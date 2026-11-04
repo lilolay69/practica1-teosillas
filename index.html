@@ -33,43 +33,67 @@
 </head>
 
 
-<body class="relative overflow-x-hidden bg-gris-claro font-poppins">
 
-    <!-- ESTA PARTE SE REPITE EN TODAS LAS PAGINAS HTML (la img y el header)  -->
+<body class="group relative overflow-x-hidden bg-gris-claro font-poppins">
+
+    <!-- ===== ESTA PARTE SE REPITE EN TODAS LAS PÁGINAS HTML (logo, menú, bombilla y panel) ===== -->
 
     <img src="media/img/LOGO PNG BLANCO.png" alt="Logo de Teo Sillas"
          class="pointer-events-none absolute -top-16 left-[22px] z-0 w-[22rem] max-w-none md:-top-92 md:left-[-140px] md:w-[44rem]">
 
-    <header class="fixed top-5 left-5 z-20 flex items-center gap-4 md:top-8 md:left-8">
+    <div id="menu"
+          class="invisible fixed inset-x-0 top-0 z-[15] bg-azul px-5 pt-5 pb-14 opacity-0 group-data-[menu=abierto]:visible group-data-[menu=abierto]:opacity-100 group-data-[menu=abierto]:transition-[opacity,visibility] group-data-[menu=abierto]:duration-800 group-data-[menu=abierto]:ease-in-out md:px-8 md:pt-8">
+
+      
+        <form id="formulario-buscar" role="search" action="#" class="mx-14">
+            <label for="buscador" class="sr-only">Buscar en la web</label>
+            <input id="buscador" type="search" placeholder="Buscar..." autocomplete="off"
+                   class="h-10 w-full bg-gris-claro px-4 text-base text-black placeholder:text-texto focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gris-claro">
+        </form>
+
+        <nav aria-label="Principal" class="-mx-5 mt-6 md:-mx-8">
+            <ul class="space-y-1">
+                <li><a href="catalogo.html" class="block px-5 py-2 text-2xl font-semibold text-gris-claro hover:bg-rojo hover:text-gris-claro focus-visible:bg-rojo focus-visible:text-gris-claro md:px-8 md:text-3xl">CATÁLOGO DE TEO</a></li>
+                <li><a href="favoritas.html" class="block px-5 py-2 text-2xl font-semibold text-gris-claro hover:bg-rojo hover:text-gris-claro focus-visible:bg-rojo focus-visible:text-gris-claro md:px-8 md:text-3xl">FAVORITAS DE TEO</a></li>
+                <li><a href="quien-es-teo.html" class="block px-5 py-2 text-2xl font-semibold text-gris-claro hover:bg-rojo hover:text-gris-claro focus-visible:bg-rojo focus-visible:text-gris-claro md:px-8 md:text-3xl">¿QUIÉN ES TEO?</a></li>
+                <li><a href="donde-esta-teo.html" class="block px-5 py-2 text-2xl font-semibold text-gris-claro hover:bg-rojo hover:text-gris-claro focus-visible:bg-rojo focus-visible:text-gris-claro md:px-8 md:text-3xl">¿DÓNDE ESTÁ TEO?</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <!-- Menú + título: fijos en pantalla, siempre encima del panel -->
+        <header class="pointer-events-none fixed top-5 left-5 z-20 flex items-center gap-4 md:top-8 md:left-8">
         <button id="boton-menu" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="menu"
-                class="flex h-10 w-10 flex-col items-center justify-center gap-[7px]">
-            <span class="block h-[4.5px] w-10 bg-azul"></span>
-            <span class="block h-[4.5px] w-10 bg-azul"></span>
-            <span class="block h-[4.5px] w-10 bg-azul"></span>
+        class="pointer-events-auto flex h-10 w-10 cursor-pointer flex-col items-center justify-center gap-[7px]">
+            <span class="block h-[4.5px] w-10 bg-azul transition duration-300 group-data-[menu=abierto]:translate-y-[11.5px] group-data-[menu=abierto]:rotate-45 group-data-[menu=abierto]:bg-gris-claro"></span>
+            <span class="block h-[4.5px] w-10 bg-azul transition duration-300 group-data-[menu=abierto]:bg-gris-claro group-data-[menu=abierto]:opacity-0"></span>
+            <span class="block h-[4.5px] w-10 bg-azul transition duration-300 group-data-[menu=abierto]:-translate-y-[11.5px] group-data-[menu=abierto]:-rotate-45 group-data-[menu=abierto]:bg-gris-claro"></span>
         </button>
-        <a href="index.html" class="text-xl leading-none text-rojo font-semibold md:text-3xl">TEO SILLAS</a>
+        <a href="index.html" class="pointer-events-auto text-xl leading-none font-semibold text-rojo group-data-[menu=abierto]:invisible md:text-3xl">TEO SILLAS</a>
     </header>
 
-        <!-- Linterna (modo oscuro): fija arriba a la derecha, como el menú -->
+    <!-- Bombilla (modo oscuro): fija arriba a la derecha; se vuelve blanca con el menú abierto -->
     <button id="boton-tema" type="button" aria-label="Activar modo oscuro" aria-pressed="false"
-            class="fixed top-5 right-5 z-20 flex h-10 w-10 items-center justify-center text-azul md:top-8 md:right-8">
+        class="fixed top-5 right-5 z-20 flex h-10 w-10 cursor-pointer items-center justify-center text-azul transition-colors duration-300 group-data-[menu=abierto]:text-white md:top-8 md:right-8">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
              stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-10 w-10" aria-hidden="true">
-            <path d="M6 2h12v5l-2 3H8L6 7z"/>
-            <rect x="8" y="10" width="8" height="12" rx="1"/>
-            <path d="M12 14v3"/>
+            <path d="M9 18h6"/>
+            <path d="M10 22h4"/>
+            <path d="M15.09 14c.18-.98.65-1.74 1.41-2.5A4.65 4.65 0 0 0 18 8 6 6 0 0 0 6 8c0 1 .23 2.23 1.5 3.5A4.61 4.61 0 0 1 8.91 14"/>
         </svg>
     </button>
 
-   
+    <!-- ===== FIN DE LA PARTE REPETIDA ===== -->
+
+
     <main class="relative z-10 pt-48 pr-5 pb-16 pl-[22px] md:pt-80 md:pr-8 md:pl-[34px]">
         <div class="grid gap-6 md:grid-cols-[minmax(0,27rem)_1fr] md:items-start">
 
-             <nav aria-label="Secciones" class="grid gap-5">
+            <nav aria-label="Secciones" class="grid gap-5">
                 <a href="catalogo.html" class="flex min-h-16 items-center bg-gris px-6 text-xl font-semibold text-rojo transition-colors duration-200 hover:bg-azul hover:text-amarillo focus-visible:bg-azul focus-visible:text-amarillo md:min-h-18 md:text-2xl">CATÁLOGO DE TEO</a>
-                <a href="favoritos.html" class="flex min-h-16 items-center bg-gris px-6 text-xl font-semibold text-rojo transition-colors duration-200 hover:bg-azul hover:text-amarillo focus-visible:bg-azul focus-visible:text-amarillo md:min-h-18 md:text-2xl">FAVORITAS DE TEO</a>
-                <a href="sobreteo.html" class="flex min-h-16 items-center bg-gris px-6 text-xl font-semibold text-rojo transition-colors duration-200 hover:bg-azul hover:text-amarillo focus-visible:bg-azul focus-visible:text-amarillo md:min-h-18 md:text-2xl">¿QUIÉN ES TEO?</a>
-                <a href="ubicacion.html" class="flex min-h-16 items-center bg-gris px-6 text-xl font-semibold text-rojo transition-colors duration-200 hover:bg-azul hover:text-amarillo focus-visible:bg-azul focus-visible:text-amarillo md:min-h-18 md:text-2xl">¿DÓNDE ESTÁ TEO?</a>
+                <a href="favoritas.html" class="flex min-h-16 items-center bg-gris px-6 text-xl font-semibold text-rojo transition-colors duration-200 hover:bg-azul hover:text-amarillo focus-visible:bg-azul focus-visible:text-amarillo md:min-h-18 md:text-2xl">FAVORITAS DE TEO</a>
+                <a href="quien-es-teo.html" class="flex min-h-16 items-center bg-gris px-6 text-xl font-semibold text-rojo transition-colors duration-200 hover:bg-azul hover:text-amarillo focus-visible:bg-azul focus-visible:text-amarillo md:min-h-18 md:text-2xl">¿QUIÉN ES TEO?</a>
+                <a href="donde-esta-teo.html" class="flex min-h-16 items-center bg-gris px-6 text-xl font-semibold text-rojo transition-colors duration-200 hover:bg-azul hover:text-amarillo focus-visible:bg-azul focus-visible:text-amarillo md:min-h-18 md:text-2xl">¿DÓNDE ESTÁ TEO?</a>
             </nav>
 
             <!-- Imagen al lado de los rectángulos (por definir) -->
