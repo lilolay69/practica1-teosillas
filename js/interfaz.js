@@ -52,3 +52,17 @@ formularioBuscar.addEventListener('submit', (e) => {
 });
 
 buscador.addEventListener('input', () => buscador.setCustomValidity(''));
+
+
+
+
+
+
+const UMBRAL_SCROLL = 40;
+
+function actualizarScroll() {
+    document.body.dataset.scroll = window.scrollY > UMBRAL_SCROLL ? 'abajo' : 'arriba';
+}
+
+window.addEventListener('scroll', actualizarScroll, { passive: true });
+actualizarScroll();

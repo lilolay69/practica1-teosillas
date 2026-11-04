@@ -61,15 +61,25 @@
         </nav>
     </div>
 
-    <!-- Menú + título: fijos en pantalla, siempre encima del panel -->
         <header class="pointer-events-none fixed top-5 left-5 z-20 flex items-center gap-4 md:top-8 md:left-8">
         <button id="boton-menu" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="menu"
-        class="pointer-events-auto flex h-10 w-10 cursor-pointer flex-col items-center justify-center gap-[7px]">
+                class="pointer-events-auto flex h-10 w-10 cursor-pointer flex-col items-center justify-center gap-[7px]">
             <span class="block h-[4.5px] w-10 bg-azul transition duration-300 group-data-[menu=abierto]:translate-y-[11.5px] group-data-[menu=abierto]:rotate-45 group-data-[menu=abierto]:bg-gris-claro"></span>
             <span class="block h-[4.5px] w-10 bg-azul transition duration-300 group-data-[menu=abierto]:bg-gris-claro group-data-[menu=abierto]:opacity-0"></span>
             <span class="block h-[4.5px] w-10 bg-azul transition duration-300 group-data-[menu=abierto]:-translate-y-[11.5px] group-data-[menu=abierto]:-rotate-45 group-data-[menu=abierto]:bg-gris-claro"></span>
         </button>
-        <a href="index.html" class="pointer-events-auto text-xl leading-none font-semibold text-rojo group-data-[menu=abierto]:invisible md:text-3xl">TEO SILLAS</a>
+        <a href="index.html" aria-label="TEO SILLAS"
+           class="pointer-events-auto flex text-xl leading-none font-semibold text-rojo group-data-[menu=abierto]:invisible group-data-[scroll=abajo]:pointer-events-none md:text-3xl">
+            <span aria-hidden="true" style="--i:0" class="transition duration-300 ease-in delay-[calc(var(--i)*50ms)] group-data-[scroll=abajo]:-translate-y-16 group-data-[scroll=abajo]:opacity-0 group-data-[scroll=abajo]:delay-[calc((8_-_var(--i))*50ms)]">T</span>
+            <span aria-hidden="true" style="--i:1" class="transition duration-300 ease-in delay-[calc(var(--i)*50ms)] group-data-[scroll=abajo]:-translate-y-16 group-data-[scroll=abajo]:opacity-0 group-data-[scroll=abajo]:delay-[calc((8_-_var(--i))*50ms)]">E</span>
+            <span aria-hidden="true" style="--i:2" class="transition duration-300 ease-in delay-[calc(var(--i)*50ms)] group-data-[scroll=abajo]:-translate-y-16 group-data-[scroll=abajo]:opacity-0 group-data-[scroll=abajo]:delay-[calc((8_-_var(--i))*50ms)]">O</span>
+            <span aria-hidden="true" style="--i:3" class="ml-[0.3em] transition duration-300 ease-in delay-[calc(var(--i)*50ms)] group-data-[scroll=abajo]:-translate-y-16 group-data-[scroll=abajo]:opacity-0 group-data-[scroll=abajo]:delay-[calc((8_-_var(--i))*50ms)]">S</span>
+            <span aria-hidden="true" style="--i:4" class="transition duration-300 ease-in delay-[calc(var(--i)*50ms)] group-data-[scroll=abajo]:-translate-y-16 group-data-[scroll=abajo]:opacity-0 group-data-[scroll=abajo]:delay-[calc((8_-_var(--i))*50ms)]">I</span>
+            <span aria-hidden="true" style="--i:5" class="transition duration-300 ease-in delay-[calc(var(--i)*50ms)] group-data-[scroll=abajo]:-translate-y-16 group-data-[scroll=abajo]:opacity-0 group-data-[scroll=abajo]:delay-[calc((8_-_var(--i))*50ms)]">L</span>
+            <span aria-hidden="true" style="--i:6" class="transition duration-300 ease-in delay-[calc(var(--i)*50ms)] group-data-[scroll=abajo]:-translate-y-16 group-data-[scroll=abajo]:opacity-0 group-data-[scroll=abajo]:delay-[calc((8_-_var(--i))*50ms)]">L</span>
+            <span aria-hidden="true" style="--i:7" class="transition duration-300 ease-in delay-[calc(var(--i)*50ms)] group-data-[scroll=abajo]:-translate-y-16 group-data-[scroll=abajo]:opacity-0 group-data-[scroll=abajo]:delay-[calc((8_-_var(--i))*50ms)]">A</span>
+            <span aria-hidden="true" style="--i:8" class="transition duration-300 ease-in delay-[calc(var(--i)*50ms)] group-data-[scroll=abajo]:-translate-y-16 group-data-[scroll=abajo]:opacity-0 group-data-[scroll=abajo]:delay-[calc((8_-_var(--i))*50ms)]">S</span>
+        </a>
     </header>
 
     <!-- Bombilla (modo oscuro): fija arriba a la derecha; se vuelve blanca con el menú abierto -->
