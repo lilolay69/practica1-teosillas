@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TEO SILLAS</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <!-- ===== CSS DE LIBRERÍAS (aquí, si hacen falta) ===== -->
+
+    <!-- Nuestro CSS propio -->
+    <link rel="stylesheet" href="css/styles.css">
+
+    <!-- Tailwind desde el CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <!-- Sistema de diseño -->
+    <style type="text/tailwindcss">
+        @theme static {
+            --color-gris-claro: #EBEBEB;
+            --color-gris: #D9D9D9;
+            --color-texto: #B1B1B1;
+            --color-rojo: #E52421;
+            --color-azul: #0D00FF;
+            --color-amarillo: #FFF600;
+
+            --font-poppins: "Poppins", system-ui, sans-serif;
+        }
+    </style>
+</head>
+
+
+<body class="relative overflow-x-hidden bg-gris-claro font-poppins">
+
+    <!-- ESTA PARTE SE REPITE EN TODAS LAS PAGINAS HTML (la img y el header)  -->
+
+    <img src="media/img/LOGO PNG BLANCO.png" alt="Logo de Teo Sillas"
+         class="pointer-events-none absolute -top-16 left-[22px] z-0 w-[22rem] max-w-none md:-top-92 md:left-[-140px] md:w-[44rem]">
+
+    <header class="fixed top-5 left-5 z-20 flex items-center gap-4 md:top-8 md:left-8">
+        <button id="boton-menu" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="menu"
+                class="flex h-10 w-10 flex-col items-center justify-center gap-[7px]">
+            <span class="block h-[4.5px] w-10 bg-azul"></span>
+            <span class="block h-[4.5px] w-10 bg-azul"></span>
+            <span class="block h-[4.5px] w-10 bg-azul"></span>
+        </button>
+        <a href="index.html" class="text-xl leading-none text-rojo font-semibold md:text-3xl">TEO SILLAS</a>
+    </header>
+
+        <!-- Linterna (modo oscuro): fija arriba a la derecha, como el menú -->
+    <button id="boton-tema" type="button" aria-label="Activar modo oscuro" aria-pressed="false"
+            class="fixed top-5 right-5 z-20 flex h-10 w-10 items-center justify-center text-azul md:top-8 md:right-8">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+             stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-10 w-10" aria-hidden="true">
+            <path d="M6 2h12v5l-2 3H8L6 7z"/>
+            <rect x="8" y="10" width="8" height="12" rx="1"/>
+            <path d="M12 14v3"/>
+        </svg>
+    </button>
