@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+!<!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
@@ -9,8 +9,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
-    <!-- ===== CSS DE LIBRERÍAS (aquí, si hacen falta) ===== -->
-
+    <!-- ===== CSS DE LIBRERÍAS ===== -->
     <link rel="stylesheet" href="css/styles.css">
 
     <script>
@@ -48,12 +47,13 @@
     </style>
 </head>
 
-
 <body class="group relative overflow-x-hidden bg-fondo font-poppins transition-colors duration-500">
 
+    <!-- Logo de fondo original -->
     <img src="media/img/LOGO PNG BLANCO.png" alt="Logo de Teo Sillas"
          class="pointer-events-none absolute -top-16 left-[22px] z-0 w-[22rem] max-w-none md:-top-92 md:left-[-140px] md:w-[44rem]">
 
+    <!-- Menú desplegable oficial del compañero -->
     <div id="menu"
          class="invisible fixed inset-x-0 top-0 z-[15] bg-azul px-5 pt-5 pb-14 opacity-0 group-data-[menu=abierto]:visible group-data-[menu=abierto]:opacity-100 group-data-[menu=abierto]:transition-[opacity,visibility] group-data-[menu=abierto]:duration-800 group-data-[menu=abierto]:ease-in-out md:px-8 md:pt-8">
 
@@ -74,6 +74,7 @@
         </nav>
     </div>
 
+    <!-- Botón de menú oficial -->
     <header class="pointer-events-none fixed top-5 left-5 z-20 flex items-center md:top-8 md:left-8">
         <button id="boton-menu" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="menu"
                 class="pointer-events-auto flex h-10 w-10 cursor-pointer flex-col items-center justify-center gap-[7px]">
@@ -83,6 +84,7 @@
         </button>
     </header>
 
+    <!-- Botón de tema oscuro/claro oficial -->
     <button id="boton-tema" type="button" aria-label="Activar modo oscuro" aria-pressed="false"
             class="fixed top-5 right-5 z-20 flex h-10 w-10 cursor-pointer items-center justify-center text-icono transition-colors duration-300 group-data-[menu=abierto]:text-white md:top-8 md:right-8">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
@@ -97,11 +99,331 @@
         </svg>
     </button>
 
+    <!-- CONTENIDO PRINCIPAL: CATÁLOGO A ANCHO COMPLETO -->
+    <main class="relative z-10 w-full px-5 pt-48 pb-24 md:pt-32 md:px-12">
+        <h1 class="mb-12 w-full text-right text-4xl font-semibold text-rojo md:text-6xl">CATÁLOGO DE TEO</h1>
 
-    <main class="relative z-10 px-5 pt-48 pb-24 md:pt-32 md:pr-8 md:pb-32 md:pl-[30%]">
-        <h1 class="text-4xl font-semibold text-rojo md:text-6xl">CATÁLOGO DE TEO</h1>
+        <!-- Contenedor general en Grid: Izquierda Cuadrícula 5x5 | Derecha 2 columnas de textos -->
+        <div class="grid grid-cols-1 lg:grid-cols-[6fr_4fr] gap-12 items-start mb-16">
+
+            <!-- IZQUIERDA: Cuadrícula de 5 columnas x 5 filas (25 sillas) -->
+            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4">
+                
+                <!-- SILLA 01 -->
+                <div class="silla-item flex flex-col cursor-pointer group" data-id="01" data-titulo="01 Silla Clásica de Madera">
+                    <div class="overflow-hidden h-44">
+                        <img src="media/img/sillas/1.webp" alt="Silla 01" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105">
+                    </div>
+                    <span class="text-azul font-bold text-sm mt-1">01</span>
+                </div>
+
+                <!-- SILLA 02 -->
+                <div class="silla-item flex flex-col cursor-pointer group" data-id="02" data-titulo="02 Silla Naranja Moderna">
+                    <div class="overflow-hidden h-44">
+                        <img src="media/img/sillas/5.webp" alt="Silla 02" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105">
+                    </div>
+                    <span class="text-azul font-bold text-sm mt-1">02</span>
+                </div>
+
+                <!-- SILLA 03 -->
+                <div class="silla-item flex flex-col cursor-pointer group" data-id="03" data-titulo="03 Silla Amarilla Diseño">
+                    <div class="overflow-hidden h-44">
+                        <img src="media/img/sillas/8.webp" alt="Silla 03" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105">
+                    </div>
+                    <span class="text-azul font-bold text-sm mt-1">03</span>
+                </div>
+
+                <!-- SILLA 04 -->
+                <div class="silla-item flex flex-col cursor-pointer group" data-id="04" data-titulo="04 Silla Plegable Negra">
+                    <div class="overflow-hidden h-44">
+                        <img src="media/img/sillas/9.webp" alt="Silla 04" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105">
+                    </div>
+                    <span class="text-azul font-bold text-sm mt-1">04</span>
+                </div>
+
+                <!-- SILLA 05 -->
+                <div class="silla-item flex flex-col cursor-pointer group" data-id="05" data-titulo="05 Silla Rejilla Moderna">
+                    <div class="overflow-hidden h-44">
+                        <img src="media/img/sillas/14.webp" alt="Silla 05" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105">
+                    </div>
+                    <span class="text-azul font-bold text-sm mt-1">05</span>
+                </div>
+
+                <!-- SILLA 06 -->
+                <div class="silla-item flex flex-col cursor-pointer group" data-id="06" data-titulo="06 Silla Metálica Azul">
+                    <div class="overflow-hidden h-44">
+                        <img src="media/img/sillas/15.webp" alt="Silla 06" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105">
+                    </div>
+                    <span class="text-azul font-bold text-sm mt-1">06</span>
+                </div>
+
+                <!-- SILLA 07 -->
+                <div class="silla-item flex flex-col cursor-pointer group" data-id="07" data-titulo="07 Silla Nórdica Verde">
+                    <div class="overflow-hidden h-44">
+                        <img src="media/img/sillas/18.webp" alt="Silla 07" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105">
+                    </div>
+                    <span class="text-azul font-bold text-sm mt-1">07</span>
+                </div>
+
+                <!-- SILLA 08 -->
+                <div class="silla-item flex flex-col cursor-pointer group" data-id="08" data-titulo="08 Silla Minimalista Negra">
+                    <div class="overflow-hidden h-44">
+                        <img src="media/img/sillas/19.webp" alt="Silla 08" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105">
+                    </div>
+                    <span class="text-azul font-bold text-sm mt-1">08</span>
+                </div>
+
+                <!-- SILLA 09 -->
+                <div class="silla-item flex flex-col cursor-pointer group" data-id="09" data-titulo="09 Silla Transparente">
+                    <div class="overflow-hidden h-44">
+                        <img src="media/img/sillas/22.webp" alt="Silla 09" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105">
+                    </div>
+                    <span class="text-azul font-bold text-sm mt-1">09</span>
+                </div>
+
+                <!-- SILLA 10 -->
+                <div class="silla-item flex flex-col cursor-pointer group" data-id="10" data-titulo="10 Silla de Viena">
+                    <div class="overflow-hidden h-44">
+                        <img src="media/img/sillas/23.webp" alt="Silla 10" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105">
+                    </div>
+                    <span class="text-azul font-bold text-sm mt-1">10</span>
+                </div>
+
+                <!-- SILLA 11 -->
+                <div class="silla-item flex flex-col cursor-pointer group" data-id="11" data-titulo="11 Silla de Oficina Diseño">
+                    <div class="overflow-hidden h-44">
+                        <img src="media/img/sillas/25.webp" alt="Silla 11" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105">
+                    </div>
+                    <span class="text-azul font-bold text-sm mt-1">11</span>
+                </div>
+
+                <!-- SILLA 12 -->
+                <div class="silla-item flex flex-col cursor-pointer group" data-id="12" data-titulo="12 Silla Chula de Autor">
+                    <div class="overflow-hidden h-44">
+                        <img src="media/img/sillas/1.webp" alt="Silla 12" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105">
+                    </div>
+                    <span class="text-azul font-bold text-sm mt-1">12</span>
+                </div>
+
+                <!-- SILLA 13 -->
+                <div class="silla-item flex flex-col cursor-pointer group" data-id="13" data-titulo="13 Silla Tapizada Verde">
+                    <div class="overflow-hidden h-44">
+                        <img src="media/img/sillas/5.webp" alt="Silla 13" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105">
+                    </div>
+                    <span class="text-azul font-bold text-sm mt-1">13</span>
+                </div>
+
+                <!-- SILLA 14 -->
+                <div class="silla-item flex flex-col cursor-pointer group" data-id="14" data-titulo="14 Silla Ejecutiva Madera">
+                    <div class="overflow-hidden h-44">
+                        <img src="media/img/sillas/8.webp" alt="Silla 14" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105">
+                    </div>
+                    <span class="text-azul font-bold text-sm mt-1">14</span>
+                </div>
+
+                <!-- SILLA 15 -->
+                <div class="silla-item flex flex-col cursor-pointer group" data-id="15" data-titulo="15 Silla Luis XVI Vintage">
+                    <div class="overflow-hidden h-44">
+                        <img src="media/img/sillas/9.webp" alt="Silla 15" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105">
+                    </div>
+                    <span class="text-azul font-bold text-sm mt-1">15</span>
+                </div>
+
+                <!-- SILLA 16 -->
+                <div class="silla-item flex flex-col cursor-pointer group" data-id="16" data-titulo="16 Silla Coral Estilo">
+                    <div class="overflow-hidden h-44">
+                        <img src="media/img/sillas/14.webp" alt="Silla 16" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105">
+                    </div>
+                    <span class="text-azul font-bold text-sm mt-1">16</span>
+                </div>
+
+                <!-- SILLA 17 -->
+                <div class="silla-item flex flex-col cursor-pointer group" data-id="17" data-titulo="17 Silla de Escritorio Velvet">
+                    <div class="overflow-hidden h-44">
+                        <img src="media/img/sillas/15.webp" alt="Silla 17" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105">
+                    </div>
+                    <span class="text-azul font-bold text-sm mt-1">17</span>
+                </div>
+
+                <!-- SILLA 18 -->
+                <div class="silla-item flex flex-col cursor-pointer group" data-id="18" data-titulo="18 Silla Forjada Artística">
+                    <div class="overflow-hidden h-44">
+                        <img src="media/img/sillas/18.webp" alt="Silla 18" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105">
+                    </div>
+                    <span class="text-azul font-bold text-sm mt-1">18</span>
+                </div>
+
+                <!-- SILLA 19 -->
+                <div class="silla-item flex flex-col cursor-pointer group" data-id="19" data-titulo="19 Silla Comedor Rústica">
+                    <div class="overflow-hidden h-44">
+                        <img src="media/img/sillas/19.webp" alt="Silla 19" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105">
+                    </div>
+                    <span class="text-azul font-bold text-sm mt-1">19</span>
+                </div>
+
+                <!-- SILLA 20 -->
+                <div class="silla-item flex flex-col cursor-pointer group" data-id="20" data-titulo="20 Silla Confort Cuero">
+                    <div class="overflow-hidden h-44">
+                        <img src="media/img/sillas/22.webp" alt="Silla 20" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105">
+                    </div>
+                    <span class="text-azul font-bold text-sm mt-1">20</span>
+                </div>
+
+                <!-- SILLA 21 -->
+                <div class="silla-item flex flex-col cursor-pointer group" data-id="21" data-titulo="21 Silla Cruzada Estilo">
+                    <div class="overflow-hidden h-44">
+                        <img src="media/img/sillas/23.webp" alt="Silla 21" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105">
+                    </div>
+                    <span class="text-azul font-bold text-sm mt-1">21</span>
+                </div>
+
+                <!-- SILLA 22 -->
+                <div class="silla-item flex flex-col cursor-pointer group" data-id="22" data-titulo="22 Silla Ratán Natural">
+                    <div class="overflow-hidden h-44">
+                        <img src="media/img/sillas/25.webp" alt="Silla 22" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105">
+                    </div>
+                    <span class="text-azul font-bold text-sm mt-1">22</span>
+                </div>
+
+                <!-- SILLA 23 -->
+                <div class="silla-item flex flex-col cursor-pointer group" data-id="23" data-titulo="23 Silla de Autor Oscura">
+                    <div class="overflow-hidden h-44">
+                        <img src="media/img/sillas/1.webp" alt="Silla 23" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105">
+                    </div>
+                    <span class="text-azul font-bold text-sm mt-1">23</span>
+                </div>
+
+                <!-- SILLA 24 -->
+                <div class="silla-item flex flex-col cursor-pointer group" data-id="24" data-titulo="24 Silla Minimalista Roble">
+                    <div class="overflow-hidden h-44">
+                        <img src="media/img/sillas/5.webp" alt="Silla 24" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105">
+                    </div>
+                    <span class="text-azul font-bold text-sm mt-1">24</span>
+                </div>
+
+                <!-- SILLA 25 -->
+                <div class="silla-item flex flex-col cursor-pointer group" data-id="25" data-titulo="25 Silla Vanguardia Acero">
+                    <div class="overflow-hidden h-44">
+                        <img src="media/img/sillas/8.webp" alt="Silla 25" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105">
+                    </div>
+                    <span class="text-azul font-bold text-sm mt-1">25</span>
+                </div>
+
+            </div>
+
+            <!-- DERECHA: Bloque de textos en 2 columnas (Conectados al hover para ponerse rojos) -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-8">
+                
+                <div class="texto-item text-texto transition-colors duration-200 text-xs md:text-sm" data-id="01">
+                    <span class="font-bold text-sm block mb-1">01</span>
+                    <p>Silla de sumadre con supadre mide mucho y de largo</p>
+                </div>
+                <div class="texto-item text-texto transition-colors duration-200 text-xs md:text-sm" data-id="02">
+                    <span class="font-bold text-sm block mb-1">02</span>
+                    <p>Silla de sumadre con supadre mide mucho y de largo</p>
+                </div>
+                <div class="texto-item text-texto transition-colors duration-200 text-xs md:text-sm" data-id="03">
+                    <span class="font-bold text-sm block mb-1">03</span>
+                    <p>Silla de sumadre con supadre mide mucho y de largo</p>
+                </div>
+                <div class="texto-item text-texto transition-colors duration-200 text-xs md:text-sm" data-id="04">
+                    <span class="font-bold text-sm block mb-1">04</span>
+                    <p>Silla de sumadre con supadre mide mucho y de largo</p>
+                </div>
+                <div class="texto-item text-texto transition-colors duration-200 text-xs md:text-sm" data-id="05">
+                    <span class="font-bold text-sm block mb-1">05</span>
+                    <p>Silla de sumadre con supadre mide mucho y de largo</p>
+                </div>
+                <div class="texto-item text-texto transition-colors duration-200 text-xs md:text-sm" data-id="06">
+                    <span class="font-bold text-sm block mb-1">06</span>
+                    <p>Silla de sumadre con supadre mide mucho y de largo</p>
+                </div>
+                <div class="texto-item text-texto transition-colors duration-200 text-xs md:text-sm" data-id="07">
+                    <span class="font-bold text-sm block mb-1">07</span>
+                    <p>Silla de sumadre con supadre mide mucho y de largo</p>
+                </div>
+                <div class="texto-item text-texto transition-colors duration-200 text-xs md:text-sm" data-id="08">
+                    <span class="font-bold text-sm block mb-1">08</span>
+                    <p>Silla de sumadre con supadre mide mucho y de largo</p>
+                </div>
+                <div class="texto-item text-texto transition-colors duration-200 text-xs md:text-sm" data-id="09">
+                    <span class="font-bold text-sm block mb-1">09</span>
+                    <p>Silla de sumadre con supadre mide mucho y de largo</p>
+                </div>
+                <div class="texto-item text-texto transition-colors duration-200 text-xs md:text-sm" data-id="10">
+                    <span class="font-bold text-sm block mb-1">10</span>
+                    <p>Silla de sumadre con supadre mide mucho y de largo</p>
+                </div>
+                <div class="texto-item text-texto transition-colors duration-200 text-xs md:text-sm" data-id="11">
+                    <span class="font-bold text-sm block mb-1">11</span>
+                    <p>Silla de sumadre con supadre mide mucho y de largo</p>
+                </div>
+                <div class="texto-item text-texto transition-colors duration-200 text-xs md:text-sm" data-id="12">
+                    <span class="font-bold text-sm block mb-1">12</span>
+                    <p>Silla de sumadre con supadre mide mucho y de largo</p>
+                </div>
+                <div class="texto-item text-texto transition-colors duration-200 text-xs md:text-sm" data-id="13">
+                    <span class="font-bold text-sm block mb-1">13</span>
+                    <p>Silla de sumadre con supadre mide mucho y de largo</p>
+                </div>
+                <div class="texto-item text-texto transition-colors duration-200 text-xs md:text-sm" data-id="14">
+                    <span class="font-bold text-sm block mb-1">14</span>
+                    <p>Silla de sumadre con supadre mide mucho y de largo</p>
+                </div>
+                <div class="texto-item text-texto transition-colors duration-200 text-xs md:text-sm" data-id="15">
+                    <span class="font-bold text-sm block mb-1">15</span>
+                    <p>Silla de sumadre con supadre mide mucho y de largo</p>
+                </div>
+                <div class="texto-item text-texto transition-colors duration-200 text-xs md:text-sm" data-id="16">
+                    <span class="font-bold text-sm block mb-1">16</span>
+                    <p>Silla de sumadre con supadre mide mucho y de largo</p>
+                </div>
+                <div class="texto-item text-texto transition-colors duration-200 text-xs md:text-sm" data-id="17">
+                    <span class="font-bold text-sm block mb-1">17</span>
+                    <p>Silla de sumadre con supadre mide mucho y de largo</p>
+                </div>
+                <div class="texto-item text-texto transition-colors duration-200 text-xs md:text-sm" data-id="18">
+                    <span class="font-bold text-sm block mb-1">18</span>
+                    <p>Silla de sumadre con supadre mide mucho y de largo</p>
+                </div>
+                <div class="texto-item text-texto transition-colors duration-200 text-xs md:text-sm" data-id="19">
+                    <span class="font-bold text-sm block mb-1">19</span>
+                    <p>Silla de sumadre con supadre mide mucho y de largo</p>
+                </div>
+                <div class="texto-item text-texto transition-colors duration-200 text-xs md:text-sm" data-id="20">
+                    <span class="font-bold text-sm block mb-1">20</span>
+                    <p>Silla de sumadre con supadre mide mucho y de largo</p>
+                </div>
+                <div class="texto-item text-texto transition-colors duration-200 text-xs md:text-sm" data-id="21">
+                    <span class="font-bold text-sm block mb-1">21</span>
+                    <p>Silla de sumadre con supadre mide mucho y de largo</p>
+                </div>
+                <div class="texto-item text-texto transition-colors duration-200 text-xs md:text-sm" data-id="22">
+                    <span class="font-bold text-sm block mb-1">22</span>
+                    <p>Silla de sumadre con supadre mide mucho y de largo</p>
+                </div>
+                <div class="texto-item text-texto transition-colors duration-200 text-xs md:text-sm" data-id="23">
+                    <span class="font-bold text-sm block mb-1">23</span>
+                    <p>Silla de sumadre con supadre mide mucho y de largo</p>
+                </div>
+                <div class="texto-item text-texto transition-colors duration-200 text-xs md:text-sm" data-id="24">
+                    <span class="font-bold text-sm block mb-1">24</span>
+                    <p>Silla de sumadre con supadre mide mucho y de largo</p>
+                </div>
+                <div class="texto-item text-texto transition-colors duration-200 text-xs md:text-sm" data-id="25">
+                    <span class="font-bold text-sm block mb-1">25</span>
+                    <p>Silla de sumadre con supadre mide mucho y de largo</p>
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- CAJA DE DETALLE DE PRODUCTO REFORMULADA (Sin espacios, con texto unificado y 3 zooms) -->
+     
     </main>
 
+    <!-- Footer oficial proporcionado por tu compañero -->
     <footer class="cursor-default">
         <div class="grid bg-azul md:grid-cols-[20rem_1fr]">
 
@@ -186,8 +508,7 @@
     </footer>
 
 
-    <!-- ===== JS DE LIBRERÍAS (antes de nuestro JS) ===== -->
-
+    <!-- Script general de interfaz -->
     <script src="js/interfaz.js"></script>
 </body>
 </html>
