@@ -23,91 +23,38 @@
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 
     <style type="text/tailwindcss">
-        @custom-variant dark (&:where(.dark, .dark *));
+    @custom-variant dark (&:where(.dark, .dark *));
 
-        @theme static {
-            --color-gris-claro: #EBEBEB;
-            --color-texto: #B1B1B1;
-            --color-rojo: #E52421;
-            --color-azul: #0D00FF;
-            --color-amarillo: #FFF600;
-            --color-fondo: #EBEBEB;
-            --color-caja: #D9D9D9;
-            --color-icono: #0D00FF;
-            --font-poppins: "Poppins", system-ui, sans-serif;
-        }
+    @theme static {
+        --color-gris-claro: #EBEBEB;
+        --color-texto: #B1B1B1;
+        --color-rojo: #E52421;
+        --color-azul: #0D00FF;
+        --color-amarillo: #FFF600;
+        --color-fondo: #EBEBEB;
+        --color-caja: #D9D9D9;
+        --color-icono: #0D00FF;
+        --font-poppins: "Poppins", system-ui, sans-serif;
 
-        html.dark {
-            --color-fondo: #161616;
-            --color-caja: #2B2B2B;
-            --color-icono: #FFF600;
-        }
-    </style>
+        --animate-marquee: marquee 30s linear infinite;
 
-    <!-- ===== CSS DEL CARRUSEL ===== -->
-
-    <style>
-        .carrusel-texto {
-            display: block;
-            position: relative;
-            width: 100%;
-            overflow: hidden;
-            white-space: nowrap;
-            padding: 25px 0;
-            margin-top: 25px;
-            margin-bottom: 10px;
-            color: #B1B1B1;
-            font-family: 'Poppins', sans-serif;
-            font-size: 14px;
-            font-weight: 400;
-        }
-
-        .carrusel-pista {
-            display: flex;
-            width: max-content;
-            animation: teo-carrusel 30s linear infinite;
-            will-change: transform;
-        }
-
-        .carrusel-grupo {
-            display: flex;
-            flex-shrink: 0;
-            align-items: center;
-        }
-
-        .carrusel-grupo span {
-            display: block;
-            flex-shrink: 0;
-            padding-right: 45px;
-        }
-
-        @keyframes teo-carrusel {
+        @keyframes marquee {
             from {
                 transform: translateX(0);
             }
-
             to {
                 transform: translateX(-50%);
             }
         }
+    }
 
-        .carrusel-texto:hover .carrusel-pista {
-            animation-play-state: paused;
-        }
+    html.dark {
+        --color-fondo: #161616;
+        --color-caja: #2B2B2B;
+        --color-icono: #FFF600;
+    }
+</style>
 
-        @media (max-width: 768px) {
-            .carrusel-texto {
-                font-size: 12px;
-                padding: 20px 0;
-            }
-        }
-
-        @media (prefers-reduced-motion: reduce) {
-            .carrusel-pista {
-                animation: none;
-            }
-        }
-    </style>
 
 </head>
 
@@ -360,28 +307,29 @@
 
         <!-- ===== CARRUSEL INFINITO ===== -->
 
-        <div class="carrusel-texto"
-             role="region"
-             aria-label="El que se fue a Sevilla compró una silla">
+        <!-- ===== CARRUSEL INFINITO ===== -->
 
-            <div class="carrusel-pista" aria-hidden="true">
+        <div class="mt-20 mb-2 w-full overflow-hidden whitespace-nowrap py-6 text-xl font-semibold text-azul md:text-2xl"
+            role="region"
+            aria-label="El que se fue a Sevilla compró una silla">
+
+            <div class="flex w-max animate-marquee motion-reduce:animate-none hover:[animation-play-state:paused]"
+                aria-hidden="true">
 
                 <!-- PRIMER GRUPO -->
-
-                <div class="carrusel-grupo">
-                    <span>EL QUE SE FUE A SEVILLA COMPRÓ UNA SILLA</span>
-                    <span>EL QUE SE FUE A SEVILLA COMPRÓ UNA SILLA</span>
-                    <span>EL QUE SE FUE A SEVILLA COMPRÓ UNA SILLA</span>
-                    <span>EL QUE SE FUE A SEVILLA COMPRÓ UNA SILLA</span>
+                <div class="flex shrink-0 items-center">
+                    <span class="shrink-0 pr-12">EL QUE SE FUE A SEVILLA COMPRÓ UNA SILLA</span>
+                    <span class="shrink-0 pr-12">EL QUE SE FUE A SEVILLA COMPRÓ UNA SILLA</span>
+                    <span class="shrink-0 pr-12">EL QUE SE FUE A SEVILLA COMPRÓ UNA SILLA</span>
+                    <span class="shrink-0 pr-12">EL QUE SE FUE A SEVILLA COMPRÓ UNA SILLA</span>
                 </div>
 
                 <!-- SEGUNDO GRUPO: DUPLICADO PARA EL BUCLE -->
-
-                <div class="carrusel-grupo">
-                    <span>EL QUE SE FUE A SEVILLA COMPRÓ UNA SILLA</span>
-                    <span>EL QUE SE FUE A SEVILLA COMPRÓ UNA SILLA</span>
-                    <span>EL QUE SE FUE A SEVILLA COMPRÓ UNA SILLA</span>
-                    <span>EL QUE SE FUE A SEVILLA COMPRÓ UNA SILLA</span>
+                <div class="flex shrink-0 items-center">
+                    <span class="shrink-0 pr-12">EL QUE SE FUE A SEVILLA COMPRÓ UNA SILLA</span>
+                    <span class="shrink-0 pr-12">EL QUE SE FUE A SEVILLA COMPRÓ UNA SILLA</span>
+                    <span class="shrink-0 pr-12">EL QUE SE FUE A SEVILLA COMPRÓ UNA SILLA</span>
+                    <span class="shrink-0 pr-12">EL QUE SE FUE A SEVILLA COMPRÓ UNA SILLA</span>
                 </div>
 
             </div>
