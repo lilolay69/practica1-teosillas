@@ -490,3 +490,15 @@
     border-bottom: 1px solid black;
     cursor: pointer;
 }
+
+
+.silla-video {
+    filter: saturate(1);
+    transition: filter 0.3s ease;
+}
+
+/* Hover: recuperar saturación */
+.silla-video:hover {
+    filter: saturate(1.5);
+}
+

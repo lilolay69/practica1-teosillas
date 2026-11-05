@@ -95,61 +95,148 @@
         </svg>
     </button>
 
-    <main class="relative z-10 px-5 pt-48 pb-10 md:pt-32 md:pr-8 md:pb-16 md:pl-[30%]">
-        <h1 class="text-4xl font-semibold text-rojo md:text-6xl">FAVORITAS DE TEO</h1>
-        <p class="mt-6 text-justify text-sm font-light text-tinta md:text-base">
+    <main class="relative z-10 px-5 pt-48 pb-4 md:pt-32 md:pr-8 md:pb-6 md:pl-[30%]">
+
+        <h1 id="titulo-favoritas"
+    aria-label="FAVORITAS DE TEO"
+    class="mb-4 flex w-full justify-end text-4xl font-semibold text-rojo md:text-6xl">
+
+    <span aria-hidden="true" style="--i:0" class="transition duration-300 ease-in delay-[calc(var(--i)*50ms)] group-data-[scroll=abajo]:-translate-y-16 group-data-[scroll=abajo]:opacity-0 group-data-[scroll=abajo]:delay-[calc((14_-_var(--i))*50ms)]">F</span>
+    <span aria-hidden="true" style="--i:1" class="transition duration-300 ease-in delay-[calc(var(--i)*50ms)] group-data-[scroll=abajo]:-translate-y-16 group-data-[scroll=abajo]:opacity-0 group-data-[scroll=abajo]:delay-[calc((14_-_var(--i))*50ms)]">A</span>
+    <span aria-hidden="true" style="--i:2" class="transition duration-300 ease-in delay-[calc(var(--i)*50ms)] group-data-[scroll=abajo]:-translate-y-16 group-data-[scroll=abajo]:opacity-0 group-data-[scroll=abajo]:delay-[calc((14_-_var(--i))*50ms)]">V</span>
+    <span aria-hidden="true" style="--i:3" class="transition duration-300 ease-in delay-[calc(var(--i)*50ms)] group-data-[scroll=abajo]:-translate-y-16 group-data-[scroll=abajo]:opacity-0 group-data-[scroll=abajo]:delay-[calc((14_-_var(--i))*50ms)]">O</span>
+    <span aria-hidden="true" style="--i:4" class="transition duration-300 ease-in delay-[calc(var(--i)*50ms)] group-data-[scroll=abajo]:-translate-y-16 group-data-[scroll=abajo]:opacity-0 group-data-[scroll=abajo]:delay-[calc((14_-_var(--i))*50ms)]">R</span>
+    <span aria-hidden="true" style="--i:5" class="transition duration-300 ease-in delay-[calc(var(--i)*50ms)] group-data-[scroll=abajo]:-translate-y-16 group-data-[scroll=abajo]:opacity-0 group-data-[scroll=abajo]:delay-[calc((14_-_var(--i))*50ms)]">I</span>
+    <span aria-hidden="true" style="--i:6" class="transition duration-300 ease-in delay-[calc(var(--i)*50ms)] group-data-[scroll=abajo]:-translate-y-16 group-data-[scroll=abajo]:opacity-0 group-data-[scroll=abajo]:delay-[calc((14_-_var(--i))*50ms)]">T</span>
+    <span aria-hidden="true" style="--i:7" class="transition duration-300 ease-in delay-[calc(var(--i)*50ms)] group-data-[scroll=abajo]:-translate-y-16 group-data-[scroll=abajo]:opacity-0 group-data-[scroll=abajo]:delay-[calc((14_-_var(--i))*50ms)]">A</span>
+    <span aria-hidden="true" style="--i:8" class="transition duration-300 ease-in delay-[calc(var(--i)*50ms)] group-data-[scroll=abajo]:-translate-y-16 group-data-[scroll=abajo]:opacity-0 group-data-[scroll=abajo]:delay-[calc((14_-_var(--i))*50ms)]">S</span>
+
+    <span aria-hidden="true" class="w-[0.3em]"></span>
+
+    <span aria-hidden="true" style="--i:9" class="transition duration-300 ease-in delay-[calc(var(--i)*50ms)] group-data-[scroll=abajo]:-translate-y-16 group-data-[scroll=abajo]:opacity-0 group-data-[scroll=abajo]:delay-[calc((14_-_var(--i))*50ms)]">D</span>
+    <span aria-hidden="true" style="--i:10" class="transition duration-300 ease-in delay-[calc(var(--i)*50ms)] group-data-[scroll=abajo]:-translate-y-16 group-data-[scroll=abajo]:opacity-0 group-data-[scroll=abajo]:delay-[calc((14_-_var(--i))*50ms)]">E</span>
+
+    <span aria-hidden="true" class="w-[0.3em]"></span>
+
+    <span aria-hidden="true" style="--i:11" class="transition duration-300 ease-in delay-[calc(var(--i)*50ms)] group-data-[scroll=abajo]:-translate-y-16 group-data-[scroll=abajo]:opacity-0 group-data-[scroll=abajo]:delay-[calc((14_-_var(--i))*50ms)]">T</span>
+    <span aria-hidden="true" style="--i:12" class="transition duration-300 ease-in delay-[calc(var(--i)*50ms)] group-data-[scroll=abajo]:-translate-y-16 group-data-[scroll=abajo]:opacity-0 group-data-[scroll=abajo]:delay-[calc((14_-_var(--i))*50ms)]">E</span>
+    <span aria-hidden="true" style="--i:13" class="transition duration-300 ease-in delay-[calc(var(--i)*50ms)] group-data-[scroll=abajo]:-translate-y-16 group-data-[scroll=abajo]:opacity-0 group-data-[scroll=abajo]:delay-[calc((14_-_var(--i))*50ms)]">O</span>
+
+</h1>
+
+        <p class="mt-2 text-justify text-sm font-light text-tinta md:text-base">
             Esta no es una selección habitual. Aquí conviven las piezas más extravagantes, raras e insólitas nacidas en el propio taller de Teo. Esculturas funcionales, experimentos de forma y asientos de edición limitada creados para quienes entienden que una silla es mucho más que un lugar donde sentarse.
         </p>
+
     </main>
 
     <!-- SECCIÓN CON EL GRID DE VÍDEOS Y TEXTO DINÁMICO -->
-    <section class="group/grid relative z-10 pb-24 md:grid md:grid-cols-[30%_1fr] md:pb-32">
+    
+<!-- SECCIÓN CON EL GRID DE VÍDEOS -->
+<section class="group/grid relative z-10 pb-24 md:grid md:grid-cols-[30%_1fr] md:pb-32">
 
-        <!-- Columna Izquierda: Texto alineado a la derecha, abajo en el horizonte del grid -->
-        <div class="hidden px-5 md:col-start-1 md:row-start-1 md:flex md:h-full md:flex-col md:items-end md:justify-end md:pr-6 md:pl-0">
-            <div class="relative w-full text-right text-2xl font-bold uppercase text-azul md:text-3xl">
-                <span class="opacity-0 transition-opacity duration-300 group-has-[#v1:hover]/grid:opacity-100">SILLA AZUL</span>
-                <span class="absolute inset-0 text-right opacity-0 transition-opacity duration-300 group-has-[#v2:hover]/grid:opacity-100">SILLA ESMERALDA</span>
-                <span class="absolute inset-0 text-right opacity-0 transition-opacity duration-300 group-has-[#v3:hover]/grid:opacity-100">SILLA FAMOSA</span>
-                <span class="absolute inset-0 text-right opacity-0 transition-opacity duration-300 group-has-[#v4:hover]/grid:opacity-100">SILLA ORGÁNICA</span>
-                <span class="absolute inset-0 text-right opacity-0 transition-opacity duration-300 group-has-[#v5:hover]/grid:opacity-100">SILLA SERPIENTE</span>
-                <span class="absolute inset-0 text-right opacity-0 transition-opacity duration-300 group-has-[#v6:hover]/grid:opacity-100">SILLA MORADA</span>
-                <span class="absolute inset-0 text-right opacity-0 transition-opacity duration-300 group-has-[#v7:hover]/grid:opacity-100">SILLA ROJA</span>
+   <!-- Columna Izquierda: Nombres de las sillas -->
+<div class="hidden px-5 md:col-start-1 md:row-start-1 md:flex md:h-full md:flex-col md:items-end md:justify-end md:pr-6 md:pl-0">
+    <div class="relative w-full text-right text-2xl font-bold uppercase text-azul md:text-3xl">
+
+        <span class="opacity-0 group-has-[#v1:hover]/grid:opacity-100">SILLA AZUL</span>
+        <span class="absolute inset-0 text-right opacity-0 group-has-[#v2:hover]/grid:opacity-100">SILLA ESMERALDA</span>
+        <span class="absolute inset-0 text-right opacity-0 group-has-[#v3:hover]/grid:opacity-100">SILLA FAMOSA</span>
+        <span class="absolute inset-0 text-right opacity-0 group-has-[#v4:hover]/grid:opacity-100">SILLA ORGÁNICA</span>
+        <span class="absolute inset-0 text-right opacity-0 group-has-[#v5:hover]/grid:opacity-100">SILLA SERPIENTE</span>
+        <span class="absolute inset-0 text-right opacity-0 group-has-[#v6:hover]/grid:opacity-100">SILLA MORADA</span>
+        <span class="absolute inset-0 text-right opacity-0 group-has-[#v7:hover]/grid:opacity-100">SILLA ROJA</span>
+
+    </div>
+</div>
+
+    <!-- Columna Derecha: Grid de 7 vídeos -->
+    <div class="px-5 md:col-start-2 md:row-start-1 md:self-start md:pr-8 md:pl-0">
+
+        <div aria-hidden="true"
+             class="grid aspect-[607/200] w-full grid-cols-[minmax(0,1.15fr)_minmax(0,1fr)_minmax(0,1fr)_minmax(0,0.94fr)_minmax(0,1fr)] grid-rows-[minmax(0,1fr)] overflow-hidden border-t border-l border-black">
+
+            <!-- Primera columna: Azul y Esmeralda -->
+            <div class="grid min-h-0 min-w-0 grid-rows-[minmax(0,42fr)_minmax(0,58fr)]">
+
+                <video
+                    id="v1"
+                    src="media/video/1colorazul.mp4"
+                    autoplay muted loop playsinline
+                    disablepictureinpicture
+                    preload="auto"
+                    class="silla-video block h-full w-full cursor-pointer border-r border-b border-black object-cover">
+                </video>
+
+                <video
+                    id="v2"
+                    src="media/video/2coloresmeralda.mp4"
+                    autoplay muted loop playsinline
+                    disablepictureinpicture
+                    preload="auto"
+                    class="silla-video block h-full w-full cursor-pointer border-r border-b border-black object-cover">
+                </video>
+
             </div>
-        </div>
 
-        <!-- Columna Derecha: Grid de vídeos con data-alt-video -->
-        <div class="px-5 md:col-start-2 md:row-start-1 md:self-start md:pr-8 md:pl-0">
-            <div aria-hidden="true"
-                 class="grid aspect-[607/200] w-full grid-cols-[minmax(0,1.15fr)_minmax(0,1fr)_minmax(0,1fr)_minmax(0,0.94fr)_minmax(0,1fr)] grid-rows-[minmax(0,1fr)] overflow-hidden border-t border-l border-black">
+            <!-- Segunda columna: Famosa -->
+            <video
+                id="v3"
+                src="media/video/3colorfamosa.mp4"
+                autoplay muted loop playsinline
+                disablepictureinpicture
+                preload="auto"
+                class="silla-video block h-full w-full cursor-pointer border-r border-b border-black object-cover">
+            </video>
 
-                <div class="grid min-h-0 min-w-0 grid-rows-[minmax(0,42fr)_minmax(0,58fr)]">
-                    <video id="v1" src="media/video/1siluetaazul.mp4" data-alt-video="media/video/1colorazul.mp4" autoplay muted loop playsinline disablepictureinpicture preload="auto"
-                           class="silla-video block h-full w-full cursor-pointer border-r border-b border-black object-cover"></video>
-                    <video id="v2" src="media/video/2siluetaesmeralda.mp4" data-alt-video="media/video/2coloresmeralda.mp4" autoplay muted loop playsinline disablepictureinpicture preload="auto"
-                           class="silla-video block h-full w-full cursor-pointer border-r border-b border-black object-cover"></video>
-                </div>
+            <!-- Tercera columna: Orgánica -->
+            <video
+                id="v4"
+                src="media/video/4colororganica.mp4"
+                autoplay muted loop playsinline
+                disablepictureinpicture
+                preload="auto"
+                class="silla-video block h-full w-full cursor-pointer border-r border-b border-black object-cover">
+            </video>
 
-                <video id="v3" src="media/video/3siluetafamosa.mp4" data-alt-video="media/video/3colorfamosa.mp4" autoplay muted loop playsinline disablepictureinpicture preload="auto"
-                       class="silla-video block h-full w-full cursor-pointer border-r border-b border-black object-cover"></video>
+            <!-- Cuarta columna: Roja y Morada -->
+            <div class="grid min-h-0 min-w-0 grid-rows-[minmax(0,34fr)_minmax(0,66fr)]">
 
-                <video id="v4" src="media/video/4siluetaorganica.mp4" data-alt-video="media/video/4colororganica.mp4" autoplay muted loop playsinline disablepictureinpicture preload="auto"
-                       class="silla-video block h-full w-full cursor-pointer border-r border-b border-black object-cover"></video>
+                <video
+                    id="v7"
+                    src="media/video/7colorrojo.mp4"
+                    autoplay muted loop playsinline
+                    disablepictureinpicture
+                    preload="auto"
+                    class="silla-video block h-full w-full cursor-pointer border-r border-b border-black object-cover">
+                </video>
 
-                <div class="grid min-h-0 min-w-0 grid-rows-[minmax(0,34fr)_minmax(0,66fr)]">
-                    <video id="v7" src="media/video/7siluetaroja.mp4" data-alt-video="media/video/7colorrojo.mp4" autoplay muted loop playsinline disablepictureinpicture preload="auto"
-                           class="silla-video block h-full w-full cursor-pointer border-r border-b border-black object-cover"></video>
-                    <video id="v6" src="media/video/6siluetamorado.mp4" data-alt-video="media/video/6colormorada.mp4" autoplay muted loop playsinline disablepictureinpicture preload="auto"
-                           class="silla-video block h-full w-full cursor-pointer border-r border-b border-black object-cover"></video>
-                </div>
-
-                <video id="v5" src="media/video/5siluetaserpiente.mp4" data-alt-video="media/video/5colorserpiente.mp4" autoplay muted loop playsinline disablepictureinpicture preload="auto"
-                       class="silla-video block h-full w-full cursor-pointer border-r border-b border-black object-cover"></video>
+                <video
+                    id="v6"
+                    src="media/video/6colormorada.mp4"
+                    autoplay muted loop playsinline
+                    disablepictureinpicture
+                    preload="auto"
+                    class="silla-video block h-full w-full cursor-pointer border-r border-b border-black object-cover">
+                </video>
 
             </div>
-        </div>
 
-    </section>
+            <!-- Quinta columna: Serpiente -->
+            <video
+                id="v5"
+                src="media/video/5colorserpiente.mp4"
+                autoplay muted loop playsinline
+                disablepictureinpicture
+                preload="auto"
+                class="silla-video block h-full w-full cursor-pointer border-r border-b border-black object-cover">
+            </video>
+
+        </div>
+    </div>
+
+</section>
+
 
     <footer class="cursor-default">
         <div class="grid bg-azul md:grid-cols-[20rem_1fr]">

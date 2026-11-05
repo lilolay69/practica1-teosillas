@@ -122,23 +122,34 @@ document.querySelectorAll('.grid-con-nombres video').forEach(video => {
 });
 
 
+
+/* ===== GRID DE VÍDEOS ===== */
+
 document.addEventListener('DOMContentLoaded', () => {
+
     const videos = document.querySelectorAll('.silla-video');
 
     videos.forEach(video => {
-        const originalSrc = video.getAttribute('src');
-        const altSrc = video.getAttribute('data-alt-video');
 
+        video.muted = true;
+        video.loop = true;
+        video.playsInline = true;
+
+        // Reproducción automática
+        video.play().catch(() => {});
+
+        // Pausar al pasar el cursor
         video.addEventListener('mouseenter', () => {
-            if (altSrc && altSrc !== '#') {
-                video.src = altSrc;
-                video.play();
-            }
+            video.pause();
         });
 
+        // Reanudar al retirar el cursor
         video.addEventListener('mouseleave', () => {
-            video.src = originalSrc;
-            video.play();
+            video.play().catch(() => {});
         });
+
     });
+
 });
+
+
