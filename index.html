@@ -143,26 +143,30 @@
 
     <main class="relative z-10 pt-48 pr-5 pb-24 pl-[22px] md:min-h-svh md:h-auto md:pt-20 md:pr-8 md:pb-20 md:pl-[34px]">
 
-        <div class="grid gap-6 md:grid-cols-[minmax(0,27rem)_1fr] md:items-end">
+        <div id="contenedor-principal"
+     class="relative grid gap-6 md:grid-cols-[minmax(0,27rem)_1fr] md:items-end">
 
-            <!-- SECCIONES -->
+    <!-- RECTÁNGULO AMARILLO DE FONDO -->
+            <div id="rectangulo-amarillo"
+                class="pointer-events-none fixed top-0 bottom-0 left-[60vw] right-0 z-0 hidden bg-amarillo md:block">
+            </div>
 
-            <nav aria-label="Secciones" class="grid gap-5 md:self-end">
 
-                <a href="catalogo.html" class="flex min-h-20 w-full items-center bg-caja px-14 py-5 text-2xl font-regular text-rojo transition-colors duration-200 hover:bg-azul hover:text-amarillo focus-visible:bg-azul focus-visible:text-amarillo md:min-h-24 md:text-3xl">CATÁLOGO DE TEO</a>
+            <nav aria-label="Secciones" class="relative z-10 grid gap-4 md:self-end">
 
-                <a href="favoritas.html" class="flex min-h-20 w-full items-center bg-caja px-14 py-5 text-2xl font-regular text-rojo transition-colors duration-200 hover:bg-azul hover:text-amarillo focus-visible:bg-azul focus-visible:text-amarillo md:min-h-24 md:text-3xl">FAVORITAS DE TEO</a>
+                <a href="catalogo.html" class="flex min-h-16 w-full items-center bg-caja px-14 py-3 text-2xl font-semibold text-rojo transition-colors duration-200 hover:bg-azul hover:text-amarillo focus-visible:bg-azul focus-visible:text-amarillo md:min-h-20 md:text-3xl">CATÁLOGO DE TEO</a>
 
-                <a href="quien-es-teo.html" class="flex min-h-20 w-full items-center bg-caja px-14 py-5 text-2xl font-regular text-rojo transition-colors duration-200 hover:bg-azul hover:text-amarillo focus-visible:bg-azul focus-visible:text-amarillo md:min-h-24 md:text-3xl">¿QUIÉN ES TEO?</a>
+                <a href="favoritas.html" class="flex min-h-16 w-full items-center bg-caja px-14 py-3 text-2xl font-semibold text-rojo transition-colors duration-200 hover:bg-azul hover:text-amarillo focus-visible:bg-azul focus-visible:text-amarillo md:min-h-20 md:text-3xl">FAVORITAS DE TEO</a>
 
-                <a href="donde-esta-teo.html" class="flex min-h-20 w-full items-center bg-caja px-14 py-5 text-2xl font-regular text-rojo transition-colors duration-200 hover:bg-azul hover:text-amarillo focus-visible:bg-azul focus-visible:text-amarillo md:min-h-24 md:text-3xl">¿DÓNDE ESTÁ TEO?</a>
+                <a href="quien-es-teo.html" class="flex min-h-16 w-full items-center bg-caja px-14 py-3 text-2xl font-semibold text-rojo transition-colors duration-200 hover:bg-azul hover:text-amarillo focus-visible:bg-azul focus-visible:text-amarillo md:min-h-20 md:text-3xl">¿QUIÉN ES TEO?</a>
+
+                <a href="donde-esta-teo.html" class="flex min-h-16 w-full items-center bg-caja px-14 py-3 text-2xl font-semibold text-rojo transition-colors duration-200 hover:bg-azul hover:text-amarillo focus-visible:bg-azul focus-visible:text-amarillo md:min-h-20 md:text-3xl">¿DÓNDE ESTÁ TEO?</a>
 
             </nav>
-
             <!-- MEDIA GRID -->
 
             <div id="media-grid"
-                 class="grid aspect-[595/842] w-full grid-cols-2 overflow-hidden md:w-[min(100%,calc((100svh-7rem)*595/842))] md:self-start md:justify-self-center">
+     class="relative z-10 grid aspect-[595/842] w-full grid-cols-2 overflow-hidden md:w-[min(100%,calc((100svh-7rem)*595/842))] md:self-start md:justify-self-center">
 
                 <img src="media/img/silla izq-roja.png"
                      alt="Mitad de una silla roja"
