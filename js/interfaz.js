@@ -66,3 +66,30 @@ function actualizarScroll() {
 
 window.addEventListener('scroll', actualizarScroll, { passive: true });
 actualizarScroll();
+
+
+
+
+
+
+
+
+
+
+const botonTema = document.getElementById('boton-tema');
+
+function sincronizarBotonTema() {
+    const oscuro = document.documentElement.classList.contains('dark');
+    botonTema.setAttribute('aria-pressed', String(oscuro));
+    botonTema.setAttribute('aria-label', oscuro ? 'Activar modo claro' : 'Activar modo oscuro');
+}
+
+botonTema.addEventListener('click', () => {
+    const oscuro = document.documentElement.classList.toggle('dark');
+    try {
+        localStorage.setItem('tema', oscuro ? 'oscuro' : 'claro');
+    } catch (e) {}
+    sincronizarBotonTema();
+});
+
+sincronizarBotonTema();

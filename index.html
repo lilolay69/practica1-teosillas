@@ -7,34 +7,49 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
     <!-- ===== CSS DE LIBRERÍAS (aquí, si hacen falta) ===== -->
 
     <!-- Nuestro CSS propio -->
     <link rel="stylesheet" href="css/styles.css">
 
+     <script>
+        try {
+            if (localStorage.getItem('tema') === 'oscuro') document.documentElement.classList.add('dark');
+        } catch (e) {}
+    </script>
+
     <!-- Tailwind desde el CDN -->
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 
-    <!-- Sistema de diseño -->
-    <style type="text/tailwindcss">
+  <style type="text/tailwindcss">
+        @custom-variant dark (&:where(.dark, .dark *));
+
         @theme static {
             --color-gris-claro: #EBEBEB;
-            --color-gris: #D9D9D9;
             --color-texto: #B1B1B1;
             --color-rojo: #E52421;
             --color-azul: #0D00FF;
             --color-amarillo: #FFF600;
 
+            --color-fondo: #EBEBEB;
+            --color-caja: #D9D9D9;
+            --color-icono: #0D00FF;
+
             --font-poppins: "Poppins", system-ui, sans-serif;
+        }
+
+        html.dark {
+            --color-fondo: #161616;
+            --color-caja: #2B2B2B;
+            --color-icono: #FFF600;
         }
     </style>
 </head>
 
 
-
-<body class="group relative overflow-x-hidden bg-gris-claro font-poppins">
+<body class="group relative overflow-x-hidden bg-fondo font-poppins transition-colors duration-500">
 
     <!-- ===== ESTA PARTE SE REPITE EN TODAS LAS PÁGINAS HTML (logo, menú, bombilla y panel) ===== -->
 
@@ -64,9 +79,9 @@
         <header class="pointer-events-none fixed top-5 left-5 z-20 flex items-center gap-4 md:top-8 md:left-8">
         <button id="boton-menu" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="menu"
                 class="pointer-events-auto flex h-10 w-10 cursor-pointer flex-col items-center justify-center gap-[7px]">
-            <span class="block h-[4.5px] w-10 bg-azul transition duration-300 group-data-[menu=abierto]:translate-y-[11.5px] group-data-[menu=abierto]:rotate-45 group-data-[menu=abierto]:bg-gris-claro"></span>
-            <span class="block h-[4.5px] w-10 bg-azul transition duration-300 group-data-[menu=abierto]:bg-gris-claro group-data-[menu=abierto]:opacity-0"></span>
-            <span class="block h-[4.5px] w-10 bg-azul transition duration-300 group-data-[menu=abierto]:-translate-y-[11.5px] group-data-[menu=abierto]:-rotate-45 group-data-[menu=abierto]:bg-gris-claro"></span>
+            <span class="block h-[4.5px] w-10 bg-icono transition duration-300 group-data-[menu=abierto]:translate-y-[11.5px] group-data-[menu=abierto]:rotate-45 group-data-[menu=abierto]:bg-gris-claro"></span>
+            <span class="block h-[4.5px] w-10 bg-icono transition duration-300 group-data-[menu=abierto]:bg-gris-claro group-data-[menu=abierto]:opacity-0"></span>
+            <span class="block h-[4.5px] w-10 bg-icono transition duration-300 group-data-[menu=abierto]:-translate-y-[11.5px] group-data-[menu=abierto]:-rotate-45 group-data-[menu=abierto]:bg-gris-claro"></span>
         </button>
         <a href="index.html" aria-label="TEO SILLAS"
            class="pointer-events-auto flex text-xl leading-none font-semibold text-rojo group-data-[menu=abierto]:invisible group-data-[scroll=abajo]:pointer-events-none md:text-3xl">
@@ -82,14 +97,17 @@
         </a>
     </header>
 
-    <!-- Bombilla (modo oscuro): fija arriba a la derecha; se vuelve blanca con el menú abierto -->
-    <button id="boton-tema" type="button" aria-label="Activar modo oscuro" aria-pressed="false"
-        class="fixed top-5 right-5 z-20 flex h-10 w-10 cursor-pointer items-center justify-center text-azul transition-colors duration-300 group-data-[menu=abierto]:text-white md:top-8 md:right-8">
+   <button id="boton-tema" type="button" aria-label="Activar modo oscuro" aria-pressed="false"
+            class="fixed top-5 right-5 z-20 flex h-10 w-10 cursor-pointer items-center justify-center text-icono transition-colors duration-300 group-data-[menu=abierto]:text-white md:top-8 md:right-8">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-             stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-10 w-10" aria-hidden="true">
+             stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-10 w-10 dark:hidden" aria-hidden="true">
             <path d="M9 18h6"/>
             <path d="M10 22h4"/>
             <path d="M15.09 14c.18-.98.65-1.74 1.41-2.5A4.65 4.65 0 0 0 18 8 6 6 0 0 0 6 8c0 1 .23 2.23 1.5 3.5A4.61 4.61 0 0 1 8.91 14"/>
+        </svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+             stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="hidden h-10 w-10 dark:block" aria-hidden="true">
+            <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/>
         </svg>
     </button>
 
@@ -100,10 +118,10 @@
         <div class="grid gap-6 md:grid-cols-[minmax(0,27rem)_1fr] md:items-start">
 
             <nav aria-label="Secciones" class="grid gap-5">
-                <a href="catalogo.html" class="flex min-h-16 items-center bg-gris px-6 text-xl font-semibold text-rojo transition-colors duration-200 hover:bg-azul hover:text-amarillo focus-visible:bg-azul focus-visible:text-amarillo md:min-h-18 md:text-2xl">CATÁLOGO DE TEO</a>
-                <a href="favoritas.html" class="flex min-h-16 items-center bg-gris px-6 text-xl font-semibold text-rojo transition-colors duration-200 hover:bg-azul hover:text-amarillo focus-visible:bg-azul focus-visible:text-amarillo md:min-h-18 md:text-2xl">FAVORITAS DE TEO</a>
-                <a href="quien-es-teo.html" class="flex min-h-16 items-center bg-gris px-6 text-xl font-semibold text-rojo transition-colors duration-200 hover:bg-azul hover:text-amarillo focus-visible:bg-azul focus-visible:text-amarillo md:min-h-18 md:text-2xl">¿QUIÉN ES TEO?</a>
-                <a href="donde-esta-teo.html" class="flex min-h-16 items-center bg-gris px-6 text-xl font-semibold text-rojo transition-colors duration-200 hover:bg-azul hover:text-amarillo focus-visible:bg-azul focus-visible:text-amarillo md:min-h-18 md:text-2xl">¿DÓNDE ESTÁ TEO?</a>
+                <a href="catalogo.html" class="flex min-h-16 items-center bg-caja px-6 text-xl font-semibold text-rojo transition-colors duration-200 hover:bg-azul hover:text-amarillo focus-visible:bg-azul focus-visible:text-amarillo md:min-h-18 md:text-2xl">CATÁLOGO DE TEO</a>
+                <a href="favoritas.html" class="flex min-h-16 items-center bg-caja px-6 text-xl font-semibold text-rojo transition-colors duration-200 hover:bg-azul hover:text-amarillo focus-visible:bg-azul focus-visible:text-amarillo md:min-h-18 md:text-2xl">FAVORITAS DE TEO</a>
+                <a href="quien-es-teo.html" class="flex min-h-16 items-center bg-caja px-6 text-xl font-semibold text-rojo transition-colors duration-200 hover:bg-azul hover:text-amarillo focus-visible:bg-azul focus-visible:text-amarillo md:min-h-18 md:text-2xl">¿QUIÉN ES TEO?</a>
+                <a href="donde-esta-teo.html" class="flex min-h-16 items-center bg-caja px-6 text-xl font-semibold text-rojo transition-colors duration-200 hover:bg-azul hover:text-amarillo focus-visible:bg-azul focus-visible:text-amarillo md:min-h-18 md:text-2xl">¿DÓNDE ESTÁ TEO?</a>
             </nav>
 
             <!-- Imagen al lado de los rectángulos (por definir) -->
@@ -114,49 +132,51 @@
     </main>
     
     <footer class="cursor-default">
-        <div class="grid bg-azul md:grid-cols-[30rem_1fr]">
+        <div class="grid bg-azul md:grid-cols-[20rem_1fr]">
 
-            <div class="px-5 pt-10 md:px-0 md:py-10">
-                <div class="flex h-full flex-col items-center justify-center border-b border-white pb-8 md:border-r md:border-b-0 md:px-4 md:pb-0">
-                    <img src="media/img/LOGO PNG + TEO.png" alt="Logo de Teo Sillas" class="w-72 md:w-96">
+            <div class="px-5 pt-4 md:px-3 md:py-3">
+                <div class="flex h-full flex-col items-center justify-center border-b border-white pb-4 md:border-b-0 md:pb-0">
+                    <img src="media/img/LOGO PNG + TEO.png" alt="Logo de Teo Sillas" class="w-48 md:w-full">
                 </div>
             </div>
 
-            <div class="grid gap-8 px-5 py-8 text-white sm:grid-cols-3 md:py-12 md:pr-8 md:pl-16">
+                        <div class="px-5 py-4 text-white md:my-8 md:border-l md:border-white md:py-0 md:pr-8 md:pl-12">
+                <div class="grid gap-5 sm:grid-cols-3">
 
-                <div>
-                    <h2 class="text-sm font-semibold uppercase">Política de privacidad</h2>
-                    <ul class="mt-3 space-y-2 text-sm">
-                        <li>Política 1</li>
-                        <li>Política 1</li>
-                        <li>Política 1</li>
-                        <li>Política 1</li>
-                        <li>Política 1</li>
-                        <li>Política 1</li>
-                        <li>Política 1</li>
-                    </ul>
+                    <div>
+                        <h2 class="text-sm font-semibold uppercase">Política de privacidad</h2>
+                        <ul class="mt-3 space-y-1 text-sm font-light">
+                            <li>Política 1</li>
+                            <li>Política 1</li>
+                            <li>Política 1</li>
+                            <li>Política 1</li>
+                            <li>Política 1</li>
+                            <li>Política 1</li>
+                            <li>Política 1</li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h2 class="text-sm font-semibold uppercase">Contacto</h2>
+                        <ul class="mt-3 space-y-1 text-sm font-light">
+                            <li>Instagram</li>
+                            <li>Twitter</li>
+                            <li>Facebook</li>
+                            <li>E-Mail</li>
+                            <li>Whatsapp</li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h2 class="text-sm font-semibold uppercase">Dónde Teo</h2>
+                        <address class="mt-3 text-sm font-light not-italic">C/ Nombre de la calle, 23<br>28000 Madrid</address>
+                    </div>
+
                 </div>
-
-                <div>
-                    <h2 class="text-sm font-semibold uppercase">Contacto</h2>
-                    <ul class="mt-3 space-y-2 text-sm">
-                        <li>Instagram</li>
-                        <li>Twitter</li>
-                        <li>Facebook</li>
-                        <li>E-Mail</li>
-                        <li>Whatsapp</li>
-                    </ul>
-                </div>
-
-                <div>
-                    <h2 class="text-sm font-semibold uppercase">Dónde Teo</h2>
-                    <address class="mt-3 text-sm not-italic">C/ Nombre de la calle, 23<br>28000 Madrid</address>
-                </div>
-
             </div>
         </div>
 
-        <div class="grid grid-cols-[6rem_1fr] md:grid-cols-[30rem_1fr]">
+        <div class="grid grid-cols-[6rem_1fr] md:grid-cols-[20rem_1fr]">
             <div class="bg-rojo"></div>
             <p class="flex min-h-12 items-center justify-end bg-amarillo px-5 py-3 text-right text-sm font-bold text-rojo md:px-8">
                 © 2026 TEO SILLAS. Todos los derechos reservados.
