@@ -9,8 +9,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
-    <!-- ===== CSS DE LIBRERÍAS (aquí, si hacen falta) ===== -->
-
+    <!-- CSS de librerías y estilos personalizados -->
     <link rel="stylesheet" href="css/styles.css">
 
     <script>
@@ -47,7 +46,6 @@
         }
     </style>
 </head>
-
 
 <body class="group relative overflow-x-hidden bg-fondo font-poppins transition-colors duration-500">
 
@@ -97,66 +95,64 @@
         </svg>
     </button>
 
-
-        <main class="relative z-10 px-5 pt-48 pb-10 md:pt-32 md:pr-8 md:pb-16 md:pl-[30%]">
+    <main class="relative z-10 px-5 pt-48 pb-10 md:pt-32 md:pr-8 md:pb-16 md:pl-[30%]">
         <h1 class="text-4xl font-semibold text-rojo md:text-6xl">FAVORITAS DE TEO</h1>
         <p class="mt-6 text-justify text-sm font-light text-tinta md:text-base">
             Esta no es una selección habitual. Aquí conviven las piezas más extravagantes, raras e insólitas nacidas en el propio taller de Teo. Esculturas funcionales, experimentos de forma y asientos de edición limitada creados para quienes entienden que una silla es mucho más que un lugar donde sentarse.
         </p>
     </main>
 
-        <section class="group/grid relative z-10 pb-24 md:grid md:grid-cols-[30%_1fr] md:pb-32">
+    <!-- SECCIÓN CON EL GRID DE VÍDEOS Y TEXTO DINÁMICO -->
+    <section class="group/grid relative z-10 pb-24 md:grid md:grid-cols-[30%_1fr] md:pb-32">
 
-    <!-- COLUMNA IZQUIERDA: Contenedor para los nombres de las sillas (alineado abajo) -->
-    <div class="hidden px-5 md:col-start-1 md:row-start-1 md:flex md:h-full md:items-end md:justify-start md:pb-2 md:pl-[30%]">
-        <div class="relative w-full text-2xl font-bold uppercase text-azul md:text-3xl">
-            <!-- Nombres de las sillas (se muestran mediante hover en cada elemento correspondiente) -->
-            <span class="opacity-0 transition-opacity duration-300 group-has-[#v1:hover]/grid:opacity-100">SILLA AZUL</span>
-            <span class="absolute inset-0 opacity-0 transition-opacity duration-300 group-has-[#v2:hover]/grid:opacity-100">SILLA ESMERALDA</span>
-            <span class="absolute inset-0 opacity-0 transition-opacity duration-300 group-has-[#v3:hover]/grid:opacity-100">SILLA FAMOSA</span>
-            <span class="absolute inset-0 opacity-0 transition-opacity duration-300 group-has-[#v4:hover]/grid:opacity-100">SILLA ORGÁNICA</span>
-            <span class="absolute inset-0 opacity-0 transition-opacity duration-300 group-has-[#v5:hover]/grid:opacity-100">SILLA SERPIENTE</span>
-            <span class="absolute inset-0 opacity-0 transition-opacity duration-300 group-has-[#v6:hover]/grid:opacity-100">SILLA MORADA</span>
-            <span class="absolute inset-0 opacity-0 transition-opacity duration-300 group-has-[#v7:hover]/grid:opacity-100">SILLA ROJA</span>
-        </div>
-    </div>
-
-    <!-- COLUMNA DERECHA: Grid de vídeos -->
-    <div class="px-5 md:col-start-2 md:row-start-1 md:self-start md:pr-8 md:pl-0">
-        <div aria-hidden="true"
-             class="grid aspect-[607/200] w-full grid-cols-[minmax(0,1.15fr)_minmax(0,1fr)_minmax(0,1fr)_minmax(0,0.94fr)_minmax(0,1fr)] grid-rows-[minmax(0,1fr)] overflow-hidden border-t border-l border-black">
-
-            <div class="grid min-h-0 min-w-0 grid-rows-[minmax(0,42fr)_minmax(0,58fr)]">
-                <video id="v1" src="media/video/1colorazul.mp4" autoplay muted loop playsinline disablepictureinpicture preload="auto"
-                       class="block h-full w-full cursor-pointer border-r border-b border-black object-cover"></video>
-                <video id="v2" src="media/video/2coloresmeralda.mp4" autoplay muted loop playsinline disablepictureinpicture preload="auto"
-                       class="block h-full w-full cursor-pointer border-r border-b border-black object-cover"></video>
+        <!-- Columna Izquierda: Texto alineado a la derecha, abajo en el horizonte del grid -->
+        <div class="hidden px-5 md:col-start-1 md:row-start-1 md:flex md:h-full md:flex-col md:items-end md:justify-end md:pr-6 md:pl-0">
+            <div class="relative w-full text-right text-2xl font-bold uppercase text-azul md:text-3xl">
+                <span class="opacity-0 transition-opacity duration-300 group-has-[#v1:hover]/grid:opacity-100">SILLA AZUL</span>
+                <span class="absolute inset-0 text-right opacity-0 transition-opacity duration-300 group-has-[#v2:hover]/grid:opacity-100">SILLA ESMERALDA</span>
+                <span class="absolute inset-0 text-right opacity-0 transition-opacity duration-300 group-has-[#v3:hover]/grid:opacity-100">SILLA FAMOSA</span>
+                <span class="absolute inset-0 text-right opacity-0 transition-opacity duration-300 group-has-[#v4:hover]/grid:opacity-100">SILLA ORGÁNICA</span>
+                <span class="absolute inset-0 text-right opacity-0 transition-opacity duration-300 group-has-[#v5:hover]/grid:opacity-100">SILLA SERPIENTE</span>
+                <span class="absolute inset-0 text-right opacity-0 transition-opacity duration-300 group-has-[#v6:hover]/grid:opacity-100">SILLA MORADA</span>
+                <span class="absolute inset-0 text-right opacity-0 transition-opacity duration-300 group-has-[#v7:hover]/grid:opacity-100">SILLA ROJA</span>
             </div>
-
-            <video id="v3" src="media/video/3colorfamosa.mp4" autoplay muted loop playsinline disablepictureinpicture preload="auto"
-                   class="block h-full w-full cursor-pointer border-r border-b border-black object-cover"></video>
-
-            <video id="v4" src="media/video/4colororganica.mp4" autoplay muted loop playsinline disablepictureinpicture preload="auto"
-                   class="block h-full w-full cursor-pointer border-r border-b border-black object-cover"></video>
-
-            <div class="grid min-h-0 min-w-0 grid-rows-[minmax(0,34fr)_minmax(0,66fr)]">
-                <video id="v7" src="media/video/7colorrojo.mp4" autoplay muted loop playsinline disablepictureinpicture preload="auto"
-                       class="block h-full w-full cursor-pointer border-r border-b border-black object-cover"></video>
-                <video id="v6" src="media/video/6colormorada.mp4" autoplay muted loop playsinline disablepictureinpicture preload="auto"
-                       class="block h-full w-full cursor-pointer border-r border-b border-black object-cover"></video>
-            </div>
-
-            <video id="v5" src="media/video/5colorserpiente.mp4" autoplay muted loop playsinline disablepictureinpicture preload="auto"
-                   class="block h-full w-full cursor-pointer border-r border-b border-black object-cover"></video>
-
         </div>
-    </div>
 
-</section>
+        <!-- Columna Derecha: Grid de vídeos con data-alt-video -->
+        <div class="px-5 md:col-start-2 md:row-start-1 md:self-start md:pr-8 md:pl-0">
+            <div aria-hidden="true"
+                 class="grid aspect-[607/200] w-full grid-cols-[minmax(0,1.15fr)_minmax(0,1fr)_minmax(0,1fr)_minmax(0,0.94fr)_minmax(0,1fr)] grid-rows-[minmax(0,1fr)] overflow-hidden border-t border-l border-black">
+
+                <div class="grid min-h-0 min-w-0 grid-rows-[minmax(0,42fr)_minmax(0,58fr)]">
+                    <video id="v1" src="media/video/1siluetaazul.mp4" data-alt-video="media/video/1colorazul.mp4" autoplay muted loop playsinline disablepictureinpicture preload="auto"
+                           class="silla-video block h-full w-full cursor-pointer border-r border-b border-black object-cover"></video>
+                    <video id="v2" src="media/video/2siluetaesmeralda.mp4" data-alt-video="media/video/2coloresmeralda.mp4" autoplay muted loop playsinline disablepictureinpicture preload="auto"
+                           class="silla-video block h-full w-full cursor-pointer border-r border-b border-black object-cover"></video>
+                </div>
+
+                <video id="v3" src="media/video/3siluetafamosa.mp4" data-alt-video="media/video/3colorfamosa.mp4" autoplay muted loop playsinline disablepictureinpicture preload="auto"
+                       class="silla-video block h-full w-full cursor-pointer border-r border-b border-black object-cover"></video>
+
+                <video id="v4" src="media/video/4siluetaorganica.mp4" data-alt-video="media/video/4colororganica.mp4" autoplay muted loop playsinline disablepictureinpicture preload="auto"
+                       class="silla-video block h-full w-full cursor-pointer border-r border-b border-black object-cover"></video>
+
+                <div class="grid min-h-0 min-w-0 grid-rows-[minmax(0,34fr)_minmax(0,66fr)]">
+                    <video id="v7" src="media/video/7siluetaroja.mp4" data-alt-video="media/video/7colorrojo.mp4" autoplay muted loop playsinline disablepictureinpicture preload="auto"
+                           class="silla-video block h-full w-full cursor-pointer border-r border-b border-black object-cover"></video>
+                    <video id="v6" src="media/video/6siluetamorado.mp4" data-alt-video="media/video/6colormorada.mp4" autoplay muted loop playsinline disablepictureinpicture preload="auto"
+                           class="silla-video block h-full w-full cursor-pointer border-r border-b border-black object-cover"></video>
+                </div>
+
+                <video id="v5" src="media/video/5siluetaserpiente.mp4" data-alt-video="media/video/5colorserpiente.mp4" autoplay muted loop playsinline disablepictureinpicture preload="auto"
+                       class="silla-video block h-full w-full cursor-pointer border-r border-b border-black object-cover"></video>
+
+            </div>
+        </div>
+
+    </section>
 
     <footer class="cursor-default">
         <div class="grid bg-azul md:grid-cols-[20rem_1fr]">
-
             <div class="px-5 pt-4 md:px-3 md:py-3">
                 <div class="flex h-full flex-col items-center justify-center border-b border-white pb-4 md:border-b-0 md:pb-0">
                     <img src="media/img/LOGO PNG + TEO.png" alt="Logo de Teo Sillas" class="w-48 md:w-full">
@@ -165,7 +161,6 @@
 
             <div class="px-5 py-4 text-white md:my-8 md:border-l md:border-white md:py-0 md:pr-8 md:pl-12">
                 <div class="grid gap-5 sm:grid-cols-3">
-
                     <div>
                         <h2 class="text-sm font-semibold uppercase">Política de privacidad</h2>
                         <ul class="mt-3 space-y-1 text-sm font-light">
@@ -182,39 +177,11 @@
                     <div>
                         <h2 class="text-sm font-semibold uppercase">Contacto</h2>
                         <ul class="mt-3 space-y-1.5 text-sm font-light">
-                            <li class="flex items-center gap-2">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4 shrink-0" aria-hidden="true">
-                                    <rect x="2" y="2" width="20" height="20" rx="5"/>
-                                    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
-                                    <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
-                                </svg>
-                                @teosillas
-                            </li>
-                            <li class="flex items-center gap-2">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4 shrink-0" aria-hidden="true">
-                                    <path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"/>
-                                </svg>
-                                @teosillas_madrid
-                            </li>
-                            <li class="flex items-center gap-2">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4 shrink-0" aria-hidden="true">
-                                    <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
-                                </svg>
-                                Teo Sillas Madrid
-                            </li>
-                            <li class="flex items-center gap-2">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4 shrink-0" aria-hidden="true">
-                                    <rect x="2" y="4" width="20" height="16" rx="2"/>
-                                    <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
-                                </svg>
-                                hola@teosillas.es
-                            </li>
-                            <li class="flex items-center gap-2">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4 shrink-0" aria-hidden="true">
-                                    <path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/>
-                                </svg>
-                                +34 612 345 678
-                            </li>
+                            <li class="flex items-center gap-2">@teosillas</li>
+                            <li class="flex items-center gap-2">@teosillas_madrid</li>
+                            <li class="flex items-center gap-2">Teo Sillas Madrid</li>
+                            <li class="flex items-center gap-2">hola@teosillas.es</li>
+                            <li class="flex items-center gap-2">+34 612 345 678</li>
                         </ul>
                     </div>
 
@@ -224,7 +191,6 @@
                         <p class="mt-3 text-sm font-light">Metro Sevilla<br>(líneas 2 y 10)</p>
                         <p class="mt-3 text-sm font-light">Lunes a sábado<br>10:30 – 20:00</p>
                     </div>
-
                 </div>
             </div>
         </div>
@@ -237,9 +203,8 @@
         </div>
     </footer>
 
-
-    <!-- ===== JS DE LIBRERÍAS (antes de nuestro JS) ===== -->
-
+    <!-- Scripts de interfaz y control de vídeos -->
     <script src="js/interfaz.js"></script>
+    <script src="js/videos.js"></script>
 </body>
 </html>

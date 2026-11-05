@@ -97,3 +97,48 @@ sincronizarBotonTema();
 
 
 
+const nombreSilla = document.getElementById('nombre-silla');
+
+document.querySelectorAll('.grid-con-nombres video').forEach(video => {
+
+    function mostrarNombre() {
+        nombreSilla.textContent = video.dataset.nombre;
+        nombreSilla.classList.add('visible');
+    }
+
+    function ocultarNombre() {
+        nombreSilla.classList.remove('visible');
+    }
+
+    video.addEventListener('mouseenter', mostrarNombre);
+    video.addEventListener('mouseleave', ocultarNombre);
+
+    // Compatibilidad con pantallas táctiles
+    video.addEventListener('click', () => {
+        nombreSilla.textContent = video.dataset.nombre;
+        nombreSilla.classList.add('visible');
+    });
+
+});
+
+
+document.addEventListener('DOMContentLoaded', () => {
+    const videos = document.querySelectorAll('.silla-video');
+
+    videos.forEach(video => {
+        const originalSrc = video.getAttribute('src');
+        const altSrc = video.getAttribute('data-alt-video');
+
+        video.addEventListener('mouseenter', () => {
+            if (altSrc && altSrc !== '#') {
+                video.src = altSrc;
+                video.play();
+            }
+        });
+
+        video.addEventListener('mouseleave', () => {
+            video.src = originalSrc;
+            video.play();
+        });
+    });
+});
