@@ -1,50 +1,436 @@
-/* ANIMACIONES HOME */
 
-/* ===== CARRUSEL INFINITO ===== */
+/* MEDIA GRID GENERAL */
 
-.carrusel-texto {
+.media-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
     width: 100%;
+    aspect-ratio: 595 / 842;
     overflow: hidden;
-    white-space: nowrap;
-    padding: 24px 0;
-    margin-top: 80px;
-    color: #B1B1B1;
-    font-size: 20px;
-    font-weight: 600;
 }
 
-.carrusel-texto-contenido {
-    display: flex;
-    width: max-content;
-    animation: desplazamiento 25s linear infinite;
-}
+/* ESCRITORIO */
 
-.carrusel-texto-contenido span {
-    padding-right: 40px;
-    flex-shrink: 0;
-}
-
-@keyframes desplazamiento {
-    from {
-        transform: translateX(0);
-    }
-    to {
-        transform: translateX(-50%);
+@media (min-width: 601px) {
+    .media-grid {
+        width: min(100%, calc((100svh - 7rem) * 595 / 842));
+        max-height: calc(100svh - 7rem);
+        height: auto;
+        justify-self: center;
+        align-self: start;
     }
 }
 
 /* MÓVIL */
 
-@media (max-width: 768px) {
-    .carrusel-texto {
-        font-size: 16px;
+@media (max-width: 600px) {
+    .media-grid {
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+        aspect-ratio: 595 / 842;
     }
 }
 
-/* Accesibilidad */
+
+
+
+/* ==========================================
+   TEO SILLAS
+   HOJA DE ESTILOS RESPONSIVE
+========================================== */
+
+
+/* ==========================================
+   RESPONSIVE: MÓVIL HASTA 400 PX
+   NO MODIFICA EL DISEÑO DE ORDENADOR
+========================================== */
+
+@media screen and (max-width: 768px) {
+
+    /* CONTENIDO PRINCIPAL */
+
+    main {
+        padding-top: 115px !important;
+        padding-right: 16px !important;
+        padding-left: 16px !important;
+        padding-bottom: 45px !important;
+        min-height: auto !important;
+    }
+
+
+    /* CONTENEDOR DE GRID Y SECCIONES */
+
+    main > div.grid {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 60px !important;
+}
+
+
+    /* ======================================
+       MEDIA GRID
+       SIEMPRE ANTES QUE LAS SECCIONES
+       LAS 12 PIEZAS PERMANECEN JUNTAS
+    ====================================== */
+
+    #media-grid {
+        order: 1 !important;
+
+        display: grid !important;
+        grid-template-columns: 1fr 1fr !important;
+        grid-template-rows: 1fr !important;
+
+        width: 100% !important;
+        max-width: 100% !important;
+        height: auto !important;
+        aspect-ratio: 595 / 842 !important;
+
+        align-self: stretch !important;
+        justify-self: stretch !important;
+
+        overflow: hidden !important;
+        gap: 0 !important;
+    }
+
+
+    /* SILLA IZQUIERDA */
+
+    #media-grid > img {
+        display: block !important;
+
+        width: 100% !important;
+        height: 100% !important;
+
+        min-width: 0 !important;
+        min-height: 0 !important;
+
+        object-fit: cover !important;
+    }
+
+
+    /* COLUMNA DE LAS 11 IMÁGENES */
+
+    #media-grid > div {
+        display: grid !important;
+        grid-template-rows: repeat(11, minmax(0, 1fr)) !important;
+
+        width: 100% !important;
+        height: 100% !important;
+
+        min-width: 0 !important;
+        min-height: 0 !important;
+
+        overflow: hidden !important;
+        gap: 0 !important;
+    }
+
+
+    /* CADA UNA DE LAS 11 CELDAS */
+
+    #media-grid .group\/celda {
+        position: relative !important;
+        display: block !important;
+
+        width: 100% !important;
+        height: 100% !important;
+
+        min-height: 0 !important;
+
+        overflow: hidden !important;
+        outline: none !important;
+
+        touch-action: manipulation !important;
+        -webkit-tap-highlight-color: transparent;
+    }
+
+
+    /* IMÁGENES */
+
+    #media-grid .group\/celda > img {
+        display: block !important;
+        position: absolute !important;
+
+        inset: 0 !important;
+
+        width: 100% !important;
+        height: 100% !important;
+
+        object-fit: cover !important;
+
+        transform: translateX(0) !important;
+
+        transition: transform 500ms ease-in-out !important;
+    }
+
+
+    /* TEXTOS ANIMADOS */
+
+    #media-grid .group\/celda > a {
+        position: absolute !important;
+
+        inset: 0 !important;
+
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+
+        width: 100% !important;
+        height: 100% !important;
+
+        padding: 1px !important;
+
+        font-size: clamp(9px, 2.8vw, 12px) !important;
+        line-height: 1.15 !important;
+
+        text-align: center !important;
+        font-weight: 600 !important;
+
+        transform: translateX(100%) !important;
+
+        transition: transform 500ms ease-in-out !important;
+
+        text-decoration: none !important;
+        overflow-wrap: anywhere !important;
+    }
+
+
+
+    #media-grid .group\/celda:hover > img,
+    #media-grid .group\/celda:focus > img,
+    #media-grid .group\/celda.is-active > img {
+        transform: translateX(-100%) !important;
+    }
+
+    #media-grid .group\/celda:hover > a,
+    #media-grid .group\/celda:focus > a,
+    #media-grid .group\/celda.is-active > a {
+        transform: translateX(0) !important;
+    }
+
+
+    /* ======================================
+       SECCIONES
+       SIEMPRE DEBAJO DEL MEDIA GRID
+    ====================================== */
+
+    main > div.grid > nav {
+        order: 2 !important;
+
+        display: grid !important;
+        grid-template-columns: 1fr !important;
+
+        width: 100% !important;
+
+        gap: 10px !important;
+
+        align-self: stretch !important;
+    }
+
+
+    /* BOTONES DE SECCIONES */
+
+    main > div.grid > nav > a {
+        display: flex !important;
+        align-items: center !important;
+
+        width: 100% !important;
+
+        min-height: 52px !important;
+        height: auto !important;
+
+        padding: 12px 16px !important;
+
+        font-size: 15px !important;
+        line-height: 1.25 !important;
+
+        transition:
+            background-color 200ms ease,
+            color 200ms ease !important;
+
+        -webkit-tap-highlight-color: transparent;
+        touch-action: manipulation;
+    }
+
+
+    /* ESTADO TÁCTIL DE LAS SECCIONES */
+
+    main > div.grid > nav > a:active,
+    main > div.grid > nav > a.is-touched {
+        background-color: #0D00FF !important;
+        color: #FFF600 !important;
+    }
+
+
+    /* ======================================
+       CARRUSEL
+    ====================================== */
+
+    main > div > div[role="region"] {
+        margin-top: 32px !important;
+        margin-bottom: 0 !important;
+
+        padding-top: 14px !important;
+        padding-bottom: 14px !important;
+
+        font-size: 16px !important;
+    }
+
+
+    /* ======================================
+       FOOTER
+    ====================================== */
+
+    footer > div:first-child {
+        grid-template-columns: 1fr !important;
+    }
+
+    footer > div:first-child > div:first-child {
+        padding: 16px 20px !important;
+    }
+
+    footer > div:first-child > div:first-child > div {
+        padding-bottom: 14px !important;
+    }
+
+    footer > div:first-child > div:first-child img {
+        width: 150px !important;
+        max-width: 100% !important;
+    }
+
+    footer > div:first-child > div:last-child {
+        margin: 0 !important;
+        padding: 20px !important;
+
+        border-left: 0 !important;
+    }
+
+    footer > div:first-child > div:last-child > div {
+        grid-template-columns: 1fr !important;
+        gap: 24px !important;
+    }
+
+    footer > div:last-child {
+        grid-template-columns: 35px 1fr !important;
+    }
+
+    footer > div:last-child > p {
+        padding: 12px !important;
+        font-size: 10px !important;
+    }
+
+
+    /* ======================================
+       CABECERA
+    ====================================== */
+
+    header {
+        top: 15px !important;
+        left: 15px !important;
+
+        gap: 10px !important;
+    }
+
+    #boton-menu {
+        width: 34px !important;
+        height: 34px !important;
+    }
+
+    #boton-menu span {
+        width: 30px !important;
+    }
+
+    #boton-tema {
+        top: 15px !important;
+        right: 15px !important;
+
+        width: 34px !important;
+        height: 34px !important;
+    }
+
+    #boton-tema svg {
+        width: 30px !important;
+        height: 30px !important;
+    }
+
+
+    /* ======================================
+       LOGO SUPERIOR
+    ====================================== */
+
+    body > img {
+        top: -45px !important;
+        left: 12px !important;
+
+        width: 15rem !important;
+    }
+
+
+    /* ======================================
+       MENÚ DESPLEGABLE
+    ====================================== */
+
+    #menu {
+        padding: 65px 16px 35px !important;
+    }
+
+    #formulario-buscar {
+        margin-left: 35px !important;
+        margin-right: 35px !important;
+    }
+
+    #formulario-buscar input {
+        height: 38px !important;
+        font-size: 14px !important;
+    }
+
+    #menu nav {
+        margin-top: 18px !important;
+
+        margin-left: -16px !important;
+        margin-right: -16px !important;
+    }
+
+    #menu nav a {
+        padding: 10px 16px !important;
+        font-size: 18px !important;
+    }
+
+}
+
+
+/* ==========================================
+   INTERACCIÓN TÁCTIL
+   COMPATIBILIDAD CON MÓVILES
+========================================== */
+
+@media (hover: none) and (pointer: coarse) {
+
+    a,
+    button,
+    [tabindex="0"] {
+        -webkit-tap-highlight-color: transparent;
+        touch-action: manipulation;
+    }
+
+    button:active {
+        opacity: 0.75;
+    }
+
+}
+
+
+/* ==========================================
+   RESPETO A MOVIMIENTO REDUCIDO
+========================================== */
 
 @media (prefers-reduced-motion: reduce) {
-    .carrusel-texto-contenido {
-        animation: none;
+
+    #media-grid .group\/celda > img,
+    #media-grid .group\/celda > a {
+        transition-duration: 0.01ms !important;
     }
+
 }
