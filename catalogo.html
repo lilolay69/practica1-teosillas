@@ -3,657 +3,191 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TEO SILLAS</title>
+    <title>Catálogo · TEO SILLAS</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
     <!-- ===== CSS DE LIBRERÍAS (aquí, si hacen falta) ===== -->
 
-    <!-- Nuestro CSS propio -->
     <link rel="stylesheet" href="css/styles.css">
 
-    <!-- Tailwind desde el CDN -->
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-
-    <!-- Sistema de diseño -->
-    <style type="text/tailwindcss">
-        @theme static {
-            --color-gris-claro: #EBEBEB;
-            --color-gris: #D9D9D9;
-            --color-texto: #B1B1B1;
-            --color-rojo: #E52421;
-            --color-azul: #0D00FF;
-            --color-amarillo: #FFF600;
-
-            --font-poppins: "Poppins", system-ui, sans-serif;
-        }
-    </style>
-</head>
-
-
-<body class="relative overflow-x-hidden bg-gris-claro font-poppins">
-
-    <!-- ESTA PARTE SE REPITE EN TODAS LAS PAGINAS HTML (la img y el header)  -->
-
-    <img src="media/img/LOGO PNG BLANCO.png" alt="Logo de Teo Sillas"
-         class="pointer-events-none absolute -top-16 left-[22px] z-0 w-[22rem] max-w-none md:-top-92 md:left-[-140px] md:w-[44rem]">
-
-    <header class="fixed top-5 left-5 z-20 flex items-center gap-4 md:top-8 md:left-8">
-        <button id="boton-menu" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="menu"
-                class="flex h-10 w-10 flex-col items-center justify-center gap-[7px]">
-            <span class="block h-[4.5px] w-10 bg-azul"></span>
-            <span class="block h-[4.5px] w-10 bg-azul"></span>
-            <span class="block h-[4.5px] w-10 bg-azul"></span>
-        </button>
-        <a href="index.html" class="text-xl leading-none text-rojo font-semibold md:text-3xl">TEO SILLAS</a>
-    </header>
-
-        <!-- Linterna (modo oscuro): fija arriba a la derecha, como el menú -->
-    <button id="boton-tema" type="button" aria-label="Activar modo oscuro" aria-pressed="false"
-            class="fixed top-5 right-5 z-20 flex h-10 w-10 items-center justify-center text-azul md:top-8 md:right-8">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-             stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-10 w-10" aria-hidden="true">
-            <path d="M6 2h12v5l-2 3H8L6 7z"/>
-            <rect x="8" y="10" width="8" height="12" rx="1"/>
-            <path d="M12 14v3"/>
-        </svg>
-    </button>
-
-    HTML
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TEO SILLAS - Catálogo</title>
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
-
-    <!-- Nuestro CSS propio -->
-    <link rel="stylesheet" href="css/styles.css">
-
-    <!-- Tailwind desde el CDN -->
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-
-    <!-- Sistema de diseño -->
-    <style type="text/tailwindcss">
-        @theme static {
-            --color-gris-claro: #EBEBEB;
-            --color-gris: #D9D9D9;
-            --color-texto: #B1B1B1;
-            --color-rojo: #E52421;
-            --color-azul: #0D00FF;
-            --color-amarillo: #FFF600;
-
-            --font-poppins: "Poppins", system-ui, sans-serif;
-        }
-    </style>
-</head>
-
-<body class="relative overflow-x-hidden bg-gris-claro font-poppins">
-
-    <!-- Elementos fijos repetidos en todas las páginas -->
-    <img src="media/img/LOGO PNG BLANCO.png" alt="Logo de Teo Sillas"
-         class="pointer-events-none absolute -top-16 left-[22px] z-0 w-[22rem] max-w-none md:-top-92 md:left-[-140px] md:w-[44rem]">
-
-    <header class="fixed top-5 left-5 z-20 flex items-center gap-4 md:top-8 md:left-8">
-        <button id="boton-menu" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="menu"
-                class="flex h-10 w-10 flex-col items-center justify-center gap-[7px]">
-            <span class="block h-[4.5px] w-10 bg-azul"></span>
-            <span class="block h-[4.5px] w-10 bg-azul"></span>
-            <span class="block h-[4.5px] w-10 bg-azul"></span>
-        </button>
-        <a href="index.html" class="text-xl leading-none text-rojo font-semibold md:text-3xl">TEO SILLAS</a>
-    </header>
-
-    <!-- Linterna (modo oscuro) -->
-    <button id="boton-tema" type="button" aria-label="Activar modo oscuro" aria-pressed="false"
-            class="fixed top-5 right-5 z-20 flex h-10 w-10 items-center justify-center text-azul md:top-8 md:right-8">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-             stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-10 w-10" aria-hidden="true">
-            <path d="M6 2h12v5l-2 3H8L6 7z"/>
-            <rect x="8" y="10" width="8" height="12" rx="1"/>
-            <path d="M12 14v3"/>
-        </svg>
-    </button>
-
-    <!-- CONTENIDO PRINCIPAL: CATÁLOGO -->
-    <main class="relative z-10 pt-48 pr-5 pb-16 pl-[22px] md:pt-48 md:pr-8 md:pl-[34px] max-w-7xl mx-auto">
-        
-        <!-- Título principal de la sección -->
-        <h1 class="text-4xl md:text-6xl font-bold text-rojo uppercase mb-12">CATÁLOGO</h1>
-
-        <!-- Cuadrícula de Sillas (5 columnas x 5 filas = 25 sillas) -->
-        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 mb-16">
-            
-            <!-- Estructura repetitiva generada para las 25 sillas -->
-            <!-- Puedes duplicar este bloque modificando el número de la 01 a la 25 -->
-            
-            <!-- SILLA 01 -->
-            <div class="silla-item flex flex-col gap-3 cursor-pointer group" data-id="01">
-                <div class="bg-gris overflow-hidden h-64 relative">
-                    <img src="media/img/sillas/1.webp" alt="Silla 01" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105">
-                </div>
-                <span class="text-azul font-bold text-lg">01</span>
-            </div>
-
-            <!-- SILLA 02 -->
-            <div class="silla-item flex flex-col gap-3 cursor-pointer group" data-id="02">
-                <div class="bg-gris overflow-hidden h-64 relative">
-                    <img src="media/img/sillas/2.webp" alt="Silla 02" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105">
-                </div>
-                <span class="text-azul font-bold text-lg">02</span>
-            </div>
-
-            <!-- SILLA 03 -->
-            <div class="silla-item flex flex-col gap-3 cursor-pointer group" data-id="03">
-                <div class="bg-gris overflow-hidden h-64 relative">
-                    <img src="media/img/sillas/3.webp" alt="Silla 03" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105">
-                </div>
-                <span class="text-azul font-bold text-lg">03</span>
-            </div>
-
-            <!-- SILLA 04 -->
-            <div class="silla-item flex flex-col gap-3 cursor-pointer group" data-id="04">
-                <div class="bg-gris overflow-hidden h-64 relative">
-                    <img src="media/img/sillas/4.webp" alt="Silla 04" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105">
-                </div>
-                <span class="text-azul font-bold text-lg">04</span>
-            </div>
-
-            <!-- SILLA 05 -->
-            <div class="silla-item flex flex-col gap-3 cursor-pointer group" data-id="05">
-                <div class="bg-gris overflow-hidden h-64 relative">
-                    <img src="media/img/sillas/5.webp" alt="Silla 05" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105">
-                </div>
-                <span class="text-azul font-bold text-lg">05</span>
-            </div>
-
-            <!-- SILLA 06 -->
-            <div class="silla-item flex flex-col gap-3 cursor-pointer group" data-id="06">
-                <div class="bg-gris overflow-hidden h-64 relative">
-                    <img src="media/img/sillas/6.webp" alt="Silla 06" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105">
-                </div>
-                <span class="text-azul font-bold text-lg">06</span>
-            </div>
-
-            <!-- SILLA 07 -->
-            <div class="silla-item flex flex-col gap-3 cursor-pointer group" data-id="07">
-                <div class="bg-gris overflow-hidden h-64 relative">
-                    <img src="media/img/sillas/7.webp" alt="Silla 07" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105">
-                </div>
-                <span class="text-azul font-bold text-lg">07</span>
-            </div>
-
-            <!-- SILLA 08 -->
-            <div class="silla-item flex flex-col gap-3 cursor-pointer group" data-id="08">
-                <div class="bg-gris overflow-hidden h-64 relative">
-                    <img src="media/img/sillas/8.webp" alt="Silla 08" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105">
-                </div>
-                <span class="text-azul font-bold text-lg">08</span>
-            </div>
-
-            <!-- SILLA 09 -->
-            <div class="silla-item flex flex-col gap-3 cursor-pointer group" data-id="09">
-                <div class="bg-gris overflow-hidden h-64 relative">
-                    <img src="media/img/sillas/9.webp" alt="Silla 09" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105">
-                </div>
-                <span class="text-azul font-bold text-lg">09</span>
-            </div>
-
-            <!-- SILLA 10 -->
-            <div class="silla-item flex flex-col gap-3 cursor-pointer group" data-id="10">
-                <div class="bg-gris overflow-hidden h-64 relative">
-                    <img src="media/img/sillas/10.webp" alt="Silla 10" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105">
-                </div>
-                <span class="text-azul font-bold text-lg">10</span>
-            </div>
-
-            <!-- SILLA 11 -->
-            <div class="silla-item flex flex-col gap-3 cursor-pointer group" data-id="11">
-                <div class="bg-gris overflow-hidden h-64 relative">
-                    <img src="media/img/sillas/11.webp" alt="Silla 11" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105">
-                </div>
-                <span class="text-azul font-bold text-lg">11</span>
-            </div>
-
-            <!-- SILLA 12 -->
-            <div class="silla-item flex flex-col gap-3 cursor-pointer group" data-id="12">
-                <div class="bg-gris overflow-hidden h-64 relative">
-                    <img src="media/img/sillas/12.webp" alt="Silla 12" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105">
-                </div>
-                <span class="text-azul font-bold text-lg">12</span>
-            </div>
-
-            <!-- SILLA 13 -->
-            <div class="silla-item flex flex-col gap-3 cursor-pointer group" data-id="13">
-                <div class="bg-gris overflow-hidden h-64 relative">
-                    <img src="media/img/sillas/13.webp" alt="Silla 13" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105">
-                </div>
-                <span class="text-azul font-bold text-lg">13</span>
-            </div>
-
-            <!-- SILLA 14 -->
-            <div class="silla-item flex flex-col gap-3 cursor-pointer group" data-id="14">
-                <div class="bg-gris overflow-hidden h-64 relative">
-                    <img src="media/img/sillas/14.webp" alt="Silla 14" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105">
-                </div>
-                <span class="text-azul font-bold text-lg">14</span>
-            </div>
-
-            <!-- SILLA 15 -->
-            <div class="silla-item flex flex-col gap-3 cursor-pointer group" data-id="15">
-                <div class="bg-gris overflow-hidden h-64 relative">
-                    <img src="media/img/sillas/15.webp" alt="Silla 15" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105">
-                </div>
-                <span class="text-azul font-bold text-lg">15</span>
-            </div>
-
-            <!-- SILLA 16 -->
-            <div class="silla-item flex flex-col gap-3 cursor-pointer group" data-id="16">
-                <div class="bg-gris overflow-hidden h-64 relative">
-                    <img src="media/img/sillas/16.webp" alt="Silla 16" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105">
-                </div>
-                <span class="text-azul font-bold text-lg">16</span>
-            </div>
-
-            <!-- SILLA 17 -->
-            <div class="silla-item flex flex-col gap-3 cursor-pointer group" data-id="17">
-                <div class="bg-gris overflow-hidden h-64 relative">
-                    <img src="media/img/sillas/17.webp" alt="Silla 17" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105">
-                </div>
-                <span class="text-azul font-bold text-lg">17</span>
-            </div>
-
-            <!-- SILLA 18 -->
-            <div class="silla-item flex flex-col gap-3 cursor-pointer group" data-id="18">
-                <div class="bg-gris overflow-hidden h-64 relative">
-                    <img src="media/img/sillas/18.webp" alt="Silla 18" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105">
-                </div>
-                <span class="text-azul font-bold text-lg">18</span>
-            </div>
-
-            <!-- SILLA 19 -->
-            <div class="silla-item flex flex-col gap-3 cursor-pointer group" data-id="19">
-                <div class="bg-gris overflow-hidden h-64 relative">
-                    <img src="media/img/sillas/19.webp" alt="Silla 19" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105">
-                </div>
-                <span class="text-azul font-bold text-lg">19</span>
-            </div>
-
-            <!-- SILLA 20 -->
-            <div class="silla-item flex flex-col gap-3 cursor-pointer group" data-id="20">
-                <div class="bg-gris overflow-hidden h-64 relative">
-                    <img src="media/img/sillas/20.webp" alt="Silla 20" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105">
-                </div>
-                <span class="text-azul font-bold text-lg">20</span>
-            </div>
-
-            <!-- SILLA 21 -->
-            <div class="silla-item flex flex-col gap-3 cursor-pointer group" data-id="21">
-                <div class="bg-gris overflow-hidden h-64 relative">
-                    <img src="media/img/sillas/21.webp" alt="Silla 21" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105">
-                </div>
-                <span class="text-azul font-bold text-lg">21</span>
-            </div>
-
-            <!-- SILLA 22 -->
-            <div class="silla-item flex flex-col gap-3 cursor-pointer group" data-id="22">
-                <div class="bg-gris overflow-hidden h-64 relative">
-                    <img src="media/img/sillas/22.webp" alt="Silla 22" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105">
-                </div>
-                <span class="text-azul font-bold text-lg">22</span>
-            </div>
-
-            <!-- SILLA 23 -->
-            <div class="silla-item flex flex-col gap-3 cursor-pointer group" data-id="23">
-                <div class="bg-gris overflow-hidden h-64 relative">
-                    <img src="media/img/sillas/23.webp" alt="Silla 23" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105">
-                </div>
-                <span class="text-azul font-bold text-lg">23</span>
-            </div>
-
-            <!-- SILLA 24 -->
-            <div class="silla-item flex flex-col gap-3 cursor-pointer group" data-id="24">
-                <div class="bg-gris overflow-hidden h-64 relative">
-                    <img src="media/img/sillas/24.webp" alt="Silla 24" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105">
-                </div>
-                <span class="text-azul font-bold text-lg">24</span>
-            </div>
-
-            <!-- SILLA 25 -->
-            <div class="silla-item flex flex-col gap-3 cursor-pointer group" data-id="25">
-                <div class="bg-gris overflow-hidden h-64 relative">
-                    <img src="media/img/sillas/25.webp" alt="Silla 25" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105">
-                </div>
-                <span class="text-azul font-bold text-lg">25</span>
-            </div>
-
-        </div>
-
-        <!-- LEYENDA DE TEXTOS (Conectados mediante interactividad al pasar el ratón) -->
-        <div class="border-t border-gris pt-8 mb-12">
-            <h2 class="text-2xl font-bold text-rojo mb-6">LEYENDA DE DISEÑOS</h2>
-            
-            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
-                
-                <!-- Texto 01 -->
-                <div class="leyenda-item text-xs text-texto transition-colors duration-200" data-id="01">
-                    <p class="font-semibold text-sm mb-1">01</p>
-                    <p>Estructura de metal curvado.</p>
-                    <p>Diseño exclusivo de autor.</p>
-                    <p>Acabado en pintura mate.</p>
-                    <p>Ideal para espacios modernos.</p>
-                </div>
-
-                <!-- Texto 02 -->
-                <div class="leyenda-item text-xs text-texto transition-colors duration-200" data-id="02">
-                    <p class="font-semibold text-sm mb-1">02</p>
-                    <p>Madera de roble natural.</p>
-                    <p>Ergonomía superior.</p>
-                    <p>Tapizado en lino rústico.</p>
-                    <p>Pieza clásica de taller.</p>
-                </div>
-
-                <!-- Texto 03 -->
-                <div class="leyenda-item text-xs text-texto transition-colors duration-200" data-id="03">
-                    <p class="font-semibold text-sm mb-1">03</p>
-                    <p>Minimalismo industrial.</p>
-                    <p>Soldadura invisible a mano.</p>
-                    <p>Resistencia extrema.</p>
-                    <p>Edición limitada madrileña.</p>
-                </div>
-
-                <!-- Texto 04 -->
-                <div class="leyenda-item text-xs text-texto transition-colors duration-200" data-id="04">
-                    <p class="font-semibold text-sm mb-1">04</p>
-                    <p>Líneas orgánicas fluidas.</p>
-                    <p>Polímero reciclado.</p>
-                    <p>Apilable y ligera.</p>
-                    <p>Confort visual absoluto.</p>
-                </div>
-
-                <!-- Texto 05 -->
-                <div class="leyenda-item text-xs text-texto transition-colors duration-200" data-id="05">
-                    <p class="font-semibold text-sm mb-1">05</p>
-                    <p>Tapizado velvet premium.</p>
-                    <p>Patas de latón envejecido.</p>
-                    <p>Elegancia contemporánea.</p>
-                    <p>Concepción artesanal.</p>
-                </div>
-
-                <!-- Texto 06 -->
-                <div class="leyenda-item text-xs text-texto transition-colors duration-200" data-id="06">
-                    <p class="font-semibold text-sm mb-1">06</p>
-                    <p>Estructura de metal curvado.</p>
-                    <p>Diseño exclusivo de autor.</p>
-                    <p>Acabado en pintura mate.</p>
-                    <p>Ideal para espacios modernos.</p>
-                </div>
-
-                <!-- Texto 07 -->
-                <div class="leyenda-item text-xs text-texto transition-colors duration-200" data-id="07">
-                    <p class="font-semibold text-sm mb-1">07</p>
-                    <p>Madera de roble natural.</p>
-                    <p>Ergonomía superior.</p>
-                    <p>Tapizado en lino rústico.</p>
-                    <p>Pieza clásica de taller.</p>
-                </div>
-
-                <!-- Texto 08 -->
-                <div class="leyenda-item text-xs text-texto transition-colors duration-200" data-id="08">
-                    <p class="font-semibold text-sm mb-1">08</p>
-                    <p>Minimalismo industrial.</p>
-                    <p>Soldadura invisible a mano.</p>
-                    <p>Resistencia extrema.</p>
-                    <p>Edición limitada madrileña.</p>
-                </div>
-
-                <!-- Texto 09 -->
-                <div class="leyenda-item text-xs text-texto transition-colors duration-200" data-id="09">
-                    <p class="font-semibold text-sm mb-1">09</p>
-                    <p>Líneas orgánicas fluidas.</p>
-                    <p>Polímero reciclado.</p>
-                    <p>Apilable y ligera.</p>
-                    <p>Confort visual absoluto.</p>
-                </div>
-
-                <!-- Texto 10 -->
-                <div class="leyenda-item text-xs text-texto transition-colors duration-200" data-id="10">
-                    <p class="font-semibold text-sm mb-1">10</p>
-                    <p>Tapizado velvet premium.</p>
-                    <p>Patas de latón envejecido.</p>
-                    <p>Elegancia contemporánea.</p>
-                    <p>Concepción artesanal.</p>
-                </div>
-
-                <!-- Texto 11 -->
-                <div class="leyenda-item text-xs text-texto transition-colors duration-200" data-id="11">
-                    <p class="font-semibold text-sm mb-1">11</p>
-                    <p>Estructura de metal curvado.</p>
-                    <p>Diseño exclusivo de autor.</p>
-                    <p>Acabado en pintura mate.</p>
-                    <p>Ideal para espacios modernos.</p>
-                </div>
-
-                <!-- Texto 12 -->
-                <div class="leyenda-item text-xs text-texto transition-colors duration-200" data-id="12">
-                    <p class="font-semibold text-sm mb-1">12</p>
-                    <p>Madera de roble natural.</p>
-                    <p>Ergonomía superior.</p>
-                    <p>Tapizado en lino rústico.</p>
-                    <p>Pieza clásica de taller.</p>
-                </div>
-
-                <!-- Texto 13 -->
-                <div class="leyenda-item text-xs text-texto transition-colors duration-200" data-id="13">
-                    <p class="font-semibold text-sm mb-1">13</p>
-                    <p>Minimalismo industrial.</p>
-                    <p>Soldadura invisible a mano.</p>
-                    <p>Resistencia extrema.</p>
-                    <p>Edición limitada madrileña.</p>
-                </div>
-
-                <!-- Texto 14 -->
-                <div class="leyenda-item text-xs text-texto transition-colors duration-200" data-id="14">
-                    <p class="font-semibold text-sm mb-1">14</p>
-                    <p>Líneas orgánicas fluidas.</p>
-                    <p>Polímero reciclado.</p>
-                    <p>Apilable y ligera.</p>
-                    <p>Confort visual absoluto.</p>
-                </div>
-
-                <!-- Texto 15 -->
-                <div class="leyenda-item text-xs text-texto transition-colors duration-200" data-id="15">
-                    <p class="font-semibold text-sm mb-1">15</p>
-                    <p>Tapizado velvet premium.</p>
-                    <p>Patas de latón envejecido.</p>
-                    <p>Elegancia contemporánea.</p>
-                    <p>Concepción artesanal.</p>
-                </div>
-
-                <!-- Texto 16 -->
-                <div class="leyenda-item text-xs text-texto transition-colors duration-200" data-id="16">
-                    <p class="font-semibold text-sm mb-1">16</p>
-                    <p>Estructura de metal curvado.</p>
-                    <p>Diseño exclusivo de autor.</p>
-                    <p>Acabado en pintura mate.</p>
-                    <p>Ideal para espacios modernos.</p>
-                </div>
-
-                <!-- Texto 17 -->
-                <div class="leyenda-item text-xs text-texto transition-colors duration-200" data-id="17">
-                    <p class="font-semibold text-sm mb-1">17</p>
-                    <p>Madera de roble natural.</p>
-                    <p>Ergonomía superior.</p>
-                    <p>Tapizado en lino rústico.</p>
-                    <p>Pieza clásica de taller.</p>
-                </div>
-
-                <!-- Texto 18 -->
-                <div class="leyenda-item text-xs text-texto transition-colors duration-200" data-id="18">
-                    <p class="font-semibold text-sm mb-1">18</p>
-                    <p>Minimalismo industrial.</p>
-                    <p>Soldadura invisible a mano.</p>
-                    <p>Resistencia extrema.</p>
-                    <p>Edición limitada madrileña.</p>
-                </div>
-
-                <!-- Texto 19 -->
-                <div class="leyenda-item text-xs text-texto transition-colors duration-200" data-id="19">
-                    <p class="font-semibold text-sm mb-1">19</p>
-                    <p>Líneas orgánicas fluidas.</p>
-                    <p>Polímero reciclado.</p>
-                    <p>Apilable y ligera.</p>
-                    <p>Confort visual absoluto.</p>
-                </div>
-
-                <!-- Texto 20 -->
-                <div class="leyenda-item text-xs text-texto transition-colors duration-200" data-id="20">
-                    <p class="font-semibold text-sm mb-1">20</p>
-                    <p>Tapizado velvet premium.</p>
-                    <p>Patas de latón envejecido.</p>
-                    <p>Elegancia contemporánea.</p>
-                    <p>Concepción artesanal.</p>
-                </div>
-
-                <!-- Texto 21 -->
-                <div class="leyenda-item text-xs text-texto transition-colors duration-200" data-id="21">
-                    <p class="font-semibold text-sm mb-1">21</p>
-                    <p>Estructura de metal curvado.</p>
-                    <p>Diseño exclusivo de autor.</p>
-                    <p>Acabado en pintura mate.</p>
-                    <p>Ideal para espacios modernos.</p>
-                </div>
-
-                <!-- Texto 22 -->
-                <div class="leyenda-item text-xs text-texto transition-colors duration-200" data-id="22">
-                    <p class="font-semibold text-sm mb-1">22</p>
-                    <p>Madera de roble natural.</p>
-                    <p>Ergonomía superior.</p>
-                    <p>Tapizado en lino rústico.</p>
-                    <p>Pieza clásica de taller.</p>
-                </div>
-
-                <!-- Texto 23 -->
-                <div class="leyenda-item text-xs text-texto transition-colors duration-200" data-id="23">
-                    <p class="font-semibold text-sm mb-1">23</p>
-                    <p>Minimalismo industrial.</p>
-                    <p>Soldadura invisible a mano.</p>
-                    <p>Resistencia extrema.</p>
-                    <p>Edición limitada madrileña.</p>
-                </div>
-
-                <!-- Texto 24 -->
-                <div class="leyenda-item text-xs text-texto transition-colors duration-200" data-id="24">
-                    <p class="font-semibold text-sm mb-1">24</p>
-                    <p>Líneas orgánicas fluidas.</p>
-                    <p>Polímero reciclado.</p>
-                    <p>Apilable y ligera.</p>
-                    <p>Confort visual absoluto.</p>
-                </div>
-
-                <!-- Texto 25 -->
-                <div class="leyenda-item text-xs text-texto transition-colors duration-200" data-id="25">
-                    <p class="font-semibold text-sm mb-1">25</p>
-                    <p>Tapizado velvet premium.</p>
-                    <p>Patas de latón envejecido.</p>
-                    <p>Elegancia contemporánea.</p>
-                    <p>Concepción artesanal.</p>
-                </div>
-
-            </div>
-        </div>
-
-        <!-- CAJA DE DETALLE DE PRODUCTO (Aparece al pinchar una silla) -->
-        <div id="caja-detalle" class="bg-gris p-6 md:p-10 border-2 border-rojo hidden transition-all duration-300">
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-                
-                <!-- Descripción y datos -->
-                <div class="flex flex-col gap-4">
-                    <span id="detalle-numero" class="text-azul font-bold text-2xl">01</span>
-                    <h3 id="detalle-titulo" class="text-3xl font-bold text-rojo">Silla de Diseño Teo Exclusiva</h3>
-                    <p id="detalle-desc" class="text-sm text-gray-700 leading-relaxed">
-                        Breve descripción detallada del producto seleccionado por Teo en su taller de Madrid. Concebida bajo criterios estrictos de diseño contemporáneo, fusionando funcionalidad y estética pura para realzar cualquier espacio de interiorismo.
-                    </p>
-                    <div class="pt-2">
-                        <span class="inline-block bg-azul text-amarillo font-semibold px-4 py-2 text-sm">Disponible en Taller Madrid</span>
-                    </div>
-                </div>
-
-                <!-- Fotos de detalle (Textura ampliada + 3 miniaturas) -->
-                <div class="flex flex-col gap-4">
-                    <!-- Foto principal ampliada de textura -->
-                    <div class="h-64 bg-white overflow-hidden border border-gray-400">
-                        <img id="detalle-img-principal" src="media/img/sillas/1.webp" alt="Textura de la silla" class="w-full h-full object-cover">
-                    </div>
-                    <!-- Tres miniaturas inferiores de detalles -->
-                    <div class="grid grid-cols-3 gap-3">
-                        <div class="h-20 bg-white overflow-hidden border border-gray-400">
-                            <img src="media/img/sillas/5.webp" alt="Detalle 1" class="w-full h-full object-cover">
-                        </div>
-                        <div class="h-20 bg-white overflow-hidden border border-gray-400">
-                            <img src="media/img/sillas/8.webp" alt="Detalle 2" class="w-full h-full object-cover">
-                        </div>
-                        <div class="h-20 bg-white overflow-hidden border border-gray-400">
-                            <img src="media/img/sillas/9.webp" alt="Detalle 3" class="w-full h-full object-cover">
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-
-    </main>
-
-    <!-- Script de interactividad: Hover y Click -->
     <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const sillas = document.querySelectorAll('.silla-item');
-            const leyendas = document.querySelectorAll('.leyenda-item');
-            const cajaDetalle = document.getElementById('caja-detalle');
-            
-            const numDetalle = document.getElementById('detalle-numero');
-            const imgPrincipal = document.getElementById('detalle-img-principal');
-
-            sillas.forEach(silla => {
-                const id = silla.getAttribute('data-id');
-                const leyendaCorrespondiente = document.querySelector(`.leyenda-item[data-id="${id}"]`);
-                const imgSilla = silla.querySelector('img').getAttribute('src');
-
-                // Hover sobre la foto -> Cambia el texto correspondiente de gris (#B1B1B1) a rojo (#E52421)
-                silla.addEventListener('mouseenter', () => {
-                    if (leyendaCorrespondiente) {
-                        leyendaCorrespondiente.classList.remove('text-texto');
-                        leyendaCorrespondiente.classList.add('text-rojo', 'font-medium');
-                    }
-                });
-
-                silla.addEventListener('mouseleave', () => {
-                    if (leyendaCorrespondiente) {
-                        leyendaCorrespondiente.classList.remove('text-rojo', 'font-medium');
-                        leyendaCorrespondiente.classList.add('text-texto');
-                    }
-                });
-
-                // Click en la foto -> Muestra la caja de detalles inferior con la info de esa silla
-                silla.addEventListener('click', () => {
-                    cajaDetalle.classList.remove('hidden');
-                    numDetalle.textContent = id;
-                    imgPrincipal.setAttribute('src', imgSilla);
-                    
-                    // Desplazamiento suave hacia la caja de detalles
-                    cajaDetalle.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-                });
-            });
-        });
+        try {
+            if (localStorage.getItem('tema') === 'oscuro') document.documentElement.classList.add('dark');
+        } catch (e) {}
     </script>
 
-    <!-- Nuestro Javascript general de la interfaz si procede -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <style type="text/tailwindcss">
+        @custom-variant dark (&:where(.dark, .dark *));
+
+        @theme static {
+            --color-gris-claro: #EBEBEB;
+            --color-texto: #B1B1B1;
+            --color-rojo: #E52421;
+            --color-azul: #0D00FF;
+            --color-amarillo: #FFF600;
+
+            --color-fondo: #EBEBEB;
+            --color-caja: #D9D9D9;
+            --color-icono: #0D00FF;
+            --color-tinta: #4D4D4D;
+
+            --font-poppins: "Poppins", system-ui, sans-serif;
+        }
+
+        html.dark {
+            --color-fondo: #161616;
+            --color-caja: #2B2B2B;
+            --color-icono: #FFF600;
+            --color-tinta: #D9D9D9;
+        }
+    </style>
+</head>
+
+
+<body class="group relative overflow-x-hidden bg-fondo font-poppins transition-colors duration-500">
+
+    <img src="media/img/LOGO PNG BLANCO.png" alt="Logo de Teo Sillas"
+         class="pointer-events-none absolute -top-16 left-[22px] z-0 w-[22rem] max-w-none md:-top-92 md:left-[-140px] md:w-[44rem]">
+
+    <div id="menu"
+         class="invisible fixed inset-x-0 top-0 z-[15] bg-azul px-5 pt-5 pb-14 opacity-0 group-data-[menu=abierto]:visible group-data-[menu=abierto]:opacity-100 group-data-[menu=abierto]:transition-[opacity,visibility] group-data-[menu=abierto]:duration-800 group-data-[menu=abierto]:ease-in-out md:px-8 md:pt-8">
+
+        <form id="formulario-buscar" role="search" action="#" class="mx-14">
+            <label for="buscador" class="sr-only">Buscar en la web</label>
+            <input id="buscador" type="search" placeholder="Buscar..." autocomplete="off"
+                   class="h-10 w-full bg-gris-claro px-4 text-base text-black placeholder:text-texto focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gris-claro">
+        </form>
+
+        <nav aria-label="Principal" class="-mx-5 mt-6 md:-mx-8">
+            <ul class="space-y-1">
+                <li><a href="index.html" class="block px-5 py-2 text-2xl font-semibold text-gris-claro hover:bg-rojo hover:text-gris-claro focus-visible:bg-rojo focus-visible:text-gris-claro md:px-8 md:text-3xl">INICIO</a></li>
+                <li><a href="catalogo.html" class="block px-5 py-2 text-2xl font-semibold text-gris-claro hover:bg-rojo hover:text-gris-claro focus-visible:bg-rojo focus-visible:text-gris-claro md:px-8 md:text-3xl">CATÁLOGO DE TEO</a></li>
+                <li><a href="favoritas.html" class="block px-5 py-2 text-2xl font-semibold text-gris-claro hover:bg-rojo hover:text-gris-claro focus-visible:bg-rojo focus-visible:text-gris-claro md:px-8 md:text-3xl">FAVORITAS DE TEO</a></li>
+                <li><a href="sobreteo.html" class="block px-5 py-2 text-2xl font-semibold text-gris-claro hover:bg-rojo hover:text-gris-claro focus-visible:bg-rojo focus-visible:text-gris-claro md:px-8 md:text-3xl">¿QUIÉN ES TEO?</a></li>
+                <li><a href="ubicacion.html" class="block px-5 py-2 text-2xl font-semibold text-gris-claro hover:bg-rojo hover:text-gris-claro focus-visible:bg-rojo focus-visible:text-gris-claro md:px-8 md:text-3xl">¿DÓNDE ESTÁ TEO?</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <header class="pointer-events-none fixed top-5 left-5 z-20 flex items-center md:top-8 md:left-8">
+        <button id="boton-menu" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="menu"
+                class="pointer-events-auto flex h-10 w-10 cursor-pointer flex-col items-center justify-center gap-[7px]">
+            <span class="block h-[4.5px] w-10 bg-icono transition duration-300 group-data-[menu=abierto]:translate-y-[11.5px] group-data-[menu=abierto]:rotate-45 group-data-[menu=abierto]:bg-gris-claro"></span>
+            <span class="block h-[4.5px] w-10 bg-icono transition duration-300 group-data-[menu=abierto]:bg-gris-claro group-data-[menu=abierto]:opacity-0"></span>
+            <span class="block h-[4.5px] w-10 bg-icono transition duration-300 group-data-[menu=abierto]:-translate-y-[11.5px] group-data-[menu=abierto]:-rotate-45 group-data-[menu=abierto]:bg-gris-claro"></span>
+        </button>
+    </header>
+
+    <button id="boton-tema" type="button" aria-label="Activar modo oscuro" aria-pressed="false"
+            class="fixed top-5 right-5 z-20 flex h-10 w-10 cursor-pointer items-center justify-center text-icono transition-colors duration-300 group-data-[menu=abierto]:text-white md:top-8 md:right-8">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+             stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-10 w-10 dark:hidden" aria-hidden="true">
+            <path d="M9 18h6"/>
+            <path d="M10 22h4"/>
+            <path d="M15.09 14c.18-.98.65-1.74 1.41-2.5A4.65 4.65 0 0 0 18 8 6 6 0 0 0 6 8c0 1 .23 2.23 1.5 3.5A4.61 4.61 0 0 1 8.91 14"/>
+        </svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+             stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="hidden h-10 w-10 dark:block" aria-hidden="true">
+            <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/>
+        </svg>
+    </button>
+
+
+    <main class="relative z-10 px-5 pt-48 pb-24 md:pt-32 md:pr-8 md:pb-32 md:pl-[30%]">
+        <h1 class="text-4xl font-semibold text-rojo md:text-6xl">CATÁLOGO DE TEO</h1>
+    </main>
+
+    <footer class="cursor-default">
+        <div class="grid bg-azul md:grid-cols-[20rem_1fr]">
+
+            <div class="px-5 pt-4 md:px-3 md:py-3">
+                <div class="flex h-full flex-col items-center justify-center border-b border-white pb-4 md:border-b-0 md:pb-0">
+                    <img src="media/img/LOGO PNG + TEO.png" alt="Logo de Teo Sillas" class="w-48 md:w-full">
+                </div>
+            </div>
+
+            <div class="px-5 py-4 text-white md:my-8 md:border-l md:border-white md:py-0 md:pr-8 md:pl-12">
+                <div class="grid gap-5 sm:grid-cols-3">
+
+                    <div>
+                        <h2 class="text-sm font-semibold uppercase">Política de privacidad</h2>
+                        <ul class="mt-3 space-y-1 text-sm font-light">
+                            <li>Protección de datos</li>
+                            <li>Política de cookies</li>
+                            <li>Aviso legal</li>
+                            <li>Condiciones de compra</li>
+                            <li>Envíos y devoluciones</li>
+                            <li>Garantía de las piezas</li>
+                            <li>Cuidado y mantenimiento</li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h2 class="text-sm font-semibold uppercase">Contacto</h2>
+                        <ul class="mt-3 space-y-1.5 text-sm font-light">
+                            <li class="flex items-center gap-2">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4 shrink-0" aria-hidden="true">
+                                    <rect x="2" y="2" width="20" height="20" rx="5"/>
+                                    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+                                    <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+                                </svg>
+                                @teosillas
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4 shrink-0" aria-hidden="true">
+                                    <path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"/>
+                                </svg>
+                                @teosillas_madrid
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4 shrink-0" aria-hidden="true">
+                                    <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
+                                </svg>
+                                Teo Sillas Madrid
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4 shrink-0" aria-hidden="true">
+                                    <rect x="2" y="4" width="20" height="16" rx="2"/>
+                                    <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
+                                </svg>
+                                hola@teosillas.es
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4 shrink-0" aria-hidden="true">
+                                    <path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/>
+                                </svg>
+                                +34 612 345 678
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h2 class="text-sm font-semibold uppercase">Dónde Teo</h2>
+                        <address class="mt-3 text-sm font-light not-italic">C/ de la Palma, 23<br>28004 Madrid</address>
+                        <p class="mt-3 text-sm font-light">Metro Tribunal<br>(líneas 1 y 10)</p>
+                        <p class="mt-3 text-sm font-light">Lunes a sábado<br>10:30 – 20:00</p>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-[6rem_1fr] md:grid-cols-[20rem_1fr]">
+            <div class="bg-rojo"></div>
+            <p class="flex min-h-12 items-center justify-end bg-amarillo px-5 py-3 text-right text-sm font-bold text-rojo md:px-8">
+                © 2026 TEO SILLAS. Todos los derechos reservados.
+            </p>
+        </div>
+    </footer>
+
+
+    <!-- ===== JS DE LIBRERÍAS (antes de nuestro JS) ===== -->
+
     <script src="js/interfaz.js"></script>
 </body>
 </html>
