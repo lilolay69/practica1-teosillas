@@ -98,10 +98,61 @@
     </button>
 
 
-    <main class="relative z-10 px-5 pt-48 pb-24 md:pt-32 md:pr-8 md:pb-32 md:pl-[30%]">
+        <main class="relative z-10 px-5 pt-48 pb-10 md:pt-32 md:pr-8 md:pb-16 md:pl-[30%]">
         <h1 class="text-4xl font-semibold text-rojo md:text-6xl">FAVORITAS DE TEO</h1>
-        
+        <p class="mt-6 text-justify text-sm font-light text-tinta md:text-base">
+            Esta no es una selección habitual. Aquí conviven las piezas más extravagantes, raras e insólitas nacidas en el propio taller de Teo. Esculturas funcionales, experimentos de forma y asientos de edición limitada creados para quienes entienden que una silla es mucho más que un lugar donde sentarse.
+        </p>
     </main>
+
+        <section class="group/grid relative z-10 pb-24 md:grid md:grid-cols-[30%_1fr] md:pb-32">
+
+    <!-- COLUMNA IZQUIERDA: Contenedor para los nombres de las sillas (alineado abajo) -->
+    <div class="hidden px-5 md:col-start-1 md:row-start-1 md:flex md:h-full md:items-end md:justify-start md:pb-2 md:pl-[30%]">
+        <div class="relative w-full text-2xl font-bold uppercase text-azul md:text-3xl">
+            <!-- Nombres de las sillas (se muestran mediante hover en cada elemento correspondiente) -->
+            <span class="opacity-0 transition-opacity duration-300 group-has-[#v1:hover]/grid:opacity-100">SILLA AZUL</span>
+            <span class="absolute inset-0 opacity-0 transition-opacity duration-300 group-has-[#v2:hover]/grid:opacity-100">SILLA ESMERALDA</span>
+            <span class="absolute inset-0 opacity-0 transition-opacity duration-300 group-has-[#v3:hover]/grid:opacity-100">SILLA FAMOSA</span>
+            <span class="absolute inset-0 opacity-0 transition-opacity duration-300 group-has-[#v4:hover]/grid:opacity-100">SILLA ORGÁNICA</span>
+            <span class="absolute inset-0 opacity-0 transition-opacity duration-300 group-has-[#v5:hover]/grid:opacity-100">SILLA SERPIENTE</span>
+            <span class="absolute inset-0 opacity-0 transition-opacity duration-300 group-has-[#v6:hover]/grid:opacity-100">SILLA MORADA</span>
+            <span class="absolute inset-0 opacity-0 transition-opacity duration-300 group-has-[#v7:hover]/grid:opacity-100">SILLA ROJA</span>
+        </div>
+    </div>
+
+    <!-- COLUMNA DERECHA: Grid de vídeos -->
+    <div class="px-5 md:col-start-2 md:row-start-1 md:self-start md:pr-8 md:pl-0">
+        <div aria-hidden="true"
+             class="grid aspect-[607/200] w-full grid-cols-[minmax(0,1.15fr)_minmax(0,1fr)_minmax(0,1fr)_minmax(0,0.94fr)_minmax(0,1fr)] grid-rows-[minmax(0,1fr)] overflow-hidden border-t border-l border-black">
+
+            <div class="grid min-h-0 min-w-0 grid-rows-[minmax(0,42fr)_minmax(0,58fr)]">
+                <video id="v1" src="media/video/1colorazul.mp4" autoplay muted loop playsinline disablepictureinpicture preload="auto"
+                       class="block h-full w-full cursor-pointer border-r border-b border-black object-cover"></video>
+                <video id="v2" src="media/video/2coloresmeralda.mp4" autoplay muted loop playsinline disablepictureinpicture preload="auto"
+                       class="block h-full w-full cursor-pointer border-r border-b border-black object-cover"></video>
+            </div>
+
+            <video id="v3" src="media/video/3colorfamosa.mp4" autoplay muted loop playsinline disablepictureinpicture preload="auto"
+                   class="block h-full w-full cursor-pointer border-r border-b border-black object-cover"></video>
+
+            <video id="v4" src="media/video/4colororganica.mp4" autoplay muted loop playsinline disablepictureinpicture preload="auto"
+                   class="block h-full w-full cursor-pointer border-r border-b border-black object-cover"></video>
+
+            <div class="grid min-h-0 min-w-0 grid-rows-[minmax(0,34fr)_minmax(0,66fr)]">
+                <video id="v7" src="media/video/7colorrojo.mp4" autoplay muted loop playsinline disablepictureinpicture preload="auto"
+                       class="block h-full w-full cursor-pointer border-r border-b border-black object-cover"></video>
+                <video id="v6" src="media/video/6colormorada.mp4" autoplay muted loop playsinline disablepictureinpicture preload="auto"
+                       class="block h-full w-full cursor-pointer border-r border-b border-black object-cover"></video>
+            </div>
+
+            <video id="v5" src="media/video/5colorserpiente.mp4" autoplay muted loop playsinline disablepictureinpicture preload="auto"
+                   class="block h-full w-full cursor-pointer border-r border-b border-black object-cover"></video>
+
+        </div>
+    </div>
+
+</section>
 
     <footer class="cursor-default">
         <div class="grid bg-azul md:grid-cols-[20rem_1fr]">
