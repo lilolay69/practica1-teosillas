@@ -93,3 +93,52 @@ botonTema.addEventListener('click', () => {
 });
 
 sincronizarBotonTema();
+
+
+
+
+
+ document.addEventListener('DOMContentLoaded', () => {
+            const sillas = document.querySelectorAll('.silla-item');
+            const cajaDetalle = document.getElementById('caja-detalle');
+            const detalleTitulo = document.getElementById('detalle-titulo');
+            
+            const imgZoom1 = document.querySelector('.zoom-img-1');
+            const imgZoom2 = document.querySelector('.zoom-img-2');
+            const imgZoom3 = document.querySelector('.zoom-img-3');
+
+            sillas.forEach(silla => {
+                const id = silla.getAttribute('data-id');
+                const textoCorrespondiente = document.querySelector(`.texto-item[data-id="${id}"]`);
+                const imgSilla = silla.querySelector('img').getAttribute('src');
+                const tituloSilla = silla.getAttribute('data-titulo');
+
+                // Hover sobre la silla -> Pone el texto de la derecha en color rojo (#E52421)
+                silla.addEventListener('mouseenter', () => {
+                    if (textoCorrespondiente) {
+                        textoCorrespondiente.classList.remove('text-texto');
+                        textoCorrespondiente.classList.add('text-rojo', 'font-medium');
+                    }
+                });
+
+                silla.addEventListener('mouseleave', () => {
+                    if (textoCorrespondiente) {
+                        textoCorrespondiente.classList.remove('text-rojo', 'font-medium');
+                        textoCorrespondiente.classList.add('text-texto');
+                    }
+                });
+
+                // Click sobre la silla -> Despliega la caja y actualiza el título y las 3 imágenes de zoom
+                silla.addEventListener('click', () => {
+                    cajaDetalle.classList.remove('hidden');
+                    detalleTitulo.textContent = tituloSilla;
+                    
+                    if(imgZoom1) imgZoom1.setAttribute('src', imgSilla);
+                    if(imgZoom2) imgZoom2.setAttribute('src', imgSilla);
+                    if(imgZoom3) imgZoom3.setAttribute('src', imgSilla);
+
+                    cajaDetalle.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                });
+            });
+        });
+

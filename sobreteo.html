@@ -10,7 +10,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
     <!-- ===== CSS DE LIBRERÍAS (aquí, si hacen falta) ===== -->
-
     <link rel="stylesheet" href="css/styles.css">
 
     <script>
@@ -45,15 +44,29 @@
             --color-icono: #FFF600;
             --color-tinta: #D9D9D9;
         }
+
+        /* Animación en loop infinito para la frase de texto móvil */
+        @keyframes marquee {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+
+        .animate-marquee {
+            display: flex;
+            width: max-content;
+            animation: marquee 18s linear infinite;
+            padding-left: 0;
+            margin-left: 0;
+        }
     </style>
 </head>
-
 
 <body class="group relative overflow-x-hidden bg-fondo font-poppins transition-colors duration-500">
 
     <img src="media/img/LOGO PNG BLANCO.png" alt="Logo de Teo Sillas"
          class="pointer-events-none absolute -top-16 left-[22px] z-0 w-[22rem] max-w-none md:-top-92 md:left-[-140px] md:w-[44rem]">
 
+    <!-- Menú de navegación desplegable -->
     <div id="menu"
          class="invisible fixed inset-x-0 top-0 z-[15] bg-azul px-5 pt-5 pb-14 opacity-0 group-data-[menu=abierto]:visible group-data-[menu=abierto]:opacity-100 group-data-[menu=abierto]:transition-[opacity,visibility] group-data-[menu=abierto]:duration-800 group-data-[menu=abierto]:ease-in-out md:px-8 md:pt-8">
 
@@ -74,6 +87,7 @@
         </nav>
     </div>
 
+    <!-- Botón Menú -->
     <header class="pointer-events-none fixed top-5 left-5 z-20 flex items-center md:top-8 md:left-8">
         <button id="boton-menu" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="menu"
                 class="pointer-events-auto flex h-10 w-10 cursor-pointer flex-col items-center justify-center gap-[7px]">
@@ -83,6 +97,7 @@
         </button>
     </header>
 
+    <!-- Botón Modo Oscuro -->
     <button id="boton-tema" type="button" aria-label="Activar modo oscuro" aria-pressed="false"
             class="fixed top-5 right-5 z-20 flex h-10 w-10 cursor-pointer items-center justify-center text-icono transition-colors duration-300 group-data-[menu=abierto]:text-white md:top-8 md:right-8">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
@@ -97,11 +112,72 @@
         </svg>
     </button>
 
+    <!-- CONTENIDO PRINCIPAL: ¿QUIÉN ES TEO? -->
+    <main class="relative z-10 w-full px-5 pt-48 pb-0 md:pt-32 md:px-12">
+    <h1 class="mb-0 w-full text-right text-4xl font-semibold text-rojo md:text-6xl">¿QUIÉN ES TEO?</h1>
 
-    <main class="relative z-10 px-5 pt-48 pb-24 md:pt-32 md:pr-8 md:pb-32 md:pl-[30%]">
-        <h1 class="text-4xl font-semibold text-rojo md:text-6xl">¿QUIÉN ES TEO?</h1>
-    </main>
+    <div class="space-y-0">
+        <div class="grid grid-cols-1 gap-0 md:grid-cols-[1.35fr_1.15fr]">
+            <div class="-ml-5 h-full w-[calc(100%+1.25rem)] overflow-hidden md:-ml-12 md:w-[calc(100%+3rem)]">
+                <video
+                    src="media/img/teo/Comp 1_2.mp4"
+                    autoplay
+                    muted
+                    loop
+                    playsinline
+                    class="block h-[440px] w-full object-contain object-left md:h-[560px]"
+                ></video>
+            </div>
 
+            <div class="mt-11 flex justify-end">
+                <p class="max-w-[34rem] text-justify text-sm leading-relaxed text-tinta md:text-base">
+                    Teo no es solo una persona, una marca ni un espacio expositivo convencional; es una forma de entender el diseño de mobiliario donde cada pieza cuenta una historia propia y personal. Nuestro proyecto nace de la pasión por rescatar iconos del pasado, restaurarlos con mimo artesanal y darles una nueva vida en los hogares contemporáneos más exigentes. Creemos firmemente que una silla no es meramente un objeto utilitario para sentarse, sino una escultura funcional dotada de carácter, ergonomía y una estética atemporal que transforma por completo cualquier rincón donde se ubique.
+                </p>
+            </div>
+        </div>
+
+
+        <div class="grid grid-cols-1 gap-0 md:grid-cols-[1.35fr_1.15fr]">
+            <div class="-ml-5 h-full w-[calc(100%+1.25rem)] overflow-hidden md:-ml-12 md:w-[calc(100%+3rem)]">
+                <img src="media/img/teo/Casa_de_teo.webp" alt="Casa de Teo"
+                     class="block h-[440px] w-full object-cover object-center md:h-[560px]">
+            </div>
+        </div>
+    </div>
+</main>
+
+<div class="relative w-full overflow-hidden bg-transparent py-5 my-8">
+        <div class="animate-marquee flex whitespace-nowrap">
+            <span class="text-3xl md:text-5xl font-bold text-azul mx-6 uppercase tracking-wider">NO SÉ, YO SOLO QUIERO SENTARME</span>
+            <span class="text-3xl md:text-5xl font-bold text-azul mx-6 uppercase tracking-wider">NO SÉ, YO SOLO QUIERO SENTARME</span>
+            <span class="text-3xl md:text-5xl font-bold text-azul mx-6 uppercase tracking-wider">NO SÉ, YO SOLO QUIERO SENTARME</span>
+        </div>
+    </div>
+
+  
+   <div class="my-4 w-full">
+    <img src="media/img/teo/abuelo_teo.webp" alt="Abuelo Teo"
+         class="block h-[400px] w-full rotate-90 object-contain md:h-[500px]">
+</div>
+
+    <section class="w-full px-5 pb-16 md:px-12">
+    <div class="mx-auto mb-16 max-w-[42rem]">
+        <p class="text-justify text-base leading-relaxed text-tinta md:text-lg">
+            El legado de las generaciones pasadas nos inspira a mantener vivo un oficio donde el tiempo no es un enemigo, sino un aliado que aporta pátina y valor emocional. Cada pieza que pasa por nuestro taller recupera su esplendor original adaptándose a las necesidades de confort actuales, convirtiéndose en un puente indestructible entre la tradición artesana y el diseño de vanguardia.
+        </p>
+    </div>
+</section>
+
+    <div class="relative bg-amarillo w-full pt-16 pb-12 px-5 md:px-12 overflow-visible">
+        <div class="absolute -top-60 right-4 z-20 pointer-events-none md:right-16">
+    <img src="media/img/teo/6.png" alt="Número 6" class="w-64 object-contain md:w-[20rem]">
+</div>
+        <div class="max-w-7xl mx-auto flex justify-between items-center text-rojo font-bold text-lg md:text-2xl">
+            <span>PIEZAS ÚNICAS DESDE EL CORAZÓN DE MADRID</span>
+        </div>
+    </div>
+
+    <!-- PIE DE PÁGINA -->
     <footer class="cursor-default">
         <div class="grid bg-azul md:grid-cols-[20rem_1fr]">
 
@@ -185,9 +261,7 @@
         </div>
     </footer>
 
-
-    <!-- ===== JS DE LIBRERÍAS (antes de nuestro JS) ===== -->
-
+    <!-- ===== JS ===== -->
     <script src="js/interfaz.js"></script>
 </body>
 </html>

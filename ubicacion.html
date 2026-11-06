@@ -9,8 +9,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
-    <!-- ===== CSS DE LIBRERÍAS (aquí, si hacen falta) ===== -->
-
+    <!-- ===== CSS DE LIBRERÍAS ===== -->
     <link rel="stylesheet" href="css/styles.css">
 
     <script>
@@ -21,33 +20,32 @@
 
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 
-    <style type="text/tailwindcss">
-        @custom-variant dark (&:where(.dark, .dark *));
+   <style type="text/tailwindcss">
+    @custom-variant dark (&:where(.dark, .dark *));
 
-        @theme static {
-            --color-gris-claro: #EBEBEB;
-            --color-texto: #B1B1B1;
-            --color-rojo: #E52421;
-            --color-azul: #0D00FF;
-            --color-amarillo: #FFF600;
+    @theme static {
+        --color-gris-claro: #EBEBEB;
+        --color-texto: #B1B1B1;
+        --color-rojo: #E52421;
+        --color-azul: #0D00FF;
+        --color-amarillo: #FFF600;
 
-            --color-fondo: #EBEBEB;
-            --color-caja: #D9D9D9;
-            --color-icono: #0D00FF;
-            --color-tinta: #4D4D4D;
+        --color-fondo: #EBEBEB;
+        --color-caja: #D9D9D9;
+        --color-icono: #0D00FF;
+        --color-tinta: #4D4D4D;
 
-            --font-poppins: "Poppins", system-ui, sans-serif;
-        }
+        --font-poppins: "Poppins", system-ui, sans-serif;
+    }
 
-        html.dark {
-            --color-fondo: #161616;
-            --color-caja: #2B2B2B;
-            --color-icono: #FFF600;
-            --color-tinta: #D9D9D9;
-        }
-    </style>
+    html.dark {
+        --color-fondo: #161616;
+        --color-caja: #2B2B2B;
+        --color-icono: #FFF600;
+        --color-tinta: #D9D9D9;
+    }
+</style>
 </head>
-
 
 <body class="group relative overflow-x-hidden bg-fondo font-poppins transition-colors duration-500">
 
@@ -97,11 +95,81 @@
         </svg>
     </button>
 
+<main class="relative z-10 w-full px-5 pt-48 pb-24 md:pt-32 md:px-12">
+    <h1 class="mb-3 w-full text-right text-4xl font-semibold text-rojo md:mb-8 md:text-6xl">
+        ¿DÓNDE ESTÁ TEO?
+    </h1>
 
-    <main class="relative z-10 px-5 pt-48 pb-24 md:pt-32 md:pr-8 md:pb-32 md:pl-[30%]">
-        <h1 class="text-4xl font-semibold text-rojo md:text-6xl">¿DÓNDE ESTÁ TEO?</h1>
+    <div class="mt-0 flex justify-end">
+        <p class="max-w-[34rem] text-justify text-sm leading-relaxed text-tinta md:text-base">
+            Teo siempre está en el taller, en la Calle de la Palma 23 y descubre de cerca cómo cobramos vida a cada una de nuestras sillas en pleno corazón de Madrid. Nos encanta abrir las puertas de nuestro espacio creativo para que veas el trabajo artesanal y la dedicación que hay detrás de cada diseño. Ven a conocernos, charla un rato con nosotros y encuentra la pieza perfecta para tu rincón favorito.
+        </p>
+    </div>
+</main>
+
+<div class="relative mt-6 w-full overflow-hidden">
+   <div class="pointer-events-none absolute left-4 top-0 z-10">
+    <h2 class="flex flex-col text-left font-bold uppercase leading-[0.8] tracking-[0.08em] text-azul">
+        <span class="text-6xl md:text-[6rem]">C/ de la Palma, 23 (Madrid)</span>
+    </h2>
+</div>
+
+    <div class="grid w-full grid-cols-3 gap-0 pt-20 md:pt-16">
+        <img src="media/img/teo/foto_taller_1.webp" alt="Taller 1" class="h-[14rem] w-full object-cover md:h-[28rem]">
+        <img src="media/img/teo/foto_taller_2.webp" alt="Taller 2" class="h-[14rem] w-full object-cover md:h-[28rem]">
+        <img src="media/img/teo/foto_taller_1.webp" alt="Taller 3" class="h-[14rem] w-full object-cover md:h-[28rem]">
+    </div>
+</div>
+
+<div class="h-2 w-full bg-amarillo"></div>
+
+
+        <!-- HORARIOS -->
+     <div class="max-w-5xl ">
+    <h2 class="mb-4 text-2xl font-bold text-azul md:text-4xl">  /NUESTRO TALLER/</h2>
+
+   <div class="mb-12 grid grid-cols-1 gap-8 md:grid-cols-[1.2fr_0.8fr] md:items-center">
+    <div class="h-[20rem] w-full overflow-hidden bg-caja md:h-[34rem]">
+        <img src="media/img/teo/foto_sillas_taller.webp" alt="Sillas en el taller de Teo" class="h-full w-full object-cover">
+    </div>
+
+
+       <ul class="ml-auto flex w-full max-w-[34rem] flex-1 flex-col justify-between space-y-1 text-base md:text-lg">
+    <li class="flex items-start gap-1 py-0.5">
+        <span class="font-black text-azul">LUNES</span>
+        <span class="font-black text-rojo">10:00 - 20:30</span>
+    </li>
+    <li class="flex items-start gap-1 py-0.5">
+        <span class="font-black text-azul">MARTES</span>
+        <span class="font-black text-rojo">10:00 - 20:30</span>
+    </li>
+    <li class="flex items-start gap-1 py-0.5">
+        <span class="font-black text-azul">MIERCOLES</span>
+        <span class="font-black text-rojo">10:00 - 20:30</span>
+    </li>
+    <li class="flex items-start gap-1 py-0.5">
+        <span class="font-black text-azul">JUEVES</span>
+        <span class="font-black text-rojo">10:00 - 20:30</span>
+    </li>
+    <li class="flex items-start gap-1 py-0.5">
+        <span class="font-black text-azul">VIERNES</span>
+        <span class="font-black text-rojo">10:00 - 20:30</span>
+    </li>
+    <li class="flex items-start gap-1 py-0.5">
+        <span class="font-black text-azul">SABADO</span>
+        <span class="font-black text-rojo">10:30 - 14:30</span>
+    </li>
+    <li class="flex items-start gap-1 py-0.5">
+        <span class="font-black text-azul">DOMINGO</span>
+        <span class="font-black text-rojo">CERRADO</span>
+    </li>
+    <li class="flex items-start gap-1 py-0.5">
+        <span class="font-black text-azul">* Los horarios especiales o festivos locales pueden variar. Consúltanos por redes sociales ante cualquier duda.</span>
+</ul>
+    </div>
+</div>
+</div>   
     </main>
-
     <footer class="cursor-default">
         <div class="grid bg-azul md:grid-cols-[20rem_1fr]">
 
@@ -186,7 +254,7 @@
     </footer>
 
 
-    <!-- ===== JS DE LIBRERÍAS (antes de nuestro JS) ===== -->
+    <!-- ===== JS ===== -->
 
     <script src="js/interfaz.js"></script>
 </body>
