@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="es">
 
@@ -35,6 +36,13 @@
             --color-caja: #D9D9D9;
             --color-icono: #0D00FF;
             --font-poppins: "Poppins", system-ui, sans-serif;
+
+            --animate-marquee: marquee 30s linear infinite;
+
+            @keyframes marquee {
+                from { transform: translateX(0); }
+                to { transform: translateX(-50%); }
+            }
         }
 
         html.dark {
@@ -287,6 +295,76 @@
                 </a>
 
             </nav>
+            <!-- MEDIA GRID -->
+
+            <div id="media-grid"
+     class="relative z-10 grid aspect-[595/842] w-full grid-cols-2 overflow-hidden md:w-[min(100%,calc((100svh-7rem)*595/842))] md:self-start md:justify-self-center">
+
+                <img src="media/img/silla izq-roja.png"
+                     alt="Mitad de una silla roja"
+                     class="block h-full w-full object-cover">
+
+                <div class="grid grid-rows-11">
+
+                    <div tabindex="0" role="button" aria-label="Sillas de madera" aria-pressed="false" class="group/celda relative overflow-hidden outline-none">
+                        <img src="media/img/1derecha.png" alt="" class="absolute inset-0 block h-full w-full object-cover transition-transform duration-500 ease-in-out group-hover/celda:-translate-x-full group-focus/celda:-translate-x-full">
+                        <a href="#" class="absolute inset-0 flex translate-x-full items-center justify-center text-lg font-normal text-azul transition-transform duration-500 ease-in-out group-hover/celda:translate-x-0 group-focus/celda:translate-x-0 sm:text-xl md:text-2xl">SILLAS DE MADERA</a>
+                    </div>
+
+                    <div tabindex="0" role="button" aria-label="Sillas modernas" aria-pressed="false" class="group/celda relative overflow-hidden outline-none">
+                        <img src="media/img/2derecha.png" alt="" class="absolute inset-0 block h-full w-full object-cover transition-transform duration-500 ease-in-out group-hover/celda:-translate-x-full group-focus/celda:-translate-x-full">
+                        <a href="#" class="absolute inset-0 flex translate-x-full items-center justify-center text-lg font-normal text-azul transition-transform duration-500 ease-in-out group-hover/celda:translate-x-0 group-focus/celda:translate-x-0 sm:text-xl md:text-2xl">SILLAS MODERNAS</a>
+                    </div>
+
+                    <div tabindex="0" role="button" aria-label="Sillas de pelo" aria-pressed="false" class="group/celda relative overflow-hidden outline-none">
+                        <img src="media/img/3derecha.png" alt="" class="absolute inset-0 block h-full w-full object-cover transition-transform duration-500 ease-in-out group-hover/celda:-translate-x-full group-focus/celda:-translate-x-full">
+                        <a href="#" class="absolute inset-0 flex translate-x-full items-center justify-center text-lg font-normal text-azul transition-transform duration-500 ease-in-out group-hover/celda:translate-x-0 group-focus/celda:translate-x-0 sm:text-xl md:text-2xl">SILLAS DE PELO</a>
+                    </div>
+
+                    <div tabindex="0" role="button" aria-label="Sillas de Teo" aria-pressed="false" class="group/celda relative overflow-hidden outline-none">
+                        <img src="media/img/4derecha.png" alt="" class="absolute inset-0 block h-full w-full object-cover transition-transform duration-500 ease-in-out group-hover/celda:-translate-x-full group-focus/celda:-translate-x-full">
+                        <a href="#" class="absolute inset-0 flex translate-x-full items-center justify-center text-lg font-normal text-azul transition-transform duration-500 ease-in-out group-hover/celda:translate-x-0 group-focus/celda:translate-x-0 sm:text-xl md:text-2xl">SILLAS DE TEO</a>
+                    </div>
+
+                    <div tabindex="0" role="button" aria-label="Sillas de colores" aria-pressed="false" class="group/celda relative overflow-hidden outline-none">
+                        <img src="media/img/5derecha.png" alt="" class="absolute inset-0 block h-full w-full object-cover transition-transform duration-500 ease-in-out group-hover/celda:-translate-x-full group-focus/celda:-translate-x-full">
+                        <a href="#" class="absolute inset-0 flex translate-x-full items-center justify-center text-lg font-normal text-azul transition-transform duration-500 ease-in-out group-hover/celda:translate-x-0 group-focus/celda:translate-x-0 sm:text-xl md:text-2xl">SILLAS DE METAL</a>
+                    </div>
+
+                    <div tabindex="0" role="button" aria-label="Sillas de plástico" aria-pressed="false" class="group/celda relative overflow-hidden outline-none">
+                        <img src="media/img/6derecha.png" alt="" class="absolute inset-0 block h-full w-full object-cover transition-transform duration-500 ease-in-out group-hover/celda:-translate-x-full group-focus/celda:-translate-x-full">
+                        <a href="#" class="absolute inset-0 flex translate-x-full items-center justify-center text-lg font-normal text-azul transition-transform duration-500 ease-in-out group-hover/celda:translate-x-0 group-focus/celda:translate-x-0 sm:text-xl md:text-2xl">SILLAS ESPECIALES</a>
+                    </div>
+
+                    <div tabindex="0" role="button" aria-label="Sillas de metal" aria-pressed="false" class="group/celda relative overflow-hidden outline-none">
+                        <img src="media/img/7derecha.png" alt="" class="absolute inset-0 block h-full w-full object-cover transition-transform duration-500 ease-in-out group-hover/celda:-translate-x-full group-focus/celda:-translate-x-full">
+                        <a href="#" class="absolute inset-0 flex translate-x-full items-center justify-center text-lg font-normal text-azul transition-transform duration-500 ease-in-out group-hover/celda:translate-x-0 group-focus/celda:translate-x-0 sm:text-xl md:text-2xl">SILLAS DE COLORES</a>
+                    </div>
+
+                    <div tabindex="0" role="button" aria-label="Sillas orgánicas" aria-pressed="false" class="group/celda relative overflow-hidden outline-none">
+                        <img src="media/img/8derecha.png" alt="" class="absolute inset-0 block h-full w-full object-cover transition-transform duration-500 ease-in-out group-hover/celda:-translate-x-full group-focus/celda:-translate-x-full">
+                        <a href="#" class="absolute inset-0 flex translate-x-full items-center justify-center text-lg font-normal text-azul transition-transform duration-500 ease-in-out group-hover/celda:translate-x-0 group-focus/celda:translate-x-0 sm:text-xl md:text-2xl">SILLAS ORGÁNICAS</a>
+                    </div>
+
+                    <div tabindex="0" role="button" aria-label="Sillas especiales" aria-pressed="false" class="group/celda relative overflow-hidden outline-none">
+                        <img src="media/img/9derecha.png" alt="" class="absolute inset-0 block h-full w-full object-cover transition-transform duration-500 ease-in-out group-hover/celda:-translate-x-full group-focus/celda:-translate-x-full">
+                        <a href="#" class="absolute inset-0 flex translate-x-full items-center justify-center text-lg font-normal text-azul transition-transform duration-500 ease-in-out group-hover/celda:translate-x-0 group-focus/celda:translate-x-0 sm:text-xl md:text-2xl">SILLAS DE PLÁSTICO</a>
+                    </div>
+
+                    <div tabindex="0" role="button" aria-label="Sillas con descuento" aria-pressed="false" class="group/celda relative overflow-hidden outline-none">
+                        <img src="media/img/10derecha.png" alt="" class="absolute inset-0 block h-full w-full object-cover transition-transform duration-500 ease-in-out group-hover/celda:-translate-x-full group-focus/celda:-translate-x-full">
+                        <a href="#" class="absolute inset-0 flex translate-x-full items-center justify-center text-lg font-normal text-azul transition-transform duration-500 ease-in-out group-hover/celda:translate-x-0 group-focus/celda:translate-x-0 sm:text-xl md:text-2xl">SILLAS CON DESCUENTO</a>
+                    </div>
+
+                    <div tabindex="0" role="button" aria-label="Sillas abstractas" aria-pressed="false" class="group/celda relative overflow-hidden outline-none">
+                        <img src="media/img/11derecha.png" alt="" class="absolute inset-0 block h-full w-full object-cover transition-transform duration-500 ease-in-out group-hover/celda:-translate-x-full group-focus/celda:-translate-x-full">
+                        <a href="#" class="absolute inset-0 flex translate-x-full items-center justify-center text-lg font-normal text-azul transition-transform duration-500 ease-in-out group-hover/celda:translate-x-0 group-focus/celda:translate-x-0 sm:text-xl md:text-2xl">SILLAS ABSTRACTAS</a>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
 
             <!-- MEDIA GRID -->
 
@@ -356,6 +434,28 @@
                 </div>
             </div>
 
+        <div class="mt-20 mb-2 w-full overflow-hidden whitespace-nowrap py-6 text-xl font-semibold text-azul md:text-2xl"
+             role="region"
+             aria-label="El que se fue a Sevilla compró una silla">
+
+            <div class="flex w-max animate-marquee motion-reduce:animate-none hover:[animation-play-state:paused]"
+                 aria-hidden="true">
+
+                <div class="flex shrink-0 items-center">
+                    <span class="shrink-0 pr-12">EL QUE SE FUE A SEVILLA COMPRÓ UNA SILLA</span>
+                    <span class="shrink-0 pr-12">EL QUE SE FUE A SEVILLA COMPRÓ UNA SILLA</span>
+                    <span class="shrink-0 pr-12">EL QUE SE FUE A SEVILLA COMPRÓ UNA SILLA</span>
+                    <span class="shrink-0 pr-12">EL QUE SE FUE A SEVILLA COMPRÓ UNA SILLA</span>
+                </div>
+
+                <div class="flex shrink-0 items-center">
+                    <span class="shrink-0 pr-12">EL QUE SE FUE A SEVILLA COMPRÓ UNA SILLA</span>
+                    <span class="shrink-0 pr-12">EL QUE SE FUE A SEVILLA COMPRÓ UNA SILLA</span>
+                    <span class="shrink-0 pr-12">EL QUE SE FUE A SEVILLA COMPRÓ UNA SILLA</span>
+                    <span class="shrink-0 pr-12">EL QUE SE FUE A SEVILLA COMPRÓ UNA SILLA</span>
+                </div>
+
+            </div>
         </div>
 
         <!-- ===== CARRUSEL INFINITO ===== -->
