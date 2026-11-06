@@ -504,3 +504,89 @@
 
 
 
+/* =========================================
+   CATÁLOGO TEO SILLAS
+   Imágenes verticales y responsive
+========================================= */
+
+/* GRID DE LAS SILLAS */
+.catalogo-grid {
+    align-items: start;
+}
+
+/* ELEMENTO INDIVIDUAL */
+.silla-item {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    width: 100%;
+    cursor: pointer;
+}
+
+/* CONTENEDOR DE IMAGEN */
+.catalogo-imagen-contenedor {
+    position: relative;
+    display: block;
+
+    width: 100%;
+    aspect-ratio: 3 / 4;
+
+    overflow: hidden;
+    flex: none;
+}
+
+/* IMAGEN */
+.catalogo-imagen {
+    position: absolute;
+    inset: 0;
+
+    display: block;
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    object-position: center;
+
+    transition: transform 300ms ease;
+}
+
+/* HOVER */
+.silla-item:hover .catalogo-imagen {
+    transform: scale(1.05);
+}
+
+/* EVITAR QUE EL GRID DEFORME LAS IMÁGENES */
+.catalogo-grid > .silla-item {
+    min-height: 0;
+    align-self: start;
+}
+
+/* TABLET */
+@media (max-width: 1023px) {
+    .catalogo-imagen-contenedor {
+        aspect-ratio: 3 / 4;
+    }
+}
+
+/* MÓVIL */
+@media (max-width: 639px) {
+    .catalogo-imagen-contenedor {
+        aspect-ratio: 3 / 4;
+    }
+}
+
+/* ACCESIBILIDAD: REDUCIR MOVIMIENTO */
+@media (prefers-reduced-motion: reduce) {
+    .catalogo-imagen {
+        transition: none;
+    }
+
+    .silla-item:hover .catalogo-imagen {
+        transform: none;
+    }
+}
+
+
+
+
+

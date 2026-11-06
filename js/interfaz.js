@@ -687,3 +687,267 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
 });
+
+
+
+    // ==================================================
+    // 9. CATÁLOGO: FICHAS PERSONALIZADAS DE LAS 25 SILLAS
+    // ==================================================
+
+    const seccionCatalogo = document.getElementById('detalle-catalogo');
+    const gridCatalogoDetalle = document.getElementById('catalogo-detalle-grid');
+    const botonCerrarCatalogo = document.getElementById('catalogo-detalle-cerrar');
+
+    if (seccionCatalogo && gridCatalogoDetalle) {
+
+        const elementosSillas = document.querySelectorAll('.silla-item');
+
+        const refCatalogo = document.getElementById('catalogo-detalle-ref');
+        const nombreCatalogo = document.getElementById('catalogo-detalle-nombre');
+        const descripcionCatalogo = document.getElementById('catalogo-detalle-descripcion');
+        const listaCatalogo = document.getElementById('catalogo-detalle-lista');
+
+        const imagenCatalogo1 = document.getElementById('catalogo-detalle-img-1');
+        const imagenCatalogo2 = document.getElementById('catalogo-detalle-img-2');
+
+        const reducirMovimiento = window.matchMedia(
+            '(prefers-reduced-motion: reduce)'
+        );
+
+        let sillaCatalogoActual = null;
+        let temporizadorCatalogo;
+
+        // ----------------------------------------------
+        // PREPARAR LAS SILLAS
+        // ----------------------------------------------
+
+        elementosSillas.forEach(silla => {
+
+            silla.setAttribute('tabindex', '0');
+            silla.setAttribute('role', 'button');
+
+            silla.setAttribute(
+                'aria-label',
+                `Ver información de ${silla.dataset.titulo || 'esta silla'}`
+            );
+
+        });
+
+
+        // ----------------------------------------------
+        // RELLENAR LA FICHA
+        // ----------------------------------------------
+
+        function rellenarFichaCatalogo(silla) {
+
+            const id = silla.dataset.id;
+            const titulo = silla.dataset.titulo || `Silla ${id}`;
+
+            const imagen = silla.querySelector('img');
+            const rutaImagen = imagen ? imagen.src : '';
+
+            const textoItem = document.querySelector(
+                `.texto-item[data-id="${id}"] p`
+            );
+
+            const descripcion = textoItem
+                ? textoItem.textContent.trim()
+                : 'Información de esta pieza próximamente.';
+
+            // Referencia
+            refCatalogo.textContent = 'REF 000991207';
+
+            // Nombre
+            nombreCatalogo.textContent = titulo;
+
+            // Descripción
+            descripcionCatalogo.textContent = descripcion;
+
+            // Características
+            listaCatalogo.replaceChildren();
+
+            const caracteristicas = [
+                `Número de catálogo: ${id}`,
+                'Pieza perteneciente al catálogo de Teo',
+                'Consulta más información en tienda'
+            ];
+
+            caracteristicas.forEach(texto => {
+
+                const li = document.createElement('li');
+
+                li.textContent = texto;
+
+                listaCatalogo.appendChild(li);
+
+            });
+
+            // Imágenes
+            if (rutaImagen) {
+
+                imagenCatalogo1.src = rutaImagen;
+                imagenCatalogo1.alt = `${titulo}, imagen 1`;
+
+                // Permite añadir una segunda imagen mediante data-imagen2.
+                const segundaImagen = silla.dataset.imagen2 || rutaImagen;
+
+                imagenCatalogo2.src = segundaImagen;
+                imagenCatalogo2.alt = `${titulo}, imagen 2`;
+
+            }
+
+        }
+
+
+        // ----------------------------------------------
+        // MOSTRAR LA FICHA
+        // ----------------------------------------------
+
+        function mostrarFichaCatalogo() {
+
+            seccionCatalogo.classList.remove('hidden');
+
+            requestAnimationFrame(() => {
+
+                requestAnimationFrame(() => {
+
+                    seccionCatalogo.dataset.visible = 'true';
+
+                });
+
+            });
+
+            gridCatalogoDetalle.scrollIntoView({
+
+                behavior: reducirMovimiento.matches ? 'auto' : 'smooth',
+
+                block: 'end'
+
+            });
+
+        }
+
+
+        // ----------------------------------------------
+        // ABRIR UNA SILLA
+        // ----------------------------------------------
+
+        function abrirFichaCatalogo(silla) {
+
+            if (!silla) return;
+
+            clearTimeout(temporizadorCatalogo);
+
+            sillaCatalogoActual = silla;
+
+            // Si ya hay una ficha abierta, primero desaparece.
+            if (seccionCatalogo.dataset.visible === 'true') {
+
+                seccionCatalogo.dataset.visible = 'false';
+
+                temporizadorCatalogo = setTimeout(() => {
+
+                    rellenarFichaCatalogo(silla);
+
+                    mostrarFichaCatalogo();
+
+                }, 300);
+
+            } else {
+
+                rellenarFichaCatalogo(silla);
+
+                mostrarFichaCatalogo();
+
+            }
+
+        }
+
+
+        // ----------------------------------------------
+        // CERRAR LA FICHA
+        // ----------------------------------------------
+
+        function cerrarFichaCatalogo() {
+
+            if (seccionCatalogo.classList.contains('hidden')) return;
+
+            clearTimeout(temporizadorCatalogo);
+
+            seccionCatalogo.dataset.visible = 'false';
+
+            temporizadorCatalogo = setTimeout(() => {
+
+                seccionCatalogo.classList.add('hidden');
+
+                if (sillaCatalogoActual) {
+
+                    sillaCatalogoActual.scrollIntoView({
+
+                        behavior: reducirMovimiento.matches ? 'auto' : 'smooth',
+
+                        block: 'center'
+
+                    });
+
+                }
+
+            }, 500);
+
+        }
+
+
+        // ----------------------------------------------
+        // EVENTOS DE LAS 25 SILLAS
+        // ----------------------------------------------
+
+        elementosSillas.forEach(silla => {
+
+            silla.addEventListener('click', () => {
+
+                abrirFichaCatalogo(silla);
+
+            });
+
+            silla.addEventListener('keydown', e => {
+
+                if (e.key === 'Enter' || e.key === ' ') {
+
+                    e.preventDefault();
+
+                    abrirFichaCatalogo(silla);
+
+                }
+
+            });
+
+        });
+
+
+        // ----------------------------------------------
+        // BOTÓN CERRAR
+        // ----------------------------------------------
+
+        if (botonCerrarCatalogo) {
+
+            botonCerrarCatalogo.addEventListener('click', cerrarFichaCatalogo);
+
+        }
+
+
+        // ----------------------------------------------
+        // ESCAPE
+        // ----------------------------------------------
+
+        document.addEventListener('keydown', e => {
+
+            if (e.key === 'Escape') {
+
+                cerrarFichaCatalogo();
+
+            }
+
+        });
+
+    }
+
