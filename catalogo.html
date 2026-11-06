@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -9,13 +10,17 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
-    <!-- ===== CSS DE LIBRERÍAS (aquí, si hacen falta) ===== -->
-
+    <!-- CSS GENERAL -->
     <link rel="stylesheet" href="css/styles.css">
+
+    <!-- CSS ESPECÍFICO DEL CATÁLOGO -->
+    <link rel="stylesheet" href="css/catalogo.css">
 
     <script>
         try {
-            if (localStorage.getItem('tema') === 'oscuro') document.documentElement.classList.add('dark');
+            if (localStorage.getItem('tema') === 'oscuro') {
+                document.documentElement.classList.add('dark');
+            }
         } catch (e) {}
     </script>
 
@@ -48,18 +53,23 @@
     </style>
 </head>
 
-
 <body class="group relative overflow-x-hidden bg-fondo font-poppins transition-colors duration-500">
 
-    <img src="media/img/LOGO PNG BLANCO.png" alt="Logo de Teo Sillas"
+    <!-- LOGO DE FONDO -->
+    <img src="media/img/LOGO PNG BLANCO.png"
+         alt="Logo de Teo Sillas"
          class="pointer-events-none absolute -top-16 left-[22px] z-0 w-[22rem] max-w-none md:-top-92 md:left-[-140px] md:w-[44rem]">
 
+    <!-- MENÚ DESPLEGABLE -->
     <div id="menu"
          class="invisible fixed inset-x-0 top-0 z-[15] bg-azul px-5 pt-5 pb-14 opacity-0 group-data-[menu=abierto]:visible group-data-[menu=abierto]:opacity-100 group-data-[menu=abierto]:transition-[opacity,visibility] group-data-[menu=abierto]:duration-800 group-data-[menu=abierto]:ease-in-out md:px-8 md:pt-8">
 
         <form id="formulario-buscar" role="search" action="#" class="mx-14">
             <label for="buscador" class="sr-only">Buscar en la web</label>
-            <input id="buscador" type="search" placeholder="Buscar..." autocomplete="off"
+            <input id="buscador"
+                   type="search"
+                   placeholder="Buscar..."
+                   autocomplete="off"
                    class="h-10 w-full bg-gris-claro px-4 text-base text-black placeholder:text-texto focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gris-claro">
         </form>
 
@@ -74,44 +84,486 @@
         </nav>
     </div>
 
+    <!-- BOTÓN DE MENÚ -->
     <header class="pointer-events-none fixed top-5 left-5 z-20 flex items-center md:top-8 md:left-8">
-        <button id="boton-menu" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="menu"
+        <button id="boton-menu"
+                type="button"
+                aria-label="Abrir menú"
+                aria-expanded="false"
+                aria-controls="menu"
                 class="pointer-events-auto flex h-10 w-10 cursor-pointer flex-col items-center justify-center gap-[7px]">
+
             <span class="block h-[4.5px] w-10 bg-icono transition duration-300 group-data-[menu=abierto]:translate-y-[11.5px] group-data-[menu=abierto]:rotate-45 group-data-[menu=abierto]:bg-gris-claro"></span>
             <span class="block h-[4.5px] w-10 bg-icono transition duration-300 group-data-[menu=abierto]:bg-gris-claro group-data-[menu=abierto]:opacity-0"></span>
             <span class="block h-[4.5px] w-10 bg-icono transition duration-300 group-data-[menu=abierto]:-translate-y-[11.5px] group-data-[menu=abierto]:-rotate-45 group-data-[menu=abierto]:bg-gris-claro"></span>
         </button>
     </header>
 
-    <button id="boton-tema" type="button" aria-label="Activar modo oscuro" aria-pressed="false"
+    <!-- BOTÓN MODO OSCURO -->
+    <button id="boton-tema"
+            type="button"
+            aria-label="Activar modo oscuro"
+            aria-pressed="false"
             class="fixed top-5 right-5 z-20 flex h-10 w-10 cursor-pointer items-center justify-center text-icono transition-colors duration-300 group-data-[menu=abierto]:text-white md:top-8 md:right-8">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-             stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-10 w-10 dark:hidden" aria-hidden="true">
+
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+             fill="none" stroke="currentColor" stroke-width="2"
+             stroke-linecap="round" stroke-linejoin="round"
+             class="h-10 w-10 dark:hidden" aria-hidden="true">
             <path d="M9 18h6"/>
             <path d="M10 22h4"/>
             <path d="M15.09 14c.18-.98.65-1.74 1.41-2.5A4.65 4.65 0 0 0 18 8 6 6 0 0 0 6 8c0 1 .23 2.23 1.5 3.5A4.61 4.61 0 0 1 8.91 14"/>
         </svg>
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-             stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="hidden h-10 w-10 dark:block" aria-hidden="true">
+
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+             fill="none" stroke="currentColor" stroke-width="2"
+             stroke-linecap="round" stroke-linejoin="round"
+             class="hidden h-10 w-10 dark:block" aria-hidden="true">
             <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/>
         </svg>
     </button>
 
+    <!-- CONTENIDO PRINCIPAL -->
+    <main class="relative z-10 w-full px-5 pt-48 pb-24 md:pt-32 md:px-12">
 
-    <main class="relative z-10 px-5 pt-48 pb-24 md:pt-32 md:pr-8 md:pb-32 md:pl-[30%]">
-        <h1 class="text-4xl font-semibold text-rojo md:text-6xl">CATÁLOGO DE TEO</h1>
+        <h1 class="mb-12 w-full text-right text-4xl font-semibold text-rojo md:text-6xl">
+            CATÁLOGO DE TEO
+        </h1>
+
+        <div class="mb-16 grid grid-cols-1 items-start gap-12 lg:grid-cols-[6fr_4fr]">
+
+            <!-- GRID DE LAS 25 SILLAS -->
+            <div class="catalogo-grid grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-5">
+
+                <!-- SILLA 01 -->
+                <div class="silla-item group flex cursor-pointer flex-col" data-id="01" data-titulo="01 Silla Clásica de Madera">
+                    <div class="catalogo-imagen-contenedor">
+                        <img src="media/img/sillas/1.webp" alt="Silla 01" class="catalogo-imagen transition-transform duration-300 group-hover:scale-105">
+                    </div>
+                    <span class="mt-1 text-sm font-bold text-azul">01</span>
+                </div>
+
+                <!-- SILLA 02 -->
+                <div class="silla-item group flex cursor-pointer flex-col" data-id="02" data-titulo="02 Silla Naranja Moderna">
+                    <div class="catalogo-imagen-contenedor">
+                        <img src="media/img/sillas/2.webp" alt="Silla 02" class="catalogo-imagen transition-transform duration-300 group-hover:scale-105">
+                    </div>
+                    <span class="mt-1 text-sm font-bold text-azul">02</span>
+                </div>
+
+                <!-- SILLA 03 -->
+                <div class="silla-item group flex cursor-pointer flex-col" data-id="03" data-titulo="03 Silla Amarilla Diseño">
+                    <div class="catalogo-imagen-contenedor">
+                        <img src="media/img/sillas/3.webp" alt="Silla 03" class="catalogo-imagen transition-transform duration-300 group-hover:scale-105">
+                    </div>
+                    <span class="mt-1 text-sm font-bold text-azul">03</span>
+                </div>
+
+                <!-- SILLA 04 -->
+                <div class="silla-item group flex cursor-pointer flex-col" data-id="04" data-titulo="04 Silla Plegable Negra">
+                    <div class="catalogo-imagen-contenedor">
+                        <img src="media/img/sillas/4.webp" alt="Silla 04" class="catalogo-imagen transition-transform duration-300 group-hover:scale-105">
+                    </div>
+                    <span class="mt-1 text-sm font-bold text-azul">04</span>
+                </div>
+
+                <!-- SILLA 05 -->
+                <div class="silla-item group flex cursor-pointer flex-col" data-id="05" data-titulo="05 Silla Rejilla Moderna">
+                    <div class="catalogo-imagen-contenedor">
+                        <img src="media/img/sillas/5.webp" alt="Silla 05" class="catalogo-imagen transition-transform duration-300 group-hover:scale-105">
+                    </div>
+                    <span class="mt-1 text-sm font-bold text-azul">05</span>
+                </div>
+
+                <!-- SILLA 06 -->
+                <div class="silla-item group flex cursor-pointer flex-col" data-id="06" data-titulo="06 Silla Metálica Azul">
+                    <div class="catalogo-imagen-contenedor">
+                        <img src="media/img/sillas/6.webp" alt="Silla 06" class="catalogo-imagen transition-transform duration-300 group-hover:scale-105">
+                    </div>
+                    <span class="mt-1 text-sm font-bold text-azul">06</span>
+                </div>
+
+                <!-- SILLA 07 -->
+                <div class="silla-item group flex cursor-pointer flex-col" data-id="07" data-titulo="07 Silla Nórdica Verde">
+                    <div class="catalogo-imagen-contenedor">
+                        <img src="media/img/sillas/7.webp" alt="Silla 07" class="catalogo-imagen transition-transform duration-300 group-hover:scale-105">
+                    </div>
+                    <span class="mt-1 text-sm font-bold text-azul">07</span>
+                </div>
+
+                <!-- SILLA 08 -->
+                <div class="silla-item group flex cursor-pointer flex-col" data-id="08" data-titulo="08 Silla Minimalista Negra">
+                    <div class="catalogo-imagen-contenedor">
+                        <img src="media/img/sillas/8.webp" alt="Silla 08" class="catalogo-imagen transition-transform duration-300 group-hover:scale-105">
+                    </div>
+                    <span class="mt-1 text-sm font-bold text-azul">08</span>
+                </div>
+
+                <!-- SILLA 09 -->
+                <div class="silla-item group flex cursor-pointer flex-col" data-id="09" data-titulo="09 Silla Transparente">
+                    <div class="catalogo-imagen-contenedor">
+                        <img src="media/img/sillas/9.webp" alt="Silla 09" class="catalogo-imagen transition-transform duration-300 group-hover:scale-105">
+                    </div>
+                    <span class="mt-1 text-sm font-bold text-azul">09</span>
+                </div>
+
+                <!-- SILLA 10 -->
+                <div class="silla-item group flex cursor-pointer flex-col" data-id="10" data-titulo="10 Silla de Viena">
+                    <div class="catalogo-imagen-contenedor">
+                        <img src="media/img/sillas/10.webp" alt="Silla 10" class="catalogo-imagen transition-transform duration-300 group-hover:scale-105">
+                    </div>
+                    <span class="mt-1 text-sm font-bold text-azul">10</span>
+                </div>
+
+                <!-- SILLA 11 -->
+                <div class="silla-item group flex cursor-pointer flex-col" data-id="11" data-titulo="11 Silla de Oficina Diseño">
+                    <div class="catalogo-imagen-contenedor">
+                        <img src="media/img/sillas/11.webp" alt="Silla 11" class="catalogo-imagen transition-transform duration-300 group-hover:scale-105">
+                    </div>
+                    <span class="mt-1 text-sm font-bold text-azul">11</span>
+                </div>
+
+                <!-- SILLA 12 -->
+                <div class="silla-item group flex cursor-pointer flex-col" data-id="12" data-titulo="12 Silla Chula de Autor">
+                    <div class="catalogo-imagen-contenedor">
+                        <img src="media/img/sillas/12.webp" alt="Silla 12" class="catalogo-imagen transition-transform duration-300 group-hover:scale-105">
+                    </div>
+                    <span class="mt-1 text-sm font-bold text-azul">12</span>
+                </div>
+
+                <!-- SILLA 13 -->
+                <div class="silla-item group flex cursor-pointer flex-col" data-id="13" data-titulo="13 Silla Tapizada Verde">
+                    <div class="catalogo-imagen-contenedor">
+                        <img src="media/img/sillas/13.webp" alt="Silla 13" class="catalogo-imagen transition-transform duration-300 group-hover:scale-105">
+                    </div>
+                    <span class="mt-1 text-sm font-bold text-azul">13</span>
+                </div>
+
+                <!-- SILLA 14 -->
+                <div class="silla-item group flex cursor-pointer flex-col" data-id="14" data-titulo="14 Silla Ejecutiva Madera">
+                    <div class="catalogo-imagen-contenedor">
+                        <img src="media/img/sillas/14.webp" alt="Silla 14" class="catalogo-imagen transition-transform duration-300 group-hover:scale-105">
+                    </div>
+                    <span class="mt-1 text-sm font-bold text-azul">14</span>
+                </div>
+
+                <!-- SILLA 15 -->
+                <div class="silla-item group flex cursor-pointer flex-col" data-id="15" data-titulo="15 Silla Luis XVI Vintage">
+                    <div class="catalogo-imagen-contenedor">
+                        <img src="media/img/sillas/15.webp" alt="Silla 15" class="catalogo-imagen transition-transform duration-300 group-hover:scale-105">
+                    </div>
+                    <span class="mt-1 text-sm font-bold text-azul">15</span>
+                </div>
+
+                <!-- SILLA 16 -->
+                <div class="silla-item group flex cursor-pointer flex-col" data-id="16" data-titulo="16 Silla Coral Estilo">
+                    <div class="catalogo-imagen-contenedor">
+                        <img src="media/img/sillas/16.webp" alt="Silla 16" class="catalogo-imagen transition-transform duration-300 group-hover:scale-105">
+                    </div>
+                    <span class="mt-1 text-sm font-bold text-azul">16</span>
+                </div>
+
+                <!-- SILLA 17 -->
+                <div class="silla-item group flex cursor-pointer flex-col" data-id="17" data-titulo="17 Silla de Escritorio Velvet">
+                    <div class="catalogo-imagen-contenedor">
+                        <img src="media/img/sillas/17.webp" alt="Silla 17" class="catalogo-imagen transition-transform duration-300 group-hover:scale-105">
+                    </div>
+                    <span class="mt-1 text-sm font-bold text-azul">17</span>
+                </div>
+
+                <!-- SILLA 18 -->
+                <div class="silla-item group flex cursor-pointer flex-col" data-id="18" data-titulo="18 Silla Forjada Artística">
+                    <div class="catalogo-imagen-contenedor">
+                        <img src="media/img/sillas/18.webp" alt="Silla 18" class="catalogo-imagen transition-transform duration-300 group-hover:scale-105">
+                    </div>
+                    <span class="mt-1 text-sm font-bold text-azul">18</span>
+                </div>
+
+                <!-- SILLA 19 -->
+                <div class="silla-item group flex cursor-pointer flex-col" data-id="19" data-titulo="19 Silla Comedor Rústica">
+                    <div class="catalogo-imagen-contenedor">
+                        <img src="media/img/sillas/19.webp" alt="Silla 19" class="catalogo-imagen transition-transform duration-300 group-hover:scale-105">
+                    </div>
+                    <span class="mt-1 text-sm font-bold text-azul">19</span>
+                </div>
+
+                <!-- SILLA 20 -->
+                <div class="silla-item group flex cursor-pointer flex-col" data-id="20" data-titulo="20 Silla Confort Cuero">
+                    <div class="catalogo-imagen-contenedor">
+                        <img src="media/img/sillas/20.webp" alt="Silla 20" class="catalogo-imagen transition-transform duration-300 group-hover:scale-105">
+                    </div>
+                    <span class="mt-1 text-sm font-bold text-azul">20</span>
+                </div>
+
+                <!-- SILLA 21 -->
+                <div class="silla-item group flex cursor-pointer flex-col" data-id="21" data-titulo="21 Silla Cruzada Estilo">
+                    <div class="catalogo-imagen-contenedor">
+                        <img src="media/img/sillas/21.webp" alt="Silla 21" class="catalogo-imagen transition-transform duration-300 group-hover:scale-105">
+                    </div>
+                    <span class="mt-1 text-sm font-bold text-azul">21</span>
+                </div>
+
+                <!-- SILLA 22 -->
+                <div class="silla-item group flex cursor-pointer flex-col" data-id="22" data-titulo="22 Silla Ratán Natural">
+                    <div class="catalogo-imagen-contenedor">
+                        <img src="media/img/sillas/22.webp" alt="Silla 22" class="catalogo-imagen transition-transform duration-300 group-hover:scale-105">
+                    </div>
+                    <span class="mt-1 text-sm font-bold text-azul">22</span>
+                </div>
+
+                <!-- SILLA 23 -->
+                <div class="silla-item group flex cursor-pointer flex-col" data-id="23" data-titulo="23 Silla de Autor Oscura">
+                    <div class="catalogo-imagen-contenedor">
+                        <img src="media/img/sillas/23.webp" alt="Silla 23" class="catalogo-imagen transition-transform duration-300 group-hover:scale-105">
+                    </div>
+                    <span class="mt-1 text-sm font-bold text-azul">23</span>
+                </div>
+
+                <!-- SILLA 24 -->
+                <div class="silla-item group flex cursor-pointer flex-col" data-id="24" data-titulo="24 Silla Minimalista Roble">
+                    <div class="catalogo-imagen-contenedor">
+                        <img src="media/img/sillas/24.webp" alt="Silla 24" class="catalogo-imagen transition-transform duration-300 group-hover:scale-105">
+                    </div>
+                    <span class="mt-1 text-sm font-bold text-azul">24</span>
+                </div>
+
+                <!-- SILLA 25 -->
+                <div class="silla-item group flex cursor-pointer flex-col" data-id="25" data-titulo="25 Silla Vanguardia Acero">
+                    <div class="catalogo-imagen-contenedor">
+                        <img src="media/img/sillas/25.webp" alt="Silla 25" class="catalogo-imagen transition-transform duration-300 group-hover:scale-105">
+                    </div>
+                    <span class="mt-1 text-sm font-bold text-azul">25</span>
+                </div>
+
+            </div>
+
+            <!-- DESCRIPCIONES DE LAS SILLAS -->
+            <div class="grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-2">
+
+                <div class="texto-item text-xs text-texto transition-colors duration-200 md:text-sm" data-id="01">
+                    <span class="mb-1 block text-sm font-bold">01</span>
+                    <p>Pieza de diseño funcional con gran ergonomía.</p>
+                </div>
+
+                <div class="texto-item text-xs text-texto transition-colors duration-200 md:text-sm" data-id="02">
+                    <span class="mb-1 block text-sm font-bold">02</span>
+                    <p>Pieza de diseño funcional con gran ergonomía.</p>
+                </div>
+
+                <div class="texto-item text-xs text-texto transition-colors duration-200 md:text-sm" data-id="03">
+                    <span class="mb-1 block text-sm font-bold">03</span>
+                    <p>Pieza de diseño funcional con gran ergonomía.</p>
+                </div>
+
+                <div class="texto-item text-xs text-texto transition-colors duration-200 md:text-sm" data-id="04">
+                    <span class="mb-1 block text-sm font-bold">04</span>
+                    <p>Pieza de diseño funcional con gran ergonomía.</p>
+                </div>
+
+                <div class="texto-item text-xs text-texto transition-colors duration-200 md:text-sm" data-id="05">
+                    <span class="mb-1 block text-sm font-bold">05</span>
+                    <p>Pieza de diseño funcional con gran ergonomía.</p>
+                </div>
+
+                <div class="texto-item text-xs text-texto transition-colors duration-200 md:text-sm" data-id="06">
+                    <span class="mb-1 block text-sm font-bold">06</span>
+                    <p>Pieza de diseño funcional con gran ergonomía.</p>
+                </div>
+
+                <div class="texto-item text-xs text-texto transition-colors duration-200 md:text-sm" data-id="07">
+                    <span class="mb-1 block text-sm font-bold">07</span>
+                    <p>Pieza de diseño funcional con gran ergonomía.</p>
+                </div>
+
+                <div class="texto-item text-xs text-texto transition-colors duration-200 md:text-sm" data-id="08">
+                    <span class="mb-1 block text-sm font-bold">08</span>
+                    <p>Pieza de diseño funcional con gran ergonomía.</p>
+                </div>
+
+                <div class="texto-item text-xs text-texto transition-colors duration-200 md:text-sm" data-id="09">
+                    <span class="mb-1 block text-sm font-bold">09</span>
+                    <p>Pieza de diseño funcional con gran ergonomía.</p>
+                </div>
+
+                <div class="texto-item text-xs text-texto transition-colors duration-200 md:text-sm" data-id="10">
+                    <span class="mb-1 block text-sm font-bold">10</span>
+                    <p>Pieza de diseño funcional con gran ergonomía.</p>
+                </div>
+
+                <div class="texto-item text-xs text-texto transition-colors duration-200 md:text-sm" data-id="11">
+                    <span class="mb-1 block text-sm font-bold">11</span>
+                    <p>Pieza de diseño funcional con gran ergonomía.</p>
+                </div>
+
+                <div class="texto-item text-xs text-texto transition-colors duration-200 md:text-sm" data-id="12">
+                    <span class="mb-1 block text-sm font-bold">12</span>
+                    <p>Pieza de diseño funcional con gran ergonomía.</p>
+                </div>
+
+                <div class="texto-item text-xs text-texto transition-colors duration-200 md:text-sm" data-id="13">
+                    <span class="mb-1 block text-sm font-bold">13</span>
+                    <p>Pieza de diseño funcional con gran ergonomía.</p>
+                </div>
+
+                <div class="texto-item text-xs text-texto transition-colors duration-200 md:text-sm" data-id="14">
+                    <span class="mb-1 block text-sm font-bold">14</span>
+                    <p>Pieza de diseño funcional con gran ergonomía.</p>
+                </div>
+
+                <div class="texto-item text-xs text-texto transition-colors duration-200 md:text-sm" data-id="15">
+                    <span class="mb-1 block text-sm font-bold">15</span>
+                    <p>Pieza de diseño funcional con gran ergonomía.</p>
+                </div>
+
+                <div class="texto-item text-xs text-texto transition-colors duration-200 md:text-sm" data-id="16">
+                    <span class="mb-1 block text-sm font-bold">16</span>
+                    <p>Pieza de diseño funcional con gran ergonomía.</p>
+                </div>
+
+                <div class="texto-item text-xs text-texto transition-colors duration-200 md:text-sm" data-id="17">
+                    <span class="mb-1 block text-sm font-bold">17</span>
+                    <p>Pieza de diseño funcional con gran ergonomía.</p>
+                </div>
+
+                <div class="texto-item text-xs text-texto transition-colors duration-200 md:text-sm" data-id="18">
+                    <span class="mb-1 block text-sm font-bold">18</span>
+                    <p>Pieza de diseño funcional con gran ergonomía.</p>
+                </div>
+
+                <div class="texto-item text-xs text-texto transition-colors duration-200 md:text-sm" data-id="19">
+                    <span class="mb-1 block text-sm font-bold">19</span>
+                    <p>Pieza de diseño funcional con gran ergonomía.</p>
+                </div>
+
+                <div class="texto-item text-xs text-texto transition-colors duration-200 md:text-sm" data-id="20">
+                    <span class="mb-1 block text-sm font-bold">20</span>
+                    <p>Pieza de diseño funcional con gran ergonomía.</p>
+                </div>
+
+                <div class="texto-item text-xs text-texto transition-colors duration-200 md:text-sm" data-id="21">
+                    <span class="mb-1 block text-sm font-bold">21</span>
+                    <p>Pieza de diseño funcional con gran ergonomía.</p>
+                </div>
+
+                <div class="texto-item text-xs text-texto transition-colors duration-200 md:text-sm" data-id="22">
+                    <span class="mb-1 block text-sm font-bold">22</span>
+                    <p>Pieza de diseño funcional con gran ergonomía.</p>
+                </div>
+
+                <div class="texto-item text-xs text-texto transition-colors duration-200 md:text-sm" data-id="23">
+                    <span class="mb-1 block text-sm font-bold">23</span>
+                    <p>Pieza de diseño funcional con gran ergonomía.</p>
+                </div>
+
+                <div class="texto-item text-xs text-texto transition-colors duration-200 md:text-sm" data-id="24">
+                    <span class="mb-1 block text-sm font-bold">24</span>
+                    <p>Pieza de diseño funcional con gran ergonomía.</p>
+                </div>
+
+                <div class="texto-item text-xs text-texto transition-colors duration-200 md:text-sm" data-id="25">
+                    <span class="mb-1 block text-sm font-bold">25</span>
+                    <p>Pieza de diseño funcional con gran ergonomía.</p>
+                </div>
+
+            </div>
+        </div>
     </main>
 
+    <!-- FICHA PERSONALIZADA DEL CATÁLOGO -->
+    <section id="detalle-catalogo"
+             aria-labelledby="catalogo-detalle-nombre"
+             class="relative z-10 hidden px-5 pb-24 opacity-0 transition-opacity duration-500 data-[visible=true]:opacity-100 md:px-12 md:pb-32">
+
+        <div id="catalogo-detalle-grid"
+             class="scroll-mb-5 border-t-2 border-l-2 border-black md:grid md:h-[60svh] md:scroll-mb-8 md:grid-rows-[minmax(3rem,11fr)_minmax(0,89fr)]">
+
+            <!-- CABECERA AMARILLA -->
+            <div class="flex min-h-12 items-center justify-between border-r-2 border-b-2 border-black bg-amarillo px-4 md:min-h-0 md:px-5">
+
+                <button id="catalogo-detalle-cerrar"
+                        type="button"
+                        aria-label="Cerrar ficha"
+                        class="-ml-1 flex h-9 w-9 cursor-pointer items-center justify-center text-[#4D4D4D] hover:text-rojo">
+
+                    <svg viewBox="0 0 24 24"
+                         fill="none"
+                         stroke="currentColor"
+                         stroke-width="2"
+                         stroke-linecap="round"
+                         class="h-6 w-6">
+                        <path d="M5 5l14 14M19 5L5 19"/>
+                    </svg>
+
+                </button>
+
+                <p id="catalogo-detalle-ref"
+                   class="text-sm font-light text-[#4D4D4D] md:text-base">
+                    REF 000991207
+                </p>
+            </div>
+
+            <!-- CONTENIDO DE LA FICHA -->
+<div class="grid grid-cols-2 md:min-h-0 md:grid-cols-[40.6fr_3fr_27fr_29.4fr] md:grid-rows-[minmax(0,1fr)]">
+
+    <!-- INFORMACIÓN -->
+    <div class="col-span-2 grid md:col-span-1 md:min-h-0 md:grid-rows-[minmax(0,75fr)_minmax(0,25fr)]">
+
+        <div class="border-r-2 border-b-2 border-black bg-caja p-5 md:min-h-0 md:overflow-y-auto md:p-6">
+
+            <h2 id="catalogo-detalle-nombre"
+                class="text-sm font-semibold text-tinta md:text-base">
+            </h2>
+
+            <p id="catalogo-detalle-descripcion"
+               class="mt-1 text-justify text-sm font-light text-tinta md:text-base">
+            </p>
+
+            <ul id="catalogo-detalle-lista"
+                class="mt-4 list-disc space-y-0.5 pl-6 text-sm font-light text-tinta md:text-base">
+            </ul>
+        </div>
+
+        <div class="flex min-h-20 items-center border-r-2 border-b-2 border-black bg-rojo px-5 text-2xl font-light text-white md:min-h-0 md:px-6 md:text-3xl">
+            + INFO
+        </div>
+    </div>
+
+    <!-- RECTÁNGULO AZUL VERTICAL -->
+    <div class="hidden border-r-2 border-b-2 border-black bg-azul md:block md:min-h-0">
+    </div>
+
+    <!-- IMAGEN 1 -->
+    <div class="relative aspect-[3/4] overflow-hidden border-r-2 border-b-2 border-black bg-white md:aspect-auto md:min-h-0">
+        <img id="catalogo-detalle-img-1"
+             alt=""
+             class="absolute inset-0 h-full w-full object-cover">
+    </div>
+
+    <!-- IMAGEN 2 -->
+    <div class="relative aspect-[3/4] overflow-hidden border-r-2 border-b-2 border-black bg-white md:aspect-auto md:min-h-0">
+        <img id="catalogo-detalle-img-2"
+             alt=""
+             class="absolute inset-0 h-full w-full object-cover">
+    </div>
+
+</div>
+    </section>
+
+    <!-- FOOTER -->
     <footer class="cursor-default">
+
         <div class="grid bg-azul md:grid-cols-[20rem_1fr]">
 
             <div class="px-5 pt-4 md:px-3 md:py-3">
                 <div class="flex h-full flex-col items-center justify-center border-b border-white pb-4 md:border-b-0 md:pb-0">
-                    <img src="media/img/LOGO PNG + TEO.png" alt="Logo de Teo Sillas" class="w-48 md:w-full">
+                    <img src="media/img/LOGO PNG + TEO.png"
+                         alt="Logo de Teo Sillas"
+                         class="w-48 md:w-full">
                 </div>
             </div>
 
             <div class="px-5 py-4 text-white md:my-8 md:border-l md:border-white md:py-0 md:pr-8 md:pl-12">
+
                 <div class="grid gap-5 sm:grid-cols-3">
 
                     <div>
@@ -129,7 +581,9 @@
 
                     <div>
                         <h2 class="text-sm font-semibold uppercase">Contacto</h2>
+
                         <ul class="mt-3 space-y-1.5 text-sm font-light">
+
                             <li class="flex items-center gap-2">
                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4 shrink-0" aria-hidden="true">
                                     <rect x="2" y="2" width="20" height="20" rx="5"/>
@@ -138,18 +592,21 @@
                                 </svg>
                                 @teosillas
                             </li>
+
                             <li class="flex items-center gap-2">
                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4 shrink-0" aria-hidden="true">
                                     <path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"/>
                                 </svg>
                                 @teosillas_madrid
                             </li>
+
                             <li class="flex items-center gap-2">
                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4 shrink-0" aria-hidden="true">
                                     <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
                                 </svg>
                                 Teo Sillas Madrid
                             </li>
+
                             <li class="flex items-center gap-2">
                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4 shrink-0" aria-hidden="true">
                                     <rect x="2" y="4" width="20" height="16" rx="2"/>
@@ -157,20 +614,31 @@
                                 </svg>
                                 hola@teosillas.es
                             </li>
+
                             <li class="flex items-center gap-2">
                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4 shrink-0" aria-hidden="true">
                                     <path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/>
                                 </svg>
                                 +34 612 345 678
                             </li>
+
                         </ul>
                     </div>
 
                     <div>
                         <h2 class="text-sm font-semibold uppercase">Dónde Teo</h2>
-                        <address class="mt-3 text-sm font-light not-italic">C/ de la Palma, 23<br>28004 Madrid</address>
-                        <p class="mt-3 text-sm font-light">Metro Tribunal<br>(líneas 1 y 10)</p>
-                        <p class="mt-3 text-sm font-light">Lunes a sábado<br>10:30 – 20:00</p>
+                        <address class="mt-3 text-sm font-light not-italic">
+                            C/ de la Palma, 23<br>
+                            28004 Madrid
+                        </address>
+                        <p class="mt-3 text-sm font-light">
+                            Metro Sevilla<br>
+                            (línea 2)
+                        </p>
+                        <p class="mt-3 text-sm font-light">
+                            Lunes a sábado<br>
+                            10:30 – 20:00
+                        </p>
                     </div>
 
                 </div>
@@ -183,11 +651,11 @@
                 © 2026 TEO SILLAS. Todos los derechos reservados.
             </p>
         </div>
+
     </footer>
 
-
-    <!-- ===== JS DE LIBRERÍAS (antes de nuestro JS) ===== -->
-
+    <!-- JAVASCRIPT GENERAL -->
     <script src="js/interfaz.js"></script>
+
 </body>
 </html>
