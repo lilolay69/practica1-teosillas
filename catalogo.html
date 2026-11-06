@@ -99,14 +99,13 @@
         </svg>
     </button>
 
-    <!-- CONTENIDO PRINCIPAL: CATÁLOGO A ANCHO COMPLETO -->
+    <!-- CONTENIDO PRINCIPAL: CATÁLOGO  -->
     <main class="relative z-10 w-full px-5 pt-48 pb-24 md:pt-32 md:px-12">
         <h1 class="mb-12 w-full text-right text-4xl font-semibold text-rojo md:text-6xl">CATÁLOGO DE TEO</h1>
 
-        <!-- Contenedor general en Grid: Izquierda Cuadrícula 5x5 | Derecha 2 columnas de textos -->
+       
         <div class="grid grid-cols-1 lg:grid-cols-[6fr_4fr] gap-12 items-start mb-16">
 
-            <!-- IZQUIERDA: Cuadrícula de 5 columnas x 5 filas (25 sillas) -->
             <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4">
                 
                 <!-- SILLA 01 -->
@@ -418,27 +417,10 @@
             </div>
 
         </div>
-
-<section id="detalle-silla" aria-live="polite"
-         class="hidden scroll-mt-8 pt-4">
-    <h2 id="detalle-titulo"
-        class="mb-6 text-3xl font-semibold text-azul md:text-5xl"></h2>
-
-    <div class="grid items-start gap-8 md:grid-cols-2">
-        <img id="detalle-img" src="" alt=""
-             class="h-auto w-full object-contain">
-
-        <p id="detalle-texto" class="text-base text-tinta md:text-lg">
-            Esta es una pieza única de nuestro catálogo, seleccionada por Teo por su diseño,
-            su materialidad y su carácter. Pregunta en tienda por disponibilidad,
-            medidas y posibilidad de envío.
-        </p>
-    </div>
-</section>
      
     </main>
 
-    <!-- Footer oficial proporcionado por tu compañero -->
+    <!-- Footer -->
     <footer class="cursor-default">
         <div class="grid bg-azul md:grid-cols-[20rem_1fr]">
 
@@ -525,38 +507,5 @@
 
     <!-- Script general de interfaz -->
     <script src="js/interfaz.js"></script>
-    <script>
-    (function () {
-        const sillas  = document.querySelectorAll('.silla-item');
-        const detalle = document.getElementById('detalle-silla');
-        const titulo  = document.getElementById('detalle-titulo');
-        const imagen  = document.getElementById('detalle-img');
-
-        function mostrarSilla(item) {
-            const img = item.querySelector('img');
-
-            titulo.textContent = item.dataset.titulo;   // ej: "02 Silla Naranja Moderna"
-            imagen.src = img.src;                       // ej: media/img/sillas/2.webp
-            imagen.alt = item.dataset.titulo;
-
-            detalle.classList.remove('hidden');
-            detalle.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        }
-
-        sillas.forEach(function (item) {
-            // Accesible con teclado
-            item.setAttribute('tabindex', '0');
-            item.setAttribute('role', 'button');
-
-            item.addEventListener('click', function () { mostrarSilla(item); });
-            item.addEventListener('keydown', function (e) {
-                if (e.key === 'Enter' || e.key === ' ') {
-                    e.preventDefault();
-                    mostrarSilla(item);
-                }
-            });
-        });
-    })();
-</script>
 </body>
 </html>
