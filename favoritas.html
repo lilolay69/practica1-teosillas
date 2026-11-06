@@ -130,112 +130,102 @@
 
     </main>
 
-    <!-- SECCIÓN CON EL GRID DE VÍDEOS Y TEXTO DINÁMICO -->
-    
-<!-- SECCIÓN CON EL GRID DE VÍDEOS -->
-<section class="group/grid relative z-10 pb-24 md:grid md:grid-cols-[30%_1fr] md:pb-32">
+        <section class="group/grid relative z-10 pb-24 md:grid md:grid-cols-[30%_1fr] md:pb-32">
 
-   <!-- Columna Izquierda: Nombres de las sillas -->
-<div class="hidden px-5 md:col-start-1 md:row-start-1 md:flex md:h-full md:flex-col md:items-end md:justify-end md:pr-6 md:pl-0">
-    <div class="relative w-full text-right text-2xl font-bold uppercase text-azul md:text-3xl">
+        <div class="hidden px-5 md:col-start-1 md:row-start-1 md:flex md:h-full md:flex-col md:items-end md:justify-end md:pr-6 md:pl-0">
+            <div class="relative w-full text-right text-2xl font-bold uppercase text-azul md:text-3xl">
+                <span class="opacity-0 group-has-[#v1:hover]/grid:opacity-100">SILLA AZUL</span>
+                <span class="absolute inset-0 text-right opacity-0 group-has-[#v2:hover]/grid:opacity-100">SILLA ESMERALDA</span>
+                <span class="absolute inset-0 text-right opacity-0 group-has-[#v3:hover]/grid:opacity-100">SILLA FAMOSA</span>
+                <span class="absolute inset-0 text-right opacity-0 group-has-[#v4:hover]/grid:opacity-100">SILLA ORGÁNICA</span>
+                <span class="absolute inset-0 text-right opacity-0 group-has-[#v5:hover]/grid:opacity-100">SILLA SERPIENTE</span>
+                <span class="absolute inset-0 text-right opacity-0 group-has-[#v6:hover]/grid:opacity-100">SILLA MORADA</span>
+                <span class="absolute inset-0 text-right opacity-0 group-has-[#v7:hover]/grid:opacity-100">SILLA ROJA</span>
+            </div>
+        </div>
 
-        <span class="opacity-0 group-has-[#v1:hover]/grid:opacity-100">SILLA AZUL</span>
-        <span class="absolute inset-0 text-right opacity-0 group-has-[#v2:hover]/grid:opacity-100">SILLA ESMERALDA</span>
-        <span class="absolute inset-0 text-right opacity-0 group-has-[#v3:hover]/grid:opacity-100">SILLA FAMOSA</span>
-        <span class="absolute inset-0 text-right opacity-0 group-has-[#v4:hover]/grid:opacity-100">SILLA ORGÁNICA</span>
-        <span class="absolute inset-0 text-right opacity-0 group-has-[#v5:hover]/grid:opacity-100">SILLA SERPIENTE</span>
-        <span class="absolute inset-0 text-right opacity-0 group-has-[#v6:hover]/grid:opacity-100">SILLA MORADA</span>
-        <span class="absolute inset-0 text-right opacity-0 group-has-[#v7:hover]/grid:opacity-100">SILLA ROJA</span>
+        <div class="px-5 md:col-start-2 md:row-start-1 md:self-start md:pr-8 md:pl-0">
 
-    </div>
-</div>
+            <div class="relative aspect-[23/49] w-full border-t-2 border-l-2 border-black md:aspect-[607/200]">
 
-    <!-- Columna Derecha: Grid de 7 vídeos -->
-    <div class="px-5 md:col-start-2 md:row-start-1 md:self-start md:pr-8 md:pl-0">
+                <div class="absolute inset-0 grid grid-cols-[minmax(0,1.3fr)_minmax(0,1fr)] grid-rows-[repeat(49,minmax(0,1fr))] overflow-hidden md:grid-cols-[minmax(0,1.15fr)_minmax(0,1fr)_minmax(0,1fr)_minmax(0,0.94fr)_minmax(0,1fr)] md:grid-rows-[minmax(0,1fr)]">
 
-        <div aria-hidden="true"
-             class="grid aspect-[607/200] w-full grid-cols-[minmax(0,1.15fr)_minmax(0,1fr)_minmax(0,1fr)_minmax(0,0.94fr)_minmax(0,1fr)] grid-rows-[minmax(0,1fr)] overflow-hidden border-t border-l border-black">
+                    <div class="contents md:grid md:min-h-0 md:min-w-0 md:grid-rows-[minmax(0,42fr)_minmax(0,58fr)]">
 
-            <!-- Primera columna: Azul y Esmeralda -->
-            <div class="grid min-h-0 min-w-0 grid-rows-[minmax(0,42fr)_minmax(0,58fr)]">
+                        <video id="v1" src="media/video/1colorazul.mp4" autoplay muted loop playsinline disablepictureinpicture preload="auto"
+                               tabindex="0" role="button" aria-label="Silla azul"
+                               class="silla-video block h-full w-full cursor-pointer object-cover col-start-1 row-start-1 row-span-6 md:[grid-area:auto]"></video>
 
-                <video
-                    id="v1"
-                    src="media/video/1colorazul.mp4"
-                    autoplay muted loop playsinline
-                    disablepictureinpicture
-                    preload="auto"
-                    class="silla-video block h-full w-full cursor-pointer border-r border-b border-black object-cover">
-                </video>
+                        <video id="v2" src="media/video/2coloresmeralda.mp4" autoplay muted loop playsinline disablepictureinpicture preload="auto"
+                               tabindex="0" role="button" aria-label="Silla esmeralda"
+                               class="silla-video block h-full w-full cursor-pointer object-cover col-start-1 row-start-7 row-span-9 md:[grid-area:auto]"></video>
 
-                <video
-                    id="v2"
-                    src="media/video/2coloresmeralda.mp4"
-                    autoplay muted loop playsinline
-                    disablepictureinpicture
-                    preload="auto"
-                    class="silla-video block h-full w-full cursor-pointer border-r border-b border-black object-cover">
-                </video>
+                    </div>
+
+                    <video id="v3" src="media/video/3colorfamosa.mp4" autoplay muted loop playsinline disablepictureinpicture preload="auto"
+                           tabindex="0" role="button" aria-label="Silla famosa"
+                           class="silla-video block h-full w-full cursor-pointer object-cover col-start-2 row-start-1 row-span-15 md:[grid-area:auto]"></video>
+
+                    <video id="v4" src="media/video/4colororganica.mp4" autoplay muted loop playsinline disablepictureinpicture preload="auto"
+                           tabindex="0" role="button" aria-label="Silla orgánica"
+                           class="silla-video block h-full w-full cursor-pointer object-cover col-start-1 row-start-27 row-span-23 md:[grid-area:auto]"></video>
+
+                    <div class="contents md:grid md:min-h-0 md:min-w-0 md:grid-rows-[minmax(0,34fr)_minmax(0,66fr)]">
+
+                        <video id="v7" src="media/video/7colorrojo.mp4" autoplay muted loop playsinline disablepictureinpicture preload="auto"
+                               tabindex="0" role="button" aria-label="Silla roja"
+                               class="silla-video block h-full w-full cursor-pointer object-cover col-start-1 col-span-2 row-start-16 row-span-11 md:[grid-area:auto]"></video>
+
+                        <video id="v6" src="media/video/6colormorada.mp4" autoplay muted loop playsinline disablepictureinpicture preload="auto"
+                               tabindex="0" role="button" aria-label="Silla morada"
+                               class="silla-video block h-full w-full cursor-pointer object-cover col-start-2 row-start-27 row-span-13 md:[grid-area:auto]"></video>
+
+                    </div>
+
+                    <video id="v5" src="media/video/5colorserpiente.mp4" autoplay muted loop playsinline disablepictureinpicture preload="auto"
+                           tabindex="0" role="button" aria-label="Silla serpiente"
+                           class="silla-video block h-full w-full cursor-pointer object-cover col-start-2 row-start-40 row-span-10 md:[grid-area:auto]"></video>
+
+                </div>
+
+                <div aria-hidden="true" class="pointer-events-none absolute inset-0 z-10 grid grid-cols-[minmax(0,1.3fr)_minmax(0,1fr)] grid-rows-[repeat(49,minmax(0,1fr))] md:grid-cols-[minmax(0,1.15fr)_minmax(0,1fr)_minmax(0,1fr)_minmax(0,0.94fr)_minmax(0,1fr)] md:grid-rows-[minmax(0,1fr)]">
+
+                    <div class="contents md:grid md:min-h-0 md:min-w-0 md:grid-rows-[minmax(0,42fr)_minmax(0,58fr)]">
+                        <div class="border-r-2 border-b-2 border-black col-start-1 row-start-1 row-span-6 md:[grid-area:auto]"></div>
+                        <div class="border-r-2 border-b-2 border-black col-start-1 row-start-7 row-span-9 md:[grid-area:auto]"></div>
+                    </div>
+
+                    <div class="border-r-2 border-b-2 border-black col-start-2 row-start-1 row-span-15 md:[grid-area:auto]"></div>
+
+                    <div class="border-r-2 border-b-2 border-black col-start-1 row-start-27 row-span-23 md:[grid-area:auto]"></div>
+
+                    <div class="contents md:grid md:min-h-0 md:min-w-0 md:grid-rows-[minmax(0,34fr)_minmax(0,66fr)]">
+                        <div class="border-r-2 border-b-2 border-black col-start-1 col-span-2 row-start-16 row-span-11 md:[grid-area:auto]"></div>
+                        <div class="border-r-2 border-b-2 border-black col-start-2 row-start-27 row-span-13 md:[grid-area:auto]"></div>
+                    </div>
+
+                    <div class="border-r-2 border-b-2 border-black col-start-2 row-start-40 row-span-10 md:[grid-area:auto]"></div>
+
+                </div>
 
             </div>
 
-            <!-- Segunda columna: Famosa -->
-            <video
-                id="v3"
-                src="media/video/3colorfamosa.mp4"
-                autoplay muted loop playsinline
-                disablepictureinpicture
-                preload="auto"
-                class="silla-video block h-full w-full cursor-pointer border-r border-b border-black object-cover">
-            </video>
-
-            <!-- Tercera columna: Orgánica -->
-            <video
-                id="v4"
-                src="media/video/4colororganica.mp4"
-                autoplay muted loop playsinline
-                disablepictureinpicture
-                preload="auto"
-                class="silla-video block h-full w-full cursor-pointer border-r border-b border-black object-cover">
-            </video>
-
-            <!-- Cuarta columna: Roja y Morada -->
-            <div class="grid min-h-0 min-w-0 grid-rows-[minmax(0,34fr)_minmax(0,66fr)]">
-
-                <video
-                    id="v7"
-                    src="media/video/7colorrojo.mp4"
-                    autoplay muted loop playsinline
-                    disablepictureinpicture
-                    preload="auto"
-                    class="silla-video block h-full w-full cursor-pointer border-r border-b border-black object-cover">
-                </video>
-
-                <video
-                    id="v6"
-                    src="media/video/6colormorada.mp4"
-                    autoplay muted loop playsinline
-                    disablepictureinpicture
-                    preload="auto"
-                    class="silla-video block h-full w-full cursor-pointer border-r border-b border-black object-cover">
-                </video>
-
+            <div class="relative mt-4 h-8 md:hidden">
+                <span class="absolute inset-0 text-sm font-light text-tinta group-has-[.silla-video:hover]/grid:opacity-0 group-has-[.silla-video:focus]/grid:opacity-0">TOCA UNA SILLA</span>
+                <span class="absolute inset-0 text-xl font-bold uppercase text-azul opacity-0 group-has-[#v1:hover]/grid:opacity-100 group-has-[#v1:focus]/grid:opacity-100">SILLA AZUL</span>
+                <span class="absolute inset-0 text-xl font-bold uppercase text-azul opacity-0 group-has-[#v2:hover]/grid:opacity-100 group-has-[#v2:focus]/grid:opacity-100">SILLA ESMERALDA</span>
+                <span class="absolute inset-0 text-xl font-bold uppercase text-azul opacity-0 group-has-[#v3:hover]/grid:opacity-100 group-has-[#v3:focus]/grid:opacity-100">SILLA FAMOSA</span>
+                <span class="absolute inset-0 text-xl font-bold uppercase text-azul opacity-0 group-has-[#v4:hover]/grid:opacity-100 group-has-[#v4:focus]/grid:opacity-100">SILLA ORGÁNICA</span>
+                <span class="absolute inset-0 text-xl font-bold uppercase text-azul opacity-0 group-has-[#v5:hover]/grid:opacity-100 group-has-[#v5:focus]/grid:opacity-100">SILLA SERPIENTE</span>
+                <span class="absolute inset-0 text-xl font-bold uppercase text-azul opacity-0 group-has-[#v6:hover]/grid:opacity-100 group-has-[#v6:focus]/grid:opacity-100">SILLA MORADA</span>
+                <span class="absolute inset-0 text-xl font-bold uppercase text-azul opacity-0 group-has-[#v7:hover]/grid:opacity-100 group-has-[#v7:focus]/grid:opacity-100">SILLA ROJA</span>
             </div>
-
-            <!-- Quinta columna: Serpiente -->
-            <video
-                id="v5"
-                src="media/video/5colorserpiente.mp4"
-                autoplay muted loop playsinline
-                disablepictureinpicture
-                preload="auto"
-                class="silla-video block h-full w-full cursor-pointer border-r border-b border-black object-cover">
-            </video>
 
         </div>
-    </div>
 
-</section>
+    </section>
+
+    
 
 
     <footer class="cursor-default">
