@@ -590,3 +590,42 @@
 
 
 
+
+
+
+
+
+
+
+
+/* =========================================
+   AUTOCOMPLETADO DEL FORMULARIO
+========================================= */
+
+#formulario-contacto input:-webkit-autofill,
+#formulario-contacto input:-webkit-autofill:hover,
+#formulario-contacto input:-webkit-autofill:focus,
+#formulario-contacto input:-webkit-autofill:active {
+
+    -webkit-text-fill-color: #D9D9D9 !important;
+
+    caret-color: #D9D9D9;
+
+    -webkit-box-shadow: 0 0 0 1000px #0D00FF inset !important;
+
+    box-shadow: 0 0 0 1000px #0D00FF inset !important;
+
+    transition: background-color 999999s ease-in-out 0s;
+}
+
+/* Mantener el fondo azul al autocompletar */
+#formulario-contacto input:autofill {
+    background-color: #0D00FF !important;
+    color: #D9D9D9 !important;
+}
+
+
+
+
+
+

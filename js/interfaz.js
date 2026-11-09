@@ -1051,3 +1051,93 @@ document.addEventListener('DOMContentLoaded', () => {
 
     }
 
+
+
+    
+// ==================================================
+//  MAPA INTERACTIVO - TEO SILLAS
+// ==================================================
+
+const contenedorMapa = document.getElementById('mapa-teo');
+
+if (contenedorMapa && typeof L !== 'undefined') {
+
+    // Coordenadas aproximadas de Calle de la Palma, Madrid
+    const coordenadasTeo = [40.4263, -3.7045];
+
+    // Crear mapa
+    const mapa = L.map('mapa-teo', {
+        scrollWheelZoom: false
+    }).setView(coordenadasTeo, 17);
+
+    // Añadir mapa de OpenStreetMap
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+    }).addTo(mapa);
+
+    // Crear marcador
+    const marcadorTeo = L.marker(coordenadasTeo).addTo(mapa);
+
+    // Información del marcador
+    marcadorTeo.bindPopup(`
+        <strong>TEO SILLAS</strong><br>
+        C/ de la Palma, 23<br>
+        28004 Madrid
+        <br><br>
+        <a href="https://www.google.com/maps/dir/?api=1&destination=Calle+de+la+Palma+23%2C+28004+Madrid"
+           target="_blank"
+           rel="noopener noreferrer">
+           Cómo llegar
+        </a>
+    `);
+
+    marcadorTeo.openPopup();
+
+}
+
+
+// ==================================================
+//  FORMULARIO DE CONTACTO
+// ==================================================
+
+const formularioContacto = document.getElementById('formulario-contacto');
+
+if (formularioContacto) {
+
+    const correo = document.getElementById('contacto-correo');
+    const repetirCorreo = document.getElementById('contacto-correo-repetido');
+    const mensajeContacto = document.getElementById('mensaje-contacto');
+
+    formularioContacto.addEventListener('submit', function (evento) {
+
+        // Comprobar que los correos coinciden
+        if (correo.value.trim().toLowerCase() !== repetirCorreo.value.trim().toLowerCase()) {
+
+            evento.preventDefault();
+
+            mensajeContacto.textContent = 'Los correos electrónicos no coinciden.';
+            mensajeContacto.classList.remove('hidden');
+
+            repetirCorreo.setCustomValidity('Los correos no coinciden.');
+            repetirCorreo.reportValidity();
+
+            return;
+        }
+
+        // Permitir el envío a FormSubmit
+        repetirCorreo.setCustomValidity('');
+
+        mensajeContacto.classList.add('hidden');
+
+    });
+
+
+    repetirCorreo.addEventListener('input', function () {
+
+        repetirCorreo.setCustomValidity('');
+        mensajeContacto.classList.add('hidden');
+
+    });
+
+}
+
