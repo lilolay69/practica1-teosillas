@@ -469,58 +469,37 @@
         </div>
     </main>
 
-    <!-- FICHA PERSONALIZADA DEL CATÁLOGO -->
-    <section id="detalle-catalogo"
+        <section id="detalle-catalogo"
              aria-labelledby="catalogo-detalle-nombre"
              class="relative z-10 hidden px-5 pb-24 opacity-0 transition-opacity duration-500 data-[visible=true]:opacity-100 md:px-12 md:pb-32">
 
         <div id="catalogo-detalle-grid"
              class="scroll-mb-5 border-t-2 border-l-2 border-black md:grid md:h-[60svh] md:scroll-mb-8 md:grid-rows-[minmax(3rem,11fr)_minmax(0,89fr)]">
 
-            <!-- CABECERA AMARILLA -->
             <div class="flex min-h-12 items-center justify-between border-r-2 border-b-2 border-black bg-amarillo px-4 md:min-h-0 md:px-5">
 
                 <button id="catalogo-detalle-cerrar"
                         type="button"
                         aria-label="Cerrar ficha"
                         class="-ml-1 flex h-9 w-9 cursor-pointer items-center justify-center text-[#4D4D4D] hover:text-rojo">
-
-                    <svg viewBox="0 0 24 24"
-                         fill="none"
-                         stroke="currentColor"
-                         stroke-width="2"
-                         stroke-linecap="round"
-                         class="h-6 w-6">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" class="h-6 w-6" aria-hidden="true">
                         <path d="M5 5l14 14M19 5L5 19"/>
                     </svg>
-
                 </button>
 
-                <p id="catalogo-detalle-ref"
-                   class="text-sm font-light text-[#4D4D4D] md:text-base">
-                    REF 000991207
-                </p>
+                <p id="catalogo-detalle-ref" class="text-sm font-light text-[#4D4D4D] md:text-base"></p>
             </div>
 
-            <!-- CONTENIDO DE LA FICHA -->
-<div class="grid grid-cols-2 md:min-h-0 md:grid-cols-[40.6fr_3fr_27fr_29.4fr] md:grid-rows-[minmax(0,1fr)]">
+           
+<div class="grid grid-cols-2 md:min-h-0 md:grid-cols-[48fr_8fr_22fr_22fr] md:grid-rows-[minmax(0,1fr)]">
 
-    <!-- INFORMACIÓN -->
+    <!-- INFORMACIÓN + BOTÓN + INFO -->
     <div class="col-span-2 grid md:col-span-1 md:min-h-0 md:grid-rows-[minmax(0,75fr)_minmax(0,25fr)]">
 
         <div class="border-r-2 border-b-2 border-black bg-caja p-5 md:min-h-0 md:overflow-y-auto md:p-6">
-
-            <h2 id="catalogo-detalle-nombre"
-                class="text-sm font-semibold text-tinta md:text-base">
-            </h2>
-
-            <p id="catalogo-detalle-descripcion"
-               class="mt-1 text-justify text-sm font-light text-tinta md:text-base">
-            </p>
-
-            <ul id="catalogo-detalle-lista"
-                class="mt-4 list-disc space-y-0.5 pl-6 text-sm font-light text-tinta md:text-base">
-            </ul>
+            <h2 id="catalogo-detalle-nombre" class="text-sm font-semibold text-tinta md:text-base"></h2>
+            <p id="catalogo-detalle-descripcion" class="mt-1 text-justify text-sm font-light text-tinta md:text-base"></p>
+            <ul id="catalogo-detalle-lista" class="mt-4 list-disc space-y-0.5 pl-6 text-sm font-light text-tinta md:text-base"></ul>
         </div>
 
         <div class="flex min-h-20 items-center border-r-2 border-b-2 border-black bg-rojo px-5 text-2xl font-light text-white md:min-h-0 md:px-6 md:text-3xl">
@@ -528,25 +507,28 @@
         </div>
     </div>
 
-    <!-- RECTÁNGULO AZUL VERTICAL -->
-    <div class="hidden border-r-2 border-b-2 border-black bg-azul md:block md:min-h-0">
-    </div>
+    <!-- RECTÁNGULO AZUL -->
+    <div class="hidden border-r-2 border-b-2 border-black bg-azul md:block md:min-h-0"></div>
 
     <!-- IMAGEN 1 -->
-    <div class="relative aspect-[3/4] overflow-hidden border-r-2 border-b-2 border-black bg-white md:aspect-auto md:min-h-0">
+    <div class="relative min-h-48 overflow-hidden border-r-2 border-b-2 border-black bg-white md:min-h-0">
         <img id="catalogo-detalle-img-1"
              alt=""
-             class="absolute inset-0 h-full w-full object-cover">
+             class="block h-full w-full object-cover">
     </div>
 
     <!-- IMAGEN 2 -->
-    <div class="relative aspect-[3/4] overflow-hidden border-r-2 border-b-2 border-black bg-white md:aspect-auto md:min-h-0">
+    <div class="relative min-h-48 overflow-hidden border-r-2 border-b-2 border-black bg-white md:min-h-0">
         <img id="catalogo-detalle-img-2"
              alt=""
-             class="absolute inset-0 h-full w-full object-cover">
+             class="block h-full w-full object-cover">
     </div>
 
 </div>
+
+
+        </div>
+
     </section>
 
     <!-- FOOTER -->

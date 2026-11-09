@@ -152,92 +152,192 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
 
-    // ==================================================
-    // 5. FICHA ANTIGUA DE SILLAS (ELEMENTOS .silla-item)
-    // ==================================================
+       const sillasCatalogo = document.querySelectorAll('.silla-item');
+    const fichaCatalogo = document.getElementById('detalle-catalogo');
 
-    const sillasAntiguas = document.querySelectorAll('.silla-item');
+    if (sillasCatalogo.length && fichaCatalogo) {
 
-    if (sillasAntiguas.length) {
+        const fichas = {
+            '01': ['Silla de líneas clásicas en madera maciza, con respaldo calado y acabado barnizado a mano.', '45 × 50 × 90 cm', 'Altura de asiento 46 cm', 'Madera natural'],
+            '02': ['Asiento ergonómico en polipiel naranja sobre patas de acero fino. Moderna, cómoda y fácil de limpiar.', '48 × 52 × 82 cm', 'Altura de asiento 45 cm', 'Naranja'],
+            '03': ['Diseño amarillo de líneas limpias, pensado para dar un toque de color a cocinas y comedores.', '46 × 50 × 80 cm', 'Altura de asiento 45 cm', 'Amarillo'],
+            '04': ['Plegable y ligera, con estructura negra que ocupa muy poco espacio cuando no se usa.', '43 × 47 × 80 cm', 'Altura de asiento 44 cm', 'Negro'],
+            '05': ['Respaldo de rejilla que deja pasar el aire y le da un aire moderno y ligero.', '45 × 52 × 85 cm', 'Altura de asiento 46 cm', 'Negro y madera'],
+            '06': ['Estructura metálica lacada en azul, resistente y apilable, ideal para interior y terraza.', '44 × 50 × 83 cm', 'Altura de asiento 45 cm', 'Azul'],
+            '07': ['Estilo nórdico en verde suave, con patas de madera inclinadas y asiento ligeramente curvo.', '47 × 51 × 81 cm', 'Altura de asiento 45 cm', 'Verde'],
+            '08': ['Minimalismo en negro mate: una sola pieza de líneas rectas y sin adornos.', '42 × 48 × 82 cm', 'Altura de asiento 45 cm', 'Negro mate'],
+            '09': ['Cuerpo transparente que casi desaparece en la estancia y deja ver el resto del espacio.', '46 × 52 × 80 cm', 'Altura de asiento 46 cm', 'Transparente'],
+            '10': ['Reinterpretación de la clásica silla de Viena, con madera curvada al vapor y respaldo ovalado.', '43 × 49 × 89 cm', 'Altura de asiento 46 cm', 'Madera oscura'],
+            '11': ['Pensada para largas jornadas: respaldo regulable, asiento acolchado y diseño actual.', '58 × 58 × 95 cm', 'Altura de asiento 42–52 cm', 'Gris y negro'],
+            '12': ['Pieza de autor con curvas muy marcadas que sorprende desde cualquier ángulo.', '50 × 55 × 84 cm', 'Altura de asiento 45 cm', 'Multicolor'],
+            '13': ['Tapizada en tela verde de tacto suave, con patas de madera y respaldo envolvente.', '48 × 54 × 85 cm', 'Altura de asiento 46 cm', 'Verde'],
+            '14': ['Silla de despacho con aire ejecutivo: madera noble, brazos amplios y acolchado generoso.', '60 × 62 × 98 cm', 'Altura de asiento 47 cm', 'Madera y cuero'],
+            '15': ['Réplica vintage de estilo Luis XVI, con respaldo tallado y patas torneadas.', '47 × 50 × 95 cm', 'Altura de asiento 46 cm', 'Blanco roto y dorado'],
+            '16': ['Color coral, formas suaves y asiento cómodo. Una silla alegre para cualquier rincón.', '46 × 51 × 82 cm', 'Altura de asiento 45 cm', 'Coral'],
+            '17': ['Silla de escritorio tapizada en terciopelo, con ruedas silenciosas y altura regulable.', '55 × 56 × 90 cm', 'Altura de asiento 44–52 cm', 'Terciopelo'],
+            '18': ['Hierro forjado a mano con detalles artísticos. Cada unidad tiene pequeñas diferencias.', '44 × 48 × 92 cm', 'Altura de asiento 46 cm', 'Negro forja'],
+            '19': ['Robusta silla de comedor de acabado rústico, pensada para aguantar décadas de comidas.', '46 × 50 × 92 cm', 'Altura de asiento 47 cm', 'Madera rústica'],
+            '20': ['Asiento y respaldo de cuero con relleno denso, para una comodidad que se nota desde el primer día.', '52 × 56 × 86 cm', 'Altura de asiento 46 cm', 'Cuero marrón'],
+            '21': ['Patas cruzadas y estructura ligera de inspiración retro, con asiento tapizado.', '45 × 50 × 83 cm', 'Altura de asiento 46 cm', 'Beige'],
+            '22': ['Ratán natural trenzado a mano sobre bastidor de madera. Fresca, luminosa y muy duradera.', '48 × 52 × 85 cm', 'Altura de asiento 45 cm', 'Ratán natural'],
+            '23': ['Silla de autor en tonos oscuros, con perfil escultórico y acabado satinado.', '48 × 53 × 86 cm', 'Altura de asiento 45 cm', 'Gris oscuro'],
+            '24': ['Roble macizo y líneas rectas: minimalismo cálido que encaja en cualquier estancia.', '44 × 48 × 80 cm', 'Altura de asiento 45 cm', 'Roble'],
+            '25': ['Estructura de acero doblado en una sola pieza. Una silla de vanguardia, ligera y resistente.', '45 × 55 × 82 cm', 'Altura de asiento 44 cm', 'Acero cromado']
+        };
 
-        const cajaDetalle = document.getElementById('caja-detalle');
-        const detalleTitulo = document.getElementById('detalle-titulo');
+        const imagenesFicha = {};
 
-        const imgZoom1 = document.querySelector('.zoom-img-1');
-        const imgZoom2 = document.querySelector('.zoom-img-2');
-        const imgZoom3 = document.querySelector('.zoom-img-3');
+        const fichaGrid = document.getElementById('catalogo-detalle-grid');
+        const fichaCerrar = document.getElementById('catalogo-detalle-cerrar');
+        const fichaRef = document.getElementById('catalogo-detalle-ref');
+        const fichaNombre = document.getElementById('catalogo-detalle-nombre');
+        const fichaDescripcion = document.getElementById('catalogo-detalle-descripcion');
+        const fichaLista = document.getElementById('catalogo-detalle-lista');
+        const fichaImagenes = [1, 2].map((n) => document.getElementById(`catalogo-detalle-img-${n}`));
+        const menosMovimiento = window.matchMedia('(prefers-reduced-motion: reduce)');
 
-        sillasAntiguas.forEach(silla => {
+        let sillaAbierta = null;
+        let temporizadorFicha;
 
-            const id = silla.getAttribute('data-id');
+        function marcarTexto(id, activo) {
+            const texto = document.querySelector(`.texto-item[data-id="${id}"]`);
+            if (!texto) return;
+            texto.classList.toggle('text-rojo', activo);
+            texto.classList.toggle('font-medium', activo);
+            texto.classList.toggle('text-texto', !activo);
+        }
 
-            const textoCorrespondiente = document.querySelector(
-                `.texto-item[data-id="${id}"]`
+        function datosSilla(item) {
+            const id = item.dataset.id;
+            const [descripcion, medidas, altura, color] = fichas[id] || ['', '', '', ''];
+            return {
+                nombre: (item.dataset.titulo || '').replace(/^\d+\s*/, ''),
+                ref: `0009901${id}`,
+                descripcion,
+                datos: [['Medidas', medidas], ['Tamaño', altura], ['Color', color]].filter(([, valor]) => valor),
+                imagenes: imagenesFicha[id] || ['#', '#']
+            };
+        }
+
+        function rellenarFicha(silla) {
+            fichaRef.textContent = `REF ${silla.ref}`;
+            fichaNombre.textContent = silla.nombre;
+            fichaDescripcion.textContent = silla.descripcion;
+
+            fichaLista.replaceChildren(
+                ...silla.datos.map(([etiqueta, valor]) => {
+                    const li = document.createElement('li');
+                    li.textContent = `${etiqueta}: ${valor}`;
+                    return li;
+                })
             );
 
-            const imagen = silla.querySelector('img');
-            const imgSilla = imagen ? imagen.getAttribute('src') : null;
-
-            const tituloSilla = silla.getAttribute('data-titulo');
-
-            silla.addEventListener('mouseenter', () => {
-
-                if (textoCorrespondiente) {
-                    textoCorrespondiente.classList.remove('text-texto');
-
-                    textoCorrespondiente.classList.add(
-                        'text-rojo',
-                        'font-medium'
-                    );
+            fichaImagenes.forEach((imagen, i) => {
+                const ruta = silla.imagenes[i];
+                if (ruta && ruta !== '#') {
+                    imagen.src = ruta;
+                    imagen.alt = `${silla.nombre}, vista ${i + 1}`;
+                } else {
+                    imagen.removeAttribute('src');
+                    imagen.alt = '';
                 }
             });
+        }
 
-            silla.addEventListener('mouseleave', () => {
-
-                if (textoCorrespondiente) {
-                    textoCorrespondiente.classList.remove(
-                        'text-rojo',
-                        'font-medium'
-                    );
-
-                    textoCorrespondiente.classList.add('text-texto');
-                }
-            });
-
-            silla.addEventListener('click', () => {
-
-                if (!cajaDetalle) return;
-
-                cajaDetalle.classList.remove('hidden');
-
-                if (detalleTitulo) {
-                    detalleTitulo.textContent = tituloSilla || '';
-                }
-
-                if (imgZoom1 && imgSilla) {
-                    imgZoom1.setAttribute('src', imgSilla);
-                }
-
-                if (imgZoom2 && imgSilla) {
-                    imgZoom2.setAttribute('src', imgSilla);
-                }
-
-                if (imgZoom3 && imgSilla) {
-                    imgZoom3.setAttribute('src', imgSilla);
-                }
-
-                cajaDetalle.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'nearest'
+        function mostrarFicha() {
+            fichaCatalogo.classList.remove('hidden');
+            requestAnimationFrame(() => {
+                requestAnimationFrame(() => {
+                    fichaCatalogo.dataset.visible = 'true';
                 });
             });
+            fichaGrid.scrollIntoView({
+                behavior: menosMovimiento.matches ? 'auto' : 'smooth',
+                block: 'end'
+            });
+        }
+
+        function abrirFicha(item) {
+            clearTimeout(temporizadorFicha);
+
+            if (sillaAbierta && sillaAbierta !== item) {
+                marcarTexto(sillaAbierta.dataset.id, false);
+            }
+            sillaAbierta = item;
+            marcarTexto(item.dataset.id, true);
+
+            const silla = datosSilla(item);
+
+            if (fichaCatalogo.dataset.visible === 'true') {
+                fichaCatalogo.dataset.visible = 'false';
+                temporizadorFicha = setTimeout(() => {
+                    rellenarFicha(silla);
+                    mostrarFicha();
+                }, 300);
+            } else {
+                rellenarFicha(silla);
+                mostrarFicha();
+            }
+        }
+
+        function cerrarFicha() {
+            if (fichaCatalogo.classList.contains('hidden')) return;
+
+            clearTimeout(temporizadorFicha);
+
+            const anterior = sillaAbierta;
+            sillaAbierta = null;
+
+            if (anterior) {
+                marcarTexto(anterior.dataset.id, false);
+                anterior.scrollIntoView({
+                    behavior: menosMovimiento.matches ? 'auto' : 'smooth',
+                    block: 'center'
+                });
+            }
+
+            fichaCatalogo.dataset.visible = 'false';
+            temporizadorFicha = setTimeout(() => {
+                fichaCatalogo.classList.add('hidden');
+            }, 500);
+        }
+
+        sillasCatalogo.forEach((silla) => {
+            const id = silla.dataset.id;
+
+            silla.tabIndex = 0;
+            silla.setAttribute('role', 'button');
+            silla.setAttribute('aria-label', silla.dataset.titulo || `Silla ${id}`);
+
+            const entrar = () => marcarTexto(id, true);
+            const salir = () => {
+                if (sillaAbierta !== silla) marcarTexto(id, false);
+            };
+
+            silla.addEventListener('mouseenter', entrar);
+            silla.addEventListener('mouseleave', salir);
+            silla.addEventListener('focus', entrar);
+            silla.addEventListener('blur', salir);
+
+            silla.addEventListener('click', () => abrirFicha(silla));
+
+            silla.addEventListener('keydown', (e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    abrirFicha(silla);
+                }
+            });
+        });
+
+        fichaCerrar.addEventListener('click', cerrarFicha);
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') cerrarFicha();
         });
     }
 
 
-    // ==================================================
-    // 6. NOMBRE DE LAS SILLAS EN EL GRID DE VÍDEOS
-    // ==================================================
+    
 
     const nombreSilla = document.getElementById('nombre-silla');
 
