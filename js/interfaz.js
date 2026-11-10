@@ -1096,27 +1096,83 @@ if (contenedorMapa && typeof L !== 'undefined') {
 }
 
 
-// ==================================================
-//  FORMULARIO DE CONTACTO
-// ==================================================
-
 const formularioContacto = document.getElementById('formulario-contacto');
 
 if (formularioContacto) {
 
+    formularioContacto.removeAttribute('action');
+    formularioContacto.removeAttribute('method');
+
+    const URL_ENVIO = 'https://formsubmit.co/ajax/hola@teosillas.es';
+
+    const botonDesplegar = document.getElementById('contacto-desplegar');
+    const filasContacto = formularioContacto.querySelectorAll('[data-fila]');
+
     const correo = document.getElementById('contacto-correo');
     const repetirCorreo = document.getElementById('contacto-correo-repetido');
     const mensajeContacto = document.getElementById('mensaje-contacto');
+    const botonEnviar = formularioContacto.querySelector('button[type="submit"]');
 
-    formularioContacto.addEventListener('submit', function (evento) {
+    const modalContacto = document.getElementById('modal-contacto');
+    const botonCerrarModal = document.getElementById('modal-contacto-cerrar');
+    const botonCerrarModalX = document.getElementById('modal-contacto-cerrar-x');
 
-        // Comprobar que los correos coinciden
+    function desplegarFormulario(abrir) {
+
+        formularioContacto.dataset.abierto = String(abrir);
+
+        if (botonDesplegar) {
+            botonDesplegar.setAttribute('aria-expanded', String(abrir));
+        }
+
+        filasContacto.forEach((fila) => {
+            fila.inert = !abrir;
+        });
+
+    }
+
+    function mostrarModal() {
+
+        if (!modalContacto) {
+            alert('MENSAJE ENVIADO CON ÉXITO');
+            return;
+        }
+
+        modalContacto.dataset.visible = 'true';
+
+        if (botonCerrarModal) botonCerrarModal.focus();
+
+    }
+
+    function ocultarModal() {
+
+        if (!modalContacto || modalContacto.dataset.visible !== 'true') return;
+
+        modalContacto.dataset.visible = 'false';
+
+        if (botonDesplegar) botonDesplegar.focus();
+
+    }
+
+    function mostrarError(texto) {
+
+        if (!mensajeContacto) {
+            alert(texto);
+            return;
+        }
+
+        mensajeContacto.textContent = texto;
+        mensajeContacto.classList.remove('hidden');
+
+    }
+
+    formularioContacto.addEventListener('submit', async (evento) => {
+
+        evento.preventDefault();
+
         if (correo.value.trim().toLowerCase() !== repetirCorreo.value.trim().toLowerCase()) {
 
-            evento.preventDefault();
-
-            mensajeContacto.textContent = 'Los correos electrónicos no coinciden.';
-            mensajeContacto.classList.remove('hidden');
+            mostrarError('Los correos electrónicos no coinciden.');
 
             repetirCorreo.setCustomValidity('Los correos no coinciden.');
             repetirCorreo.reportValidity();
@@ -1124,20 +1180,74 @@ if (formularioContacto) {
             return;
         }
 
-        // Permitir el envío a FormSubmit
         repetirCorreo.setCustomValidity('');
+        if (mensajeContacto) mensajeContacto.classList.add('hidden');
 
-        mensajeContacto.classList.add('hidden');
+        if (botonEnviar) botonEnviar.disabled = true;
+
+        try {
+
+            const respuesta = await fetch(URL_ENVIO, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json'
+                },
+                body: JSON.stringify(Object.fromEntries(new FormData(formularioContacto)))
+            });
+
+            const datos = await respuesta.json();
+
+            if (respuesta.ok && String(datos.success) === 'true') {
+
+                formularioContacto.reset();
+                desplegarFormulario(false);
+                mostrarModal();
+
+            } else {
+
+                mostrarError(datos.message || 'No se ha podido enviar el mensaje. Inténtalo de nuevo.');
+
+            }
+
+        } catch (error) {
+
+            mostrarError('No se ha podido enviar el mensaje. Comprueba tu conexión e inténtalo de nuevo.');
+
+        } finally {
+
+            if (botonEnviar) botonEnviar.disabled = false;
+
+        }
 
     });
 
+    desplegarFormulario(false);
 
-    repetirCorreo.addEventListener('input', function () {
+    if (botonDesplegar) {
+        botonDesplegar.addEventListener('click', () => {
+            desplegarFormulario(botonDesplegar.getAttribute('aria-expanded') !== 'true');
+        });
+    }
+
+    repetirCorreo.addEventListener('input', () => {
 
         repetirCorreo.setCustomValidity('');
-        mensajeContacto.classList.add('hidden');
+        if (mensajeContacto) mensajeContacto.classList.add('hidden');
 
+    });
+
+    if (botonCerrarModal) botonCerrarModal.addEventListener('click', ocultarModal);
+    if (botonCerrarModalX) botonCerrarModalX.addEventListener('click', ocultarModal);
+
+    if (modalContacto) {
+        modalContacto.addEventListener('click', (evento) => {
+            if (evento.target === modalContacto) ocultarModal();
+        });
+    }
+
+    document.addEventListener('keydown', (evento) => {
+        if (evento.key === 'Escape') ocultarModal();
     });
 
 }
-
