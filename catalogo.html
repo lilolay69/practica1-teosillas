@@ -475,11 +475,9 @@
         </div>
     </main>
 
-    <!-- FICHA DESPLEGABLE -->
-    <!-- MÁRGENES: 20px MÓVIL / 32px ESCRITORIO -->
-    <section id="detalle-catalogo"
+        <section id="detalle-catalogo"
              aria-labelledby="catalogo-detalle-nombre"
-             class="relative z-10 hidden px-5 pb-24 opacity-0 transition-opacity duration-500 data-[visible=true]:opacity-100 md:px-8 md:pb-32">
+             class="relative z-10 col-span-full hidden px-5 pb-24 opacity-0 transition-opacity duration-500 data-[visible=true]:opacity-100 in-[.textos-grid]:px-0 in-[.textos-grid]:pb-0 md:px-8 md:pb-32">
 
         <div id="catalogo-detalle-grid"
              class="scroll-mb-5 border-t-2 border-l-2 border-black md:grid md:h-[60svh] md:scroll-mb-8 md:grid-rows-[minmax(3rem,11fr)_minmax(0,89fr)]">
@@ -500,7 +498,6 @@
 
             <div class="grid grid-cols-2 md:min-h-0 md:grid-cols-[48fr_8fr_22fr_22fr] md:grid-rows-[minmax(0,1fr)]">
 
-                <!-- INFORMACIÓN + BOTÓN + INFO -->
                 <div class="col-span-2 grid md:col-span-1 md:min-h-0 md:grid-rows-[minmax(0,75fr)_minmax(0,25fr)]">
 
                     <div class="border-r-2 border-b-2 border-black bg-caja p-5 md:min-h-0 md:overflow-y-auto md:p-6">
@@ -509,26 +506,25 @@
                         <ul id="catalogo-detalle-lista" class="mt-4 list-disc space-y-0.5 pl-6 text-sm font-light text-tinta md:text-base"></ul>
                     </div>
 
-                    <div class="flex min-h-20 items-center border-r-2 border-b-2 border-black bg-rojo px-5 text-2xl font-light text-white md:min-h-0 md:px-6 md:text-3xl">
+                    <div class="flex min-h-11 items-center border-r-2 border-b-2 border-black bg-rojo px-5 text-lg font-light text-white md:min-h-0 md:px-6 md:text-3xl">
                         + INFO
                     </div>
+
+                    <div class="h-2 border-r-2 border-b-2 border-black bg-azul md:hidden"></div>
                 </div>
 
-                <!-- RECTÁNGULO AZUL -->
                 <div class="hidden border-r-2 border-b-2 border-black bg-azul md:block md:min-h-0"></div>
 
-                <!-- IMAGEN 1 -->
-                <div class="relative min-h-48 overflow-hidden border-r-2 border-b-2 border-black bg-white md:min-h-0">
+                <div class="relative h-62 overflow-hidden border-r-2 border-b-2 border-black bg-white md:h-auto md:min-h-0">
                     <img id="catalogo-detalle-img-1"
                          alt=""
-                         class="block h-full w-full object-cover">
+                         class="absolute inset-0 block h-full w-full object-contain md:object-cover">
                 </div>
 
-                <!-- IMAGEN 2 -->
-                <div class="relative min-h-48 overflow-hidden border-r-2 border-b-2 border-black bg-white md:min-h-0">
+                <div class="relative h-62 overflow-hidden border-r-2 border-b-2 border-black bg-white md:h-auto md:min-h-0">
                     <img id="catalogo-detalle-img-2"
                          alt=""
-                         class="block h-full w-full object-cover">
+                         class="absolute inset-0 block h-full w-full object-contain md:object-cover">
                 </div>
 
             </div>

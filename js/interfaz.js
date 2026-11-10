@@ -152,7 +152,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
 
-       const sillasCatalogo = document.querySelectorAll('.silla-item');
+          const sillasCatalogo = document.querySelectorAll('.silla-item');
     const fichaCatalogo = document.getElementById('detalle-catalogo');
 
     if (sillasCatalogo.length && fichaCatalogo) {
@@ -187,6 +187,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const imagenesFicha = {};
 
+        const mainCatalogo = document.querySelector('main');
+        const textosCatalogo = [...document.querySelectorAll('.texto-item')];
+        const textosGrid = textosCatalogo.length ? textosCatalogo[0].parentElement : null;
+
+        if (textosGrid) textosGrid.classList.add('textos-grid');
+
         const fichaGrid = document.getElementById('catalogo-detalle-grid');
         const fichaCerrar = document.getElementById('catalogo-detalle-cerrar');
         const fichaRef = document.getElementById('catalogo-detalle-ref');
@@ -194,13 +200,19 @@ document.addEventListener('DOMContentLoaded', () => {
         const fichaDescripcion = document.getElementById('catalogo-detalle-descripcion');
         const fichaLista = document.getElementById('catalogo-detalle-lista');
         const fichaImagenes = [1, 2].map((n) => document.getElementById(`catalogo-detalle-img-${n}`));
+
         const menosMovimiento = window.matchMedia('(prefers-reduced-motion: reduce)');
+        const movil = window.matchMedia('(max-width: 767px)');
 
         let sillaAbierta = null;
         let temporizadorFicha;
 
+        function textoDe(id) {
+            return document.querySelector(`.texto-item[data-id="${id}"]`);
+        }
+
         function marcarTexto(id, activo) {
-            const texto = document.querySelector(`.texto-item[data-id="${id}"]`);
+            const texto = textoDe(id);
             if (!texto) return;
             texto.classList.toggle('text-rojo', activo);
             texto.classList.toggle('font-medium', activo);
@@ -210,12 +222,15 @@ document.addEventListener('DOMContentLoaded', () => {
         function datosSilla(item) {
             const id = item.dataset.id;
             const [descripcion, medidas, altura, color] = fichas[id] || ['', '', '', ''];
+            const imagenBase = item.querySelector('img');
+            const rutaBase = imagenBase ? imagenBase.getAttribute('src') : '#';
+
             return {
                 nombre: (item.dataset.titulo || '').replace(/^\d+\s*/, ''),
                 ref: `0009901${id}`,
                 descripcion,
                 datos: [['Medidas', medidas], ['Tamaño', altura], ['Color', color]].filter(([, valor]) => valor),
-                imagenes: imagenesFicha[id] || ['#', '#']
+                imagenes: imagenesFicha[id] || [rutaBase, item.dataset.imagen2 || rutaBase]
             };
         }
 
@@ -244,6 +259,43 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         }
 
+        function devolverFicha() {
+            if (mainCatalogo && fichaCatalogo.parentElement !== mainCatalogo.parentElement) {
+                mainCatalogo.after(fichaCatalogo);
+            }
+        }
+
+        function colocarFicha(item) {
+            if (!movil.matches || !textosGrid) {
+                devolverFicha();
+                return;
+            }
+
+            const textos = [...textosGrid.querySelectorAll('.texto-item')];
+            const texto = textoDe(item.dataset.id);
+            const indice = textos.indexOf(texto);
+
+            if (indice === -1) return;
+
+            const columnas = getComputedStyle(textosGrid).gridTemplateColumns.split(' ').length;
+            const finDeFila = Math.min((Math.floor(indice / columnas) + 1) * columnas, textos.length) - 1;
+            const referencia = textos[finDeFila];
+
+            if (referencia.nextElementSibling !== fichaCatalogo) {
+                referencia.after(fichaCatalogo);
+            }
+        }
+
+                function alinearFicha() {
+            const margen = movil.matches ? 20 : 32;
+            const alto = fichaGrid.getBoundingClientRect().height;
+
+            fichaGrid.scrollIntoView({
+                behavior: menosMovimiento.matches ? 'auto' : 'smooth',
+                block: alto + margen > window.innerHeight ? 'start' : 'end'
+            });
+        }
+
         function mostrarFicha() {
             fichaCatalogo.classList.remove('hidden');
             requestAnimationFrame(() => {
@@ -251,10 +303,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     fichaCatalogo.dataset.visible = 'true';
                 });
             });
-            fichaGrid.scrollIntoView({
-                behavior: menosMovimiento.matches ? 'auto' : 'smooth',
-                block: 'end'
-            });
+            alinearFicha();
         }
 
         function abrirFicha(item) {
@@ -271,10 +320,12 @@ document.addEventListener('DOMContentLoaded', () => {
             if (fichaCatalogo.dataset.visible === 'true') {
                 fichaCatalogo.dataset.visible = 'false';
                 temporizadorFicha = setTimeout(() => {
+                    colocarFicha(item);
                     rellenarFicha(silla);
                     mostrarFicha();
                 }, 300);
             } else {
+                colocarFicha(item);
                 rellenarFicha(silla);
                 mostrarFicha();
             }
@@ -290,7 +341,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
             if (anterior) {
                 marcarTexto(anterior.dataset.id, false);
-                anterior.scrollIntoView({
+                const destino = movil.matches ? (textoDe(anterior.dataset.id) || anterior) : anterior;
+                destino.scrollIntoView({
                     behavior: menosMovimiento.matches ? 'auto' : 'smooth',
                     block: 'center'
                 });
@@ -329,10 +381,56 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
 
+
+                textosCatalogo.forEach((texto) => {
+            const id = texto.dataset.id;
+            const silla = document.querySelector(`.silla-item[data-id="${id}"]`);
+
+            if (!silla) return;
+
+            texto.tabIndex = 0;
+            texto.style.cursor = 'pointer';
+            texto.setAttribute('role', 'button');
+            texto.setAttribute('aria-label', silla.dataset.titulo || `Silla ${id}`);
+
+            const entrar = () => marcarTexto(id, true);
+            const salir = () => {
+                if (sillaAbierta !== silla) marcarTexto(id, false);
+            };
+
+            texto.addEventListener('mouseenter', entrar);
+            texto.addEventListener('mouseleave', salir);
+            texto.addEventListener('focus', entrar);
+            texto.addEventListener('blur', salir);
+
+            texto.addEventListener('click', () => abrirFicha(silla));
+
+            texto.addEventListener('keydown', (e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    abrirFicha(silla);
+                }
+            });
+        });
+
         fichaCerrar.addEventListener('click', cerrarFicha);
 
         document.addEventListener('keydown', (e) => {
             if (e.key === 'Escape') cerrarFicha();
+        });
+
+        movil.addEventListener('change', () => {
+            if (sillaAbierta) {
+                colocarFicha(sillaAbierta);
+            } else {
+                devolverFicha();
+            }
+        });
+
+        window.addEventListener('resize', () => {
+            if (movil.matches && sillaAbierta && fichaCatalogo.parentElement === textosGrid) {
+                colocarFicha(sillaAbierta);
+            }
         });
     }
 
