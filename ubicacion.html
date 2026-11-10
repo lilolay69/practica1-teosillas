@@ -52,7 +52,24 @@
             --color-tinta: #4D4D4D;
 
             --font-poppins: "Poppins", system-ui, sans-serif;
+
+             --animate-marquee: marquee 30s linear infinite;
+
+            @keyframes marquee {
+                from { transform: translateX(0); }
+                to { transform: translateX(-50%); }
+            }
+
+            --animate-ciclo: ciclo-color 3s linear var(--desfase, 0s) infinite;
+
+            @keyframes ciclo-color {
+                0%, 30% { background-color: var(--color-azul); color: var(--color-gris-claro); }
+                33.33%, 63.33% { background-color: var(--color-rojo); color: var(--color-gris-claro); }
+                66.66%, 96.66% { background-color: var(--color-amarillo); color: var(--color-azul); }
+                100% { background-color: var(--color-azul); color: var(--color-gris-claro); }
+            }
         }
+        
 
         html.dark {
             --color-fondo: #161616;
@@ -131,8 +148,7 @@
 
 
     <!-- BOTÓN MENÚ -->
-    <header class="pointer-events-none fixed top-5 left-5 z-20 flex items-center md:top-8 md:left-8">
-
+    <header class="pointer-events-none fixed top-5 left-5 z-[9999] flex items-center md:top-8 md:left-8">
         <button id="boton-menu"
                 type="button"
                 aria-label="Abrir menú"
@@ -150,41 +166,17 @@
     </header>
 
 
-    <!-- BOTÓN MODO OSCURO -->
-    <button id="boton-tema"
-            type="button"
-            aria-label="Activar modo oscuro"
-            aria-pressed="false"
+    <button id="boton-tema" type="button" aria-label="Activar modo oscuro" aria-pressed="false"
             class="fixed top-5 right-5 z-20 flex h-10 w-10 cursor-pointer items-center justify-center text-icono transition-colors duration-300 group-data-[menu=abierto]:text-white md:top-8 md:right-8">
-
-        <svg xmlns="http://www.w3.org/2000/svg"
-             viewBox="0 0 24 24"
-             fill="none"
-             stroke="currentColor"
-             stroke-width="2"
-             stroke-linecap="round"
-             stroke-linejoin="round"
-             class="h-10 w-10 dark:hidden"
-             aria-hidden="true">
-
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+             stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-10 w-10 dark:hidden" aria-hidden="true">
             <path d="M9 18h6"/>
             <path d="M10 22h4"/>
             <path d="M15.09 14c.18-.98.65-1.74 1.41-2.5A4.65 4.65 0 0 0 18 8 6 6 0 0 0 6 8c0 1 .23 2.23 1.5 3.5A4.61 4.61 0 0 1 8.91 14"/>
-
         </svg>
-
-        <svg xmlns="http://www.w3.org/2000/svg"
-             viewBox="0 0 24 24"
-             fill="none"
-             stroke="currentColor"
-             stroke-width="2"
-             stroke-linecap="round"
-             stroke-linejoin="round"
-             class="hidden h-10 w-10 dark:block"
-             aria-hidden="true">
-
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+             stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="hidden h-10 w-10 dark:block" aria-hidden="true">
             <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/>
-
         </svg>
     </button>
 
@@ -198,7 +190,7 @@
 
         <div class="mt-0 flex justify-end">
 
-            <p class="max-w-[34rem] text-justify text-sm leading-relaxed text-tinta md:text-base">
+            <p class="max-w-[34rem] text-justify text-sm leading-relaxed font-light text-tinta md:text-base">
                 Teo siempre está en el taller, en la Calle de la Palma 23 y descubre de cerca cómo cobramos vida a cada una de nuestras sillas en pleno corazón de Madrid. Nos encanta abrir las puertas de nuestro espacio creativo para que veas el trabajo artesanal y la dedicación que hay detrás de cada diseño. Ven a conocernos, charla un rato con nosotros y encuentra la pieza perfecta para tu rincón favorito.
             </p>
 
@@ -449,69 +441,127 @@
 
 </section>
 
+<div class="mb-16 w-full overflow-hidden py-6 text-xl font-semibold whitespace-nowrap text-rojo md:text-2xl"
+         role="region"
+         aria-label="¡Te espero sentado!">
 
+            <div class="flex w-max animate-marquee motion-reduce:animate-none hover:[animation-play-state:paused]"
+                aria-hidden="true">
 
-    <!-- HORARIOS Y TALLER -->
-    <section class="w-full pt-10 pb-12 md:pt-14 md:pb-16">
-
-        <div class="max-w-5xl">
-
-            <h2 class="mb-4 text-2xl font-bold text-azul md:text-4xl px-5 md:px-8">
-                /NUESTRO TALLER/
-            </h2>
-
-            <div class="mb-12 grid grid-cols-1 gap-8 md:grid-cols-[1.2fr_0.8fr] md:items-center">
-
-                <div class="h-[20rem] w-full overflow-hidden bg-caja md:h-[34rem]">
-                    <img src="media/img/teo/foto_sillas_taller.webp"
-                         alt="Sillas en el taller de Teo"
-                         class="h-full w-full object-cover">
+                <div class="flex shrink-0 items-center">
+                    <span class="shrink-0 pr-12">¡NO LO DES POR SENTADO!</span>
+                    <span class="shrink-0 pr-12">¡NO LO DES POR SENTADO!</span>
+                    <span class="shrink-0 pr-12">¡NO LO DES POR SENTADO!</span>
+                    <span class="shrink-0 pr-12">¡NO LO DES POR SENTADO!</span>
+                    <span class="shrink-0 pr-12">¡NO LO DES POR SENTADO!</span>
+                    <span class="shrink-0 pr-12">¡NO LO DES POR SENTADO!</span>
                 </div>
 
-                <ul class="ml-auto flex w-full max-w-[34rem] flex-1 flex-col justify-between space-y-1 text-base md:text-lg">
-
-                    <li class="flex items-start gap-1 py-0.5">
-                        <span class="font-black text-azul">LUNES</span>
-                        <span class="font-black text-rojo">10:00 - 20:30</span>
-                    </li>
-
-                    <li class="flex items-start gap-1 py-0.5">
-                        <span class="font-black text-azul">MARTES</span>
-                        <span class="font-black text-rojo">10:00 - 20:30</span>
-                    </li>
-
-                    <li class="flex items-start gap-1 py-0.5">
-                        <span class="font-black text-azul">MIERCOLES</span>
-                        <span class="font-black text-rojo">10:00 - 20:30</span>
-                    </li>
-
-                    <li class="flex items-start gap-1 py-0.5">
-                        <span class="font-black text-azul">JUEVES</span>
-                        <span class="font-black text-rojo">10:00 - 20:30</span>
-                    </li>
-
-                    <li class="flex items-start gap-1 py-0.5">
-                        <span class="font-black text-azul">VIERNES</span>
-                        <span class="font-black text-rojo">10:00 - 20:30</span>
-                    </li>
-
-                    <li class="flex items-start gap-1 py-0.5">
-                        <span class="font-black text-azul">SABADO</span>
-                        <span class="font-black text-rojo">10:30 - 14:30</span>
-                    </li>
-
-                    <li class="flex items-start gap-1 py-0.5">
-                        <span class="font-black text-azul">DOMINGO</span>
-                        <span class="font-black text-rojo">CERRADO</span>
-                    </li>
-
-                    <li class="flex items-start gap-1 py-0.5">
-                        <span class="font-regular text-tinta">Los horarios especiales o festivos locales pueden variar. Consúltanos por redes sociales ante cualquier duda.</span>
-                </ul>
+                <div class="flex shrink-0 items-center">
+                    <span class="shrink-0 pr-12">¡NO LO DES POR SENTADO!</span>
+                    <span class="shrink-0 pr-12">¡NO LO DES POR SENTADO!</span>
+                    <span class="shrink-0 pr-12">¡NO LO DES POR SENTADO!</span>
+                    <span class="shrink-0 pr-12">¡NO LO DES POR SENTADO!</span>
+                    <span class="shrink-0 pr-12">¡NO LO DES POR SENTADO!</span>
+                    <span class="shrink-0 pr-12">¡NO LO DES POR SENTADO!</span>
+                </div>
 
             </div>
         </div>
-    </section>
+
+    
+
+
+
+    
+<!-- HORARIOS Y TALLER -->
+<section class="w-full pt-10 pb-12 md:pt-14 md:pb-16">
+
+    <div class="w-full max-w-5xl">
+
+        <!-- TÍTULO -->
+        <h2 class="mb-4 px-5 text-2xl font-bold text-azul md:px-8 md:text-4xl">
+            /NUESTRO TALLER/
+        </h2>
+
+        <div class="mb-12 grid grid-cols-1 gap-8 md:grid-cols-[1.2fr_0.8fr] md:items-center">
+
+            <!-- IMAGEN SIN MÁRGENES -->
+            <div class="h-[20rem] w-full overflow-hidden bg-caja md:h-[34rem]">
+                <img src="media/img/teo/foto_sillas_taller.webp"
+                     alt="Sillas en el taller de Teo"
+                     class="h-full w-full object-cover">
+            </div>
+
+            <!-- HORARIOS CON MÁRGENES -->
+            <ul class="mx-5 flex w-auto max-w-[34rem] flex-1 flex-col justify-between space-y-1 text-base md:mx-0 md:ml-auto md:w-full md:text-lg">
+
+                <li class="flex items-start gap-1 py-0.5">
+                    <span class="font-black text-azul">LUNES</span>
+                    <span class="font-black text-rojo">10:00 - 20:30</span>
+                </li>
+
+                <li class="flex items-start gap-1 py-0.5">
+                    <span class="font-black text-azul">MARTES</span>
+                    <span class="font-black text-rojo">10:00 - 20:30</span>
+                </li>
+
+                <li class="flex items-start gap-1 py-0.5">
+                    <span class="font-black text-azul">MIÉRCOLES</span>
+                    <span class="font-black text-rojo">10:00 - 20:30</span>
+                </li>
+
+                <li class="flex items-start gap-1 py-0.5">
+                    <span class="font-black text-azul">JUEVES</span>
+                    <span class="font-black text-rojo">10:00 - 20:30</span>
+                </li>
+
+                <li class="flex items-start gap-1 py-0.5">
+                    <span class="font-black text-azul">VIERNES</span>
+                    <span class="font-black text-rojo">10:00 - 20:30</span>
+                </li>
+
+                <li class="flex items-start gap-1 py-0.5">
+                    <span class="font-black text-azul">SÁBADO</span>
+                    <span class="font-black text-rojo">10:30 - 14:30</span>
+                </li>
+
+                <li class="flex items-start gap-1 py-0.5">
+                    <span class="font-black text-azul">DOMINGO</span>
+                    <span class="font-black text-rojo">CERRADO</span>
+                </li>
+
+                <li class="flex items-start py-0.5">
+                    <span class="font-light text-tinta">
+                        Los horarios especiales o festivos locales pueden variar. Consúltanos por redes sociales ante cualquier duda.
+                    </span>
+                </li>
+
+            </ul>
+
+        </div>
+    </div>
+</section>
+
+
+    <nav aria-label="Accesos rápidos" class="group/botones grid px-5 pb-16 md:grid-cols-3 md:px-8 md:pb-24">
+
+            <a id="b-catalogo" href="catalogo.html"
+            class="flex min-h-16 items-center bg-azul px-5 text-base font-semibold text-gris-claro uppercase group-has-[#b-catalogo:hover]/botones:bg-rojo group-has-[#b-sobre:hover]/botones:bg-amarillo group-has-[#b-sobre:hover]/botones:text-azul group-has-[#b-ubicacion:hover]/botones:bg-amarillo group-has-[#b-ubicacion:hover]/botones:text-azul focus-visible:outline-2 focus-visible:-outline-offset-4 focus-visible:outline-white md:min-h-20 md:text-lg">
+                IR AL CATÁLOGO
+            </a>
+
+            <a id="b-sobre" href="favoritas.html"
+            class="flex min-h-16 items-center bg-rojo px-5 text-base font-semibold text-gris-claro uppercase group-has-[#b-catalogo:hover]/botones:bg-amarillo group-has-[#b-catalogo:hover]/botones:text-azul group-has-[#b-ubicacion:hover]/botones:bg-azul focus-visible:outline-2 focus-visible:-outline-offset-4 focus-visible:outline-white md:min-h-20 md:text-lg">
+                SILLAS DE TEO
+            </a>
+
+            <a id="b-ubicacion" href="sobreteo.html"
+            class="flex min-h-16 items-center bg-amarillo px-5 text-base font-semibold text-azul uppercase group-has-[#b-catalogo:hover]/botones:bg-azul group-has-[#b-catalogo:hover]/botones:text-gris-claro group-has-[#b-sobre:hover]/botones:bg-azul group-has-[#b-sobre:hover]/botones:text-gris-claro group-has-[#b-ubicacion:hover]/botones:bg-rojo group-has-[#b-ubicacion:hover]/botones:text-gris-claro focus-visible:outline-2 focus-visible:-outline-offset-4 focus-visible:outline-azul md:min-h-20 md:text-lg">
+                SABER MÁS
+            </a>
+
+        </nav>
 
 
     <!-- FOOTER -->

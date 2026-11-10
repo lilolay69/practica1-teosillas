@@ -47,6 +47,22 @@
             --color-tinta: #4D4D4D;
 
             --font-poppins: "Poppins", system-ui, sans-serif;
+
+            --animate-marquee: marquee 30s linear infinite;
+
+            @keyframes marquee {
+                from { transform: translateX(0); }
+                to { transform: translateX(-50%); }
+            }
+
+            --animate-ciclo: ciclo-color 3s linear var(--desfase, 0s) infinite;
+
+            @keyframes ciclo-color {
+                0%, 30% { background-color: var(--color-azul); color: var(--color-gris-claro); }
+                33.33%, 63.33% { background-color: var(--color-rojo); color: var(--color-gris-claro); }
+                66.66%, 96.66% { background-color: var(--color-amarillo); color: var(--color-azul); }
+                100% { background-color: var(--color-azul); color: var(--color-gris-claro); }
+            }
         }
 
         html.dark {
@@ -129,7 +145,6 @@
     </button>
 
     <!-- CONTENIDO PRINCIPAL -->
-    <!-- MÁRGENES: 20px MÓVIL / 32px ESCRITORIO -->
     <main class="relative z-10 px-5 pt-48 pb-24 md:min-h-svh md:h-auto md:px-8 md:pt-20 md:pb-20">
 
         <h1 class="mb-12 w-full text-right text-4xl font-semibold text-rojo md:text-6xl">
@@ -348,130 +363,130 @@
 
                 <div class="texto-item text-xs text-texto transition-colors duration-200 md:text-sm" data-id="01">
                     <span class="mb-1 block text-sm font-bold">01</span>
-                    <p>Pieza de diseño funcional con gran ergonomía.</p>
+                    <p>Silla Clásica de Madera</p>
                 </div>
 
                 <div class="texto-item text-xs text-texto transition-colors duration-200 md:text-sm" data-id="02">
                     <span class="mb-1 block text-sm font-bold">02</span>
-                    <p>Pieza de diseño funcional con gran ergonomía.</p>
+                    <p>Silla Naranja Moderna</p>
                 </div>
 
                 <div class="texto-item text-xs text-texto transition-colors duration-200 md:text-sm" data-id="03">
                     <span class="mb-1 block text-sm font-bold">03</span>
-                    <p>Pieza de diseño funcional con gran ergonomía.</p>
+                    <p>Silla Amarilla Diseño</p>
                 </div>
 
                 <div class="texto-item text-xs text-texto transition-colors duration-200 md:text-sm" data-id="04">
                     <span class="mb-1 block text-sm font-bold">04</span>
-                    <p>Pieza de diseño funcional con gran ergonomía.</p>
+                    <p>Silla Plegable Negra</p>
                 </div>
 
                 <div class="texto-item text-xs text-texto transition-colors duration-200 md:text-sm" data-id="05">
                     <span class="mb-1 block text-sm font-bold">05</span>
-                    <p>Pieza de diseño funcional con gran ergonomía.</p>
+                    <p>Silla Rejilla Moderna</p>
                 </div>
 
                 <div class="texto-item text-xs text-texto transition-colors duration-200 md:text-sm" data-id="06">
                     <span class="mb-1 block text-sm font-bold">06</span>
-                    <p>Pieza de diseño funcional con gran ergonomía.</p>
+                    <p>Silla Metálica Azul</p>
                 </div>
 
                 <div class="texto-item text-xs text-texto transition-colors duration-200 md:text-sm" data-id="07">
                     <span class="mb-1 block text-sm font-bold">07</span>
-                    <p>Pieza de diseño funcional con gran ergonomía.</p>
+                    <p>Silla Nórdica Verde</p>
                 </div>
 
                 <div class="texto-item text-xs text-texto transition-colors duration-200 md:text-sm" data-id="08">
                     <span class="mb-1 block text-sm font-bold">08</span>
-                    <p>Pieza de diseño funcional con gran ergonomía.</p>
+                    <p>Silla Minimalista Negra</p>
                 </div>
 
                 <div class="texto-item text-xs text-texto transition-colors duration-200 md:text-sm" data-id="09">
                     <span class="mb-1 block text-sm font-bold">09</span>
-                    <p>Pieza de diseño funcional con gran ergonomía.</p>
+                    <p>Silla Transparente</p>
                 </div>
 
                 <div class="texto-item text-xs text-texto transition-colors duration-200 md:text-sm" data-id="10">
                     <span class="mb-1 block text-sm font-bold">10</span>
-                    <p>Pieza de diseño funcional con gran ergonomía.</p>
+                    <p>Silla de Viena</p>
                 </div>
 
                 <div class="texto-item text-xs text-texto transition-colors duration-200 md:text-sm" data-id="11">
                     <span class="mb-1 block text-sm font-bold">11</span>
-                    <p>Pieza de diseño funcional con gran ergonomía.</p>
+                    <p>Silla de Oficina Diseño</p>
                 </div>
 
                 <div class="texto-item text-xs text-texto transition-colors duration-200 md:text-sm" data-id="12">
                     <span class="mb-1 block text-sm font-bold">12</span>
-                    <p>Pieza de diseño funcional con gran ergonomía.</p>
+                    <p>Silla Chula de Autor</p>
                 </div>
 
                 <div class="texto-item text-xs text-texto transition-colors duration-200 md:text-sm" data-id="13">
                     <span class="mb-1 block text-sm font-bold">13</span>
-                    <p>Pieza de diseño funcional con gran ergonomía.</p>
+                    <p>Silla Tapizada Verde</p>
                 </div>
 
                 <div class="texto-item text-xs text-texto transition-colors duration-200 md:text-sm" data-id="14">
                     <span class="mb-1 block text-sm font-bold">14</span>
-                    <p>Pieza de diseño funcional con gran ergonomía.</p>
+                    <p>Silla Ejecutiva Madera</p>
                 </div>
 
                 <div class="texto-item text-xs text-texto transition-colors duration-200 md:text-sm" data-id="15">
                     <span class="mb-1 block text-sm font-bold">15</span>
-                    <p>Pieza de diseño funcional con gran ergonomía.</p>
+                    <p>Silla Luis XVI Vintage</p>
                 </div>
 
                 <div class="texto-item text-xs text-texto transition-colors duration-200 md:text-sm" data-id="16">
                     <span class="mb-1 block text-sm font-bold">16</span>
-                    <p>Pieza de diseño funcional con gran ergonomía.</p>
+                    <p>Silla Coral Estilo</p>
                 </div>
 
                 <div class="texto-item text-xs text-texto transition-colors duration-200 md:text-sm" data-id="17">
                     <span class="mb-1 block text-sm font-bold">17</span>
-                    <p>Pieza de diseño funcional con gran ergonomía.</p>
+                    <p>Silla de Escritorio Velvet</p>
                 </div>
 
                 <div class="texto-item text-xs text-texto transition-colors duration-200 md:text-sm" data-id="18">
                     <span class="mb-1 block text-sm font-bold">18</span>
-                    <p>Pieza de diseño funcional con gran ergonomía.</p>
+                    <p>Silla Forjada Artística</p>
                 </div>
 
                 <div class="texto-item text-xs text-texto transition-colors duration-200 md:text-sm" data-id="19">
                     <span class="mb-1 block text-sm font-bold">19</span>
-                    <p>Pieza de diseño funcional con gran ergonomía.</p>
+                    <p>Silla Comedor Rústica</p>
                 </div>
 
                 <div class="texto-item text-xs text-texto transition-colors duration-200 md:text-sm" data-id="20">
                     <span class="mb-1 block text-sm font-bold">20</span>
-                    <p>Pieza de diseño funcional con gran ergonomía.</p>
+                    <p>Silla Confort Cuero</p>
                 </div>
 
                 <div class="texto-item text-xs text-texto transition-colors duration-200 md:text-sm" data-id="21">
                     <span class="mb-1 block text-sm font-bold">21</span>
-                    <p>Pieza de diseño funcional con gran ergonomía.</p>
+                    <p>Silla Cruzada Estilo</p>
                 </div>
 
                 <div class="texto-item text-xs text-texto transition-colors duration-200 md:text-sm" data-id="22">
                     <span class="mb-1 block text-sm font-bold">22</span>
-                    <p>Pieza de diseño funcional con gran ergonomía.</p>
+                    <p>Silla Ratán Natural</p>
                 </div>
 
                 <div class="texto-item text-xs text-texto transition-colors duration-200 md:text-sm" data-id="23">
                     <span class="mb-1 block text-sm font-bold">23</span>
-                    <p>Pieza de diseño funcional con gran ergonomía.</p>
+                    <p>Silla de Autor Oscura</p>
                 </div>
 
                 <div class="texto-item text-xs text-texto transition-colors duration-200 md:text-sm" data-id="24">
                     <span class="mb-1 block text-sm font-bold">24</span>
-                    <p>Pieza de diseño funcional con gran ergonomía.</p>
+                    <p>Silla Minimalista Roble</p>
                 </div>
 
                 <div class="texto-item text-xs text-texto transition-colors duration-200 md:text-sm" data-id="25">
                     <span class="mb-1 block text-sm font-bold">25</span>
-                    <p>Pieza de diseño funcional con gran ergonomía.</p>
+                    <p>Silla Vanguardia Acero</p>
                 </div>
 
-            </div>
+            </div> 
         </div>
     </main>
 
@@ -530,6 +545,53 @@
             </div>
         </div>
     </section>
+
+    <div class="mb-16 w-full overflow-hidden py-6 text-xl font-semibold whitespace-nowrap text-icono md:text-2xl"
+         role="region"
+         aria-label="¡Te espero sentado!">
+
+            <div class="flex w-max animate-marquee motion-reduce:animate-none hover:[animation-play-state:paused]"
+                aria-hidden="true">
+
+                <div class="flex shrink-0 items-center">
+                    <span class="shrink-0 pr-12">TEO SILLAS</span>
+                    <span class="shrink-0 pr-12">TEO SILLAS</span>
+                    <span class="shrink-0 pr-12">TEO SILLAS</span>
+                    <span class="shrink-0 pr-12">TEO SILLAS</span>
+                    <span class="shrink-0 pr-12">TEO SILLAS</span>
+                    <span class="shrink-0 pr-12">TEO SILLAS</span>
+                </div>
+
+                <div class="flex shrink-0 items-center">
+                    <span class="shrink-0 pr-12">TEO SILLAS</span>
+                    <span class="shrink-0 pr-12">TEO SILLAS</span>
+                    <span class="shrink-0 pr-12">TEO SILLAS</span>
+                    <span class="shrink-0 pr-12">TEO SILLAS</span>
+                    <span class="shrink-0 pr-12">TEO SILLAS</span>
+                    <span class="shrink-0 pr-12">TEO SILLAS</span>
+                </div>
+
+            </div>
+        </div>
+
+        <nav aria-label="Accesos rápidos" class="group/botones grid px-5 pb-16 md:grid-cols-3 md:px-8 md:pb-24">
+
+            <a id="b-catalogo" href="favoritos.html"
+            class="flex min-h-16 items-center bg-azul px-5 text-base font-semibold text-gris-claro uppercase group-has-[#b-catalogo:hover]/botones:bg-rojo group-has-[#b-sobre:hover]/botones:bg-amarillo group-has-[#b-sobre:hover]/botones:text-azul group-has-[#b-ubicacion:hover]/botones:bg-amarillo group-has-[#b-ubicacion:hover]/botones:text-azul focus-visible:outline-2 focus-visible:-outline-offset-4 focus-visible:outline-white md:min-h-20 md:text-lg">
+                FAVORITOS DE TEO
+            </a>
+
+            <a id="b-sobre" href="sobreteo.html"
+            class="flex min-h-16 items-center bg-rojo px-5 text-base font-semibold text-gris-claro uppercase group-has-[#b-catalogo:hover]/botones:bg-amarillo group-has-[#b-catalogo:hover]/botones:text-azul group-has-[#b-ubicacion:hover]/botones:bg-azul focus-visible:outline-2 focus-visible:-outline-offset-4 focus-visible:outline-white md:min-h-20 md:text-lg">
+                SABER MÁS
+            </a>
+
+            <a id="b-ubicacion" href="ubicacion.html"
+            class="flex min-h-16 items-center bg-amarillo px-5 text-base font-semibold text-azul uppercase group-has-[#b-catalogo:hover]/botones:bg-azul group-has-[#b-catalogo:hover]/botones:text-gris-claro group-has-[#b-sobre:hover]/botones:bg-azul group-has-[#b-sobre:hover]/botones:text-gris-claro group-has-[#b-ubicacion:hover]/botones:bg-rojo group-has-[#b-ubicacion:hover]/botones:text-gris-claro focus-visible:outline-2 focus-visible:-outline-offset-4 focus-visible:outline-azul md:min-h-20 md:text-lg">
+                DONDE COMPRARLOS
+            </a>
+
+        </nav>
 
     <!-- FOOTER -->
     <footer class="cursor-default">

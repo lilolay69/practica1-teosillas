@@ -628,4 +628,35 @@
 
 
 
+/* ==========================================
+   CAPAS SUPERIORES
+   MENÚ Y MODO NOCHE SIEMPRE POR ENCIMA
+========================================== */
 
+/* Cabecera y botón del menú */
+header {
+    position: fixed !important;
+    z-index: 99999 !important;
+}
+
+/* Botón de modo noche */
+#boton-tema {
+    position: fixed !important;
+    z-index: 99999 !important;
+}
+
+/* El menú desplegable queda debajo de los botones */
+#menu {
+    z-index: 99998 !important;
+}
+
+/* El mapa y sus controles quedan en una capa inferior */
+#mapa-teo {
+    position: relative;
+    z-index: 1 !important;
+}
+
+#mapa-teo .leaflet-pane,
+#mapa-teo .leaflet-control-container {
+    z-index: 1 !important;
+}
