@@ -1,85 +1,170 @@
+
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ubicación · TEO SILLAS</title>
+    <title>Ubicación | TEO SILLAS</title>
 
+     <!-- FAVICON -->
+    <link rel="icon" href="media/img/FAVICON-TEO.png" sizes="48x48">
+    <link rel="icon" type="image/png" sizes="32x32" href="media/img/favicon/favicon-32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="media/img/favicon/favicon-16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="media/img/favicon/apple-touch-icon.png">
+
+    <!-- TIPOGRAFÍA -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
-    <!-- ===== CSS DE LIBRERÍAS ===== -->
+    <!-- CSS -->
     <link rel="stylesheet" href="css/styles.css">
+
+    <link rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+      integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+      crossorigin="">
 
     <script>
         try {
-            if (localStorage.getItem('tema') === 'oscuro') document.documentElement.classList.add('dark');
+            if (localStorage.getItem('tema') === 'oscuro') {
+                document.documentElement.classList.add('dark');
+            }
         } catch (e) {}
     </script>
 
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 
-   <style type="text/tailwindcss">
-    @custom-variant dark (&:where(.dark, .dark *));
+    <style type="text/tailwindcss">
+        @custom-variant dark (&:where(.dark, .dark *));
 
-    @theme static {
-        --color-gris-claro: #EBEBEB;
-        --color-texto: #B1B1B1;
-        --color-rojo: #E52421;
-        --color-azul: #0D00FF;
-        --color-amarillo: #FFF600;
+        @theme static {
+            --color-gris-claro: #EBEBEB;
+            --color-texto: #B1B1B1;
+            --color-rojo: #E52421;
+            --color-azul: #0D00FF;
+            --color-amarillo: #FFF600;
 
-        --color-fondo: #EBEBEB;
-        --color-caja: #D9D9D9;
-        --color-icono: #0D00FF;
-        --color-tinta: #4D4D4D;
+            --color-fondo: #EBEBEB;
+            --color-caja: #D9D9D9;
+            --color-icono: #0D00FF;
+            --color-tinta: #4D4D4D;
 
-        --font-poppins: "Poppins", system-ui, sans-serif;
-    }
+            --font-poppins: "Poppins", system-ui, sans-serif;
 
-    html.dark {
-        --color-fondo: #161616;
-        --color-caja: #2B2B2B;
-        --color-icono: #FFF600;
-        --color-tinta: #D9D9D9;
-    }
-</style>
+             --animate-marquee: marquee 30s linear infinite;
+
+            @keyframes marquee {
+                from { transform: translateX(0); }
+                to { transform: translateX(-50%); }
+            }
+
+            --animate-ciclo: ciclo-color 3s linear var(--desfase, 0s) infinite;
+
+            @keyframes ciclo-color {
+                0%, 30% { background-color: var(--color-azul); color: var(--color-gris-claro); }
+                33.33%, 63.33% { background-color: var(--color-rojo); color: var(--color-gris-claro); }
+                66.66%, 96.66% { background-color: var(--color-amarillo); color: var(--color-azul); }
+                100% { background-color: var(--color-azul); color: var(--color-gris-claro); }
+            }
+        }
+        
+
+        html.dark {
+            --color-fondo: #161616;
+            --color-caja: #2B2B2B;
+            --color-icono: #FFF600;
+            --color-tinta: #D9D9D9;
+        }
+    </style>
 </head>
 
 <body class="group relative overflow-x-hidden bg-fondo font-poppins transition-colors duration-500">
 
-    <img src="media/img/LOGO PNG BLANCO.png" alt="Logo de Teo Sillas"
+    <!-- LOGO DE FONDO -->
+    <img src="media/img/LOGO PNG BLANCO.png"
+         alt="Logo de Teo Sillas"
          class="pointer-events-none absolute -top-16 left-[22px] z-0 w-[22rem] max-w-none md:-top-92 md:left-[-140px] md:w-[44rem]">
 
+
+    <!-- MENÚ DESPLEGABLE -->
     <div id="menu"
          class="invisible fixed inset-x-0 top-0 z-[15] bg-azul px-5 pt-5 pb-14 opacity-0 group-data-[menu=abierto]:visible group-data-[menu=abierto]:opacity-100 group-data-[menu=abierto]:transition-[opacity,visibility] group-data-[menu=abierto]:duration-800 group-data-[menu=abierto]:ease-in-out md:px-8 md:pt-8">
 
         <form id="formulario-buscar" role="search" action="#" class="mx-14">
+
             <label for="buscador" class="sr-only">Buscar en la web</label>
-            <input id="buscador" type="search" placeholder="Buscar..." autocomplete="off"
+
+            <input id="buscador"
+                   type="search"
+                   placeholder="Buscar..."
+                   autocomplete="off"
                    class="h-10 w-full bg-gris-claro px-4 text-base text-black placeholder:text-texto focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gris-claro">
+
         </form>
 
         <nav aria-label="Principal" class="-mx-5 mt-6 md:-mx-8">
             <ul class="space-y-1">
-                <li><a href="index.html" class="block px-5 py-2 text-2xl font-semibold text-gris-claro hover:bg-rojo hover:text-gris-claro focus-visible:bg-rojo focus-visible:text-gris-claro md:px-8 md:text-3xl">INICIO</a></li>
-                <li><a href="catalogo.html" class="block px-5 py-2 text-2xl font-semibold text-gris-claro hover:bg-rojo hover:text-gris-claro focus-visible:bg-rojo focus-visible:text-gris-claro md:px-8 md:text-3xl">CATÁLOGO DE TEO</a></li>
-                <li><a href="favoritas.html" class="block px-5 py-2 text-2xl font-semibold text-gris-claro hover:bg-rojo hover:text-gris-claro focus-visible:bg-rojo focus-visible:text-gris-claro md:px-8 md:text-3xl">FAVORITAS DE TEO</a></li>
-                <li><a href="sobreteo.html" class="block px-5 py-2 text-2xl font-semibold text-gris-claro hover:bg-rojo hover:text-gris-claro focus-visible:bg-rojo focus-visible:text-gris-claro md:px-8 md:text-3xl">¿QUIÉN ES TEO?</a></li>
-                <li><a href="ubicacion.html" class="block px-5 py-2 text-2xl font-semibold text-gris-claro hover:bg-rojo hover:text-gris-claro focus-visible:bg-rojo focus-visible:text-gris-claro md:px-8 md:text-3xl">¿DÓNDE ESTÁ TEO?</a></li>
+
+                <li>
+                    <a href="index.html"
+                       class="block px-5 py-2 text-2xl font-semibold text-gris-claro hover:bg-rojo hover:text-gris-claro focus-visible:bg-rojo focus-visible:text-gris-claro md:px-8 md:text-3xl">
+                        INICIO
+                    </a>
+                </li>
+
+                <li>
+                    <a href="catalogo.html"
+                       class="block px-5 py-2 text-2xl font-semibold text-gris-claro hover:bg-rojo hover:text-gris-claro focus-visible:bg-rojo focus-visible:text-gris-claro md:px-8 md:text-3xl">
+                        CATÁLOGO DE TEO
+                    </a>
+                </li>
+
+                <li>
+                    <a href="favoritas.html"
+                       class="block px-5 py-2 text-2xl font-semibold text-gris-claro hover:bg-rojo hover:text-gris-claro focus-visible:bg-rojo focus-visible:text-gris-claro md:px-8 md:text-3xl">
+                        FAVORITAS DE TEO
+                    </a>
+                </li>
+
+                <li>
+                    <a href="sobreteo.html"
+                       class="block px-5 py-2 text-2xl font-semibold text-gris-claro hover:bg-rojo hover:text-gris-claro focus-visible:bg-rojo focus-visible:text-gris-claro md:px-8 md:text-3xl">
+                        ¿QUIÉN ES TEO?
+                    </a>
+                </li>
+
+                <li>
+                    <a href="ubicacion.html"
+                       class="block px-5 py-2 text-2xl font-semibold text-gris-claro hover:bg-rojo hover:text-gris-claro focus-visible:bg-rojo focus-visible:text-gris-claro md:px-8 md:text-3xl">
+                        ¿DÓNDE ESTÁ TEO?
+                    </a>
+                </li>
+
             </ul>
         </nav>
     </div>
 
-    <header class="pointer-events-none fixed top-5 left-5 z-20 flex items-center md:top-8 md:left-8">
-        <button id="boton-menu" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="menu"
+
+    <!-- BOTÓN MENÚ -->
+    <header class="pointer-events-none fixed top-5 left-5 z-[9999] flex items-center md:top-8 md:left-8">
+        <button id="boton-menu"
+                type="button"
+                aria-label="Abrir menú"
+                aria-expanded="false"
+                aria-controls="menu"
                 class="pointer-events-auto flex h-10 w-10 cursor-pointer flex-col items-center justify-center gap-[7px]">
+
             <span class="block h-[4.5px] w-10 bg-icono transition duration-300 group-data-[menu=abierto]:translate-y-[11.5px] group-data-[menu=abierto]:rotate-45 group-data-[menu=abierto]:bg-gris-claro"></span>
+
             <span class="block h-[4.5px] w-10 bg-icono transition duration-300 group-data-[menu=abierto]:bg-gris-claro group-data-[menu=abierto]:opacity-0"></span>
+
             <span class="block h-[4.5px] w-10 bg-icono transition duration-300 group-data-[menu=abierto]:-translate-y-[11.5px] group-data-[menu=abierto]:-rotate-45 group-data-[menu=abierto]:bg-gris-claro"></span>
+
         </button>
     </header>
+
 
     <button id="boton-tema" type="button" aria-label="Activar modo oscuro" aria-pressed="false"
             class="fixed top-5 right-5 z-20 flex h-10 w-10 cursor-pointer items-center justify-center text-icono transition-colors duration-300 group-data-[menu=abierto]:text-white md:top-8 md:right-8">
@@ -95,95 +180,416 @@
         </svg>
     </button>
 
-<main class="relative z-10 w-full px-5 pt-48 pb-24 md:pt-32 md:px-12">
-    <h1 class="mb-3 w-full text-right text-4xl font-semibold text-rojo md:mb-8 md:text-6xl">
-        ¿DÓNDE ESTÁ TEO?
-    </h1>
 
-    <div class="mt-0 flex justify-end">
-        <p class="max-w-[34rem] text-justify text-sm leading-relaxed text-tinta md:text-base">
-            Teo siempre está en el taller, en la Calle de la Palma 23 y descubre de cerca cómo cobramos vida a cada una de nuestras sillas en pleno corazón de Madrid. Nos encanta abrir las puertas de nuestro espacio creativo para que veas el trabajo artesanal y la dedicación que hay detrás de cada diseño. Ven a conocernos, charla un rato con nosotros y encuentra la pieza perfecta para tu rincón favorito.
-        </p>
-    </div>
-</main>
+    <!-- CONTENIDO PRINCIPAL -->
+    <main class="relative z-10 w-full px-5 pt-48 pb-24 md:px-8 md:pt-32 md:pb-24">
 
-<div class="relative mt-6 w-full overflow-hidden">
-   <div class="pointer-events-none absolute left-4 top-0 z-10">
-    <h2 class="flex flex-col text-left font-bold uppercase leading-[0.8] tracking-[0.08em] text-azul">
-        <span class="text-6xl md:text-[6rem]">C/ de la Palma, 23 (Madrid)</span>
-    </h2>
-</div>
+        <h1 class="mb-3 w-full text-right text-4xl font-semibold text-rojo md:mb-8 md:text-6xl">
+            ¿DÓNDE ESTÁ TEO?
+        </h1>
 
-    <div class="grid w-full grid-cols-3 gap-0 pt-20 md:pt-16">
-        <img src="media/img/teo/foto_taller_1.webp" alt="Taller 1" class="h-[14rem] w-full object-cover md:h-[28rem]">
-        <img src="media/img/teo/foto_taller_2.webp" alt="Taller 2" class="h-[14rem] w-full object-cover md:h-[28rem]">
-        <img src="media/img/teo/foto_taller_1.webp" alt="Taller 3" class="h-[14rem] w-full object-cover md:h-[28rem]">
-    </div>
-</div>
+        <div class="mt-0 flex justify-end">
 
-<div class="h-2 w-full bg-amarillo"></div>
+            <p class="max-w-[34rem] text-justify text-sm leading-relaxed font-light text-tinta md:text-base">
+                Teo siempre está en el taller, en la Calle de la Palma 23 y descubre de cerca cómo cobramos vida a cada una de nuestras sillas en pleno corazón de Madrid. Nos encanta abrir las puertas de nuestro espacio creativo para que veas el trabajo artesanal y la dedicación que hay detrás de cada diseño. Ven a conocernos, charla un rato con nosotros y encuentra la pieza perfecta para tu rincón favorito.
+            </p>
 
-
-        <!-- HORARIOS -->
-     <div class="max-w-5xl ">
-    <h2 class="mb-4 text-2xl font-bold text-azul md:text-4xl">  /NUESTRO TALLER/</h2>
-
-   <div class="mb-12 grid grid-cols-1 gap-8 md:grid-cols-[1.2fr_0.8fr] md:items-center">
-    <div class="h-[20rem] w-full overflow-hidden bg-caja md:h-[34rem]">
-        <img src="media/img/teo/foto_sillas_taller.webp" alt="Sillas en el taller de Teo" class="h-full w-full object-cover">
-    </div>
-
-
-       <ul class="ml-auto flex w-full max-w-[34rem] flex-1 flex-col justify-between space-y-1 text-base md:text-lg">
-    <li class="flex items-start gap-1 py-0.5">
-        <span class="font-black text-azul">LUNES</span>
-        <span class="font-black text-rojo">10:00 - 20:30</span>
-    </li>
-    <li class="flex items-start gap-1 py-0.5">
-        <span class="font-black text-azul">MARTES</span>
-        <span class="font-black text-rojo">10:00 - 20:30</span>
-    </li>
-    <li class="flex items-start gap-1 py-0.5">
-        <span class="font-black text-azul">MIERCOLES</span>
-        <span class="font-black text-rojo">10:00 - 20:30</span>
-    </li>
-    <li class="flex items-start gap-1 py-0.5">
-        <span class="font-black text-azul">JUEVES</span>
-        <span class="font-black text-rojo">10:00 - 20:30</span>
-    </li>
-    <li class="flex items-start gap-1 py-0.5">
-        <span class="font-black text-azul">VIERNES</span>
-        <span class="font-black text-rojo">10:00 - 20:30</span>
-    </li>
-    <li class="flex items-start gap-1 py-0.5">
-        <span class="font-black text-azul">SABADO</span>
-        <span class="font-black text-rojo">10:30 - 14:30</span>
-    </li>
-    <li class="flex items-start gap-1 py-0.5">
-        <span class="font-black text-azul">DOMINGO</span>
-        <span class="font-black text-rojo">CERRADO</span>
-    </li>
-    <li class="flex items-start gap-1 py-0.5">
-        <span class="font-black text-azul">* Los horarios especiales o festivos locales pueden variar. Consúltanos por redes sociales ante cualquier duda.</span>
-</ul>
-    </div>
-</div>
-</div>   
+        </div>
     </main>
-    <footer class="cursor-default">
-        <div class="grid bg-azul md:grid-cols-[20rem_1fr]">
 
-            <div class="px-5 pt-4 md:px-3 md:py-3">
-                <div class="flex h-full flex-col items-center justify-center border-b border-white pb-4 md:border-b-0 md:pb-0">
-                    <img src="media/img/LOGO PNG + TEO.png" alt="Logo de Teo Sillas" class="w-48 md:w-full">
+
+    <!-- DIRECCIÓN Y GALERÍA -->
+    <section class="relative mt-6 w-full overflow-hidden">
+
+        <div class="pointer-events-none absolute left-5 top-0 z-10 md:left-8">
+
+            <h2 class="flex flex-col text-left font-bold uppercase leading-[0.8] tracking-[0.08em] text-azul">
+
+                <span class="text-6xl md:text-[6rem]">
+                    C/ de la Palma, 23 (Madrid)
+                </span>
+
+            </h2>
+        </div>
+
+        <div class="grid w-full grid-cols-3 gap-0 pt-20 md:pt-16">
+
+            <img src="media/img/teo/foto_taller_1.webp"
+                 alt="Taller 1"
+                 class="h-[14rem] w-full object-cover md:h-[28rem]">
+
+            <img src="media/img/teo/foto_taller_2.webp"
+                 alt="Taller 2"
+                 class="h-[14rem] w-full object-cover md:h-[28rem]">
+
+            <img src="media/img/teo/foto_taller_1.webp"
+                 alt="Taller 3"
+                 class="h-[14rem] w-full object-cover md:h-[28rem]">
+
+        </div>
+    </section>
+
+
+    <!-- FRANJA AMARILLA -->
+    <div class="h-2 w-full bg-amarillo"></div>
+
+
+<!-- MAPA Y FORMULARIO DE CONTACTO -->
+<section class="w-full bg-caja px-5 py-12 md:px-8 md:py-20">
+
+    <div class="grid w-full grid-cols-1 items-start gap-8 md:grid-cols-2 md:gap-10">
+
+        <!-- MAPA INTERACTIVO -->
+        <div class="w-full">
+
+            <div id="mapa-teo"
+                 class="h-[17rem] w-full overflow-hidden bg-gris-claro md:h-[22rem]"
+                 aria-label="Mapa interactivo de la ubicación de Teo Sillas">
+            </div>
+
+            <a href="https://www.google.com/maps/dir/?api=1&destination=Calle+de+la+Palma+23%2C+28004+Madrid"
+               target="_blank"
+               rel="noopener noreferrer"
+               class="mt-3 inline-flex items-center gap-2 text-sm font-bold uppercase text-azul transition-colors hover:text-rojo">
+
+                <span>ABRIR EN GOOGLE MAPS</span>
+
+                <svg xmlns="http://www.w3.org/2000/svg"
+                     viewBox="0 0 24 24"
+                     fill="none"
+                     stroke="currentColor"
+                     stroke-width="2"
+                     stroke-linecap="round"
+                     stroke-linejoin="round"
+                     class="h-4 w-4"
+                     aria-hidden="true">
+
+                    <path d="M7 17 17 7"/>
+                    <path d="M7 7h10v10"/>
+
+                </svg>
+
+            </a>
+
+        </div>
+
+
+        <!-- FORMULARIO DE CONTACTO -->
+<div class="h-[17rem] w-full md:h-[22rem]">
+
+    <form id="formulario-contacto"
+          onsubmit="return false"
+          data-abierto="false"
+          class="group/form flex h-full w-full flex-col">
+
+        <input type="hidden" name="_subject" value="Nuevo contacto desde TEO SILLAS">
+        <input type="hidden" name="_template" value="table">
+        <input type="hidden" name="_captcha" value="false">
+
+        <input type="text"
+               name="_honey"
+               class="hidden"
+               tabindex="-1"
+               autocomplete="off">
+
+
+        <button id="contacto-desplegar"
+                type="button"
+                aria-expanded="false"
+                aria-controls="contacto-campos"
+                class="flex min-h-10 w-full shrink-0 cursor-pointer items-center justify-between bg-rojo px-5 py-3 text-left">
+
+            <span class="text-xs font-bold uppercase text-white md:text-sm">
+                MÁS INFORMACIÓN
+            </span>
+
+            <svg xmlns="http://www.w3.org/2000/svg"
+                 viewBox="0 0 24 24"
+                 fill="none"
+                 stroke="white"
+                 stroke-width="2.5"
+                 stroke-linecap="round"
+                 stroke-linejoin="round"
+                 class="h-5 w-5 transition-transform duration-300 group-data-[abierto=true]/form:rotate-180"
+                 aria-hidden="true">
+
+                <path d="m6 9 6 6 6-6"/>
+
+            </svg>
+
+        </button>
+
+
+        <div id="contacto-campos" class="flex min-h-0 flex-1 flex-col">
+
+            <div data-fila
+                 class="grid shrink-0 grid-rows-[0fr] transition-[grid-template-rows] duration-300 ease-out group-data-[abierto=true]/form:grid-rows-[1fr] group-data-[abierto=true]/form:delay-0">
+                <div class="min-h-0 overflow-hidden bg-azul px-4 md:px-5">
+
+                    <label for="contacto-nombre" class="sr-only">Nombre</label>
+
+                    <input id="contacto-nombre"
+                           type="text"
+                           name="Nombre"
+                           placeholder="Nombre"
+                           autocomplete="given-name"
+                           required
+                           class="mt-1 h-8 w-full border-b border-white/80 bg-transparent px-1 text-xs text-[#D9D9D9] outline-none transition-colors placeholder:text-[#A6A6A6] hover:placeholder:italic focus:border-amarillo focus:bg-white/5 md:text-sm">
+
                 </div>
             </div>
 
+
+            <div data-fila
+                 class="grid shrink-0 grid-rows-[0fr] transition-[grid-template-rows] duration-300 ease-out group-data-[abierto=true]/form:grid-rows-[1fr] group-data-[abierto=true]/form:delay-[80ms]">
+                <div class="min-h-0 overflow-hidden bg-azul px-4 md:px-5">
+
+                    <label for="contacto-apellidos" class="sr-only">Apellidos</label>
+
+                    <input id="contacto-apellidos"
+                           type="text"
+                           name="Apellidos"
+                           placeholder="Apellidos"
+                           autocomplete="family-name"
+                           required
+                           class="h-8 w-full border-b border-white/80 bg-transparent px-1 text-xs text-[#D9D9D9] outline-none transition-colors placeholder:text-[#A6A6A6] hover:placeholder:italic focus:border-amarillo focus:bg-white/5 md:text-sm">
+
+                </div>
+            </div>
+
+
+            <div data-fila
+                 class="grid shrink-0 grid-rows-[0fr] transition-[grid-template-rows] duration-300 ease-out group-data-[abierto=true]/form:grid-rows-[1fr] group-data-[abierto=true]/form:delay-[160ms]">
+                <div class="min-h-0 overflow-hidden bg-azul px-4 md:px-5">
+
+                    <label for="contacto-correo" class="sr-only">Correo electrónico</label>
+
+                    <input id="contacto-correo"
+                           type="email"
+                           name="Correo electrónico"
+                           placeholder="Correo electrónico"
+                           autocomplete="email"
+                           required
+                           class="h-8 w-full border-b border-white/80 bg-transparent px-1 text-xs text-[#D9D9D9] outline-none transition-colors placeholder:text-[#A6A6A6] hover:placeholder:italic focus:border-amarillo focus:bg-white/5 md:text-sm">
+
+                </div>
+            </div>
+
+
+            <div data-fila
+                 class="grid shrink-0 grid-rows-[0fr] transition-[grid-template-rows] duration-300 ease-out group-data-[abierto=true]/form:grid-rows-[1fr] group-data-[abierto=true]/form:delay-[240ms]">
+                <div class="min-h-0 overflow-hidden bg-azul px-4 md:px-5">
+
+                    <label for="contacto-correo-repetido" class="sr-only">Repite tu correo electrónico</label>
+
+                    <input id="contacto-correo-repetido"
+                           type="email"
+                           name="Confirmación del correo"
+                           placeholder="Repite tu correo electrónico"
+                           autocomplete="off"
+                           required
+                           class="h-8 w-full border-b border-white/80 bg-transparent px-1 text-xs text-[#D9D9D9] outline-none transition-colors placeholder:text-[#A6A6A6] hover:placeholder:italic focus:border-amarillo focus:bg-white/5 md:text-sm">
+
+                </div>
+            </div>
+
+
+            <div data-fila
+                 class="min-h-0 basis-0 grow-0 overflow-hidden bg-azul px-4 transition-[flex-grow] duration-300 ease-out group-data-[abierto=true]/form:grow group-data-[abierto=true]/form:delay-[320ms] md:px-5">
+
+                <label for="contacto-mensaje" class="sr-only">¿Algo más...?</label>
+
+                <textarea id="contacto-mensaje"
+                          name="Mensaje"
+                          placeholder="¿Algo más...?"
+                          class="block h-full w-full resize-none bg-transparent px-1 py-2 text-xs leading-relaxed text-[#D9D9D9] outline-none transition-colors placeholder:text-[#A6A6A6] hover:placeholder:italic focus:bg-white/5 md:text-sm"></textarea>
+
+            </div>
+
+
+            <div data-fila
+                 class="grid shrink-0 grid-rows-[0fr] transition-[grid-template-rows] duration-300 ease-out group-data-[abierto=true]/form:grid-rows-[1fr] group-data-[abierto=true]/form:delay-[400ms]">
+                <div class="min-h-0 overflow-hidden">
+
+                    <button type="submit"
+                            class="group/enviar relative block h-8 w-full cursor-pointer overflow-hidden bg-amarillo text-xs font-bold uppercase text-azul">
+
+                        <span class="absolute top-0 left-[calc(100%-1.25rem)] flex h-full -translate-x-full items-center transition-[left,transform,color] duration-500 ease-in-out group-hover/enviar:left-5 group-hover/enviar:translate-x-0 group-hover/enviar:text-rojo group-focus-visible/enviar:left-5 group-focus-visible/enviar:translate-x-0 group-focus-visible/enviar:text-rojo motion-reduce:transition-none">
+                            ENVIAR
+                        </span>
+
+                    </button>
+
+                </div>
+            </div>
+
+        </div>
+
+
+        <p id="mensaje-contacto"
+           class="mt-2 hidden shrink-0 text-xs font-semibold text-rojo"
+           role="alert"
+           aria-live="polite">
+        </p>
+
+    </form>
+
+</div>
+
+
+    </div>
+
+</section>
+
+<div class="mt-20 mb-2 w-full overflow-hidden whitespace-nowrap py-6 text-xl font-semibold text-azul md:text-2xl"
+        role="region"
+        aria-label="El que se fue a Sevilla compró una silla">
+
+    <div class="flex w-max animate-marquee motion-reduce:animate-none hover:[animation-play-state:paused]"
+            aria-hidden="true">
+
+        <div class="flex shrink-0 items-center">
+            <span class="shrink-0 pr-12">EL QUE SE FUE A SEVILLA COMPRÓ UNA SILLA</span>
+            <span class="shrink-0 pr-12">EL QUE SE FUE A SEVILLA COMPRÓ UNA SILLA</span>
+            <span class="shrink-0 pr-12">EL QUE SE FUE A SEVILLA COMPRÓ UNA SILLA</span>
+            <span class="shrink-0 pr-12">EL QUE SE FUE A SEVILLA COMPRÓ UNA SILLA</span>
+        </div>
+
+        <div class="flex shrink-0 items-center">
+            <span class="shrink-0 pr-12">EL QUE SE FUE A SEVILLA COMPRÓ UNA SILLA</span>
+            <span class="shrink-0 pr-12">EL QUE SE FUE A SEVILLA COMPRÓ UNA SILLA</span>
+            <span class="shrink-0 pr-12">EL QUE SE FUE A SEVILLA COMPRÓ UNA SILLA</span>
+            <span class="shrink-0 pr-12">EL QUE SE FUE A SEVILLA COMPRÓ UNA SILLA</span>
+        </div>
+
+    </div>
+</div>
+
+    
+
+
+
+    
+<!-- HORARIOS Y TALLER -->
+<section class="w-full pt-10 pb-12 md:pt-14 md:pb-16">
+
+    <div class="w-full max-w-5xl">
+
+        <!-- TÍTULO -->
+        <h2 class="mb-4 px-5 text-2xl font-bold text-azul md:px-8 md:text-4xl">
+            /NUESTRO TALLER/
+        </h2>
+
+        <div class="mb-12 grid grid-cols-1 gap-8 md:grid-cols-[1.2fr_0.8fr] md:items-center">
+
+            <!-- IMAGEN SIN MÁRGENES -->
+            <div class="h-[20rem] w-full overflow-hidden bg-caja md:h-[34rem]">
+                <img src="media/img/teo/foto_sillas_taller.webp"
+                     alt="Sillas en el taller de Teo"
+                     class="h-full w-full object-cover">
+            </div>
+
+            <!-- HORARIOS CON MÁRGENES -->
+            <ul class="mx-5 flex w-auto max-w-[34rem] flex-1 flex-col justify-between space-y-1 text-base md:mx-0 md:ml-auto md:w-full md:text-lg">
+
+                <li class="flex items-start gap-1 py-0.5">
+                    <span class="font-black text-azul">LUNES</span>
+                    <span class="font-black text-rojo">10:00 - 20:30</span>
+                </li>
+
+                <li class="flex items-start gap-1 py-0.5">
+                    <span class="font-black text-azul">MARTES</span>
+                    <span class="font-black text-rojo">10:00 - 20:30</span>
+                </li>
+
+                <li class="flex items-start gap-1 py-0.5">
+                    <span class="font-black text-azul">MIÉRCOLES</span>
+                    <span class="font-black text-rojo">10:00 - 20:30</span>
+                </li>
+
+                <li class="flex items-start gap-1 py-0.5">
+                    <span class="font-black text-azul">JUEVES</span>
+                    <span class="font-black text-rojo">10:00 - 20:30</span>
+                </li>
+
+                <li class="flex items-start gap-1 py-0.5">
+                    <span class="font-black text-azul">VIERNES</span>
+                    <span class="font-black text-rojo">10:00 - 20:30</span>
+                </li>
+
+                <li class="flex items-start gap-1 py-0.5">
+                    <span class="font-black text-azul">SÁBADO</span>
+                    <span class="font-black text-rojo">10:30 - 14:30</span>
+                </li>
+
+                <li class="flex items-start gap-1 py-0.5">
+                    <span class="font-black text-azul">DOMINGO</span>
+                    <span class="font-black text-rojo">CERRADO</span>
+                </li>
+
+                <li class="flex items-start py-0.5">
+                    <span class="font-light text-tinta">
+                        Los horarios especiales o festivos locales pueden variar. Consúltanos por redes sociales ante cualquier duda.
+                    </span>
+                </li>
+
+            </ul>
+
+        </div>
+    </div>
+</section>
+
+
+    <nav aria-label="Accesos rápidos" class="group/botones grid px-5 pb-16 md:grid-cols-3 md:px-8 md:pb-24">
+
+            <a id="b-catalogo" href="catalogo.html"
+            class="flex min-h-16 items-center bg-azul px-5 text-base font-semibold text-gris-claro uppercase group-has-[#b-catalogo:hover]/botones:bg-rojo group-has-[#b-sobre:hover]/botones:bg-amarillo group-has-[#b-sobre:hover]/botones:text-azul group-has-[#b-ubicacion:hover]/botones:bg-amarillo group-has-[#b-ubicacion:hover]/botones:text-azul focus-visible:outline-2 focus-visible:-outline-offset-4 focus-visible:outline-white md:min-h-20 md:text-lg">
+                IR AL CATÁLOGO
+            </a>
+
+            <a id="b-sobre" href="favoritas.html"
+            class="flex min-h-16 items-center bg-rojo px-5 text-base font-semibold text-gris-claro uppercase group-has-[#b-catalogo:hover]/botones:bg-amarillo group-has-[#b-catalogo:hover]/botones:text-azul group-has-[#b-ubicacion:hover]/botones:bg-azul focus-visible:outline-2 focus-visible:-outline-offset-4 focus-visible:outline-white md:min-h-20 md:text-lg">
+                SILLAS DE TEO
+            </a>
+
+            <a id="b-ubicacion" href="sobreteo.html"
+            class="flex min-h-16 items-center bg-amarillo px-5 text-base font-semibold text-azul uppercase group-has-[#b-catalogo:hover]/botones:bg-azul group-has-[#b-catalogo:hover]/botones:text-gris-claro group-has-[#b-sobre:hover]/botones:bg-azul group-has-[#b-sobre:hover]/botones:text-gris-claro group-has-[#b-ubicacion:hover]/botones:bg-rojo group-has-[#b-ubicacion:hover]/botones:text-gris-claro focus-visible:outline-2 focus-visible:-outline-offset-4 focus-visible:outline-azul md:min-h-20 md:text-lg">
+                SABER MÁS
+            </a>
+
+        </nav>
+
+
+    <!-- FOOTER -->
+    <footer class="cursor-default">
+
+        <div class="grid bg-azul md:grid-cols-[20rem_1fr]">
+
+            <!-- LOGO -->
+            <div class="px-5 pt-4 md:px-3 md:py-3">
+
+                <div class="flex h-full flex-col items-center justify-center border-b border-white pb-4 md:border-b-0 md:pb-0">
+
+                    <img src="media/img/LOGO PNG + TEO.png"
+                         alt="Logo de Teo Sillas"
+                         class="w-48 md:w-full">
+
+                </div>
+            </div>
+
+
+            <!-- INFORMACIÓN FOOTER -->
             <div class="px-5 py-4 text-white md:my-8 md:border-l md:border-white md:py-0 md:pr-8 md:pl-12">
+
                 <div class="grid gap-5 sm:grid-cols-3">
 
+                    <!-- POLÍTICA DE PRIVACIDAD -->
                     <div>
-                        <h2 class="text-sm font-semibold uppercase">Política de privacidad</h2>
+
+                        <h2 class="text-sm font-semibold uppercase">
+                            Política de privacidad
+                        </h2>
+
                         <ul class="mt-3 space-y-1 text-sm font-light">
                             <li>Protección de datos</li>
                             <li>Política de cookies</li>
@@ -193,69 +599,223 @@
                             <li>Garantía de las piezas</li>
                             <li>Cuidado y mantenimiento</li>
                         </ul>
+
                     </div>
 
+
+                    <!-- CONTACTO -->
                     <div>
-                        <h2 class="text-sm font-semibold uppercase">Contacto</h2>
+
+                        <h2 class="text-sm font-semibold uppercase">
+                            Contacto
+                        </h2>
+
                         <ul class="mt-3 space-y-1.5 text-sm font-light">
+
                             <li class="flex items-center gap-2">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4 shrink-0" aria-hidden="true">
+                                <svg xmlns="http://www.w3.org/2000/svg"
+                                     viewBox="0 0 24 24"
+                                     fill="none"
+                                     stroke="currentColor"
+                                     stroke-width="2"
+                                     stroke-linecap="round"
+                                     stroke-linejoin="round"
+                                     class="h-4 w-4 shrink-0"
+                                     aria-hidden="true">
+
                                     <rect x="2" y="2" width="20" height="20" rx="5"/>
                                     <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
                                     <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
                                 </svg>
+
                                 @teosillas
                             </li>
+
                             <li class="flex items-center gap-2">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4 shrink-0" aria-hidden="true">
+                                <svg xmlns="http://www.w3.org/2000/svg"
+                                     viewBox="0 0 24 24"
+                                     fill="none"
+                                     stroke="currentColor"
+                                     stroke-width="2"
+                                     stroke-linecap="round"
+                                     stroke-linejoin="round"
+                                     class="h-4 w-4 shrink-0"
+                                     aria-hidden="true">
+
                                     <path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"/>
                                 </svg>
+
                                 @teosillas_madrid
                             </li>
+
                             <li class="flex items-center gap-2">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4 shrink-0" aria-hidden="true">
+                                <svg xmlns="http://www.w3.org/2000/svg"
+                                     viewBox="0 0 24 24"
+                                     fill="none"
+                                     stroke="currentColor"
+                                     stroke-width="2"
+                                     stroke-linecap="round"
+                                     stroke-linejoin="round"
+                                     class="h-4 w-4 shrink-0"
+                                     aria-hidden="true">
+
                                     <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
                                 </svg>
+
                                 Teo Sillas Madrid
                             </li>
+
                             <li class="flex items-center gap-2">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4 shrink-0" aria-hidden="true">
+                                <svg xmlns="http://www.w3.org/2000/svg"
+                                     viewBox="0 0 24 24"
+                                     fill="none"
+                                     stroke="currentColor"
+                                     stroke-width="2"
+                                     stroke-linecap="round"
+                                     stroke-linejoin="round"
+                                     class="h-4 w-4 shrink-0"
+                                     aria-hidden="true">
+
                                     <rect x="2" y="4" width="20" height="16" rx="2"/>
                                     <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
                                 </svg>
+
                                 hola@teosillas.es
                             </li>
+
                             <li class="flex items-center gap-2">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4 shrink-0" aria-hidden="true">
+                                <svg xmlns="http://www.w3.org/2000/svg"
+                                     viewBox="0 0 24 24"
+                                     fill="none"
+                                     stroke="currentColor"
+                                     stroke-width="2"
+                                     stroke-linecap="round"
+                                     stroke-linejoin="round"
+                                     class="h-4 w-4 shrink-0"
+                                     aria-hidden="true">
+
                                     <path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/>
                                 </svg>
+
                                 +34 612 345 678
                             </li>
+
                         </ul>
                     </div>
 
+
+                    <!-- DÓNDE TEO -->
                     <div>
-                        <h2 class="text-sm font-semibold uppercase">Dónde Teo</h2>
-                        <address class="mt-3 text-sm font-light not-italic">C/ de la Palma, 23<br>28004 Madrid</address>
-                        <p class="mt-3 text-sm font-light">Metro Sevilla<br>(línea 2)</p>
-                        <p class="mt-3 text-sm font-light">Lunes a sábado<br>10:30 – 20:00</p>
+
+                        <h2 class="text-sm font-semibold uppercase">
+                            Dónde Teo
+                        </h2>
+
+                        <address class="mt-3 text-sm font-light not-italic">
+                            C/ de la Palma, 23<br>
+                            28004 Madrid
+                        </address>
+
+                        <p class="mt-3 text-sm font-light">
+                            Metro Sevilla<br>
+                            (línea 2)
+                        </p>
+
+                        <p class="mt-3 text-sm font-light">
+                            Lunes a sábado<br>
+                            10:30 – 20:00
+                        </p>
+
                     </div>
 
                 </div>
             </div>
         </div>
 
+
+        <!-- FRANJA INFERIOR -->
         <div class="grid grid-cols-[6rem_1fr] md:grid-cols-[20rem_1fr]">
+
             <div class="bg-rojo"></div>
+
             <p class="flex min-h-12 items-center justify-end bg-amarillo px-5 py-3 text-right text-sm font-bold text-rojo md:px-8">
                 © 2026 TEO SILLAS. Todos los derechos reservados.
             </p>
+
         </div>
     </footer>
 
+    <div id="modal-contacto"
+     role="dialog"
+     aria-modal="true"
+     aria-labelledby="modal-contacto-titulo"
+     data-visible="false"
+     class="group/modal invisible fixed inset-0 z-[40] flex items-center justify-center bg-black/60 px-5 opacity-0 transition-[opacity,visibility] duration-300 data-[visible=true]:visible data-[visible=true]:opacity-100">
 
-    <!-- ===== JS ===== -->
+    <div class="w-full max-w-md scale-95 bg-azul transition-transform duration-300 group-data-[visible=true]/modal:scale-100">
 
+        <div class="flex min-h-10 items-center justify-between bg-rojo px-5 py-3">
+
+            <span class="text-xs font-bold uppercase text-white md:text-sm">
+                TEO SILLAS
+            </span>
+
+            <button id="modal-contacto-cerrar-x"
+                    type="button"
+                    aria-label="Cerrar ventana"
+                    class="flex h-6 w-6 cursor-pointer items-center justify-center text-white">
+
+                <svg xmlns="http://www.w3.org/2000/svg"
+                     viewBox="0 0 24 24"
+                     fill="none"
+                     stroke="currentColor"
+                     stroke-width="2.5"
+                     stroke-linecap="round"
+                     stroke-linejoin="round"
+                     class="h-5 w-5"
+                     aria-hidden="true">
+
+                    <path d="M18 6 6 18"/>
+                    <path d="m6 6 12 12"/>
+
+                </svg>
+
+            </button>
+
+        </div>
+
+        <div class="px-5 py-8 text-center md:px-8">
+
+            <h2 id="modal-contacto-titulo"
+                class="text-2xl font-bold uppercase text-white md:text-3xl">
+                MENSAJE ENVIADO CON ÉXITO
+            </h2>
+
+            <p class="mt-3 text-sm text-[#D9D9D9]">
+                Gracias por escribirnos. Te responderemos lo antes posible.
+            </p>
+
+        </div>
+
+        <button id="modal-contacto-cerrar"
+                type="button"
+                class="flex h-8 w-full cursor-pointer items-center justify-center bg-amarillo text-xs font-bold uppercase text-azul transition-colors hover:bg-rojo hover:text-white">
+            CERRAR
+        </button>
+
+    </div>
+
+</div>
+
+
+    <!-- LEAFLET: BIBLIOTECA DEL MAPA -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+            integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+            crossorigin="">
+    </script>
+
+    <!-- JAVASCRIPT PRINCIPAL -->
     <script src="js/interfaz.js"></script>
+
 </body>
 </html>

@@ -3,7 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Favoritos de Teo · TEO SILLAS</title>
+    <title>Favoritos de Teo | TEO SILLAS</title>
+
+    <!-- FAVICON -->
+    <link rel="icon" href="media/img/FAVICON-TEO.png" sizes="48x48">
+    <link rel="icon" type="image/png" sizes="32x32" href="media/img/favicon/favicon-32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="media/img/favicon/favicon-16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="media/img/favicon/apple-touch-icon.png">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -36,6 +42,22 @@
             --color-tinta: #4D4D4D;
 
             --font-poppins: "Poppins", system-ui, sans-serif;
+
+            --animate-marquee: marquee 30s linear infinite;
+
+            @keyframes marquee {
+                from { transform: translateX(0); }
+                to { transform: translateX(-50%); }
+            }
+
+            --animate-ciclo: ciclo-color 3s linear var(--desfase, 0s) infinite;
+
+            @keyframes ciclo-color {
+                0%, 30% { background-color: var(--color-azul); color: var(--color-gris-claro); }
+                33.33%, 63.33% { background-color: var(--color-rojo); color: var(--color-gris-claro); }
+                66.66%, 96.66% { background-color: var(--color-amarillo); color: var(--color-azul); }
+                100% { background-color: var(--color-azul); color: var(--color-gris-claro); }
+            }
         }
 
         html.dark {
@@ -97,29 +119,14 @@
 
     <main class="relative z-10 px-5 pt-48 pb-4 md:pt-32 md:pr-8 md:pb-6 md:pl-[30%]">
 
-        <h1 id="titulo-favoritas" aria-label="FAVORITAS DE TEO"
+        <h1 id="titulo-favoritas"
             class="mb-4 flex w-full justify-end text-4xl font-semibold text-rojo md:text-6xl">
 
-    <span aria-hidden="true" style="--i:0" class="transition duration-300 ease-in delay-[calc(var(--i)*50ms)] group-data-[scroll=abajo]:-translate-y-16 group-data-[scroll=abajo]:opacity-0 group-data-[scroll=abajo]:delay-[calc((14_-_var(--i))*50ms)]">F</span>
-    <span aria-hidden="true" style="--i:1" class="transition duration-300 ease-in delay-[calc(var(--i)*50ms)] group-data-[scroll=abajo]:-translate-y-16 group-data-[scroll=abajo]:opacity-0 group-data-[scroll=abajo]:delay-[calc((14_-_var(--i))*50ms)]">A</span>
-    <span aria-hidden="true" style="--i:2" class="transition duration-300 ease-in delay-[calc(var(--i)*50ms)] group-data-[scroll=abajo]:-translate-y-16 group-data-[scroll=abajo]:opacity-0 group-data-[scroll=abajo]:delay-[calc((14_-_var(--i))*50ms)]">V</span>
-    <span aria-hidden="true" style="--i:3" class="transition duration-300 ease-in delay-[calc(var(--i)*50ms)] group-data-[scroll=abajo]:-translate-y-16 group-data-[scroll=abajo]:opacity-0 group-data-[scroll=abajo]:delay-[calc((14_-_var(--i))*50ms)]">O</span>
-    <span aria-hidden="true" style="--i:4" class="transition duration-300 ease-in delay-[calc(var(--i)*50ms)] group-data-[scroll=abajo]:-translate-y-16 group-data-[scroll=abajo]:opacity-0 group-data-[scroll=abajo]:delay-[calc((14_-_var(--i))*50ms)]">R</span>
-    <span aria-hidden="true" style="--i:5" class="transition duration-300 ease-in delay-[calc(var(--i)*50ms)] group-data-[scroll=abajo]:-translate-y-16 group-data-[scroll=abajo]:opacity-0 group-data-[scroll=abajo]:delay-[calc((14_-_var(--i))*50ms)]">I</span>
-    <span aria-hidden="true" style="--i:6" class="transition duration-300 ease-in delay-[calc(var(--i)*50ms)] group-data-[scroll=abajo]:-translate-y-16 group-data-[scroll=abajo]:opacity-0 group-data-[scroll=abajo]:delay-[calc((14_-_var(--i))*50ms)]">T</span>
-    <span aria-hidden="true" style="--i:7" class="transition duration-300 ease-in delay-[calc(var(--i)*50ms)] group-data-[scroll=abajo]:-translate-y-16 group-data-[scroll=abajo]:opacity-0 group-data-[scroll=abajo]:delay-[calc((14_-_var(--i))*50ms)]">A</span>
-    <span aria-hidden="true" style="--i:8" class="transition duration-300 ease-in delay-[calc(var(--i)*50ms)] group-data-[scroll=abajo]:-translate-y-16 group-data-[scroll=abajo]:opacity-0 group-data-[scroll=abajo]:delay-[calc((14_-_var(--i))*50ms)]">S</span>
-    <span aria-hidden="true" class="w-[0.3em]"></span>
-    <span aria-hidden="true" style="--i:9" class="transition duration-300 ease-in delay-[calc(var(--i)*50ms)] group-data-[scroll=abajo]:-translate-y-16 group-data-[scroll=abajo]:opacity-0 group-data-[scroll=abajo]:delay-[calc((14_-_var(--i))*50ms)]">D</span>
-    <span aria-hidden="true" style="--i:10" class="transition duration-300 ease-in delay-[calc(var(--i)*50ms)] group-data-[scroll=abajo]:-translate-y-16 group-data-[scroll=abajo]:opacity-0 group-data-[scroll=abajo]:delay-[calc((14_-_var(--i))*50ms)]">E</span>
-    <span aria-hidden="true" class="w-[0.3em]"></span>
-    <span aria-hidden="true" style="--i:11" class="transition duration-300 ease-in delay-[calc(var(--i)*50ms)] group-data-[scroll=abajo]:-translate-y-16 group-data-[scroll=abajo]:opacity-0 group-data-[scroll=abajo]:delay-[calc((14_-_var(--i))*50ms)]">T</span>
-    <span aria-hidden="true" style="--i:12" class="transition duration-300 ease-in delay-[calc(var(--i)*50ms)] group-data-[scroll=abajo]:-translate-y-16 group-data-[scroll=abajo]:opacity-0 group-data-[scroll=abajo]:delay-[calc((14_-_var(--i))*50ms)]">E</span>
-    <span aria-hidden="true" style="--i:13" class="transition duration-300 ease-in delay-[calc(var(--i)*50ms)] group-data-[scroll=abajo]:-translate-y-16 group-data-[scroll=abajo]:opacity-0 group-data-[scroll=abajo]:delay-[calc((14_-_var(--i))*50ms)]">O</span>
+            FAVORITAS DE TEO
 
         </h1>
 
-        <p class="mt-2 text-justify text-sm font-light text-tinta md:text-base">
+        <p class="mt-2 max-w-[34rem]text-justify text-sm font-light text-tinta md:text-base">
             Esta no es una selección habitual. Aquí conviven las piezas más extravagantes, raras e insólitas nacidas en el propio taller de Teo. Esculturas funcionales, experimentos de forma y asientos de edición limitada creados para quienes entienden que una silla es mucho más que un lugar donde sentarse.
         </p>
 
@@ -128,7 +135,7 @@
     <section id="grid-favoritas" class="group/grid relative z-10 pb-24 md:grid md:grid-cols-[30%_1fr] md:pb-32">
 
         <div class="hidden px-5 md:col-start-1 md:row-start-1 md:flex md:h-full md:flex-col md:items-end md:justify-end md:pr-6 md:pl-0">
-            <div class="relative w-full text-right text-2xl font-bold uppercase text-azul md:text-3xl">
+            <div class="relative w-full text-right text-2xl font-semibold uppercase text-azul md:text-3xl">
                 <span class="opacity-0 group-data-[nombre=v1]/grid:opacity-100">SILLA AZUL</span>
                 <span class="absolute inset-0 text-right opacity-0 group-data-[nombre=v2]/grid:opacity-100">SILLA ESMERALDA</span>
                 <span class="absolute inset-0 text-right opacity-0 group-data-[nombre=v3]/grid:opacity-100">SILLA FAMOSA</span>
@@ -221,6 +228,8 @@
     </section>
 
     
+
+    
 <section id="detalle-silla"
          aria-labelledby="detalle-nombre"
          class="relative z-10 hidden px-5 pb-24 opacity-0 transition-opacity duration-500 data-[visible=true]:opacity-100 md:px-8 md:pb-32">
@@ -306,6 +315,54 @@
 
 </section>
 
+
+
+        <div class="mb-16 w-full overflow-hidden py-6 text-xl font-semibold whitespace-nowrap text-icono md:text-2xl"
+         role="region"
+         aria-label="¡Te espero sentado!">
+
+            <div class="flex w-max animate-marquee motion-reduce:animate-none hover:[animation-play-state:paused]"
+                aria-hidden="true">
+
+                <div class="flex shrink-0 items-center">
+                    <span class="shrink-0 pr-12">¡TE ESPERO SENTADO!</span>
+                    <span class="shrink-0 pr-12">¡TE ESPERO SENTADO!</span>
+                    <span class="shrink-0 pr-12">¡TE ESPERO SENTADO!</span>
+                    <span class="shrink-0 pr-12">¡TE ESPERO SENTADO!</span>
+                    <span class="shrink-0 pr-12">¡TE ESPERO SENTADO!</span>
+                    <span class="shrink-0 pr-12">¡TE ESPERO SENTADO!</span>
+                </div>
+
+                <div class="flex shrink-0 items-center">
+                    <span class="shrink-0 pr-12">¡TE ESPERO SENTADO!</span>
+                    <span class="shrink-0 pr-12">¡TE ESPERO SENTADO!</span>
+                    <span class="shrink-0 pr-12">¡TE ESPERO SENTADO!</span>
+                    <span class="shrink-0 pr-12">¡TE ESPERO SENTADO!</span>
+                    <span class="shrink-0 pr-12">¡TE ESPERO SENTADO!</span>
+                    <span class="shrink-0 pr-12">¡TE ESPERO SENTADO!</span>
+                </div>
+
+            </div>
+        </div>
+
+        <nav aria-label="Accesos rápidos" class="group/botones grid px-5 pb-16 md:grid-cols-3 md:px-8 md:pb-24">
+
+            <a id="b-catalogo" href="catalogo.html"
+            class="flex min-h-16 items-center bg-azul px-5 text-base font-semibold text-gris-claro uppercase group-has-[#b-catalogo:hover]/botones:bg-rojo group-has-[#b-sobre:hover]/botones:bg-amarillo group-has-[#b-sobre:hover]/botones:text-azul group-has-[#b-ubicacion:hover]/botones:bg-amarillo group-has-[#b-ubicacion:hover]/botones:text-azul focus-visible:outline-2 focus-visible:-outline-offset-4 focus-visible:outline-white md:min-h-20 md:text-lg">
+                IR AL CATÁLOGO
+            </a>
+
+            <a id="b-sobre" href="sobreteo.html"
+            class="flex min-h-16 items-center bg-rojo px-5 text-base font-semibold text-gris-claro uppercase group-has-[#b-catalogo:hover]/botones:bg-amarillo group-has-[#b-catalogo:hover]/botones:text-azul group-has-[#b-ubicacion:hover]/botones:bg-azul focus-visible:outline-2 focus-visible:-outline-offset-4 focus-visible:outline-white md:min-h-20 md:text-lg">
+                SABER MÁS
+            </a>
+
+            <a id="b-ubicacion" href="ubicacion.html"
+            class="flex min-h-16 items-center bg-amarillo px-5 text-base font-semibold text-azul uppercase group-has-[#b-catalogo:hover]/botones:bg-azul group-has-[#b-catalogo:hover]/botones:text-gris-claro group-has-[#b-sobre:hover]/botones:bg-azul group-has-[#b-sobre:hover]/botones:text-gris-claro group-has-[#b-ubicacion:hover]/botones:bg-rojo group-has-[#b-ubicacion:hover]/botones:text-gris-claro focus-visible:outline-2 focus-visible:-outline-offset-4 focus-visible:outline-azul md:min-h-20 md:text-lg">
+                DONDE COMPRARLOS
+            </a>
+
+        </nav>
 
     <footer class="cursor-default">
         <div class="grid bg-azul md:grid-cols-[20rem_1fr]">

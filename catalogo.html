@@ -1,10 +1,15 @@
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Catálogo · TEO SILLAS</title>
+    <title>Catálogo | TEO SILLAS</title>
+
+    <!-- FAVICON -->
+    <link rel="icon" href="media/img/FAVICON-TEO.png" sizes="48x48">
+    <link rel="icon" type="image/png" sizes="32x32" href="media/img/favicon/favicon-32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="media/img/favicon/favicon-16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="media/img/favicon/apple-touch-icon.png">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -42,6 +47,22 @@
             --color-tinta: #4D4D4D;
 
             --font-poppins: "Poppins", system-ui, sans-serif;
+
+            --animate-marquee: marquee 30s linear infinite;
+
+            @keyframes marquee {
+                from { transform: translateX(0); }
+                to { transform: translateX(-50%); }
+            }
+
+            --animate-ciclo: ciclo-color 3s linear var(--desfase, 0s) infinite;
+
+            @keyframes ciclo-color {
+                0%, 30% { background-color: var(--color-azul); color: var(--color-gris-claro); }
+                33.33%, 63.33% { background-color: var(--color-rojo); color: var(--color-gris-claro); }
+                66.66%, 96.66% { background-color: var(--color-amarillo); color: var(--color-azul); }
+                100% { background-color: var(--color-azul); color: var(--color-gris-claro); }
+            }
         }
 
         html.dark {
@@ -124,7 +145,7 @@
     </button>
 
     <!-- CONTENIDO PRINCIPAL -->
-    <main class="relative z-10 w-full px-5 pt-48 pb-24 md:pt-32 md:px-12">
+    <main class="relative z-10 px-5 pt-48 pb-24 md:min-h-svh md:h-auto md:px-8 md:pt-20 md:pb-20">
 
         <h1 class="mb-12 w-full text-right text-4xl font-semibold text-rojo md:text-6xl">
             CATÁLOGO DE TEO
@@ -342,212 +363,235 @@
 
                 <div class="texto-item text-xs text-texto transition-colors duration-200 md:text-sm" data-id="01">
                     <span class="mb-1 block text-sm font-bold">01</span>
-                    <p>Pieza de diseño funcional con gran ergonomía.</p>
+                    <p>Silla Clásica de Madera</p>
                 </div>
 
                 <div class="texto-item text-xs text-texto transition-colors duration-200 md:text-sm" data-id="02">
                     <span class="mb-1 block text-sm font-bold">02</span>
-                    <p>Pieza de diseño funcional con gran ergonomía.</p>
+                    <p>Silla Naranja Moderna</p>
                 </div>
 
                 <div class="texto-item text-xs text-texto transition-colors duration-200 md:text-sm" data-id="03">
                     <span class="mb-1 block text-sm font-bold">03</span>
-                    <p>Pieza de diseño funcional con gran ergonomía.</p>
+                    <p>Silla Amarilla Diseño</p>
                 </div>
 
                 <div class="texto-item text-xs text-texto transition-colors duration-200 md:text-sm" data-id="04">
                     <span class="mb-1 block text-sm font-bold">04</span>
-                    <p>Pieza de diseño funcional con gran ergonomía.</p>
+                    <p>Silla Plegable Negra</p>
                 </div>
 
                 <div class="texto-item text-xs text-texto transition-colors duration-200 md:text-sm" data-id="05">
                     <span class="mb-1 block text-sm font-bold">05</span>
-                    <p>Pieza de diseño funcional con gran ergonomía.</p>
+                    <p>Silla Rejilla Moderna</p>
                 </div>
 
                 <div class="texto-item text-xs text-texto transition-colors duration-200 md:text-sm" data-id="06">
                     <span class="mb-1 block text-sm font-bold">06</span>
-                    <p>Pieza de diseño funcional con gran ergonomía.</p>
+                    <p>Silla Metálica Azul</p>
                 </div>
 
                 <div class="texto-item text-xs text-texto transition-colors duration-200 md:text-sm" data-id="07">
                     <span class="mb-1 block text-sm font-bold">07</span>
-                    <p>Pieza de diseño funcional con gran ergonomía.</p>
+                    <p>Silla Nórdica Verde</p>
                 </div>
 
                 <div class="texto-item text-xs text-texto transition-colors duration-200 md:text-sm" data-id="08">
                     <span class="mb-1 block text-sm font-bold">08</span>
-                    <p>Pieza de diseño funcional con gran ergonomía.</p>
+                    <p>Silla Minimalista Negra</p>
                 </div>
 
                 <div class="texto-item text-xs text-texto transition-colors duration-200 md:text-sm" data-id="09">
                     <span class="mb-1 block text-sm font-bold">09</span>
-                    <p>Pieza de diseño funcional con gran ergonomía.</p>
+                    <p>Silla Transparente</p>
                 </div>
 
                 <div class="texto-item text-xs text-texto transition-colors duration-200 md:text-sm" data-id="10">
                     <span class="mb-1 block text-sm font-bold">10</span>
-                    <p>Pieza de diseño funcional con gran ergonomía.</p>
+                    <p>Silla de Viena</p>
                 </div>
 
                 <div class="texto-item text-xs text-texto transition-colors duration-200 md:text-sm" data-id="11">
                     <span class="mb-1 block text-sm font-bold">11</span>
-                    <p>Pieza de diseño funcional con gran ergonomía.</p>
+                    <p>Silla de Oficina Diseño</p>
                 </div>
 
                 <div class="texto-item text-xs text-texto transition-colors duration-200 md:text-sm" data-id="12">
                     <span class="mb-1 block text-sm font-bold">12</span>
-                    <p>Pieza de diseño funcional con gran ergonomía.</p>
+                    <p>Silla Chula de Autor</p>
                 </div>
 
                 <div class="texto-item text-xs text-texto transition-colors duration-200 md:text-sm" data-id="13">
                     <span class="mb-1 block text-sm font-bold">13</span>
-                    <p>Pieza de diseño funcional con gran ergonomía.</p>
+                    <p>Silla Tapizada Verde</p>
                 </div>
 
                 <div class="texto-item text-xs text-texto transition-colors duration-200 md:text-sm" data-id="14">
                     <span class="mb-1 block text-sm font-bold">14</span>
-                    <p>Pieza de diseño funcional con gran ergonomía.</p>
+                    <p>Silla Ejecutiva Madera</p>
                 </div>
 
                 <div class="texto-item text-xs text-texto transition-colors duration-200 md:text-sm" data-id="15">
                     <span class="mb-1 block text-sm font-bold">15</span>
-                    <p>Pieza de diseño funcional con gran ergonomía.</p>
+                    <p>Silla Luis XVI Vintage</p>
                 </div>
 
                 <div class="texto-item text-xs text-texto transition-colors duration-200 md:text-sm" data-id="16">
                     <span class="mb-1 block text-sm font-bold">16</span>
-                    <p>Pieza de diseño funcional con gran ergonomía.</p>
+                    <p>Silla Coral Estilo</p>
                 </div>
 
                 <div class="texto-item text-xs text-texto transition-colors duration-200 md:text-sm" data-id="17">
                     <span class="mb-1 block text-sm font-bold">17</span>
-                    <p>Pieza de diseño funcional con gran ergonomía.</p>
+                    <p>Silla de Escritorio Velvet</p>
                 </div>
 
                 <div class="texto-item text-xs text-texto transition-colors duration-200 md:text-sm" data-id="18">
                     <span class="mb-1 block text-sm font-bold">18</span>
-                    <p>Pieza de diseño funcional con gran ergonomía.</p>
+                    <p>Silla Forjada Artística</p>
                 </div>
 
                 <div class="texto-item text-xs text-texto transition-colors duration-200 md:text-sm" data-id="19">
                     <span class="mb-1 block text-sm font-bold">19</span>
-                    <p>Pieza de diseño funcional con gran ergonomía.</p>
+                    <p>Silla Comedor Rústica</p>
                 </div>
 
                 <div class="texto-item text-xs text-texto transition-colors duration-200 md:text-sm" data-id="20">
                     <span class="mb-1 block text-sm font-bold">20</span>
-                    <p>Pieza de diseño funcional con gran ergonomía.</p>
+                    <p>Silla Confort Cuero</p>
                 </div>
 
                 <div class="texto-item text-xs text-texto transition-colors duration-200 md:text-sm" data-id="21">
                     <span class="mb-1 block text-sm font-bold">21</span>
-                    <p>Pieza de diseño funcional con gran ergonomía.</p>
+                    <p>Silla Cruzada Estilo</p>
                 </div>
 
                 <div class="texto-item text-xs text-texto transition-colors duration-200 md:text-sm" data-id="22">
                     <span class="mb-1 block text-sm font-bold">22</span>
-                    <p>Pieza de diseño funcional con gran ergonomía.</p>
+                    <p>Silla Ratán Natural</p>
                 </div>
 
                 <div class="texto-item text-xs text-texto transition-colors duration-200 md:text-sm" data-id="23">
                     <span class="mb-1 block text-sm font-bold">23</span>
-                    <p>Pieza de diseño funcional con gran ergonomía.</p>
+                    <p>Silla de Autor Oscura</p>
                 </div>
 
                 <div class="texto-item text-xs text-texto transition-colors duration-200 md:text-sm" data-id="24">
                     <span class="mb-1 block text-sm font-bold">24</span>
-                    <p>Pieza de diseño funcional con gran ergonomía.</p>
+                    <p>Silla Minimalista Roble</p>
                 </div>
 
                 <div class="texto-item text-xs text-texto transition-colors duration-200 md:text-sm" data-id="25">
                     <span class="mb-1 block text-sm font-bold">25</span>
-                    <p>Pieza de diseño funcional con gran ergonomía.</p>
+                    <p>Silla Vanguardia Acero</p>
                 </div>
 
-            </div>
+            </div> 
         </div>
     </main>
 
-    <!-- FICHA PERSONALIZADA DEL CATÁLOGO -->
-    <section id="detalle-catalogo"
+        <section id="detalle-catalogo"
              aria-labelledby="catalogo-detalle-nombre"
-             class="relative z-10 hidden px-5 pb-24 opacity-0 transition-opacity duration-500 data-[visible=true]:opacity-100 md:px-12 md:pb-32">
+             class="relative z-10 col-span-full hidden px-5 pb-24 opacity-0 transition-opacity duration-500 data-[visible=true]:opacity-100 in-[.textos-grid]:px-0 in-[.textos-grid]:pb-0 md:px-8 md:pb-32">
 
         <div id="catalogo-detalle-grid"
              class="scroll-mb-5 border-t-2 border-l-2 border-black md:grid md:h-[60svh] md:scroll-mb-8 md:grid-rows-[minmax(3rem,11fr)_minmax(0,89fr)]">
 
-            <!-- CABECERA AMARILLA -->
             <div class="flex min-h-12 items-center justify-between border-r-2 border-b-2 border-black bg-amarillo px-4 md:min-h-0 md:px-5">
 
                 <button id="catalogo-detalle-cerrar"
                         type="button"
                         aria-label="Cerrar ficha"
                         class="-ml-1 flex h-9 w-9 cursor-pointer items-center justify-center text-[#4D4D4D] hover:text-rojo">
-
-                    <svg viewBox="0 0 24 24"
-                         fill="none"
-                         stroke="currentColor"
-                         stroke-width="2"
-                         stroke-linecap="round"
-                         class="h-6 w-6">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" class="h-6 w-6" aria-hidden="true">
                         <path d="M5 5l14 14M19 5L5 19"/>
                     </svg>
-
                 </button>
 
-                <p id="catalogo-detalle-ref"
-                   class="text-sm font-light text-[#4D4D4D] md:text-base">
-                    REF 000991207
-                </p>
+                <p id="catalogo-detalle-ref" class="text-sm font-light text-[#4D4D4D] md:text-base"></p>
             </div>
 
-            <!-- CONTENIDO DE LA FICHA -->
-<div class="grid grid-cols-2 md:min-h-0 md:grid-cols-[40.6fr_3fr_27fr_29.4fr] md:grid-rows-[minmax(0,1fr)]">
+            <div class="grid grid-cols-2 md:min-h-0 md:grid-cols-[48fr_8fr_22fr_22fr] md:grid-rows-[minmax(0,1fr)]">
 
-    <!-- INFORMACIÓN -->
-    <div class="col-span-2 grid md:col-span-1 md:min-h-0 md:grid-rows-[minmax(0,75fr)_minmax(0,25fr)]">
+                <div class="col-span-2 grid md:col-span-1 md:min-h-0 md:grid-rows-[minmax(0,75fr)_minmax(0,25fr)]">
 
-        <div class="border-r-2 border-b-2 border-black bg-caja p-5 md:min-h-0 md:overflow-y-auto md:p-6">
+                    <div class="border-r-2 border-b-2 border-black bg-caja p-5 md:min-h-0 md:overflow-y-auto md:p-6">
+                        <h2 id="catalogo-detalle-nombre" class="text-sm font-semibold text-tinta md:text-base"></h2>
+                        <p id="catalogo-detalle-descripcion" class="mt-1 text-justify text-sm font-light text-tinta md:text-base"></p>
+                        <ul id="catalogo-detalle-lista" class="mt-4 list-disc space-y-0.5 pl-6 text-sm font-light text-tinta md:text-base"></ul>
+                    </div>
 
-            <h2 id="catalogo-detalle-nombre"
-                class="text-sm font-semibold text-tinta md:text-base">
-            </h2>
+                    <div class="flex min-h-11 items-center border-r-2 border-b-2 border-black bg-rojo px-5 text-lg font-light text-white md:min-h-0 md:px-6 md:text-3xl">
+                        + INFO
+                    </div>
 
-            <p id="catalogo-detalle-descripcion"
-               class="mt-1 text-justify text-sm font-light text-tinta md:text-base">
-            </p>
+                    <div class="h-2 border-r-2 border-b-2 border-black bg-azul md:hidden"></div>
+                </div>
 
-            <ul id="catalogo-detalle-lista"
-                class="mt-4 list-disc space-y-0.5 pl-6 text-sm font-light text-tinta md:text-base">
-            </ul>
+                <div class="hidden border-r-2 border-b-2 border-black bg-azul md:block md:min-h-0"></div>
+
+                <div class="relative h-62 overflow-hidden border-r-2 border-b-2 border-black bg-white md:h-auto md:min-h-0">
+                    <img id="catalogo-detalle-img-1"
+                         alt=""
+                         class="absolute inset-0 block h-full w-full object-contain md:object-cover">
+                </div>
+
+                <div class="relative h-62 overflow-hidden border-r-2 border-b-2 border-black bg-white md:h-auto md:min-h-0">
+                    <img id="catalogo-detalle-img-2"
+                         alt=""
+                         class="absolute inset-0 block h-full w-full object-contain md:object-cover">
+                </div>
+
+            </div>
         </div>
-
-        <div class="flex min-h-20 items-center border-r-2 border-b-2 border-black bg-rojo px-5 text-2xl font-light text-white md:min-h-0 md:px-6 md:text-3xl">
-            + INFO
-        </div>
-    </div>
-
-    <!-- RECTÁNGULO AZUL VERTICAL -->
-    <div class="hidden border-r-2 border-b-2 border-black bg-azul md:block md:min-h-0">
-    </div>
-
-    <!-- IMAGEN 1 -->
-    <div class="relative aspect-[3/4] overflow-hidden border-r-2 border-b-2 border-black bg-white md:aspect-auto md:min-h-0">
-        <img id="catalogo-detalle-img-1"
-             alt=""
-             class="absolute inset-0 h-full w-full object-cover">
-    </div>
-
-    <!-- IMAGEN 2 -->
-    <div class="relative aspect-[3/4] overflow-hidden border-r-2 border-b-2 border-black bg-white md:aspect-auto md:min-h-0">
-        <img id="catalogo-detalle-img-2"
-             alt=""
-             class="absolute inset-0 h-full w-full object-cover">
-    </div>
-
-</div>
     </section>
+
+    <!-- <div class="mb-16 w-full overflow-hidden py-6 text-xl font-semibold whitespace-nowrap text-icono md:text-2xl"
+         role="region"
+         aria-label="¡Te espero sentado!">
+
+            <div class="flex w-max animate-marquee motion-reduce:animate-none hover:[animation-play-state:paused]"
+                aria-hidden="true">
+
+                <div class="flex shrink-0 items-center">
+                    <span class="shrink-0 pr-12">TEO SILLAS</span>
+                    <span class="shrink-0 pr-12">TEO SILLAS</span>
+                    <span class="shrink-0 pr-12">TEO SILLAS</span>
+                    <span class="shrink-0 pr-12">TEO SILLAS</span>
+                    <span class="shrink-0 pr-12">TEO SILLAS</span>
+                    <span class="shrink-0 pr-12">TEO SILLAS</span>
+                </div>
+
+                <div class="flex shrink-0 items-center">
+                    <span class="shrink-0 pr-12">TEO SILLAS</span>
+                    <span class="shrink-0 pr-12">TEO SILLAS</span>
+                    <span class="shrink-0 pr-12">TEO SILLAS</span>
+                    <span class="shrink-0 pr-12">TEO SILLAS</span>
+                    <span class="shrink-0 pr-12">TEO SILLAS</span>
+                    <span class="shrink-0 pr-12">TEO SILLAS</span>
+                </div>
+
+            </div>
+        </div> -->
+
+        <nav aria-label="Accesos rápidos" class="group/botones grid px-5 pb-16 md:grid-cols-3 md:px-8 md:pb-24">
+
+            <a id="b-catalogo" href="favoritos.html"
+            class="flex min-h-16 items-center bg-azul px-5 text-base font-semibold text-gris-claro uppercase group-has-[#b-catalogo:hover]/botones:bg-rojo group-has-[#b-sobre:hover]/botones:bg-amarillo group-has-[#b-sobre:hover]/botones:text-azul group-has-[#b-ubicacion:hover]/botones:bg-amarillo group-has-[#b-ubicacion:hover]/botones:text-azul focus-visible:outline-2 focus-visible:-outline-offset-4 focus-visible:outline-white md:min-h-20 md:text-lg">
+                FAVORITOS DE TEO
+            </a>
+
+            <a id="b-sobre" href="sobreteo.html"
+            class="flex min-h-16 items-center bg-rojo px-5 text-base font-semibold text-gris-claro uppercase group-has-[#b-catalogo:hover]/botones:bg-amarillo group-has-[#b-catalogo:hover]/botones:text-azul group-has-[#b-ubicacion:hover]/botones:bg-azul focus-visible:outline-2 focus-visible:-outline-offset-4 focus-visible:outline-white md:min-h-20 md:text-lg">
+                SABER MÁS
+            </a>
+
+            <a id="b-ubicacion" href="ubicacion.html"
+            class="flex min-h-16 items-center bg-amarillo px-5 text-base font-semibold text-azul uppercase group-has-[#b-catalogo:hover]/botones:bg-azul group-has-[#b-catalogo:hover]/botones:text-gris-claro group-has-[#b-sobre:hover]/botones:bg-azul group-has-[#b-sobre:hover]/botones:text-gris-claro group-has-[#b-ubicacion:hover]/botones:bg-rojo group-has-[#b-ubicacion:hover]/botones:text-gris-claro focus-visible:outline-2 focus-visible:-outline-offset-4 focus-visible:outline-azul md:min-h-20 md:text-lg">
+                DONDE COMPRARLOS
+            </a>
+
+        </nav>
 
     <!-- FOOTER -->
     <footer class="cursor-default">

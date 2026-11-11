@@ -1,5 +1,113 @@
-
 document.addEventListener('DOMContentLoaded', () => {
+
+    const fichas = {
+        '01': ['Silla de líneas clásicas en madera maciza, con respaldo calado y acabado barnizado a mano.', '45 × 50 × 90 cm', 'Altura de asiento 46 cm', 'Madera natural'],
+        '02': ['Asiento ergonómico en polipiel naranja sobre patas de acero fino. Moderna, cómoda y fácil de limpiar.', '48 × 52 × 82 cm', 'Altura de asiento 45 cm', 'Naranja'],
+        '03': ['Diseño amarillo de líneas limpias, pensado para dar un toque de color a cocinas y comedores.', '46 × 50 × 80 cm', 'Altura de asiento 45 cm', 'Amarillo'],
+        '04': ['Plegable y ligera, con estructura negra que ocupa muy poco espacio cuando no se usa.', '43 × 47 × 80 cm', 'Altura de asiento 44 cm', 'Negro'],
+        '05': ['Respaldo de rejilla que deja pasar el aire y le da un aire moderno y ligero.', '45 × 52 × 85 cm', 'Altura de asiento 46 cm', 'Negro y madera'],
+        '06': ['Estructura metálica lacada en azul, resistente y apilable, ideal para interior y terraza.', '44 × 50 × 83 cm', 'Altura de asiento 45 cm', 'Azul'],
+        '07': ['Estilo nórdico en verde suave, con patas de madera inclinadas y asiento ligeramente curvo.', '47 × 51 × 81 cm', 'Altura de asiento 45 cm', 'Verde'],
+        '08': ['Minimalismo en negro mate: una sola pieza de líneas rectas y sin adornos.', '42 × 48 × 82 cm', 'Altura de asiento 45 cm', 'Negro mate'],
+        '09': ['Cuerpo transparente que casi desaparece en la estancia y deja ver el resto del espacio.', '46 × 52 × 80 cm', 'Altura de asiento 46 cm', 'Transparente'],
+        '10': ['Reinterpretación de la clásica silla de Viena, con madera curvada al vapor y respaldo ovalado.', '43 × 49 × 89 cm', 'Altura de asiento 46 cm', 'Madera oscura'],
+        '11': ['Pensada para largas jornadas: respaldo regulable, asiento acolchado y diseño actual.', '58 × 58 × 95 cm', 'Altura de asiento 42–52 cm', 'Gris y negro'],
+        '12': ['Pieza de autor con curvas muy marcadas que sorprende desde cualquier ángulo.', '50 × 55 × 84 cm', 'Altura de asiento 45 cm', 'Multicolor'],
+        '13': ['Tapizada en tela verde de tacto suave, con patas de madera y respaldo envolvente.', '48 × 54 × 85 cm', 'Altura de asiento 46 cm', 'Verde'],
+        '14': ['Silla de despacho con aire ejecutivo: madera noble, brazos amplios y acolchado generoso.', '60 × 62 × 98 cm', 'Altura de asiento 47 cm', 'Madera y cuero'],
+        '15': ['Réplica vintage de estilo Luis XVI, con respaldo tallado y patas torneadas.', '47 × 50 × 95 cm', 'Altura de asiento 46 cm', 'Blanco roto y dorado'],
+        '16': ['Color coral, formas suaves y asiento cómodo. Una silla alegre para cualquier rincón.', '46 × 51 × 82 cm', 'Altura de asiento 45 cm', 'Coral'],
+        '17': ['Silla de escritorio tapizada en terciopelo, con ruedas silenciosas y altura regulable.', '55 × 56 × 90 cm', 'Altura de asiento 44–52 cm', 'Terciopelo'],
+        '18': ['Hierro forjado a mano con detalles artísticos. Cada unidad tiene pequeñas diferencias.', '44 × 48 × 92 cm', 'Altura de asiento 46 cm', 'Negro forja'],
+        '19': ['Robusta silla de comedor de acabado rústico, pensada para aguantar décadas de comidas.', '46 × 50 × 92 cm', 'Altura de asiento 47 cm', 'Madera rústica'],
+        '20': ['Asiento y respaldo de cuero con relleno denso, para una comodidad que se nota desde el primer día.', '52 × 56 × 86 cm', 'Altura de asiento 46 cm', 'Cuero marrón'],
+        '21': ['Patas cruzadas y estructura ligera de inspiración retro, con asiento tapizado.', '45 × 50 × 83 cm', 'Altura de asiento 46 cm', 'Beige'],
+        '22': ['Ratán natural trenzado a mano sobre bastidor de madera. Fresca, luminosa y muy duradera.', '48 × 52 × 85 cm', 'Altura de asiento 45 cm', 'Ratán natural'],
+        '23': ['Silla de autor en tonos oscuros, con perfil escultórico y acabado satinado.', '48 × 53 × 86 cm', 'Altura de asiento 45 cm', 'Gris oscuro'],
+        '24': ['Roble macizo y líneas rectas: minimalismo cálido que encaja en cualquier estancia.', '44 × 48 × 80 cm', 'Altura de asiento 45 cm', 'Roble'],
+        '25': ['Estructura de acero doblado en una sola pieza. Una silla de vanguardia, ligera y resistente.', '45 × 55 × 82 cm', 'Altura de asiento 44 cm', 'Acero cromado']
+    };
+
+    const sillas = {
+        v1: {
+            nombre: 'Silla azul',
+            ref: '000990933',
+            descripcion: 'Estructura de acero lacado en azul eléctrico y asiento de haya. Ligera, apilable y pensada para mesas pequeñas y cocinas con mucha vida.',
+            datos: [
+                ['Medidas', '48 × 55 × 84 cm'],
+                ['Tamaño', 'Altura de asiento 46 cm'],
+                ['Color', 'Azul eléctrico']
+            ],
+            imagenes: ['#', '#']
+        },
+        v2: {
+            nombre: 'Silla esmeralda',
+            ref: '000990412',
+            descripcion: 'Asiento tapizado en terciopelo verde esmeralda sobre una base de haya curvada al vapor. Cómoda, cálida y con un punto señorial.',
+            datos: [
+                ['Medidas', '50 × 54 × 86 cm'],
+                ['Tamaño', 'Altura de asiento 45 cm'],
+                ['Color', 'Verde esmeralda']
+            ],
+            imagenes: ['#', '#']
+        },
+        v3: {
+            nombre: 'Silla famosa',
+            ref: '000991207',
+            descripcion: 'La pieza más fotografiada del taller. Edición limitada de 25 unidades numeradas, con una silueta que parece moverse incluso quieta.',
+            datos: [
+                ['Medidas', '47 × 60 × 90 cm'],
+                ['Tamaño', 'Altura de asiento 44 cm'],
+                ['Color', 'Rojo lacado']
+            ],
+            imagenes: ['#', '#']
+        },
+        v4: {
+            nombre: 'Silla orgánica',
+            ref: '000990586',
+            descripcion: 'Formas redondeadas moldeadas a mano en madera contrachapada. Cada unidad es ligeramente distinta, porque ninguna curva se repite igual.',
+            datos: [
+                ['Medidas', '52 × 58 × 78 cm'],
+                ['Tamaño', 'Altura de asiento 43 cm'],
+                ['Color', 'Madera natural']
+            ],
+            imagenes: ['#', '#']
+        },
+        v5: {
+            nombre: 'Silla serpiente',
+            ref: '000990871',
+            descripcion: 'Tapizado con estampado de serpiente sobre un asiento acolchado y patas de acero cromado. Atrevida, brillante y difícil de pasar por alto.',
+            datos: [
+                ['Medidas', '46 × 53 × 85 cm'],
+                ['Tamaño', 'Altura de asiento 47 cm'],
+                ['Color', 'Estampado serpiente']
+            ],
+            imagenes: ['#', '#']
+        },
+        v6: {
+            nombre: 'Silla morada',
+            ref: '000991054',
+            descripcion: 'Tela jacquard morada con dibujo geométrico sobre una estructura de tubo cromado en voladizo. Un clásico reinterpretado en el taller de Teo.',
+            datos: [
+                ['Medidas', '45 × 52 × 83 cm'],
+                ['Tamaño', 'Altura de asiento 46 cm'],
+                ['Color', 'Morado y blanco']
+            ],
+            imagenes: ['#', '#']
+        },
+        v7: {
+            nombre: 'Silla roja',
+            ref: '000990129',
+            descripcion: 'Nuestra silla de siempre, lacada en rojo y con patas inclinadas. Sencilla, robusta y fiel al primer diseño que salió del taller.',
+            datos: [
+                ['Medidas', '44 × 50 × 80 cm'],
+                ['Tamaño', 'Altura de asiento 45 cm'],
+                ['Color', 'Rojo taller']
+            ],
+            imagenes: ['#', '#']
+        }
+    };
+
 
     // ==================================================
     // 1. MENÚ DESPLEGABLE
@@ -26,7 +134,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
 
-    // ==================================================
+        // ==================================================
     // 2. BUSCADOR
     // ==================================================
 
@@ -53,6 +161,68 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     ];
 
+    const nombresCatalogo = {
+        '01': 'Silla clásica de madera',
+        '02': 'Silla naranja moderna',
+        '03': 'Silla amarilla minimalista',
+        '04': 'Silla plegable negra',
+        '05': 'Silla de rejilla',
+        '06': 'Silla azul apilable',
+        '07': 'Silla nórdica verde',
+        '08': 'Silla negro mate',
+        '09': 'Silla transparente',
+        '10': 'Silla de Viena',
+        '11': 'Silla de trabajo regulable',
+        '12': 'Silla de autor multicolor',
+        '13': 'Silla verde tapizada',
+        '14': 'Silla ejecutiva de madera',
+        '15': 'Silla Luis XVI',
+        '16': 'Silla coral',
+        '17': 'Silla de escritorio de terciopelo',
+        '18': 'Silla de hierro forjado',
+        '19': 'Silla de comedor rústica',
+        '20': 'Silla de cuero marrón',
+        '21': 'Silla retro beige',
+        '22': 'Silla de ratán',
+        '23': 'Silla escultórica gris',
+        '24': 'Silla de roble',
+        '25': 'Silla de acero cromado'
+    };
+
+    const sillasBuscables = [
+        ...Object.keys(fichas).map((id) => {
+            const [descripcion, , , color] = fichas[id];
+            const nombre = nombresCatalogo[id] || `Silla ${id}`;
+
+            return {
+                nombre,
+                texto: `${nombre} ${id} ${Number(id)} ${descripcion} ${color}`,
+                url: `catalogo.html?silla=${id}`,
+                seccion: 'Catálogo'
+            };
+        }),
+        ...Object.keys(sillas).map((id) => {
+            const silla = sillas[id];
+
+            return {
+                nombre: silla.nombre,
+                texto: `${silla.nombre} ${silla.descripcion} ${silla.datos[2][1]}`,
+                url: `favoritas.html?silla=${id}`,
+                seccion: 'Favoritas'
+            };
+        })
+    ];
+
+    const opcionesBuscables = [
+        ...paginas.map((p) => ({
+            nombre: p.nombre,
+            texto: `${p.nombre} ${p.palabras}`,
+            url: p.url,
+            seccion: 'Página'
+        })),
+        ...sillasBuscables
+    ];
+
     function normalizar(texto) {
         return texto
             .toLowerCase()
@@ -60,25 +230,226 @@ document.addEventListener('DOMContentLoaded', () => {
             .replace(/[\u0300-\u036f]/g, '');
     }
 
+    function palabrasDe(texto) {
+        return normalizar(texto).split(/[^a-z0-9]+/).filter(Boolean);
+    }
+
+    function coincide(palabrasTexto, palabrasConsulta) {
+        return palabrasConsulta.every((q) => {
+            if (/^\d+$/.test(q)) {
+                return palabrasTexto.includes(q);
+            }
+
+            const raiz = q.length > 3 && q.endsWith('s') ? q.slice(0, -1) : q;
+
+            return palabrasTexto.some((p) => p.startsWith(raiz));
+        });
+    }
+
+    function buscarSugerencias(consulta) {
+        const palabrasConsulta = palabrasDe(consulta);
+
+        if (!palabrasConsulta.length) return [];
+
+        const porNombre = opcionesBuscables.filter((o) =>
+            coincide(palabrasDe(o.nombre), palabrasConsulta)
+        );
+
+        const porTexto = opcionesBuscables.filter((o) =>
+            !porNombre.includes(o) && coincide(palabrasDe(o.texto), palabrasConsulta)
+        );
+
+        return [...porNombre, ...porTexto].slice(0, 8);
+    }
+
     const formularioBuscar = document.getElementById('formulario-buscar');
     const buscador = document.getElementById('buscador');
 
     if (formularioBuscar && buscador) {
 
+        const estilosSugerencias = document.createElement('style');
+
+               estilosSugerencias.textContent = `
+            #sugerencias-buscador {
+                position: absolute;
+                top: calc(100% + 4px);
+                left: 0;
+                right: 0;
+                z-index: 60;
+                margin: 0;
+                padding: 0;
+                list-style: none;
+                max-height: 320px;
+                overflow-y: auto;
+                background: var(--color-fondo);
+                color: #161616;
+                border: 1px solid var(--color-caja);
+                border-radius: 0;
+                box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+                font-family: var(--font-poppins);
+            }
+            #sugerencias-buscador[hidden] {
+                display: none;
+            }
+            #sugerencias-buscador li {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                gap: 12px;
+                padding: 10px 12px;
+                border-radius: 0;
+                cursor: pointer;
+                font-size: 0.95rem;
+            }
+            #sugerencias-buscador li[aria-selected="true"],
+            #sugerencias-buscador li:hover {
+                background: var(--color-amarillo);
+                color: #161616;
+            }
+            #sugerencias-buscador small {
+                color: var(--color-texto);
+                white-space: nowrap;
+            }
+            #sugerencias-buscador li[aria-selected="true"] small,
+            #sugerencias-buscador li:hover small {
+                color: #161616;
+            }
+            .dark #sugerencias-buscador {
+                color: var(--color-gris-claro);
+            }
+            .dark #sugerencias-buscador li[aria-selected="true"],
+            .dark #sugerencias-buscador li:hover {
+                color: #161616;
+            }
+        `;
+
+        document.head.appendChild(estilosSugerencias);
+
+        if (getComputedStyle(formularioBuscar).position === 'static') {
+            formularioBuscar.style.position = 'relative';
+        }
+
+        const listaSugerencias = document.createElement('ul');
+
+        listaSugerencias.id = 'sugerencias-buscador';
+        listaSugerencias.setAttribute('role', 'listbox');
+        listaSugerencias.hidden = true;
+
+        formularioBuscar.appendChild(listaSugerencias);
+
+        buscador.setAttribute('autocomplete', 'off');
+        buscador.setAttribute('role', 'combobox');
+        buscador.setAttribute('aria-autocomplete', 'list');
+        buscador.setAttribute('aria-controls', 'sugerencias-buscador');
+        buscador.setAttribute('aria-expanded', 'false');
+
+        let sugerenciasActuales = [];
+        let indiceActivo = -1;
+
+        function cerrarSugerencias() {
+            listaSugerencias.hidden = true;
+            listaSugerencias.replaceChildren();
+            sugerenciasActuales = [];
+            indiceActivo = -1;
+            buscador.setAttribute('aria-expanded', 'false');
+            buscador.removeAttribute('aria-activedescendant');
+        }
+
+        function marcarActiva(indice) {
+            const elementos = listaSugerencias.querySelectorAll('li');
+
+            elementos.forEach((li, i) => {
+                li.setAttribute('aria-selected', String(i === indice));
+            });
+
+            indiceActivo = indice;
+
+            if (indice >= 0 && elementos[indice]) {
+                buscador.setAttribute('aria-activedescendant', elementos[indice].id);
+                elementos[indice].scrollIntoView({ block: 'nearest' });
+            } else {
+                buscador.removeAttribute('aria-activedescendant');
+            }
+        }
+
+        function pintarSugerencias() {
+            sugerenciasActuales = buscarSugerencias(buscador.value);
+            indiceActivo = -1;
+
+            if (!sugerenciasActuales.length) {
+                cerrarSugerencias();
+                return;
+            }
+
+            listaSugerencias.replaceChildren(
+                ...sugerenciasActuales.map((opcion, i) => {
+                    const li = document.createElement('li');
+                    const nombre = document.createElement('span');
+                    const seccion = document.createElement('small');
+
+                    li.id = `sugerencia-${i}`;
+                    li.setAttribute('role', 'option');
+                    li.setAttribute('aria-selected', 'false');
+
+                    nombre.textContent = opcion.nombre;
+                    seccion.textContent = opcion.seccion;
+
+                    li.append(nombre, seccion);
+
+                    li.addEventListener('mousedown', (e) => {
+                        e.preventDefault();
+                    });
+
+                    li.addEventListener('click', () => {
+                        window.location.href = opcion.url;
+                    });
+
+                    return li;
+                })
+            );
+
+            listaSugerencias.hidden = false;
+            buscador.setAttribute('aria-expanded', 'true');
+        }
+
         formularioBuscar.addEventListener('submit', (e) => {
             e.preventDefault();
 
-            const consulta = normalizar(buscador.value.trim());
+            if (indiceActivo >= 0 && sugerenciasActuales[indiceActivo]) {
+                window.location.href = sugerenciasActuales[indiceActivo].url;
+                return;
+            }
 
-            if (!consulta) return;
+            const palabrasConsulta = palabrasDe(buscador.value);
 
-            const resultado = paginas.find((pagina) =>
-                normalizar(pagina.nombre + ' ' + pagina.palabras)
-                    .includes(consulta)
+            if (!palabrasConsulta.length) return;
+
+            const porNombre = sillasBuscables.filter((s) =>
+                coincide(palabrasDe(s.nombre), palabrasConsulta)
             );
 
-            if (resultado) {
-                window.location.href = resultado.url;
+            const porTexto = sillasBuscables.filter((s) =>
+                coincide(palabrasDe(s.texto), palabrasConsulta)
+            );
+
+            const pagina = paginas.find((p) =>
+                coincide(palabrasDe(`${p.nombre} ${p.palabras}`), palabrasConsulta)
+            );
+
+            let destino = null;
+
+            if (porNombre.length === 1) {
+                destino = porNombre[0].url;
+            } else if (pagina) {
+                destino = pagina.url;
+            } else if (porNombre.length) {
+                destino = porNombre[0].url;
+            } else if (porTexto.length) {
+                destino = porTexto[0].url;
+            }
+
+            if (destino) {
+                window.location.href = destino;
             } else {
                 buscador.setCustomValidity(
                     'No hay resultados para esa búsqueda'
@@ -90,6 +461,33 @@ document.addEventListener('DOMContentLoaded', () => {
 
         buscador.addEventListener('input', () => {
             buscador.setCustomValidity('');
+            pintarSugerencias();
+        });
+
+        buscador.addEventListener('focus', () => {
+            if (buscador.value.trim()) pintarSugerencias();
+        });
+
+        buscador.addEventListener('keydown', (e) => {
+            if (listaSugerencias.hidden) return;
+
+            if (e.key === 'ArrowDown') {
+                e.preventDefault();
+                marcarActiva((indiceActivo + 1) % sugerenciasActuales.length);
+            } else if (e.key === 'ArrowUp') {
+                e.preventDefault();
+                marcarActiva(
+                    indiceActivo <= 0 ? sugerenciasActuales.length - 1 : indiceActivo - 1
+                );
+            } else if (e.key === 'Escape') {
+                cerrarSugerencias();
+            }
+        });
+
+        buscador.addEventListener('blur', cerrarSugerencias);
+
+        document.addEventListener('click', (e) => {
+            if (!formularioBuscar.contains(e.target)) cerrarSugerencias();
         });
     }
 
@@ -110,6 +508,11 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     actualizarScroll();
+
+
+
+
+    
 
 
     // ==================================================
@@ -153,90 +556,275 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
     // ==================================================
-    // 5. FICHA ANTIGUA DE SILLAS (ELEMENTOS .silla-item)
+    // 5. CATÁLOGO: FICHAS DE LAS 25 SILLAS
     // ==================================================
 
-    const sillasAntiguas = document.querySelectorAll('.silla-item');
+    const sillasCatalogo = document.querySelectorAll('.silla-item');
+    const fichaCatalogo = document.getElementById('detalle-catalogo');
 
-    if (sillasAntiguas.length) {
+    if (sillasCatalogo.length && fichaCatalogo) {
 
-        const cajaDetalle = document.getElementById('caja-detalle');
-        const detalleTitulo = document.getElementById('detalle-titulo');
+        const imagenesFicha = {};
 
-        const imgZoom1 = document.querySelector('.zoom-img-1');
-        const imgZoom2 = document.querySelector('.zoom-img-2');
-        const imgZoom3 = document.querySelector('.zoom-img-3');
+        const mainCatalogo = document.querySelector('main');
+        const textosCatalogo = [...document.querySelectorAll('.texto-item')];
+        const textosGrid = textosCatalogo.length ? textosCatalogo[0].parentElement : null;
 
-        sillasAntiguas.forEach(silla => {
+        if (textosGrid) textosGrid.classList.add('textos-grid');
 
-            const id = silla.getAttribute('data-id');
+        const fichaGrid = document.getElementById('catalogo-detalle-grid');
+        const fichaCerrar = document.getElementById('catalogo-detalle-cerrar');
+        const fichaRef = document.getElementById('catalogo-detalle-ref');
+        const fichaNombre = document.getElementById('catalogo-detalle-nombre');
+        const fichaDescripcion = document.getElementById('catalogo-detalle-descripcion');
+        const fichaLista = document.getElementById('catalogo-detalle-lista');
+        const fichaImagenes = [1, 2].map((n) => document.getElementById(`catalogo-detalle-img-${n}`));
 
-            const textoCorrespondiente = document.querySelector(
-                `.texto-item[data-id="${id}"]`
+        const menosMovimiento = window.matchMedia('(prefers-reduced-motion: reduce)');
+        const movil = window.matchMedia('(max-width: 767px)');
+
+        let sillaAbierta = null;
+        let temporizadorFicha;
+
+        function textoDe(id) {
+            return document.querySelector(`.texto-item[data-id="${id}"]`);
+        }
+
+        function marcarTexto(id, activo) {
+            const texto = textoDe(id);
+            if (!texto) return;
+            texto.classList.toggle('text-rojo', activo);
+            texto.classList.toggle('font-medium', activo);
+            texto.classList.toggle('text-texto', !activo);
+        }
+
+        function datosSilla(item) {
+            const id = item.dataset.id;
+            const [descripcion, medidas, altura, color] = fichas[id] || ['', '', '', ''];
+            const imagenBase = item.querySelector('img');
+            const rutaBase = imagenBase ? imagenBase.getAttribute('src') : '#';
+
+            return {
+                nombre: (item.dataset.titulo || '').replace(/^\d+\s*/, ''),
+                ref: `0009901${id}`,
+                descripcion,
+                datos: [['Medidas', medidas], ['Tamaño', altura], ['Color', color]].filter(([, valor]) => valor),
+                imagenes: imagenesFicha[id] || [rutaBase, item.dataset.imagen2 || rutaBase]
+            };
+        }
+
+        function rellenarFicha(silla) {
+            fichaRef.textContent = `REF ${silla.ref}`;
+            fichaNombre.textContent = silla.nombre;
+            fichaDescripcion.textContent = silla.descripcion;
+
+            fichaLista.replaceChildren(
+                ...silla.datos.map(([etiqueta, valor]) => {
+                    const li = document.createElement('li');
+                    li.textContent = `${etiqueta}: ${valor}`;
+                    return li;
+                })
             );
 
-            const imagen = silla.querySelector('img');
-            const imgSilla = imagen ? imagen.getAttribute('src') : null;
-
-            const tituloSilla = silla.getAttribute('data-titulo');
-
-            silla.addEventListener('mouseenter', () => {
-
-                if (textoCorrespondiente) {
-                    textoCorrespondiente.classList.remove('text-texto');
-
-                    textoCorrespondiente.classList.add(
-                        'text-rojo',
-                        'font-medium'
-                    );
+            fichaImagenes.forEach((imagen, i) => {
+                const ruta = silla.imagenes[i];
+                if (ruta && ruta !== '#') {
+                    imagen.src = ruta;
+                    imagen.alt = `${silla.nombre}, vista ${i + 1}`;
+                } else {
+                    imagen.removeAttribute('src');
+                    imagen.alt = '';
                 }
             });
+        }
 
-            silla.addEventListener('mouseleave', () => {
+        function devolverFicha() {
+            if (mainCatalogo && fichaCatalogo.parentElement !== mainCatalogo.parentElement) {
+                mainCatalogo.after(fichaCatalogo);
+            }
+        }
 
-                if (textoCorrespondiente) {
-                    textoCorrespondiente.classList.remove(
-                        'text-rojo',
-                        'font-medium'
-                    );
+        function colocarFicha(item) {
+            if (!movil.matches || !textosGrid) {
+                devolverFicha();
+                return;
+            }
 
-                    textoCorrespondiente.classList.add('text-texto');
-                }
+            const textos = [...textosGrid.querySelectorAll('.texto-item')];
+            const texto = textoDe(item.dataset.id);
+            const indice = textos.indexOf(texto);
+
+            if (indice === -1) return;
+
+            const columnas = getComputedStyle(textosGrid).gridTemplateColumns.split(' ').length;
+            const finDeFila = Math.min((Math.floor(indice / columnas) + 1) * columnas, textos.length) - 1;
+            const referencia = textos[finDeFila];
+
+            if (referencia.nextElementSibling !== fichaCatalogo) {
+                referencia.after(fichaCatalogo);
+            }
+        }
+
+        function alinearFicha() {
+            const margen = movil.matches ? 20 : 32;
+            const alto = fichaGrid.getBoundingClientRect().height;
+
+            fichaGrid.scrollIntoView({
+                behavior: menosMovimiento.matches ? 'auto' : 'smooth',
+                block: alto + margen > window.innerHeight ? 'start' : 'end'
             });
+        }
 
-            silla.addEventListener('click', () => {
-
-                if (!cajaDetalle) return;
-
-                cajaDetalle.classList.remove('hidden');
-
-                if (detalleTitulo) {
-                    detalleTitulo.textContent = tituloSilla || '';
-                }
-
-                if (imgZoom1 && imgSilla) {
-                    imgZoom1.setAttribute('src', imgSilla);
-                }
-
-                if (imgZoom2 && imgSilla) {
-                    imgZoom2.setAttribute('src', imgSilla);
-                }
-
-                if (imgZoom3 && imgSilla) {
-                    imgZoom3.setAttribute('src', imgSilla);
-                }
-
-                cajaDetalle.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'nearest'
+        function mostrarFicha() {
+            fichaCatalogo.classList.remove('hidden');
+            requestAnimationFrame(() => {
+                requestAnimationFrame(() => {
+                    fichaCatalogo.dataset.visible = 'true';
                 });
             });
+            alinearFicha();
+        }
+
+        function abrirFicha(item) {
+            clearTimeout(temporizadorFicha);
+
+            if (sillaAbierta && sillaAbierta !== item) {
+                marcarTexto(sillaAbierta.dataset.id, false);
+            }
+            sillaAbierta = item;
+            marcarTexto(item.dataset.id, true);
+
+            const silla = datosSilla(item);
+
+            if (fichaCatalogo.dataset.visible === 'true') {
+                fichaCatalogo.dataset.visible = 'false';
+                temporizadorFicha = setTimeout(() => {
+                    colocarFicha(item);
+                    rellenarFicha(silla);
+                    mostrarFicha();
+                }, 300);
+            } else {
+                colocarFicha(item);
+                rellenarFicha(silla);
+                mostrarFicha();
+            }
+        }
+
+        function cerrarFicha() {
+            if (fichaCatalogo.classList.contains('hidden')) return;
+
+            clearTimeout(temporizadorFicha);
+
+            const anterior = sillaAbierta;
+            sillaAbierta = null;
+
+            if (anterior) {
+                marcarTexto(anterior.dataset.id, false);
+                const destino = movil.matches ? (textoDe(anterior.dataset.id) || anterior) : anterior;
+                destino.scrollIntoView({
+                    behavior: menosMovimiento.matches ? 'auto' : 'smooth',
+                    block: 'center'
+                });
+            }
+
+            fichaCatalogo.dataset.visible = 'false';
+            temporizadorFicha = setTimeout(() => {
+                fichaCatalogo.classList.add('hidden');
+            }, 500);
+        }
+
+        sillasCatalogo.forEach((silla) => {
+            const id = silla.dataset.id;
+
+            silla.tabIndex = 0;
+            silla.setAttribute('role', 'button');
+            silla.setAttribute('aria-label', silla.dataset.titulo || `Silla ${id}`);
+
+            const entrar = () => marcarTexto(id, true);
+            const salir = () => {
+                if (sillaAbierta !== silla) marcarTexto(id, false);
+            };
+
+            silla.addEventListener('mouseenter', entrar);
+            silla.addEventListener('mouseleave', salir);
+            silla.addEventListener('focus', entrar);
+            silla.addEventListener('blur', salir);
+
+            silla.addEventListener('click', () => abrirFicha(silla));
+
+            silla.addEventListener('keydown', (e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    abrirFicha(silla);
+                }
+            });
         });
+
+        textosCatalogo.forEach((texto) => {
+            const id = texto.dataset.id;
+            const silla = document.querySelector(`.silla-item[data-id="${id}"]`);
+
+            if (!silla) return;
+
+            texto.tabIndex = 0;
+            texto.style.cursor = 'pointer';
+            texto.setAttribute('role', 'button');
+            texto.setAttribute('aria-label', silla.dataset.titulo || `Silla ${id}`);
+
+            const entrar = () => marcarTexto(id, true);
+            const salir = () => {
+                if (sillaAbierta !== silla) marcarTexto(id, false);
+            };
+
+            texto.addEventListener('mouseenter', entrar);
+            texto.addEventListener('mouseleave', salir);
+            texto.addEventListener('focus', entrar);
+            texto.addEventListener('blur', salir);
+
+            texto.addEventListener('click', () => abrirFicha(silla));
+
+            texto.addEventListener('keydown', (e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    abrirFicha(silla);
+                }
+            });
+        });
+
+        fichaCerrar.addEventListener('click', cerrarFicha);
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') cerrarFicha();
+        });
+
+        movil.addEventListener('change', () => {
+            if (sillaAbierta) {
+                colocarFicha(sillaAbierta);
+            } else {
+                devolverFicha();
+            }
+        });
+
+        window.addEventListener('resize', () => {
+            if (movil.matches && sillaAbierta && fichaCatalogo.parentElement === textosGrid) {
+                colocarFicha(sillaAbierta);
+            }
+        });
+
+        const sillaPedidaCatalogo = new URLSearchParams(window.location.search).get('silla');
+
+        if (sillaPedidaCatalogo) {
+            const objetivo = [...sillasCatalogo].find((s) => s.dataset.id === sillaPedidaCatalogo);
+
+            if (objetivo) {
+                setTimeout(() => abrirFicha(objetivo), 300);
+            }
+        }
     }
 
 
     // ==================================================
-    // 6. NOMBRE DE LAS SILLAS EN EL GRID DE VÍDEOS
+    // 6. NOMBRE DE SILLA EN LOS VÍDEOS
     // ==================================================
 
     const nombreSilla = document.getElementById('nombre-silla');
@@ -244,32 +832,27 @@ document.addEventListener('DOMContentLoaded', () => {
     document.querySelectorAll('.grid-con-nombres video').forEach(video => {
 
         function mostrarNombre() {
-
             if (!nombreSilla) return;
 
             nombreSilla.textContent = video.dataset.nombre || '';
-
             nombreSilla.classList.add('visible');
         }
 
         function ocultarNombre() {
-
             if (!nombreSilla) return;
 
             nombreSilla.classList.remove('visible');
         }
 
         video.addEventListener('mouseenter', mostrarNombre);
-
         video.addEventListener('mouseleave', ocultarNombre);
-
         video.addEventListener('click', mostrarNombre);
 
     });
 
 
     // ==================================================
-    // 7. CONFIGURACIÓN Y REPRODUCCIÓN DE VÍDEOS
+    // 7. REPRODUCCIÓN DE VÍDEOS
     // ==================================================
 
     const videos = document.querySelectorAll('.silla-video');
@@ -282,13 +865,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
         video.play().catch(() => {});
 
-        // Pausar al pasar el cursor
-
         video.addEventListener('mouseenter', () => {
             video.pause();
         });
-
-        // Reanudar al retirar el cursor
 
         video.addEventListener('mouseleave', () => {
             video.play().catch(() => {});
@@ -298,104 +877,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
     // ==================================================
-    // 8. GRID DE FAVORITAS Y FICHAS PERSONALIZADAS
+    // 8. FAVORITAS: FICHAS PERSONALIZADAS
     // ==================================================
 
     const seccionDetalle = document.getElementById('detalle-silla');
     const seccionGrid = document.getElementById('grid-favoritas');
 
     if (seccionDetalle && seccionGrid) {
-
-        const sillas = {
-
-            v1: {
-                nombre: 'Silla azul',
-                ref: '000990933',
-                descripcion: 'Estructura de acero lacado en azul eléctrico y asiento de haya. Ligera, apilable y pensada para mesas pequeñas y cocinas con mucha vida.',
-                datos: [
-                    ['Medidas', '48 × 55 × 84 cm'],
-                    ['Tamaño', 'Altura de asiento 46 cm'],
-                    ['Color', 'Azul eléctrico']
-                ],
-                imagenes: ['#', '#']
-            },
-
-            v2: {
-                nombre: 'Silla esmeralda',
-                ref: '000990412',
-                descripcion: 'Asiento tapizado en terciopelo verde esmeralda sobre una base de haya curvada al vapor. Cómoda, cálida y con un punto señorial.',
-                datos: [
-                    ['Medidas', '50 × 54 × 86 cm'],
-                    ['Tamaño', 'Altura de asiento 45 cm'],
-                    ['Color', 'Verde esmeralda']
-                ],
-                imagenes: ['#', '#']
-            },
-
-            v3: {
-                nombre: 'Silla famosa',
-                ref: '000991207',
-                descripcion: 'La pieza más fotografiada del taller. Edición limitada de 25 unidades numeradas, con una silueta que parece moverse incluso quieta.',
-                datos: [
-                    ['Medidas', '47 × 60 × 90 cm'],
-                    ['Tamaño', 'Altura de asiento 44 cm'],
-                    ['Color', 'Rojo lacado']
-                ],
-                imagenes: ['#', '#']
-            },
-
-            v4: {
-                nombre: 'Silla orgánica',
-                ref: '000990586',
-                descripcion: 'Formas redondeadas moldeadas a mano en madera contrachapada. Cada unidad es ligeramente distinta, porque ninguna curva se repite igual.',
-                datos: [
-                    ['Medidas', '52 × 58 × 78 cm'],
-                    ['Tamaño', 'Altura de asiento 43 cm'],
-                    ['Color', 'Madera natural']
-                ],
-                imagenes: ['#', '#']
-            },
-
-            v5: {
-                nombre: 'Silla serpiente',
-                ref: '000990871',
-                descripcion: 'Tapizado con estampado de serpiente sobre un asiento acolchado y patas de acero cromado. Atrevida, brillante y difícil de pasar por alto.',
-                datos: [
-                    ['Medidas', '46 × 53 × 85 cm'],
-                    ['Tamaño', 'Altura de asiento 47 cm'],
-                    ['Color', 'Estampado serpiente']
-                ],
-                imagenes: ['#', '#']
-            },
-
-            v6: {
-                nombre: 'Silla morada',
-                ref: '000991054',
-                descripcion: 'Tela jacquard morada con dibujo geométrico sobre una estructura de tubo cromado en voladizo. Un clásico reinterpretado en el taller de Teo.',
-                datos: [
-                    ['Medidas', '45 × 52 × 83 cm'],
-                    ['Tamaño', 'Altura de asiento 46 cm'],
-                    ['Color', 'Morado y blanco']
-                ],
-                imagenes: ['#', '#']
-            },
-
-            v7: {
-                nombre: 'Silla roja',
-                ref: '000990129',
-                descripcion: 'Nuestra silla de siempre, lacada en rojo y con patas inclinadas. Sencilla, robusta y fiel al primer diseño que salió del taller.',
-                datos: [
-                    ['Medidas', '44 × 50 × 80 cm'],
-                    ['Tamaño', 'Altura de asiento 45 cm'],
-                    ['Color', 'Rojo taller']
-                ],
-                imagenes: ['#', '#']
-            }
-
-        };
-
-
-        // Elementos HTML
 
         const gridVideos = document.getElementById('videos-favoritas');
         const gridDetalle = document.getElementById('detalle-grid');
@@ -416,18 +904,11 @@ document.addEventListener('DOMContentLoaded', () => {
             '(prefers-reduced-motion: reduce)'
         );
 
-
-        // Estado
-
         let sillaFija = null;
         let sillaHover = null;
         let temporizadorDetalle;
 
-
-        // Actualizar nombre de la silla
-
         function actualizarNombre() {
-
             const id = sillaFija || sillaHover;
 
             if (id) {
@@ -436,9 +917,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 delete seccionGrid.dataset.nombre;
             }
         }
-
-
-        // Rellenar información de la ficha
 
         function rellenarDetalle(silla) {
 
@@ -455,22 +933,14 @@ document.addEventListener('DOMContentLoaded', () => {
             }
 
             if (listaDetalle) {
-
                 listaDetalle.replaceChildren(
                     ...silla.datos.map(([etiqueta, valor]) => {
-
                         const li = document.createElement('li');
-
                         li.textContent = `${etiqueta}: ${valor}`;
-
                         return li;
-
                     })
                 );
             }
-
-
-            // Actualizar imágenes
 
             imagenesDetalle.forEach((imagen, i) => {
 
@@ -479,55 +949,33 @@ document.addEventListener('DOMContentLoaded', () => {
                 const ruta = silla.imagenes[i];
 
                 if (ruta && ruta !== '#') {
-
                     imagen.src = ruta;
-
                     imagen.alt = `${silla.nombre}, vista ${i + 1}`;
-
                 } else {
-
                     imagen.removeAttribute('src');
-
                     imagen.alt = '';
                 }
 
             });
-
         }
-
-
-        // Mostrar ficha
 
         function mostrarDetalle() {
 
             seccionDetalle.classList.remove('hidden');
 
             requestAnimationFrame(() => {
-
                 requestAnimationFrame(() => {
-
                     seccionDetalle.dataset.visible = 'true';
-
                 });
-
             });
 
             if (gridDetalle) {
-
                 gridDetalle.scrollIntoView({
-
                     behavior: reducirMovimiento.matches ? 'auto' : 'smooth',
-
                     block: 'end'
-
                 });
-
             }
-
         }
-
-
-        // Abrir ficha de una silla
 
         function abrirDetalle(id) {
 
@@ -546,25 +994,15 @@ document.addEventListener('DOMContentLoaded', () => {
                 seccionDetalle.dataset.visible = 'false';
 
                 temporizadorDetalle = setTimeout(() => {
-
                     rellenarDetalle(silla);
-
                     mostrarDetalle();
-
                 }, 300);
 
             } else {
-
                 rellenarDetalle(silla);
-
                 mostrarDetalle();
-
             }
-
         }
-
-
-        // Cerrar ficha
 
         function cerrarDetalle() {
 
@@ -579,95 +1017,62 @@ document.addEventListener('DOMContentLoaded', () => {
             seccionDetalle.dataset.visible = 'false';
 
             if (gridVideos) {
-
                 gridVideos.scrollIntoView({
-
                     behavior: reducirMovimiento.matches ? 'auto' : 'smooth',
-
                     block: 'center'
-
                 });
-
             }
 
             temporizadorDetalle = setTimeout(() => {
-
                 seccionDetalle.classList.add('hidden');
-
             }, 500);
-
         }
-
-
-        // Eventos de los vídeos
 
         videos.forEach(video => {
 
             const entrar = () => {
-
                 sillaHover = video.id;
-
                 actualizarNombre();
-
             };
 
             const salir = () => {
-
                 sillaHover = null;
-
                 actualizarNombre();
-
             };
 
             video.addEventListener('mouseenter', entrar);
-
             video.addEventListener('mouseleave', salir);
-
             video.addEventListener('focus', entrar);
-
             video.addEventListener('blur', salir);
 
             video.addEventListener('click', () => {
-
                 abrirDetalle(video.id);
-
             });
 
             video.addEventListener('keydown', e => {
-
                 if (e.key === 'Enter' || e.key === ' ') {
-
                     e.preventDefault();
-
                     abrirDetalle(video.id);
-
                 }
-
             });
 
         });
 
-
-        // Botón de cerrar ficha
-
         if (botonCerrar) {
-
             botonCerrar.addEventListener('click', cerrarDetalle);
-
         }
 
-
-        // Escape cierra la ficha
-
         document.addEventListener('keydown', e => {
-
             if (e.key === 'Escape') {
-
                 cerrarDetalle();
-
             }
-
         });
+
+        const sillaPedidaFavoritas = new URLSearchParams(window.location.search).get('silla');
+
+        if (sillaPedidaFavoritas && sillas[sillaPedidaFavoritas]) {
+            setTimeout(() => abrirDetalle(sillaPedidaFavoritas), 300);
+        }
 
     }
 
@@ -677,277 +1082,207 @@ document.addEventListener('DOMContentLoaded', () => {
     // ==================================================
 
     document.addEventListener('keydown', e => {
-
         if (e.key === 'Escape' && botonMenu) {
-
             abrirMenu(false);
-
         }
-
     });
 
-});
 
+    // ==================================================
+    // 10. MAPA INTERACTIVO
+    // ==================================================
+
+    const contenedorMapa = document.getElementById('mapa-teo');
+
+    if (contenedorMapa && typeof L !== 'undefined') {
+
+        const coordenadasTeo = [40.4263, -3.7045];
+
+        const mapa = L.map('mapa-teo', {
+            scrollWheelZoom: false
+        }).setView(coordenadasTeo, 17);
+
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+        }).addTo(mapa);
+
+        const marcadorTeo = L.marker(coordenadasTeo).addTo(mapa);
+
+        marcadorTeo.bindPopup(`
+            <strong>TEO SILLAS</strong><br>
+            C/ de la Palma, 23<br>
+            28004 Madrid
+            <br><br>
+            <a href="https://www.google.com/maps/dir/?api=1&destination=Calle+de+la+Palma+23%2C+28004+Madrid"
+               target="_blank"
+               rel="noopener noreferrer">
+               Cómo llegar
+            </a>
+        `);
+
+        marcadorTeo.openPopup();
+
+    }
 
 
     // ==================================================
-    // 9. CATÁLOGO: FICHAS PERSONALIZADAS DE LAS 25 SILLAS
+    // 11. FORMULARIO DE CONTACTO
     // ==================================================
 
-    const seccionCatalogo = document.getElementById('detalle-catalogo');
-    const gridCatalogoDetalle = document.getElementById('catalogo-detalle-grid');
-    const botonCerrarCatalogo = document.getElementById('catalogo-detalle-cerrar');
+    const formularioContacto = document.getElementById('formulario-contacto');
 
-    if (seccionCatalogo && gridCatalogoDetalle) {
+    if (formularioContacto) {
 
-        const elementosSillas = document.querySelectorAll('.silla-item');
+        formularioContacto.removeAttribute('action');
+        formularioContacto.removeAttribute('method');
 
-        const refCatalogo = document.getElementById('catalogo-detalle-ref');
-        const nombreCatalogo = document.getElementById('catalogo-detalle-nombre');
-        const descripcionCatalogo = document.getElementById('catalogo-detalle-descripcion');
-        const listaCatalogo = document.getElementById('catalogo-detalle-lista');
+        const URL_ENVIO = 'https://formsubmit.co/ajax/hola@teosillas.es';
 
-        const imagenCatalogo1 = document.getElementById('catalogo-detalle-img-1');
-        const imagenCatalogo2 = document.getElementById('catalogo-detalle-img-2');
+        const botonDesplegar = document.getElementById('contacto-desplegar');
+        const filasContacto = formularioContacto.querySelectorAll('[data-fila]');
 
-        const reducirMovimiento = window.matchMedia(
-            '(prefers-reduced-motion: reduce)'
-        );
+        const correo = document.getElementById('contacto-correo');
+        const repetirCorreo = document.getElementById('contacto-correo-repetido');
+        const mensajeContacto = document.getElementById('mensaje-contacto');
+        const botonEnviar = formularioContacto.querySelector('button[type="submit"]');
 
-        let sillaCatalogoActual = null;
-        let temporizadorCatalogo;
+        const modalContacto = document.getElementById('modal-contacto');
+        const botonCerrarModal = document.getElementById('modal-contacto-cerrar');
+        const botonCerrarModalX = document.getElementById('modal-contacto-cerrar-x');
 
-        // ----------------------------------------------
-        // PREPARAR LAS SILLAS
-        // ----------------------------------------------
+        function desplegarFormulario(abrir) {
 
-        elementosSillas.forEach(silla => {
+            formularioContacto.dataset.abierto = String(abrir);
 
-            silla.setAttribute('tabindex', '0');
-            silla.setAttribute('role', 'button');
-
-            silla.setAttribute(
-                'aria-label',
-                `Ver información de ${silla.dataset.titulo || 'esta silla'}`
-            );
-
-        });
-
-
-        // ----------------------------------------------
-        // RELLENAR LA FICHA
-        // ----------------------------------------------
-
-        function rellenarFichaCatalogo(silla) {
-
-            const id = silla.dataset.id;
-            const titulo = silla.dataset.titulo || `Silla ${id}`;
-
-            const imagen = silla.querySelector('img');
-            const rutaImagen = imagen ? imagen.src : '';
-
-            const textoItem = document.querySelector(
-                `.texto-item[data-id="${id}"] p`
-            );
-
-            const descripcion = textoItem
-                ? textoItem.textContent.trim()
-                : 'Información de esta pieza próximamente.';
-
-            // Referencia
-            refCatalogo.textContent = 'REF 000991207';
-
-            // Nombre
-            nombreCatalogo.textContent = titulo;
-
-            // Descripción
-            descripcionCatalogo.textContent = descripcion;
-
-            // Características
-            listaCatalogo.replaceChildren();
-
-            const caracteristicas = [
-                `Número de catálogo: ${id}`,
-                'Pieza perteneciente al catálogo de Teo',
-                'Consulta más información en tienda'
-            ];
-
-            caracteristicas.forEach(texto => {
-
-                const li = document.createElement('li');
-
-                li.textContent = texto;
-
-                listaCatalogo.appendChild(li);
-
-            });
-
-            // Imágenes
-            if (rutaImagen) {
-
-                imagenCatalogo1.src = rutaImagen;
-                imagenCatalogo1.alt = `${titulo}, imagen 1`;
-
-                // Permite añadir una segunda imagen mediante data-imagen2.
-                const segundaImagen = silla.dataset.imagen2 || rutaImagen;
-
-                imagenCatalogo2.src = segundaImagen;
-                imagenCatalogo2.alt = `${titulo}, imagen 2`;
-
+            if (botonDesplegar) {
+                botonDesplegar.setAttribute('aria-expanded', String(abrir));
             }
+
+            filasContacto.forEach((fila) => {
+                fila.inert = !abrir;
+            });
 
         }
 
+        function mostrarModal() {
 
-        // ----------------------------------------------
-        // MOSTRAR LA FICHA
-        // ----------------------------------------------
+            if (!modalContacto) {
+                alert('MENSAJE ENVIADO CON ÉXITO');
+                return;
+            }
 
-        function mostrarFichaCatalogo() {
+            modalContacto.dataset.visible = 'true';
 
-            seccionCatalogo.classList.remove('hidden');
+            if (botonCerrarModal) botonCerrarModal.focus();
 
-            requestAnimationFrame(() => {
+        }
 
-                requestAnimationFrame(() => {
+        function ocultarModal() {
 
-                    seccionCatalogo.dataset.visible = 'true';
+            if (!modalContacto || modalContacto.dataset.visible !== 'true') return;
 
+            modalContacto.dataset.visible = 'false';
+
+            if (botonDesplegar) botonDesplegar.focus();
+
+        }
+
+        function mostrarError(texto) {
+
+            if (!mensajeContacto) {
+                alert(texto);
+                return;
+            }
+
+            mensajeContacto.textContent = texto;
+            mensajeContacto.classList.remove('hidden');
+
+        }
+
+        formularioContacto.addEventListener('submit', async (evento) => {
+
+            evento.preventDefault();
+
+            if (correo.value.trim().toLowerCase() !== repetirCorreo.value.trim().toLowerCase()) {
+
+                mostrarError('Los correos electrónicos no coinciden.');
+
+                repetirCorreo.setCustomValidity('Los correos no coinciden.');
+                repetirCorreo.reportValidity();
+
+                return;
+            }
+
+            repetirCorreo.setCustomValidity('');
+            if (mensajeContacto) mensajeContacto.classList.add('hidden');
+
+            if (botonEnviar) botonEnviar.disabled = true;
+
+            try {
+
+                const respuesta = await fetch(URL_ENVIO, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Accept': 'application/json'
+                    },
+                    body: JSON.stringify(Object.fromEntries(new FormData(formularioContacto)))
                 });
 
-            });
+                const datos = await respuesta.json();
 
-            gridCatalogoDetalle.scrollIntoView({
+                if (respuesta.ok && String(datos.success) === 'true') {
 
-                behavior: reducirMovimiento.matches ? 'auto' : 'smooth',
+                    formularioContacto.reset();
+                    desplegarFormulario(false);
+                    mostrarModal();
 
-                block: 'end'
+                } else {
 
-            });
+                    mostrarError(datos.message || 'No se ha podido enviar el mensaje. Inténtalo de nuevo.');
 
-        }
+                }
 
+            } catch (error) {
 
-        // ----------------------------------------------
-        // ABRIR UNA SILLA
-        // ----------------------------------------------
+                mostrarError('No se ha podido enviar el mensaje. Comprueba tu conexión e inténtalo de nuevo.');
 
-        function abrirFichaCatalogo(silla) {
+            } finally {
 
-            if (!silla) return;
-
-            clearTimeout(temporizadorCatalogo);
-
-            sillaCatalogoActual = silla;
-
-            // Si ya hay una ficha abierta, primero desaparece.
-            if (seccionCatalogo.dataset.visible === 'true') {
-
-                seccionCatalogo.dataset.visible = 'false';
-
-                temporizadorCatalogo = setTimeout(() => {
-
-                    rellenarFichaCatalogo(silla);
-
-                    mostrarFichaCatalogo();
-
-                }, 300);
-
-            } else {
-
-                rellenarFichaCatalogo(silla);
-
-                mostrarFichaCatalogo();
+                if (botonEnviar) botonEnviar.disabled = false;
 
             }
-
-        }
-
-
-        // ----------------------------------------------
-        // CERRAR LA FICHA
-        // ----------------------------------------------
-
-        function cerrarFichaCatalogo() {
-
-            if (seccionCatalogo.classList.contains('hidden')) return;
-
-            clearTimeout(temporizadorCatalogo);
-
-            seccionCatalogo.dataset.visible = 'false';
-
-            temporizadorCatalogo = setTimeout(() => {
-
-                seccionCatalogo.classList.add('hidden');
-
-                if (sillaCatalogoActual) {
-
-                    sillaCatalogoActual.scrollIntoView({
-
-                        behavior: reducirMovimiento.matches ? 'auto' : 'smooth',
-
-                        block: 'center'
-
-                    });
-
-                }
-
-            }, 500);
-
-        }
-
-
-        // ----------------------------------------------
-        // EVENTOS DE LAS 25 SILLAS
-        // ----------------------------------------------
-
-        elementosSillas.forEach(silla => {
-
-            silla.addEventListener('click', () => {
-
-                abrirFichaCatalogo(silla);
-
-            });
-
-            silla.addEventListener('keydown', e => {
-
-                if (e.key === 'Enter' || e.key === ' ') {
-
-                    e.preventDefault();
-
-                    abrirFichaCatalogo(silla);
-
-                }
-
-            });
 
         });
 
+        desplegarFormulario(false);
 
-        // ----------------------------------------------
-        // BOTÓN CERRAR
-        // ----------------------------------------------
-
-        if (botonCerrarCatalogo) {
-
-            botonCerrarCatalogo.addEventListener('click', cerrarFichaCatalogo);
-
+        if (botonDesplegar) {
+            botonDesplegar.addEventListener('click', () => {
+                desplegarFormulario(botonDesplegar.getAttribute('aria-expanded') !== 'true');
+            });
         }
 
+        repetirCorreo.addEventListener('input', () => {
 
-        // ----------------------------------------------
-        // ESCAPE
-        // ----------------------------------------------
+            repetirCorreo.setCustomValidity('');
+            if (mensajeContacto) mensajeContacto.classList.add('hidden');
 
-        document.addEventListener('keydown', e => {
+        });
 
-            if (e.key === 'Escape') {
+        if (botonCerrarModal) botonCerrarModal.addEventListener('click', ocultarModal);
+        if (botonCerrarModalX) botonCerrarModalX.addEventListener('click', ocultarModal);
 
-                cerrarFichaCatalogo();
+        if (modalContacto) {
+            modalContacto.addEventListener('click', (evento) => {
+                if (evento.target === modalContacto) ocultarModal();
+            });
+        }
 
-            }
-
+        document.addEventListener('keydown', (evento) => {
+            if (evento.key === 'Escape') ocultarModal();
         });
 
     }
 
+});
