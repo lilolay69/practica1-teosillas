@@ -46,8 +46,12 @@
             --animate-marquee: marquee 30s linear infinite;
 
             @keyframes marquee {
-                from { transform: translateX(0); }
-                to { transform: translateX(-50%); }
+                from {
+                    transform: translateX(0);
+                }
+                to {
+                    transform: translateX(-50%);
+                }
             }
         }
 
@@ -146,17 +150,14 @@
     </button>
 
     
-<main class="relative z-10 min-h-svh">
+<main class="relative z-10 md:min-h-svh">
 
-    <!-- FONDO AMARILLO -->
     <div aria-hidden="true"
          class="absolute inset-y-0 right-0 w-[36%] bg-amarillo"></div>
 
-    <!-- CONTENEDOR PRINCIPAL -->
-    <div class="relative flex min-h-svh flex-col pt-20 pb-8
-                md:grid md:grid-cols-[1fr_auto] md:items-end md:p-0 md:pb-16">
+    <div class="relative flex flex-col pt-20 pb-8
+                md:grid md:min-h-svh md:grid-cols-[1fr_auto] md:items-end md:p-0 md:pb-16">
 
-        <!-- CUATRO RECTÁNGULOS -->
         <nav aria-label="Secciones"
              class="order-2 mt-5 flex flex-col gap-2
                     md:order-none md:mt-0 md:gap-3 md:py-0 md:pr-16 md:pl-8">
@@ -183,11 +184,11 @@
 
         </nav>
 
-        <!-- VÍDEO -->
         <div class="order-1 flex justify-end md:order-none md:pt-28 md:pr-8">
 
             <video
-                class="pointer-events-none block h-auto w-full saturate-140 brightness-94 md:w-auto md:max-w-[min(64rem,64vw)] md:max-h-[max(12rem,calc(100svh-11rem))] [&::-webkit-media-controls]:hidden [&::-webkit-media-controls-panel]:hidden [&::-webkit-media-controls-start-playback-button]:hidden"
+                id="home-video"
+                class="video-home pointer-events-none block h-auto w-full saturate-140 brightness-94 md:w-auto md:max-w-[min(64rem,64vw)] md:max-h-[max(12rem,calc(100svh-11rem))]"
                 src="media/video/home-video.mp4"
                 autoplay
                 loop
@@ -205,6 +206,103 @@
     </div>
 
 </main>
+
+<section class="bg-azul px-5 py-10 text-white md:px-8 md:py-10">
+
+    <p class="text-justify text-sm leading-relaxed font-light md:text-base">
+         TEO SILLAS es una web dedicada a descubrir el universo de una tienda de sillas, donde el diseño, la funcionalidad y la personalidad se encuentran. A través de sus diferentes secciones, podremos explorar el catálogo de productos, conocer una selección de sillas favoritas, descubrir quién está detrás de Teo y consultar dónde se encuentra la tienda.
+
+</section>
+
+<section class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5">
+
+    <img src="media/img/sillas/3.webp"
+         alt="Silla de Teo 1"
+         class="block aspect-[3/4] w-full object-cover">
+
+    <img src="media/img/sillas/4.webp"
+         alt="Silla de Teo 2"
+         class="block aspect-[3/4] w-full object-cover">
+
+    <img src="media/img/sillas/7.webp"
+         alt="Silla de Teo 3"
+         class="block aspect-[3/4] w-full object-cover">
+
+    <img src="media/img/sillas/8.webp"
+         alt="Silla de Teo 4"
+         class="block aspect-[3/4] w-full object-cover">
+
+    <img src="media/img/sillas/9.webp"
+         alt="Silla de Teo 5"
+         class="block aspect-[3/4] w-full object-cover">
+
+    <img src="media/img/sillas/12.webp"
+         alt="Silla de Teo 6"
+         class="block aspect-[3/4] w-full object-cover lg:hidden">
+
+</section>
+
+
+<!-- CARRUSEL -->
+
+<div class="mt-20 mb-16 w-full overflow-hidden whitespace-nowrap py-0 text-xl font-semibold text-rojo md:text-2xl"
+     role="region"
+     aria-label="El que se fue a Sevilla compró una silla">
+
+    <div class="flex w-max animate-marquee motion-reduce:animate-none hover:[animation-play-state:paused]"
+         aria-hidden="true">
+
+        <!-- PRIMER GRUPO -->
+        <div class="flex shrink-0 items-center">
+            <span class="shrink-0 pr-12">TEO SILLAS</span>
+            <span class="shrink-0 pr-12">TEO SILLAS</span>
+            <span class="shrink-0 pr-12">TEO SILLAS</span>
+            <span class="shrink-0 pr-12">TEO SILLAS</span>
+            <span class="shrink-0 pr-12">TEO SILLAS</span>
+            <span class="shrink-0 pr-12">TEO SILLAS</span>
+            <span class="shrink-0 pr-12">TEO SILLAS</span>
+            <span class="shrink-0 pr-12">TEO SILLAS</span>
+            <span class="shrink-0 pr-12">TEO SILLAS</span>
+            <span class="shrink-0 pr-12">TEO SILLAS</span>
+        </div>
+
+        <!-- SEGUNDO GRUPO: DUPLICADO -->
+        <div class="flex shrink-0 items-center">
+            <span class="shrink-0 pr-12">TEO SILLAS</span>
+            <span class="shrink-0 pr-12">TEO SILLAS</span>
+            <span class="shrink-0 pr-12">TEO SILLAS</span>
+            <span class="shrink-0 pr-12">TEO SILLAS</span>
+            <span class="shrink-0 pr-12">TEO SILLAS</span>
+            <span class="shrink-0 pr-12">TEO SILLAS</span>
+            <span class="shrink-0 pr-12">TEO SILLAS</span>
+            <span class="shrink-0 pr-12">TEO SILLAS</span>
+            <span class="shrink-0 pr-12">TEO SILLAS</span>
+            <span class="shrink-0 pr-12">TEO SILLAS</span>
+        </div>
+
+    </div>
+</div>
+
+<nav aria-label="Accesos rápidos" class="group/botones grid px-5 pb-16 md:grid-cols-3 md:px-8 md:pb-24">
+
+            <a id="b-catalogo" href="catalogo.html"
+            class="flex min-h-16 items-center bg-azul px-5 text-base font-semibold text-gris-claro uppercase group-has-[#b-catalogo:hover]/botones:bg-rojo group-has-[#b-sobre:hover]/botones:bg-amarillo group-has-[#b-sobre:hover]/botones:text-azul group-has-[#b-ubicacion:hover]/botones:bg-amarillo group-has-[#b-ubicacion:hover]/botones:text-azul focus-visible:outline-2 focus-visible:-outline-offset-4 focus-visible:outline-white md:min-h-20 md:text-lg">
+                IR AL CATÁLOGO
+            </a>
+
+            <a id="b-sobre" href="sobreteo.html"
+            class="flex min-h-16 items-center bg-rojo px-5 text-base font-semibold text-gris-claro uppercase group-has-[#b-catalogo:hover]/botones:bg-amarillo group-has-[#b-catalogo:hover]/botones:text-azul group-has-[#b-ubicacion:hover]/botones:bg-azul focus-visible:outline-2 focus-visible:-outline-offset-4 focus-visible:outline-white md:min-h-20 md:text-lg">
+                SABER MÁS
+            </a>
+
+            <a id="b-ubicacion" href="ubicacion.html"
+            class="flex min-h-16 items-center bg-amarillo px-5 text-base font-semibold text-azul uppercase group-has-[#b-catalogo:hover]/botones:bg-azul group-has-[#b-catalogo:hover]/botones:text-gris-claro group-has-[#b-sobre:hover]/botones:bg-azul group-has-[#b-sobre:hover]/botones:text-gris-claro group-has-[#b-ubicacion:hover]/botones:bg-rojo group-has-[#b-ubicacion:hover]/botones:text-gris-claro focus-visible:outline-2 focus-visible:-outline-offset-4 focus-visible:outline-azul md:min-h-20 md:text-lg">
+                DONDE COMPRARLOS
+            </a>
+
+        </nav>
+
+
 
 
     <!-- FOOTER -->
