@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -17,6 +16,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="css/styles.css">
+    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
 
     <script>
         try {
@@ -58,7 +58,39 @@
             --color-tinta: #D9D9D9;
         }
 
-    
+        .foto-presentacion {
+            overflow: hidden;
+            margin-left: -1.25rem;
+            margin-right: -1.25rem;
+        }
+
+        .foto-presentacion img {
+            display: block;
+            width: 100%;
+            max-width: 100%;
+            height: auto;
+            object-fit: contain;
+            transform: translateY(0);
+            transition: transform 250ms ease-out, filter 250ms ease-out;
+        }
+
+        .foto-presentacion:hover img {
+            transform: translateY(-4px) scale(1.06);
+        }
+
+        #galeria-teo .group .absolute {
+            opacity: 0 !important;
+            transition: opacity 300ms ease;
+            pointer-events: none;
+        }
+
+        #galeria-teo .group:hover .absolute {
+            opacity: 0 !important;
+        }
+
+        #galeria-teo .group .absolute.galeria-overlay-visible {
+            opacity: 1 !important;
+        }
     </style>
 </head>
 
@@ -68,7 +100,7 @@
          class="pointer-events-none absolute -top-16 left-[22px] z-0 w-[22rem] max-w-none md:-top-92 md:left-[-140px] md:w-[44rem]">
 
     <!-- MENÚ DESPLEGABLE -->
-    <div id="menu"
+    <div id="menu" 
          class="invisible fixed inset-x-0 top-0 z-[15] bg-azul px-5 pt-5 pb-14 opacity-0 group-data-[menu=abierto]:visible group-data-[menu=abierto]:opacity-100 group-data-[menu=abierto]:transition-[opacity,visibility] group-data-[menu=abierto]:duration-800 group-data-[menu=abierto]:ease-in-out md:px-8 md:pt-8">
 
         <form id="formulario-buscar" role="search" action="#" class="mx-14">
@@ -119,105 +151,218 @@
         <h1 class="mb-0 w-full text-right text-4xl font-semibold text-rojo md:text-6xl">
             ¿QUIÉN ES TEO?
         </h1>
+<!-- CARTA DE PRESENTACIÓN... -->
+    <section id="detalle-catalogo"
+             aria-labelledby="catalogo-detalle-nombre"
+             data-aos="fade-up"
+             data-aos-duration="800"
+             class="group relative z-10 mt-10 px-5 pb-24 transition-transform duration-300 ease-out hover:scale-[1.01] in-[.textos-grid]:px-0 in-[.textos-grid]:pb-0 md:mt-8 md:px-8 md:pb-32">
 
-        <div class="space-y-0">
+        <div id="catalogo-detalle-grid"
+             class="scroll-mb-5 border-t-2 border-l-2 border-black md:grid md:h-[60svh] md:scroll-mb-8 md:grid-rows-[minmax(3rem,11fr)_minmax(0,89fr)]">
 
-            <div class="grid grid-cols-1 gap-0 md:grid-cols-[1.35fr_1.15fr]">
+            <div class="flex min-h-12 items-center justify-between border-r-2 border-b-2 border-black bg-amarillo px-4 md:min-h-0 md:px-5">
 
-                <!-- IMAGEN PEGADA AL BORDE IZQUIERDO -->
-                <div class="-ml-5 h-full w-[calc(100%+1.25rem)] overflow-hidden md:-ml-8 md:w-[calc(100%+2rem)]">
-                    <video
-                        src="media/img/teo/Comp 1_2.mp4"
-                        autoplay
-                        muted
-                        loop
-                        playsinline
-                        class="block h-[440px] w-full object-contain object-left md:h-[560px]"
-                    ></video>
-                </div>
-
-                <div class="mt-11 flex justify-end">
-                    <p class="max-w-[34rem] text-justify text-sm leading-relaxed font-light text-tinta md:text-base">
-                        Teo no es solo una persona, una marca ni un espacio expositivo convencional; es una forma de entender el diseño de mobiliario donde cada pieza cuenta una historia propia y personal. Nuestro proyecto nace de la pasión por rescatar iconos del pasado, restaurarlos con mimo artesanal y darles una nueva vida en los hogares contemporáneos más exigentes. Creemos firmemente que una silla no es meramente un objeto utilitario para sentarse, sino una escultura funcional dotada de carácter, ergonomía y una estética atemporal que transforma por completo cualquier rincón donde se ubique.
-                    </p>
-                </div>
+                <p id="catalogo-detalle-ref" class="ml-auto text-right text-sm font-light text-[#4D4D4D] md:text-base">Mi casa y yo</p>
             </div>
 
-            <div class="grid grid-cols-1 gap-0 md:grid-cols-[1.35fr_1.15fr]">
+            <div class="grid grid-cols-2 md:min-h-0 md:grid-cols-[48fr_8fr_22fr_22fr] md:grid-rows-[minmax(0,1fr)]">
 
-                <!-- IMAGEN PEGADA AL BORDE IZQUIERDO -->
-                <div class="-ml-5 h-full w-[calc(100%+1.25rem)] overflow-hidden md:-ml-8 md:w-[calc(100%+2rem)]">
-                    <img src="media/img/teo/Casa_de_teo.webp" alt="Casa de Teo"
-                         class="block h-[440px] w-full object-cover object-center md:h-[560px]">
+                <div class="col-span-2 grid md:col-span-1 md:min-h-0 md:grid-rows-[minmax(0,75fr)_minmax(0,25fr)]">
+
+                    <div class="border-r-2 border-b-2 border-black bg-caja p-5 md:min-h-0 md:overflow-y-auto md:p-6">
+                        <h2 id="catalogo-detalle-nombre" class="text-sm font-semibold text-tinta md:text-base">¿Quién es TEO?</h2>
+                        <p id="catalogo-detalle-descripcion" class="mt-1 text-justify text-sm font-light text-tinta md:text-base">Hola, YO SOY TEO! fundador de TEO SILLAS, 
+                        enamorado del diseño y el placer de 
+                        sentarse en él. </p>
+                            <p id="catalogo-detalle-descripcion" class="mt-1 text-justify text-sm font-light text-tinta md:text-base">Coleccionista y heredero de TEO mi abuelo. 
+                        Un artesano de los que ya no quedan. Aquí en 
+                        TEO SILLAS descubriras diseños familiares y 
+                        descubrimientos que he ido recolectando a lo
+                        largo de mi vida. Me encanta viajar y traer 
+                        nuevas texturas, nuevas formas, etc.
+                        Todo curado por los Teo.</p>
+                            <p id="catalogo-detalle-descripcion" class="mt-1 text-justify text-sm font-light text-tinta md:text-base">
+ 
+                            Un negocio familiar lleno de amor por la 
+                            artesanía y años de experiencia</p>
+                    </div>
+
+                    <button type="button" id="btn-fotos-teo" aria-label="Ir a la galería de fotos de Teo" class="flex min-h-11 cursor-pointer items-center border-r-2 border-b-2 border-black bg-rojo px-5 text-left text-lg font-light text-white transition-all duration-200 hover:bg-amarillo hover:text-azul focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-azul md:min-h-0 md:px-6 md:text-3xl">
+                        + FOTOS 
+                    </button>
+
+                    <div class="h-2 border-r-2 border-b-2 border-black bg-amarillo md:hidden"></div>
                 </div>
+
+                <div class="hidden border-r-2 border-b-2 border-black bg-azul md:block md:min-h-0"></div>
+
+                <div class="group relative h-62 overflow-hidden border-r-2 border-b-2 border-black bg-white md:h-auto md:min-h-0">
+                    <img src="media/img/teo/Casa_de_teo.webp"
+                         alt=""
+                         class="absolute inset-0 block h-full w-full scale-100 object-cover transition-transform duration-300 ease-out group-hover:scale-105 md:object-cover">
+                </div>
+
+                <div class="group relative h-62 overflow-hidden border-r-2 border-b-2 border-black bg-white md:h-auto md:min-h-0">
+                    <img src="media/img/teo/TEO.webp"
+                         alt=""
+                         class="absolute inset-0 block h-full w-full scale-100 object-cover transition-transform duration-300 ease-out group-hover:scale-105 md:object-cover">
+                </div>
+
             </div>
         </div>
-    </main>
-
-    <!-- TEXTO EN MOVIMIENTO -->
-    <!-- MARQUESINA -->
-<div class="mb-16 w-full overflow-hidden py-6 text-xl font-semibold whitespace-nowrap text-icono md:text-2xl"
+    </section>
+        
+        <!-- CARRUSEL -->
+<div class="relative left-1/2 w-screen -ml-[50vw] overflow-hidden" id="video-teo-wrapper">
+    <video id="video-teo" src="media/img/teo/fotos extra/Comp 1.mp4" autoplay muted loop playsinline class="block h-auto w-full max-w-none object-cover"></video>
+</div>
+<div class="relative left-1/2 mt-6 mb-12 w-screen -ml-[50vw] overflow-hidden whitespace-nowrap py-0 text-xl font-semibold text-rojo md:mt-0 md:mb-12 md:text-2xl"
      role="region"
-     aria-label="No sé, yo solo quiero sentarme">
+     aria-label="El que se fue a Sevilla compró una silla">
 
     <div class="flex w-max animate-marquee motion-reduce:animate-none hover:[animation-play-state:paused]"
          aria-hidden="true">
 
+        <!-- PRIMER GRUPO -->
         <div class="flex shrink-0 items-center">
-            <span class="shrink-0 pr-12">NO SÉ, YO SOLO QUIERO SENTARME</span>
-            <span class="shrink-0 pr-12">NO SÉ, YO SOLO QUIERO SENTARME</span>
-            <span class="shrink-0 pr-12">NO SÉ, YO SOLO QUIERO SENTARME</span>
-            <span class="shrink-0 pr-12">NO SÉ, YO SOLO QUIERO SENTARME</span>
-            <span class="shrink-0 pr-12">NO SÉ, YO SOLO QUIERO SENTARME</span>
-            <span class="shrink-0 pr-12">NO SÉ, YO SOLO QUIERO SENTARME</span>
-        </div>
-
-        <div class="flex shrink-0 items-center">
-            <span class="shrink-0 pr-12">NO SÉ, YO SOLO QUIERO SENTARME</span>
-            <span class="shrink-0 pr-12">NO SÉ, YO SOLO QUIERO SENTARME</span>
-            <span class="shrink-0 pr-12">NO SÉ, YO SOLO QUIERO SENTARME</span>
-            <span class="shrink-0 pr-12">NO SÉ, YO SOLO QUIERO SENTARME</span>
-            <span class="shrink-0 pr-12">NO SÉ, YO SOLO QUIERO SENTARME</span>
-            <span class="shrink-0 pr-12">NO SÉ, YO SOLO QUIERO SENTARME</span>
-        </div>
-
+            <span class="shrink-0 pr-12">NO SÉ, SOLO QUIERO SENTARME</span>
+            <span class="shrink-0 pr-12">NO SÉ, SOLO QUIERO SENTARME</span>
+            <span class="shrink-0 pr-12">NO SÉ, SOLO QUIERO SENTARME</span>
+            <span class="shrink-0 pr-12">NO SÉ, SOLO QUIERO SENTARME</span>
+            <span class="shrink-0 pr-12">NO SÉ, SOLO QUIERO SENTARME</span>
+            <span class="shrink-0 pr-12">NO SÉ, SOLO QUIERO SENTARME</span>
     </div>
 </div>
 
-    <!-- IMAGEN ABUELO TEO -->
-    <div class="my-4 w-full px-5 md:px-8">
-        <img src="media/img/teo/abuelo_teo.webp" alt="Abuelo Teo"
-             class="block h-[400px] w-full rotate-90 object-contain md:h-[500px]">
-    </div>
 
-    <!-- TEXTO LEGADO -->
-    <section class="w-full px-5 pb-16 md:px-8">
-        <div class="mx-auto mb-16 max-w-[42rem]">
-            <p class="text-justify text-base leading-relaxed font-light text-tinta md:text-lg">
-                El legado de las generaciones pasadas nos inspira a mantener vivo un oficio donde el tiempo no es un enemigo, sino un aliado que aporta pátina y valor emocional. Cada pieza que pasa por nuestro taller recupera su esplendor original adaptándose a las necesidades de confort actuales, convirtiéndose en un puente indestructible entre la tradición artesana y el diseño de vanguardia.
+
+        <div id="galeria-teo" class="mt-8 w-full scroll-mt-24 md:mt-10">
+            <div class="flex flex-col gap-0 md:block">
+                <h2 class="mb-0 w-full pl-5 pr-5 text-left text-4xl font-semibold text-azul md:pl-13 md:pr-1 md:text-6xl">
+                    GALERIA DE TEO
+                </h2>
+            </div>
+
+            <div class="grid grid-cols-2 gap-0 border-t-2 border-l-2 border-black md:grid-cols-4">
+                <div class="group relative overflow-hidden border-r-2 border-b-2 border-black bg-white">
+                    <img src="media/img/teo/fotos extra/teoymoodboard.jpg" alt="Dos sillas de Teo" class="block aspect-[3/4] w-full object-cover transition-transform duration-500 group-hover:scale-105">
+                    <div class="absolute inset-0 flex items-center justify-center bg-black/15 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+                        <div class="text-center text-xl font-semibold tracking-tight md:text-2xl">
+                            <span class="text-azul">@</span><span class="text-rojo">teo</span><span class="text-amarillo">sillas</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="group relative overflow-hidden border-r-2 border-b-2 border-black bg-white">
+                    <img src="media/img/teo/fotos extra/manos_trabajando.webp" alt="Manos trabajando" class="block aspect-[3/4] w-full object-cover transition-transform duration-500 group-hover:scale-105">
+                    <div class="absolute inset-0 flex items-center justify-center bg-black/15 opacity-0 transition-opacity duration-300 pointer-events-none group-hover:opacity-100">
+                        <div class="text-center text-xl font-semibold tracking-tight md:text-2xl">
+                            <span class="text-azul">@</span><span class="text-rojo">teo</span><span class="text-amarillo">sillas</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="group relative overflow-hidden border-r-2 border-b-2 border-black bg-white">
+                    <img src="media/img/teo/fotos extra/silla_canasta.webp" alt="Silla canasta" class="block aspect-[3/4] w-full object-cover transition-transform duration-500 group-hover:scale-105">
+                    <div class="absolute inset-0 flex items-center justify-center bg-black/15 opacity-0 transition-opacity duration-300 pointer-events-none group-hover:opacity-100">
+                        <div class="text-center text-xl font-semibold tracking-tight md:text-2xl">
+                            <span class="text-azul">@</span><span class="text-rojo">teo</span><span class="text-amarillo">sillas</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="group relative overflow-hidden border-r-2 border-b-2 border-black bg-white">
+                    <img src="media/img/teo/fotos extra/teodos.avif" alt="Silla humo" class="block aspect-[3/4] w-full object-cover transition-transform duration-500 group-hover:scale-105">
+                    <div class="absolute inset-0 flex items-center justify-center bg-black/15 opacity-0 transition-opacity duration-300 pointer-events-none group-hover:opacity-100">
+                        <div class="text-center text-xl font-semibold tracking-tight md:text-2xl">
+                            <span class="text-azul">@</span><span class="text-rojo">teo</span><span class="text-amarillo">sillas</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="group relative overflow-hidden border-r-2 border-b-2 border-black bg-white">
+                    <img src="media/img/másamigos.webp" alt="Más imágenes de Teo" class="block aspect-[3/4] w-full object-cover transition-transform duration-500 group-hover:scale-105">
+                    <div class="absolute inset-0 flex items-center justify-center bg-black/15 opacity-0 transition-opacity duration-300 pointer-events-none group-hover:opacity-100">
+                        <div class="text-center text-xl font-semibold tracking-tight md:text-2xl">
+                            <span class="text-azul">@</span><span class="text-rojo">teo</span><span class="text-amarillo">sillas</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="group relative overflow-hidden border-r-2 border-b-2 border-black bg-white">
+                    <img src="media/img/teo/fotos extra/hijo-de-teo.jpg" alt="Más manos trabajando" class="block aspect-[3/4] w-full object-cover transition-transform duration-500 group-hover:scale-105">
+                    <div class="absolute inset-0 flex items-center justify-center bg-black/15 opacity-0 transition-opacity duration-300 pointer-events-none group-hover:opacity-100">
+                        <div class="text-center text-xl font-semibold tracking-tight md:text-2xl">
+                            <span class="text-azul">@</span><span class="text-rojo">teo</span><span class="text-amarillo">sillas</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="group relative overflow-hidden border-r-2 border-b-2 border-black bg-white">
+                    <img src="media/img/teo/fotos extra/silla-divertida.webp" alt="Más silla canasta" class="block aspect-[3/4] w-full object-cover transition-transform duration-500 group-hover:scale-105">
+                    <div class="absolute inset-0 flex items-center justify-center bg-black/15 opacity-0 transition-opacity duration-300 pointer-events-none group-hover:opacity-100">
+                        <div class="text-center text-xl font-semibold tracking-tight md:text-2xl">
+                            <span class="text-azul">@</span><span class="text-rojo">teo</span><span class="text-amarillo">sillas</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="group relative overflow-hidden border-r-2 border-b-2 border-black bg-white">
+                    <img src="media/img/teo/fotos extra/amigo_sillas.webp" alt="Más silla humo" class="block aspect-[3/4] w-full object-cover transition-transform duration-500 group-hover:scale-105">
+                    <div class="absolute inset-0 flex items-center justify-center bg-black/15 opacity-0 transition-opacity duration-300 pointer-events-none group-hover:opacity-100">
+                        <div class="text-center text-xl font-semibold tracking-tight md:text-2xl">
+                            <span class="text-azul">@</span><span class="text-rojo">teo</span><span class="text-amarillo">sillas</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="group relative overflow-hidden border-r-2 border-b-2 border-black bg-white">
+                    <img src="media/img/teo/fotos extra/maquina_palos.webp" alt="Más imágenes de Teo" class="block aspect-[3/4] w-full object-cover transition-transform duration-500 group-hover:scale-105">
+                    <div class="absolute inset-0 flex items-center justify-center bg-black/15 opacity-0 transition-opacity duration-300 pointer-events-none group-hover:opacity-100">
+                        <div class="text-center text-xl font-semibold tracking-tight md:text-2xl">
+                            <span class="text-azul">@</span><span class="text-rojo">teo</span><span class="text-amarillo">sillas</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="group relative overflow-hidden border-r-2 border-b-2 border-black bg-white">
+                    <img src="media/img/teo/manos_apoyadas.webp" alt="Más manos trabajando" class="block aspect-[3/4] w-full object-cover transition-transform duration-500 group-hover:scale-105">
+                    <div class="absolute inset-0 flex items-center justify-center bg-black/15 opacity-0 transition-opacity duration-300 pointer-events-none group-hover:opacity-100">
+                        <div class="text-center text-xl font-semibold tracking-tight md:text-2xl">
+                            <span class="text-azul">@</span><span class="text-rojo">teo</span><span class="text-amarillo">sillas</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="group relative overflow-hidden border-r-2 border-b-2 border-black bg-white">
+                    <img src="media/img/teo/Casa_de_teo.webp" alt="Más silla canasta" class="block aspect-[3/4] w-full object-cover transition-transform duration-500 group-hover:scale-105">
+                    <div class="absolute inset-0 flex items-center justify-center bg-black/15 opacity-0 transition-opacity duration-300 pointer-events-none group-hover:opacity-100">
+                        <div class="text-center text-xl font-semibold tracking-tight md:text-2xl">
+                            <span class="text-azul">@</span><span class="text-rojo">teo</span><span class="text-amarillo">sillas</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="group relative overflow-hidden border-r-2 border-b-2 border-black bg-white">
+                    <img src="media/img/teo/fotos extra/silla_humo.webp" alt="Más silla humo" class="block aspect-[3/4] w-full object-cover transition-transform duration-500 group-hover:scale-105">
+                    <div class="absolute inset-0 flex items-center justify-center bg-black/15 opacity-0 transition-opacity duration-300 pointer-events-none group-hover:opacity-100">
+                        <div class="text-center text-xl font-semibold tracking-tight md:text-2xl">
+                            <span class="text-azul">@</span><span class="text-rojo">teo</span><span class="text-amarillo">sillas</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="border-t-2 border-black px-5 py-4 text-center md:px-8 md:py-5">
+            <p class="text-2xl font-semibold tracking-tight text-rojo md:text-4xl">
+                SÍGUENOS EN INSTAGRAM
             </p>
-        </div>
-    </section>
-
-    <!-- FRANJA AMARILLA -->
-    <div class="relative bg-amarillo w-full pt-16 pb-12 px-5 md:px-8 overflow-visible">
-
-        <div class="absolute -top-60 right-4 z-20 pointer-events-none md:right-8">
-            <img src="media/img/teo/6.png" alt="Número 6" class="w-64 object-contain md:w-[20rem]">
+            <div class="mt-2 text-sm font-semibold tracking-tight text-rojo md:hidden">
+                @teosillas
+            </div>
         </div>
 
-        <div class="max-w-7xl mx-auto flex justify-between items-center text-rojo font-bold text-lg md:text-2xl">
-            <span>PIEZAS ÚNICAS DESDE EL CORAZÓN DE MADRID</span>
-        </div>
-    </div>
+    </main>
 
     <!-- PIE DE PÁGINA -->
-    <footer class="cursor-default">
+    <footer class="-mt-px cursor-default">
 
         <div class="grid bg-azul md:grid-cols-[20rem_1fr]">
 
-            <div class="px-5 pt-4 md:px-8 md:py-3">
-                <div class="flex h-full flex-col items-center justify-center border-b border-white pb-4 md:border-b-0 md:pb-0">
+            <div class="px-0 md:px-0 md:py-0">
+                <div class="flex h-full flex-col items-center justify-center border-b border-white pb-0 md:border-b-0 md:pb-0">
                     <img src="media/img/LOGO PNG + TEO.png" alt="Logo de Teo Sillas" class="w-48 md:w-full">
                 </div>
             </div>
@@ -305,6 +450,81 @@
     </footer>
 
     <script src="js/interfaz.js"></script>
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            once: true,
+            duration: 3000,
+            easing: 'ease-out-cubic'
+        });
+    </script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const btnFotosTeo = document.getElementById('btn-fotos-teo');
+            const galeriaTeo = document.getElementById('galeria-teo');
+            const videoTeo = document.getElementById('video-teo');
+            const videoWrapper = document.getElementById('video-teo-wrapper');
+
+            if (btnFotosTeo && galeriaTeo) {
+                const activarHoverMobile = () => {
+                    btnFotosTeo.classList.add('bg-amarillo', 'text-azul');
+                    btnFotosTeo.classList.remove('bg-rojo', 'text-white');
+                };
+
+                const desactivarHoverMobile = () => {
+                    btnFotosTeo.classList.remove('bg-amarillo', 'text-azul');
+                    btnFotosTeo.classList.add('bg-rojo', 'text-white');
+                };
+
+                btnFotosTeo.addEventListener('click', () => {
+                    galeriaTeo.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    activarHoverMobile();
+                    setTimeout(desactivarHoverMobile, 250);
+                });
+
+                btnFotosTeo.addEventListener('touchstart', activarHoverMobile, { passive: true });
+                btnFotosTeo.addEventListener('touchend', desactivarHoverMobile, { passive: true });
+                btnFotosTeo.addEventListener('touchcancel', desactivarHoverMobile, { passive: true });
+            }
+
+            if (videoTeo && videoWrapper) {
+                videoTeo.muted = true;
+                videoTeo.play().catch(() => {});
+
+                videoWrapper.addEventListener('mouseenter', () => {
+                    videoTeo.pause();
+                });
+
+                videoWrapper.addEventListener('mouseleave', () => {
+                    videoTeo.play().catch(() => {});
+                });
+            }
+        });
+    </script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const grupoFotos = document.querySelectorAll('#galeria-teo .group');
+
+            grupoFotos.forEach((grupo) => {
+                const overlay = grupo.querySelector('.absolute');
+                if (!overlay) return;
+
+                grupo.addEventListener('mouseenter', () => {
+                    grupoFotos.forEach((otro) => {
+                        const otroOverlay = otro.querySelector('.absolute');
+                        if (otroOverlay) otroOverlay.classList.remove('galeria-overlay-visible');
+                    });
+                    overlay.classList.add('galeria-overlay-visible');
+                });
+
+                grupo.addEventListener('mouseleave', () => {
+                    overlay.classList.remove('galeria-overlay-visible');
+                });
+            });
+        });
+    </script>
 
 </body>
 </html>
