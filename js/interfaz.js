@@ -1,32 +1,34 @@
 document.addEventListener('DOMContentLoaded', () => {
 
-    const fichas = {
-    '01': ['Silla de líneas clásicas en madera maciza, con respaldo calado y acabado barnizado a mano.', '45 × 50 × 90 cm', 'Altura de asiento 46 cm', 'Madera natural'],
-    '02': ['Diseño amarillo de líneas limpias, pensado para dar un toque de color a cocinas y comedores.', '46 × 50 × 80 cm', 'Altura de asiento 45 cm', 'Amarillo'],
-    '03': ['Plegable y ligera, con estructura negra que ocupa muy poco espacio cuando no se usa.', '43 × 47 × 80 cm', 'Altura de asiento 44 cm', 'Negro'],
-    '04': ['Respaldo de rejilla que deja pasar el aire y le da un aire moderno y ligero.', '45 × 52 × 85 cm', 'Altura de asiento 46 cm', 'Negro y madera'],
-    '05': ['Estilo nórdico en verde suave, con patas de madera inclinadas y asiento ligeramente curvo.', '47 × 51 × 81 cm', 'Altura de asiento 45 cm', 'Verde'],
-    '06': ['Minimalismo en negro mate: una sola pieza de líneas rectas y sin adornos.', '42 × 48 × 82 cm', 'Altura de asiento 45 cm', 'Negro mate'],
-    '07': ['Cuerpo transparente que casi desaparece en la estancia y deja ver el resto del espacio.', '46 × 52 × 80 cm', 'Altura de asiento 46 cm', 'Transparente'],
-    '08': ['Reinterpretación de la clásica silla de Viena, con madera curvada al vapor y respaldo ovalado.', '43 × 49 × 89 cm', 'Altura de asiento 46 cm', 'Madera oscura'],
-    '09': ['Pensada para largas jornadas: respaldo regulable, asiento acolchado y diseño actual.', '58 × 58 × 95 cm', 'Altura de asiento 42–52 cm', 'Gris y negro'],
-    '10': ['Asiento ergonómico en polipiel naranja sobre patas de acero fino. Moderna, cómoda y fácil de limpiar.', '48 × 52 × 82 cm', 'Altura de asiento 45 cm', 'Naranja'],
-    '11': ['Pieza de autor con curvas muy marcadas que sorprende desde cualquier ángulo.', '50 × 55 × 84 cm', 'Altura de asiento 45 cm', 'Multicolor'],
-    '12': ['Tapizada en tela verde de tacto suave, con patas de madera y respaldo envolvente.', '48 × 54 × 85 cm', 'Altura de asiento 46 cm', 'Verde'],
-    '13': ['Silla de despacho con aire ejecutivo: madera noble, brazos amplios y acolchado generoso.', '60 × 62 × 98 cm', 'Altura de asiento 47 cm', 'Madera y cuero'],
-    '14': ['Réplica vintage de estilo Luis XVI, con respaldo tallado y patas torneadas.', '47 × 50 × 95 cm', 'Altura de asiento 46 cm', 'Blanco roto y dorado'],
-    '15': ['Color coral, formas suaves y asiento cómodo. Una silla alegre para cualquier rincón.', '46 × 51 × 82 cm', 'Altura de asiento 45 cm', 'Coral'],
-    '16': ['Silla de escritorio tapizada en terciopelo, con ruedas silenciosas y altura regulable.', '55 × 56 × 90 cm', 'Altura de asiento 44–52 cm', 'Terciopelo'],
-    '17': ['Hierro forjado a mano con detalles artísticos. Cada unidad tiene pequeñas diferencias.', '44 × 48 × 92 cm', 'Altura de asiento 46 cm', 'Negro forja'],
-    '18': ['Robusta silla de comedor de acabado rústico, pensada para aguantar décadas de comidas.', '46 × 50 × 92 cm', 'Altura de asiento 47 cm', 'Madera rústica'],
-    '19': ['Asiento y respaldo de cuero con relleno denso, para una comodidad que se nota desde el primer día.', '52 × 56 × 86 cm', 'Altura de asiento 46 cm', 'Cuero marrón'],
-    '20': ['Patas cruzadas y estructura ligera de inspiración retro, con asiento tapizado.', '45 × 50 × 83 cm', 'Altura de asiento 46 cm', 'Beige'],
-    '21': ['Ratán natural trenzado a mano sobre bastidor de madera. Fresca, luminosa y muy duradera.', '48 × 52 × 85 cm', 'Altura de asiento 45 cm', 'Ratán natural'],
-    '22': ['Silla de autor en tonos oscuros, con perfil escultórico y acabado satinado.', '48 × 53 × 86 cm', 'Altura de asiento 45 cm', 'Gris oscuro'],
-    '23': ['Roble macizo y líneas rectas: minimalismo cálido que encaja en cualquier estancia.', '44 × 48 × 80 cm', 'Altura de asiento 45 cm', 'Roble'],
-    '24': ['Estructura de acero doblado en una sola pieza. Una silla de vanguardia, ligera y resistente.', '45 × 55 × 82 cm', 'Altura de asiento 44 cm', 'Acero cromado'],
-    '25': ['Reinterpretación de la clásica silla de Viena, con madera curvada al vapor y respaldo ovalado.', '43 × 49 × 89 cm', 'Altura de asiento 46 cm', 'Madera oscura']
+        
+const fichas = {
+    '01': ['Silla de líneas clásicas fabricada en madera, con respaldo de diseño tradicional y acabado natural.', '45 × 50 × 90 cm', 'Altura de asiento 46 cm', 'Madera natural'],
+    '02': ['Silla de diseño contemporáneo con asiento naranja y estructura ligera. Una pieza llamativa que aporta color al espacio.', '48 × 52 × 82 cm', 'Altura de asiento 45 cm', 'Naranja'],
+    '03': ['Silla amarilla de formas sencillas y líneas limpias. Su color aporta luminosidad y personalidad a cualquier estancia.', '46 × 50 × 80 cm', 'Altura de asiento 45 cm', 'Amarillo'],
+    '04': ['Silla plegable de estructura negra, práctica y funcional. Su diseño permite guardarla fácilmente cuando no se utiliza.', '43 × 47 × 80 cm', 'Altura de asiento 44 cm', 'Negro'],
+    '05': ['Silla con respaldo de rejilla y estructura de líneas ligeras. Combina materiales y texturas en un diseño actual.', '45 × 52 × 85 cm', 'Altura de asiento 46 cm', 'Negro y madera'],
+    '06': ['Silla de inspiración nórdica con asiento verde y patas de madera. Sus formas suaves y su estructura equilibrada aportan calidez.', '47 × 51 × 81 cm', 'Altura de asiento 45 cm', 'Verde'],
+    '07': ['Silla de estética minimalista y acabado negro. Su estructura sencilla prescinde de adornos y apuesta por la funcionalidad.', '42 × 48 × 82 cm', 'Altura de asiento 45 cm', 'Negro mate'],
+    '08': ['Silla transparente de aspecto ligero que permite integrar la pieza en distintos ambientes sin recargar el espacio.', '46 × 52 × 80 cm', 'Altura de asiento 46 cm', 'Transparente'],
+    '09': ['Silla de estilo vienés con respaldo curvado y una silueta clásica. Una reinterpretación de un diseño atemporal.', '43 × 49 × 89 cm', 'Altura de asiento 46 cm', 'Madera oscura'],
+    '10': ['Silla de oficina diseñada para el uso diario, con asiento cómodo, respaldo ergonómico y una estética funcional.', '58 × 58 × 95 cm', 'Altura de asiento 42–52 cm', 'Gris y negro'],
+    '11': ['Silla metálica de acabado azul y estructura resistente. Su diseño sencillo combina ligereza visual y funcionalidad.', '45 × 50 × 82 cm', 'Altura de asiento 45 cm', 'Azul'],
+    '12': ['Pieza de autor con una silueta expresiva y formas singulares. Un diseño con personalidad que destaca en cualquier ambiente.', '50 × 55 × 84 cm', 'Altura de asiento 45 cm', 'Multicolor'],
+    '13': ['Silla tapizada en tela verde, con asiento acolchado y respaldo envolvente. Combina comodidad y una estética acogedora.', '48 × 54 × 85 cm', 'Altura de asiento 46 cm', 'Verde'],
+    '14': ['Silla ejecutiva fabricada en madera, con brazos amplios y asiento acolchado. Una pieza de presencia elegante y clásica.', '60 × 62 × 98 cm', 'Altura de asiento 47 cm', 'Madera y cuero'],
+    '15': ['Silla de inspiración Luis XVI con respaldo ornamentado y patas de formas torneadas. Un diseño de carácter clásico y vintage.', '47 × 50 × 95 cm', 'Altura de asiento 46 cm', 'Blanco roto y dorado'],
+    '16': ['Silla de color coral y formas suaves. Su diseño aporta un toque de color y frescura a cualquier estancia.', '46 × 51 × 82 cm', 'Altura de asiento 45 cm', 'Coral'],
+    '17': ['Silla de escritorio tapizada en terciopelo. Su acabado textil y su diseño aportan un punto sofisticado al espacio de trabajo.', '55 × 56 × 90 cm', 'Altura de asiento 44–52 cm', 'Terciopelo'],
+    '18': ['Silla de hierro forjado con detalles decorativos y una estructura de carácter artesanal. Cada pieza destaca por su personalidad.', '44 × 48 × 92 cm', 'Altura de asiento 46 cm', 'Negro forja'],
+    '19': ['Silla de comedor de estética rústica, con estructura robusta y acabado de aspecto natural. Pensada para espacios cálidos.', '46 × 50 × 92 cm', 'Altura de asiento 47 cm', 'Madera rústica'],
+    '20': ['Silla de diseño clásico en color rojo. Su silueta sencilla y su acabado llamativo la convierten en una pieza protagonista.', '52 × 56 × 86 cm', 'Altura de asiento 46 cm', 'Rojo'],
+    '21': ['Silla de inspiración retro con patas cruzadas y asiento tapizado. Una combinación de formas geométricas y líneas ligeras.', '45 × 50 × 83 cm', 'Altura de asiento 46 cm', 'Beige'],
+    '22': ['Silla de ratán natural trenzado, con una estética artesanal y ligera. Sus materiales aportan textura y calidez al ambiente.', '48 × 52 × 85 cm', 'Altura de asiento 45 cm', 'Ratán natural'],
+    '23': ['Silla de autor de tonos oscuros y perfil escultórico. Una pieza de diseño singular que destaca por sus formas y acabado.', '48 × 53 × 86 cm', 'Altura de asiento 45 cm', 'Gris oscuro'],
+    '24': ['Silla minimalista fabricada en roble, con líneas rectas y una estética sobria. La madera aporta calidez a su diseño.', '44 × 48 × 80 cm', 'Altura de asiento 45 cm', 'Roble'],
+    '25': ['Silla de vanguardia con estructura de acero y formas contemporáneas. Una pieza que combina resistencia y ligereza visual.', '45 × 55 × 82 cm', 'Altura de asiento 44 cm', 'Acero cromado']
 };
+
 
     const sillas = {
         v1: {
@@ -160,33 +162,35 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     ];
 
-    const nombresCatalogo = {
+       
+const nombresCatalogo = {
     '01': 'Silla clásica de madera',
-    '02': 'Silla amarilla minimalista',
-    '03': 'Silla plegable negra',
-    '04': 'Silla de rejilla',
-    '05': 'Silla nórdica verde',
-    '06': 'Silla negro mate',
-    '07': 'Silla transparente',
-    '08': 'Silla de Viena',
-    '09': 'Silla de trabajo regulable',
-    '10': 'Silla naranja moderna',
-    '11': 'Silla de autor multicolor',
-    '12': 'Silla verde tapizada',
-    '13': 'Silla ejecutiva de madera',
-    '14': 'Silla Luis XVI',
-    '15': 'Silla coral',
-    '16': 'Silla de escritorio de terciopelo',
-    '17': 'Silla de hierro forjado',
-    '18': 'Silla de comedor rústica',
-    '19': 'Silla de cuero marrón',
-    '20': 'Silla retro beige',
-    '21': 'Silla de ratán',
-    '22': 'Silla escultórica gris',
-    '23': 'Silla de roble',
-    '24': 'Silla de acero cromado',
-    '25': 'Silla de Viena'
+    '02': 'Silla naranja moderna',
+    '03': 'Silla amarilla de diseño',
+    '04': 'Silla plegable negra',
+    '05': 'Silla de rejilla',
+    '06': 'Silla nórdica verde',
+    '07': 'Silla minimalista negra',
+    '08': 'Silla transparente',
+    '09': 'Silla de Viena',
+    '10': 'Silla de oficina',
+    '11': 'Silla metálica azul',
+    '12': 'Silla Chula de autor',
+    '13': 'Silla tapizada verde',
+    '14': 'Silla ejecutiva de madera',
+    '15': 'Silla Luis XVI vintage',
+    '16': 'Silla coral',
+    '17': 'Silla Velvet',
+    '18': 'Silla forjada artística',
+    '19': 'Silla rústica de comedor',
+    '20': 'Silla roja clásica',
+    '21': 'Silla de patas cruzadas',
+    '22': 'Silla de ratán natural',
+    '23': 'Silla de autor',
+    '24': 'Silla minimalista de roble',
+    '25': 'Silla de vanguardia de acero'
 };
+
 
     const sillasBuscables = [
         ...Object.keys(fichas).map((id) => {
