@@ -1,32 +1,32 @@
 document.addEventListener('DOMContentLoaded', () => {
 
     const fichas = {
-        '01': ['Silla de líneas clásicas en madera maciza, con respaldo calado y acabado barnizado a mano.', '45 × 50 × 90 cm', 'Altura de asiento 46 cm', 'Madera natural'],
-        '02': ['Asiento ergonómico en polipiel naranja sobre patas de acero fino. Moderna, cómoda y fácil de limpiar.', '48 × 52 × 82 cm', 'Altura de asiento 45 cm', 'Naranja'],
-        '03': ['Diseño amarillo de líneas limpias, pensado para dar un toque de color a cocinas y comedores.', '46 × 50 × 80 cm', 'Altura de asiento 45 cm', 'Amarillo'],
-        '04': ['Plegable y ligera, con estructura negra que ocupa muy poco espacio cuando no se usa.', '43 × 47 × 80 cm', 'Altura de asiento 44 cm', 'Negro'],
-        '05': ['Respaldo de rejilla que deja pasar el aire y le da un aire moderno y ligero.', '45 × 52 × 85 cm', 'Altura de asiento 46 cm', 'Negro y madera'],
-        '06': ['Estructura metálica lacada en azul, resistente y apilable, ideal para interior y terraza.', '44 × 50 × 83 cm', 'Altura de asiento 45 cm', 'Azul'],
-        '07': ['Estilo nórdico en verde suave, con patas de madera inclinadas y asiento ligeramente curvo.', '47 × 51 × 81 cm', 'Altura de asiento 45 cm', 'Verde'],
-        '08': ['Minimalismo en negro mate: una sola pieza de líneas rectas y sin adornos.', '42 × 48 × 82 cm', 'Altura de asiento 45 cm', 'Negro mate'],
-        '09': ['Cuerpo transparente que casi desaparece en la estancia y deja ver el resto del espacio.', '46 × 52 × 80 cm', 'Altura de asiento 46 cm', 'Transparente'],
-        '10': ['Reinterpretación de la clásica silla de Viena, con madera curvada al vapor y respaldo ovalado.', '43 × 49 × 89 cm', 'Altura de asiento 46 cm', 'Madera oscura'],
-        '11': ['Pensada para largas jornadas: respaldo regulable, asiento acolchado y diseño actual.', '58 × 58 × 95 cm', 'Altura de asiento 42–52 cm', 'Gris y negro'],
-        '12': ['Pieza de autor con curvas muy marcadas que sorprende desde cualquier ángulo.', '50 × 55 × 84 cm', 'Altura de asiento 45 cm', 'Multicolor'],
-        '13': ['Tapizada en tela verde de tacto suave, con patas de madera y respaldo envolvente.', '48 × 54 × 85 cm', 'Altura de asiento 46 cm', 'Verde'],
-        '14': ['Silla de despacho con aire ejecutivo: madera noble, brazos amplios y acolchado generoso.', '60 × 62 × 98 cm', 'Altura de asiento 47 cm', 'Madera y cuero'],
-        '15': ['Réplica vintage de estilo Luis XVI, con respaldo tallado y patas torneadas.', '47 × 50 × 95 cm', 'Altura de asiento 46 cm', 'Blanco roto y dorado'],
-        '16': ['Color coral, formas suaves y asiento cómodo. Una silla alegre para cualquier rincón.', '46 × 51 × 82 cm', 'Altura de asiento 45 cm', 'Coral'],
-        '17': ['Silla de escritorio tapizada en terciopelo, con ruedas silenciosas y altura regulable.', '55 × 56 × 90 cm', 'Altura de asiento 44–52 cm', 'Terciopelo'],
-        '18': ['Hierro forjado a mano con detalles artísticos. Cada unidad tiene pequeñas diferencias.', '44 × 48 × 92 cm', 'Altura de asiento 46 cm', 'Negro forja'],
-        '19': ['Robusta silla de comedor de acabado rústico, pensada para aguantar décadas de comidas.', '46 × 50 × 92 cm', 'Altura de asiento 47 cm', 'Madera rústica'],
-        '20': ['Asiento y respaldo de cuero con relleno denso, para una comodidad que se nota desde el primer día.', '52 × 56 × 86 cm', 'Altura de asiento 46 cm', 'Cuero marrón'],
-        '21': ['Patas cruzadas y estructura ligera de inspiración retro, con asiento tapizado.', '45 × 50 × 83 cm', 'Altura de asiento 46 cm', 'Beige'],
-        '22': ['Ratán natural trenzado a mano sobre bastidor de madera. Fresca, luminosa y muy duradera.', '48 × 52 × 85 cm', 'Altura de asiento 45 cm', 'Ratán natural'],
-        '23': ['Silla de autor en tonos oscuros, con perfil escultórico y acabado satinado.', '48 × 53 × 86 cm', 'Altura de asiento 45 cm', 'Gris oscuro'],
-        '24': ['Roble macizo y líneas rectas: minimalismo cálido que encaja en cualquier estancia.', '44 × 48 × 80 cm', 'Altura de asiento 45 cm', 'Roble'],
-        '25': ['Estructura de acero doblado en una sola pieza. Una silla de vanguardia, ligera y resistente.', '45 × 55 × 82 cm', 'Altura de asiento 44 cm', 'Acero cromado']
-    };
+    '01': ['Silla de líneas clásicas en madera maciza, con respaldo calado y acabado barnizado a mano.', '45 × 50 × 90 cm', 'Altura de asiento 46 cm', 'Madera natural'],
+    '02': ['Diseño amarillo de líneas limpias, pensado para dar un toque de color a cocinas y comedores.', '46 × 50 × 80 cm', 'Altura de asiento 45 cm', 'Amarillo'],
+    '03': ['Plegable y ligera, con estructura negra que ocupa muy poco espacio cuando no se usa.', '43 × 47 × 80 cm', 'Altura de asiento 44 cm', 'Negro'],
+    '04': ['Respaldo de rejilla que deja pasar el aire y le da un aire moderno y ligero.', '45 × 52 × 85 cm', 'Altura de asiento 46 cm', 'Negro y madera'],
+    '05': ['Estilo nórdico en verde suave, con patas de madera inclinadas y asiento ligeramente curvo.', '47 × 51 × 81 cm', 'Altura de asiento 45 cm', 'Verde'],
+    '06': ['Minimalismo en negro mate: una sola pieza de líneas rectas y sin adornos.', '42 × 48 × 82 cm', 'Altura de asiento 45 cm', 'Negro mate'],
+    '07': ['Cuerpo transparente que casi desaparece en la estancia y deja ver el resto del espacio.', '46 × 52 × 80 cm', 'Altura de asiento 46 cm', 'Transparente'],
+    '08': ['Reinterpretación de la clásica silla de Viena, con madera curvada al vapor y respaldo ovalado.', '43 × 49 × 89 cm', 'Altura de asiento 46 cm', 'Madera oscura'],
+    '09': ['Pensada para largas jornadas: respaldo regulable, asiento acolchado y diseño actual.', '58 × 58 × 95 cm', 'Altura de asiento 42–52 cm', 'Gris y negro'],
+    '10': ['Asiento ergonómico en polipiel naranja sobre patas de acero fino. Moderna, cómoda y fácil de limpiar.', '48 × 52 × 82 cm', 'Altura de asiento 45 cm', 'Naranja'],
+    '11': ['Pieza de autor con curvas muy marcadas que sorprende desde cualquier ángulo.', '50 × 55 × 84 cm', 'Altura de asiento 45 cm', 'Multicolor'],
+    '12': ['Tapizada en tela verde de tacto suave, con patas de madera y respaldo envolvente.', '48 × 54 × 85 cm', 'Altura de asiento 46 cm', 'Verde'],
+    '13': ['Silla de despacho con aire ejecutivo: madera noble, brazos amplios y acolchado generoso.', '60 × 62 × 98 cm', 'Altura de asiento 47 cm', 'Madera y cuero'],
+    '14': ['Réplica vintage de estilo Luis XVI, con respaldo tallado y patas torneadas.', '47 × 50 × 95 cm', 'Altura de asiento 46 cm', 'Blanco roto y dorado'],
+    '15': ['Color coral, formas suaves y asiento cómodo. Una silla alegre para cualquier rincón.', '46 × 51 × 82 cm', 'Altura de asiento 45 cm', 'Coral'],
+    '16': ['Silla de escritorio tapizada en terciopelo, con ruedas silenciosas y altura regulable.', '55 × 56 × 90 cm', 'Altura de asiento 44–52 cm', 'Terciopelo'],
+    '17': ['Hierro forjado a mano con detalles artísticos. Cada unidad tiene pequeñas diferencias.', '44 × 48 × 92 cm', 'Altura de asiento 46 cm', 'Negro forja'],
+    '18': ['Robusta silla de comedor de acabado rústico, pensada para aguantar décadas de comidas.', '46 × 50 × 92 cm', 'Altura de asiento 47 cm', 'Madera rústica'],
+    '19': ['Asiento y respaldo de cuero con relleno denso, para una comodidad que se nota desde el primer día.', '52 × 56 × 86 cm', 'Altura de asiento 46 cm', 'Cuero marrón'],
+    '20': ['Patas cruzadas y estructura ligera de inspiración retro, con asiento tapizado.', '45 × 50 × 83 cm', 'Altura de asiento 46 cm', 'Beige'],
+    '21': ['Ratán natural trenzado a mano sobre bastidor de madera. Fresca, luminosa y muy duradera.', '48 × 52 × 85 cm', 'Altura de asiento 45 cm', 'Ratán natural'],
+    '22': ['Silla de autor en tonos oscuros, con perfil escultórico y acabado satinado.', '48 × 53 × 86 cm', 'Altura de asiento 45 cm', 'Gris oscuro'],
+    '23': ['Roble macizo y líneas rectas: minimalismo cálido que encaja en cualquier estancia.', '44 × 48 × 80 cm', 'Altura de asiento 45 cm', 'Roble'],
+    '24': ['Estructura de acero doblado en una sola pieza. Una silla de vanguardia, ligera y resistente.', '45 × 55 × 82 cm', 'Altura de asiento 44 cm', 'Acero cromado'],
+    '25': ['Reinterpretación de la clásica silla de Viena, con madera curvada al vapor y respaldo ovalado.', '43 × 49 × 89 cm', 'Altura de asiento 46 cm', 'Madera oscura']
+};
 
     const sillas = {
         v1: {
@@ -38,7 +38,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 ['Tamaño', 'Altura de asiento 46 cm'],
                 ['Color', 'Azul eléctrico']
             ],
-            imagenes: ['#', '#']
+            imagenes: ['#'],
+            video: 'media/video/silla-azul.mp4'
         },
         v2: {
             nombre: 'Silla esmeralda',
@@ -49,7 +50,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 ['Tamaño', 'Altura de asiento 45 cm'],
                 ['Color', 'Verde esmeralda']
             ],
-            imagenes: ['#', '#']
+            imagenes: ['#'],
+            video: 'media/video/silla-esmeralda.mp4'
         },
         v3: {
             nombre: 'Silla famosa',
@@ -60,7 +62,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 ['Tamaño', 'Altura de asiento 44 cm'],
                 ['Color', 'Rojo lacado']
             ],
-            imagenes: ['#', '#']
+            imagenes: ['#'],
+            video: 'media/video/silla-famosa.mp4'
         },
         v4: {
             nombre: 'Silla orgánica',
@@ -71,7 +74,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 ['Tamaño', 'Altura de asiento 43 cm'],
                 ['Color', 'Madera natural']
             ],
-            imagenes: ['#', '#']
+            imagenes: ['#'],
+            video: 'media/video/silla-organica.mp4'
         },
         v5: {
             nombre: 'Silla serpiente',
@@ -82,7 +86,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 ['Tamaño', 'Altura de asiento 47 cm'],
                 ['Color', 'Estampado serpiente']
             ],
-            imagenes: ['#', '#']
+            imagenes: ['#'],
+            video: 'media/video/silla-serpiente.mp4'
         },
         v6: {
             nombre: 'Silla morada',
@@ -93,7 +98,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 ['Tamaño', 'Altura de asiento 46 cm'],
                 ['Color', 'Morado y blanco']
             ],
-            imagenes: ['#', '#']
+            imagenes: ['#'],
+            video: 'media/video/silla-morada.mp4'
         },
         v7: {
             nombre: 'Silla roja',
@@ -104,14 +110,11 @@ document.addEventListener('DOMContentLoaded', () => {
                 ['Tamaño', 'Altura de asiento 45 cm'],
                 ['Color', 'Rojo taller']
             ],
-            imagenes: ['#', '#']
+            imagenes: ['#'],
+            video: 'media/video/silla-roja.mp4'
         }
     };
 
-
-    // ==================================================
-    // 1. MENÚ DESPLEGABLE
-    // ==================================================
 
     const botonMenu = document.getElementById('boton-menu');
 
@@ -134,10 +137,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
 
-        // ==================================================
-    // 2. BUSCADOR
-    // ==================================================
-
     const paginas = [
         {
             nombre: 'Catálogo de Teo',
@@ -151,43 +150,43 @@ document.addEventListener('DOMContentLoaded', () => {
         },
         {
             nombre: '¿Quién es Teo?',
-            url: 'quien-es-teo.html',
+            url: 'sobreteo.html',
             palabras: 'quien teo historia sobre'
         },
         {
             nombre: '¿Dónde está Teo?',
-            url: 'donde-esta-teo.html',
+            url: 'ubicacion.html',
             palabras: 'donde direccion horario contacto mapa'
         }
     ];
 
     const nombresCatalogo = {
-        '01': 'Silla clásica de madera',
-        '02': 'Silla naranja moderna',
-        '03': 'Silla amarilla minimalista',
-        '04': 'Silla plegable negra',
-        '05': 'Silla de rejilla',
-        '06': 'Silla azul apilable',
-        '07': 'Silla nórdica verde',
-        '08': 'Silla negro mate',
-        '09': 'Silla transparente',
-        '10': 'Silla de Viena',
-        '11': 'Silla de trabajo regulable',
-        '12': 'Silla de autor multicolor',
-        '13': 'Silla verde tapizada',
-        '14': 'Silla ejecutiva de madera',
-        '15': 'Silla Luis XVI',
-        '16': 'Silla coral',
-        '17': 'Silla de escritorio de terciopelo',
-        '18': 'Silla de hierro forjado',
-        '19': 'Silla de comedor rústica',
-        '20': 'Silla de cuero marrón',
-        '21': 'Silla retro beige',
-        '22': 'Silla de ratán',
-        '23': 'Silla escultórica gris',
-        '24': 'Silla de roble',
-        '25': 'Silla de acero cromado'
-    };
+    '01': 'Silla clásica de madera',
+    '02': 'Silla amarilla minimalista',
+    '03': 'Silla plegable negra',
+    '04': 'Silla de rejilla',
+    '05': 'Silla nórdica verde',
+    '06': 'Silla negro mate',
+    '07': 'Silla transparente',
+    '08': 'Silla de Viena',
+    '09': 'Silla de trabajo regulable',
+    '10': 'Silla naranja moderna',
+    '11': 'Silla de autor multicolor',
+    '12': 'Silla verde tapizada',
+    '13': 'Silla ejecutiva de madera',
+    '14': 'Silla Luis XVI',
+    '15': 'Silla coral',
+    '16': 'Silla de escritorio de terciopelo',
+    '17': 'Silla de hierro forjado',
+    '18': 'Silla de comedor rústica',
+    '19': 'Silla de cuero marrón',
+    '20': 'Silla retro beige',
+    '21': 'Silla de ratán',
+    '22': 'Silla escultórica gris',
+    '23': 'Silla de roble',
+    '24': 'Silla de acero cromado',
+    '25': 'Silla de Viena'
+};
 
     const sillasBuscables = [
         ...Object.keys(fichas).map((id) => {
@@ -269,7 +268,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const estilosSugerencias = document.createElement('style');
 
-               estilosSugerencias.textContent = `
+        estilosSugerencias.textContent = `
             #sugerencias-buscador {
                 position: absolute;
                 top: calc(100% + 4px);
@@ -451,10 +450,7 @@ document.addEventListener('DOMContentLoaded', () => {
             if (destino) {
                 window.location.href = destino;
             } else {
-                buscador.setCustomValidity(
-                    'No hay resultados para esa búsqueda'
-                );
-
+                buscador.setCustomValidity('No hay resultados para esa búsqueda');
                 buscador.reportValidity();
             }
         });
@@ -492,10 +488,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
 
-    // ==================================================
-    // 3. SCROLL
-    // ==================================================
-
     const UMBRAL_SCROLL = 40;
 
     function actualizarScroll() {
@@ -503,21 +495,10 @@ document.addEventListener('DOMContentLoaded', () => {
             window.scrollY > UMBRAL_SCROLL ? 'abajo' : 'arriba';
     }
 
-    window.addEventListener('scroll', actualizarScroll, {
-        passive: true
-    });
+    window.addEventListener('scroll', actualizarScroll, { passive: true });
 
     actualizarScroll();
 
-
-
-
-    
-
-
-    // ==================================================
-    // 4. MODO OSCURO
-    // ==================================================
 
     const botonTema = document.getElementById('boton-tema');
 
@@ -527,7 +508,6 @@ document.addEventListener('DOMContentLoaded', () => {
         const oscuro = document.documentElement.classList.contains('dark');
 
         botonTema.setAttribute('aria-pressed', String(oscuro));
-
         botonTema.setAttribute(
             'aria-label',
             oscuro ? 'Activar modo claro' : 'Activar modo oscuro'
@@ -538,14 +518,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
         botonTema.addEventListener('click', () => {
 
-            const oscuro =
-                document.documentElement.classList.toggle('dark');
+            const oscuro = document.documentElement.classList.toggle('dark');
 
             try {
-                localStorage.setItem(
-                    'tema',
-                    oscuro ? 'oscuro' : 'claro'
-                );
+                localStorage.setItem('tema', oscuro ? 'oscuro' : 'claro');
             } catch (e) {}
 
             sincronizarBotonTema();
@@ -554,10 +530,6 @@ document.addEventListener('DOMContentLoaded', () => {
         sincronizarBotonTema();
     }
 
-
-    // ==================================================
-    // 5. CATÁLOGO: FICHAS DE LAS 25 SILLAS
-    // ==================================================
 
     const sillasCatalogo = document.querySelectorAll('.silla-item');
     const fichaCatalogo = document.getElementById('detalle-catalogo');
@@ -823,10 +795,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
 
-    // ==================================================
-    // 6. NOMBRE DE SILLA EN LOS VÍDEOS
-    // ==================================================
-
     const nombreSilla = document.getElementById('nombre-silla');
 
     document.querySelectorAll('.grid-con-nombres video').forEach(video => {
@@ -851,10 +819,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
 
-    // ==================================================
-    // 7. REPRODUCCIÓN DE VÍDEOS
-    // ==================================================
-
     const videos = document.querySelectorAll('.silla-video');
 
     videos.forEach(video => {
@@ -876,10 +840,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
 
-    // ==================================================
-    // 8. FAVORITAS: FICHAS PERSONALIZADAS
-    // ==================================================
-
     const seccionDetalle = document.getElementById('detalle-silla');
     const seccionGrid = document.getElementById('grid-favoritas');
 
@@ -893,16 +853,12 @@ document.addEventListener('DOMContentLoaded', () => {
         const refDetalle = document.getElementById('detalle-ref');
         const nombreDetalle = document.getElementById('detalle-nombre');
         const descripcionDetalle = document.getElementById('detalle-descripcion');
-
         const listaDetalle = document.getElementById('detalle-lista');
 
-        const imagenesDetalle = [1, 2].map(n =>
-            document.getElementById(`detalle-img-${n}`)
-        );
+        const imagenesDetalle = [document.getElementById('detalle-img-1')];
+        const videoDetalle = document.getElementById('detalle-video');
 
-        const reducirMovimiento = window.matchMedia(
-            '(prefers-reduced-motion: reduce)'
-        );
+        const reducirMovimiento = window.matchMedia('(prefers-reduced-motion: reduce)');
 
         let sillaFija = null;
         let sillaHover = null;
@@ -957,6 +913,25 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
 
             });
+
+            if (videoDetalle) {
+
+                if (silla.video) {
+                    videoDetalle.muted = true;
+                    videoDetalle.loop = true;
+                    videoDetalle.playsInline = true;
+                    videoDetalle.src = silla.video;
+                    videoDetalle.setAttribute('aria-label', `${silla.nombre}, vídeo`);
+                    videoDetalle.load();
+                    videoDetalle.play().catch(() => {});
+                } else {
+                    videoDetalle.pause();
+                    videoDetalle.removeAttribute('src');
+                    videoDetalle.removeAttribute('aria-label');
+                    videoDetalle.load();
+                }
+
+            }
         }
 
         function mostrarDetalle() {
@@ -1025,6 +1000,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             temporizadorDetalle = setTimeout(() => {
                 seccionDetalle.classList.add('hidden');
+                if (videoDetalle) videoDetalle.pause();
             }, 500);
         }
 
@@ -1077,20 +1053,12 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
 
-    // ==================================================
-    // 9. ESCAPE: CERRAR MENÚ
-    // ==================================================
-
     document.addEventListener('keydown', e => {
         if (e.key === 'Escape' && botonMenu) {
             abrirMenu(false);
         }
     });
 
-
-    // ==================================================
-    // 10. MAPA INTERACTIVO
-    // ==================================================
 
     const contenedorMapa = document.getElementById('mapa-teo');
 
@@ -1124,10 +1092,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     }
 
-
-    // ==================================================
-    // 11. FORMULARIO DE CONTACTO
-    // ==================================================
 
     const formularioContacto = document.getElementById('formulario-contacto');
 

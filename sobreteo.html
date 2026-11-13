@@ -26,7 +26,7 @@
 
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 
-    <style type="text/tailwindcss">
+        <style type="text/tailwindcss">
         @custom-variant dark (&:where(.dark, .dark *));
 
         @theme static {
@@ -48,7 +48,7 @@
             @keyframes marquee {
                 from { transform: translateX(0); }
                 to { transform: translateX(-50%); }
-}
+            }
         }
 
         html.dark {
@@ -76,6 +76,17 @@
 
         .foto-presentacion:hover img {
             transform: translateY(-4px) scale(1.06);
+        }
+
+        #video-teo::-webkit-media-controls,
+        #video-teo::-webkit-media-controls-panel,
+        #video-teo::-webkit-media-controls-enclosure,
+        #video-teo::-webkit-media-controls-overlay-play-button,
+        #video-teo::-webkit-media-controls-start-playback-button {
+            display: none !important;
+            -webkit-appearance: none;
+            opacity: 0;
+            pointer-events: none;
         }
 
         #galeria-teo .group .absolute {
@@ -151,19 +162,19 @@
         <h1 class="mb-0 w-full text-right text-4xl font-semibold text-rojo md:text-6xl">
             ¿QUIÉN ES TEO?
         </h1>
-<!-- CARTA DE PRESENTACIÓN... -->
+
     <section id="detalle-catalogo"
              aria-labelledby="catalogo-detalle-nombre"
              data-aos="fade-up"
              data-aos-duration="800"
-             class="group relative z-10 mt-10 px-5 pb-24 transition-transform duration-300 ease-out hover:scale-[1.01] in-[.textos-grid]:px-0 in-[.textos-grid]:pb-0 md:mt-8 md:px-8 md:pb-32">
+             class="relative z-10 mt-10 pb-24 md:mt-8 md:pb-32">
 
         <div id="catalogo-detalle-grid"
              class="scroll-mb-5 border-t-2 border-l-2 border-black md:grid md:h-[60svh] md:scroll-mb-8 md:grid-rows-[minmax(3rem,11fr)_minmax(0,89fr)]">
 
-            <div class="flex min-h-12 items-center justify-between border-r-2 border-b-2 border-black bg-amarillo px-4 md:min-h-0 md:px-5">
+            <div class="flex min-h-12 items-center justify-between border-r-2 border-b-2 border-black bg-azul text-gris-claro px-4 md:min-h-0 md:px-5">
 
-                <p id="catalogo-detalle-ref" class="ml-auto text-right text-sm font-light text-[#4D4D4D] md:text-base">Mi casa y yo</p>
+                <p id="catalogo-detalle-ref" class="ml-auto text-right text-sm font-light text-gris-claro md:text-base">Mi casa y yo</p>
             </div>
 
             <div class="grid grid-cols-2 md:min-h-0 md:grid-cols-[48fr_8fr_22fr_22fr] md:grid-rows-[minmax(0,1fr)]">
@@ -188,43 +199,42 @@
                             artesanía y años de experiencia</p>
                     </div>
 
-                    <button type="button" id="btn-fotos-teo" aria-label="Ir a la galería de fotos de Teo" class="flex min-h-11 cursor-pointer items-center border-r-2 border-b-2 border-black bg-rojo px-5 text-left text-lg font-light text-white transition-all duration-200 hover:bg-amarillo hover:text-azul focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-azul md:min-h-0 md:px-6 md:text-3xl">
+                    <button type="button" id="btn-fotos-teo" aria-label="Ir a la galería de fotos de Teo" class="flex min-h-11 cursor-pointer items-center border-r-2 border-b-2 border-black bg-azul px-5 text-left text-lg font-light text-gris-claro transition-all duration-200 hover:bg-rojo hover:text-gris-claro focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-azul md:min-h-0 md:px-6 md:text-3xl">
                         + FOTOS 
                     </button>
 
                     <div class="h-2 border-r-2 border-b-2 border-black bg-amarillo md:hidden"></div>
                 </div>
 
-                <div class="hidden border-r-2 border-b-2 border-black bg-azul md:block md:min-h-0"></div>
+                <div class="hidden border-r-2 border-b-2 border-black bg-amarillo md:block md:min-h-0"></div>
 
-                <div class="group relative h-62 overflow-hidden border-r-2 border-b-2 border-black bg-white md:h-auto md:min-h-0">
+                <div class="relative h-62 overflow-hidden border-r-2 border-b-2 border-black bg-white md:h-auto md:min-h-0">
                     <img src="media/img/teo/Casa_de_teo.webp"
                          alt=""
-                         class="absolute inset-0 block h-full w-full scale-100 object-cover transition-transform duration-300 ease-out group-hover:scale-105 md:object-cover">
+                         class="absolute inset-0 block h-full w-full object-cover">
                 </div>
 
-                <div class="group relative h-62 overflow-hidden border-r-2 border-b-2 border-black bg-white md:h-auto md:min-h-0">
+                <div class="relative h-62 overflow-hidden border-r-2 border-b-2 border-black bg-white md:h-auto md:min-h-0">
                     <img src="media/img/teo/TEO.webp"
                          alt=""
-                         class="absolute inset-0 block h-full w-full scale-100 object-cover transition-transform duration-300 ease-out group-hover:scale-105 md:object-cover">
+                         class="absolute inset-0 block h-full w-full object-cover">
                 </div>
 
             </div>
         </div>
     </section>
         
-        <!-- CARRUSEL -->
-<div class="relative left-1/2 w-screen -ml-[50vw] overflow-hidden" id="video-teo-wrapper">
-    <video id="video-teo" src="media/img/teo/fotos extra/Comp 1.mp4" autoplay muted loop playsinline class="block h-auto w-full max-w-none object-cover"></video>
+<div class="relative -mx-5 mt-10 overflow-hidden md:-mx-8" id="video-teo-wrapper">
+    <video id="video-teo" src="media/img/teo/fotos extra/Comp 1.mp4" autoplay muted loop playsinline disablepictureinpicture disableremoteplayback controlslist="nodownload nofullscreen noremoteplayback" tabindex="-1" class="block h-[20svh] w-full max-w-none object-cover md:h-auto"></video>
 </div>
-<div class="relative left-1/2 mt-6 mb-12 w-screen -ml-[50vw] overflow-hidden whitespace-nowrap py-0 text-xl font-semibold text-rojo md:mt-0 md:mb-12 md:text-2xl"
+
+<div class="relative -mx-5 mt-6 mb-4 overflow-hidden whitespace-nowrap py-0 text-xl font-semibold text-rojo md:-mx-8 md:mt-0 md:mb-4 md:text-2xl"
      role="region"
      aria-label="El que se fue a Sevilla compró una silla">
 
     <div class="flex w-max animate-marquee motion-reduce:animate-none hover:[animation-play-state:paused]"
          aria-hidden="true">
 
-        <!-- PRIMER GRUPO -->
         <div class="flex shrink-0 items-center">
             <span class="shrink-0 pr-12">NO SÉ, SOLO QUIERO SENTARME</span>
             <span class="shrink-0 pr-12">NO SÉ, SOLO QUIERO SENTARME</span>
@@ -232,29 +242,111 @@
             <span class="shrink-0 pr-12">NO SÉ, SOLO QUIERO SENTARME</span>
             <span class="shrink-0 pr-12">NO SÉ, SOLO QUIERO SENTARME</span>
             <span class="shrink-0 pr-12">NO SÉ, SOLO QUIERO SENTARME</span>
+        </div>
     </div>
 </div>
 
+<section aria-labelledby="objetivos-teo-titulo"
+         class="relative -mx-5 mt-10 bg-amarillo md:-mx-8 md:mt-[max(16rem,calc(min(70.75vw,100svh-7rem)-14rem))]">
 
+    <div class="grid md:grid-cols-2">
 
-        <div id="galeria-teo" class="mt-8 w-full scroll-mt-24 md:mt-10">
+        <div class="flex flex-col justify-center px-5 pt-10 pb-0 md:px-8 md:py-16">
+            <h2 id="objetivos-teo-titulo" class="text-4xl font-semibold text-rojo md:text-6xl">
+                OBJETIVOS TEO
+            </h2>
+
+            <p class="mt-6 max-w-xl text-justify text-sm font-light text-[#4D4D4D] md:text-base">
+                Nuestro objetivo es devolverle a sentarse la importancia que merece. En TEO SILLAS reunimos piezas únicas, nacidas en el taller o encontradas en viajes, para que cada casa tenga una silla con historia.
+            </p>
+            <p class="mt-3 max-w-xl text-justify text-sm font-light text-[#4D4D4D] md:text-base">
+                Apostamos por la artesanía, el diseño honesto y los materiales que envejecen bien. Queremos que cada persona encuentre la silla que encaja con su espacio y con su forma de vivir, y que la disfrute durante muchos años.
+            </p>
+        </div>
+
+        <div class="mx-auto flex w-full max-w-md flex-col px-5 pt-10 pb-10 md:h-0 md:max-w-none md:justify-end md:self-end md:px-0 md:pt-0 md:pb-16">
+
+            <div id="media-grid"
+                 class="relative z-10 grid aspect-[595/842] w-full shrink-0 grid-cols-2 self-center overflow-hidden md:w-[min(100%,calc((100svh-7rem)*595/842))]">
+
+                <img src="media/img/silla izq-roja.png"
+                     alt="Mitad de una silla roja"
+                     class="block h-full w-full object-cover">
+
+                <div class="grid grid-rows-11">
+
+                    <div tabindex="0" role="button" aria-label="Artesanía" aria-pressed="false" class="group/celda relative overflow-hidden outline-none">
+                        <img src="media/img/1derecha.png" alt="" class="absolute inset-0 block h-full w-full object-cover transition-transform duration-500 ease-in-out group-hover/celda:-translate-x-full group-focus/celda:-translate-x-full">
+                        <span class="absolute inset-0 flex translate-x-full items-center justify-center px-2 text-center text-base font-semibold text-azul transition-transform duration-500 ease-in-out group-hover/celda:translate-x-0 group-focus/celda:translate-x-0 sm:text-lg md:text-xl">ARTESANÍA</span>
+                    </div>
+
+                    <div tabindex="0" role="button" aria-label="Únicas" aria-pressed="false" class="group/celda relative overflow-hidden outline-none">
+                        <img src="media/img/2derecha.png" alt="" class="absolute inset-0 block h-full w-full object-cover transition-transform duration-500 ease-in-out group-hover/celda:-translate-x-full group-focus/celda:-translate-x-full">
+                        <span class="absolute inset-0 flex translate-x-full items-center justify-center px-2 text-center text-base font-semibold text-azul transition-transform duration-500 ease-in-out group-hover/celda:translate-x-0 group-focus/celda:translate-x-0 sm:text-lg md:text-xl">ÚNICAS</span>
+                    </div>
+
+                    <div tabindex="0" role="button" aria-label="Honesto" aria-pressed="false" class="group/celda relative overflow-hidden outline-none">
+                        <img src="media/img/3derecha.png" alt="" class="absolute inset-0 block h-full w-full object-cover transition-transform duration-500 ease-in-out group-hover/celda:-translate-x-full group-focus/celda:-translate-x-full">
+                        <span class="absolute inset-0 flex translate-x-full items-center justify-center px-2 text-center text-base font-semibold text-azul transition-transform duration-500 ease-in-out group-hover/celda:translate-x-0 group-focus/celda:translate-x-0 sm:text-lg md:text-xl">HONESTO</span>
+                    </div>
+
+                    <div tabindex="0" role="button" aria-label="Manual" aria-pressed="false" class="group/celda relative overflow-hidden outline-none">
+                        <img src="media/img/4derecha.png" alt="" class="absolute inset-0 block h-full w-full object-cover transition-transform duration-500 ease-in-out group-hover/celda:-translate-x-full group-focus/celda:-translate-x-full">
+                        <span class="absolute inset-0 flex translate-x-full items-center justify-center px-2 text-center text-base font-semibold text-azul transition-transform duration-500 ease-in-out group-hover/celda:translate-x-0 group-focus/celda:translate-x-0 sm:text-lg md:text-xl">MANUAL</span>
+                    </div>
+
+                    <div tabindex="0" role="button" aria-label="Nobles" aria-pressed="false" class="group/celda relative overflow-hidden outline-none">
+                        <img src="media/img/5derecha.png" alt="" class="absolute inset-0 block h-full w-full object-cover transition-transform duration-500 ease-in-out group-hover/celda:-translate-x-full group-focus/celda:-translate-x-full">
+                        <span class="absolute inset-0 flex translate-x-full items-center justify-center px-2 text-center text-base font-semibold text-azul transition-transform duration-500 ease-in-out group-hover/celda:translate-x-0 group-focus/celda:translate-x-0 sm:text-lg md:text-xl">NOBLES</span>
+                    </div>
+
+                    <div tabindex="0" role="button" aria-label="Limitada" aria-pressed="false" class="group/celda relative overflow-hidden outline-none">
+                        <img src="media/img/6derecha.png" alt="" class="absolute inset-0 block h-full w-full object-cover transition-transform duration-500 ease-in-out group-hover/celda:-translate-x-full group-focus/celda:-translate-x-full">
+                        <span class="absolute inset-0 flex translate-x-full items-center justify-center px-2 text-center text-base font-semibold text-azul transition-transform duration-500 ease-in-out group-hover/celda:translate-x-0 group-focus/celda:translate-x-0 sm:text-lg md:text-xl">LIMITADA</span>
+                    </div>
+
+                    <div tabindex="0" role="button" aria-label="Durables" aria-pressed="false" class="group/celda relative overflow-hidden outline-none">
+                        <img src="media/img/7derecha.png" alt="" class="absolute inset-0 block h-full w-full object-cover transition-transform duration-500 ease-in-out group-hover/celda:-translate-x-full group-focus/celda:-translate-x-full">
+                        <span class="absolute inset-0 flex translate-x-full items-center justify-center px-2 text-center text-base font-semibold text-azul transition-transform duration-500 ease-in-out group-hover/celda:translate-x-0 group-focus/celda:translate-x-0 sm:text-lg md:text-xl">DURABLES</span>
+                    </div>
+
+                    <div tabindex="0" role="button" aria-label="Familiar" aria-pressed="false" class="group/celda relative overflow-hidden outline-none">
+                        <img src="media/img/8derecha.png" alt="" class="absolute inset-0 block h-full w-full object-cover transition-transform duration-500 ease-in-out group-hover/celda:-translate-x-full group-focus/celda:-translate-x-full">
+                        <span class="absolute inset-0 flex translate-x-full items-center justify-center px-2 text-center text-base font-semibold text-azul transition-transform duration-500 ease-in-out group-hover/celda:translate-x-0 group-focus/celda:translate-x-0 sm:text-lg md:text-xl">FAMILIAR</span>
+                    </div>
+
+                    <div tabindex="0" role="button" aria-label="Curadas" aria-pressed="false" class="group/celda relative overflow-hidden outline-none">
+                        <img src="media/img/9derecha.png" alt="" class="absolute inset-0 block h-full w-full object-cover transition-transform duration-500 ease-in-out group-hover/celda:-translate-x-full group-focus/celda:-translate-x-full">
+                        <span class="absolute inset-0 flex translate-x-full items-center justify-center px-2 text-center text-base font-semibold text-azul transition-transform duration-500 ease-in-out group-hover/celda:translate-x-0 group-focus/celda:translate-x-0 sm:text-lg md:text-xl">CURADAS</span>
+                    </div>
+
+                    <div tabindex="0" role="button" aria-label="Cómodas" aria-pressed="false" class="group/celda relative overflow-hidden outline-none">
+                        <img src="media/img/10derecha.png" alt="" class="absolute inset-0 block h-full w-full object-cover transition-transform duration-500 ease-in-out group-hover/celda:-translate-x-full group-focus/celda:-translate-x-full">
+                        <span class="absolute inset-0 flex translate-x-full items-center justify-center px-2 text-center text-base font-semibold text-azul transition-transform duration-500 ease-in-out group-hover/celda:translate-x-0 group-focus/celda:translate-x-0 sm:text-lg md:text-xl">CÓMODAS</span>
+                    </div>
+
+                    <div tabindex="0" role="button" aria-label="Calidad" aria-pressed="false" class="group/celda relative overflow-hidden outline-none">
+                        <img src="media/img/11derecha.png" alt="" class="absolute inset-0 block h-full w-full object-cover transition-transform duration-500 ease-in-out group-hover/celda:-translate-x-full group-focus/celda:-translate-x-full">
+                        <span class="absolute inset-0 flex translate-x-full items-center justify-center px-2 text-center text-base font-semibold text-azul transition-transform duration-500 ease-in-out group-hover/celda:translate-x-0 group-focus/celda:translate-x-0 sm:text-lg md:text-xl">CALIDAD</span>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+        <div id="galeria-teo" class="relative -mx-5 mt-30 overflow-hidden scroll-mt-24 md:-mx-8">
             <div class="flex flex-col gap-0 md:block">
-                <h2 class="mb-0 w-full pl-5 pr-5 text-left text-4xl font-semibold text-azul md:pl-13 md:pr-1 md:text-6xl">
+                <h2 class="mb-4 w-full px-5 text-left text-4xl font-semibold text-azul md:mb-6 md:px-8 md:text-6xl">
                     GALERIA DE TEO
                 </h2>
             </div>
 
             <div class="grid grid-cols-2 gap-0 border-t-2 border-l-2 border-black md:grid-cols-4">
                 <div class="group relative overflow-hidden border-r-2 border-b-2 border-black bg-white">
-                    <img src="media/img/teo/fotos extra/teoymoodboard.jpg" alt="Dos sillas de Teo" class="block aspect-[3/4] w-full object-cover transition-transform duration-500 group-hover:scale-105">
-                    <div class="absolute inset-0 flex items-center justify-center bg-black/15 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
-                        <div class="text-center text-xl font-semibold tracking-tight md:text-2xl">
-                            <span class="text-azul">@</span><span class="text-rojo">teo</span><span class="text-amarillo">sillas</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="group relative overflow-hidden border-r-2 border-b-2 border-black bg-white">
-                    <img src="media/img/teo/fotos extra/manos_trabajando.webp" alt="Manos trabajando" class="block aspect-[3/4] w-full object-cover transition-transform duration-500 group-hover:scale-105">
+                    <img src="media/img/teo/fotos extra/teoymoodboard.jpg" alt="Dos sillas de Teo" class="block aspect-[3/4] w-full object-cover">
                     <div class="absolute inset-0 flex items-center justify-center bg-black/15 opacity-0 transition-opacity duration-300 pointer-events-none group-hover:opacity-100">
                         <div class="text-center text-xl font-semibold tracking-tight md:text-2xl">
                             <span class="text-azul">@</span><span class="text-rojo">teo</span><span class="text-amarillo">sillas</span>
@@ -262,7 +354,7 @@
                     </div>
                 </div>
                 <div class="group relative overflow-hidden border-r-2 border-b-2 border-black bg-white">
-                    <img src="media/img/teo/fotos extra/silla_canasta.webp" alt="Silla canasta" class="block aspect-[3/4] w-full object-cover transition-transform duration-500 group-hover:scale-105">
+                    <img src="media/img/teo/fotos extra/manos_trabajando.webp" alt="Manos trabajando" class="block aspect-[3/4] w-full object-cover">
                     <div class="absolute inset-0 flex items-center justify-center bg-black/15 opacity-0 transition-opacity duration-300 pointer-events-none group-hover:opacity-100">
                         <div class="text-center text-xl font-semibold tracking-tight md:text-2xl">
                             <span class="text-azul">@</span><span class="text-rojo">teo</span><span class="text-amarillo">sillas</span>
@@ -270,7 +362,15 @@
                     </div>
                 </div>
                 <div class="group relative overflow-hidden border-r-2 border-b-2 border-black bg-white">
-                    <img src="media/img/teo/fotos extra/teodos.avif" alt="Silla humo" class="block aspect-[3/4] w-full object-cover transition-transform duration-500 group-hover:scale-105">
+                    <img src="media/img/teo/fotos extra/silla_canasta.webp" alt="Silla canasta" class="block aspect-[3/4] w-full object-cover">
+                    <div class="absolute inset-0 flex items-center justify-center bg-black/15 opacity-0 transition-opacity duration-300 pointer-events-none group-hover:opacity-100">
+                        <div class="text-center text-xl font-semibold tracking-tight md:text-2xl">
+                            <span class="text-azul">@</span><span class="text-rojo">teo</span><span class="text-amarillo">sillas</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="group relative overflow-hidden border-r-2 border-b-2 border-black bg-white">
+                    <img src="media/img/teo/fotos extra/teodos.avif" alt="Silla humo" class="block aspect-[3/4] w-full object-cover">
                     <div class="absolute inset-0 flex items-center justify-center bg-black/15 opacity-0 transition-opacity duration-300 pointer-events-none group-hover:opacity-100">
                         <div class="text-center text-xl font-semibold tracking-tight md:text-2xl">
                             <span class="text-azul">@</span><span class="text-rojo">teo</span><span class="text-amarillo">sillas</span>
@@ -279,7 +379,7 @@
                 </div>
 
                 <div class="group relative overflow-hidden border-r-2 border-b-2 border-black bg-white">
-                    <img src="media/img/másamigos.webp" alt="Más imágenes de Teo" class="block aspect-[3/4] w-full object-cover transition-transform duration-500 group-hover:scale-105">
+                    <img src="media/img/másamigos.webp" alt="Más imágenes de Teo" class="block aspect-[3/4] w-full object-cover">
                     <div class="absolute inset-0 flex items-center justify-center bg-black/15 opacity-0 transition-opacity duration-300 pointer-events-none group-hover:opacity-100">
                         <div class="text-center text-xl font-semibold tracking-tight md:text-2xl">
                             <span class="text-azul">@</span><span class="text-rojo">teo</span><span class="text-amarillo">sillas</span>
@@ -287,7 +387,7 @@
                     </div>
                 </div>
                 <div class="group relative overflow-hidden border-r-2 border-b-2 border-black bg-white">
-                    <img src="media/img/teo/fotos extra/hijo-de-teo.jpg" alt="Más manos trabajando" class="block aspect-[3/4] w-full object-cover transition-transform duration-500 group-hover:scale-105">
+                    <img src="media/img/teo/fotos extra/hijo-de-teo.jpg" alt="Más manos trabajando" class="block aspect-[3/4] w-full object-cover">
                     <div class="absolute inset-0 flex items-center justify-center bg-black/15 opacity-0 transition-opacity duration-300 pointer-events-none group-hover:opacity-100">
                         <div class="text-center text-xl font-semibold tracking-tight md:text-2xl">
                             <span class="text-azul">@</span><span class="text-rojo">teo</span><span class="text-amarillo">sillas</span>
@@ -295,7 +395,7 @@
                     </div>
                 </div>
                 <div class="group relative overflow-hidden border-r-2 border-b-2 border-black bg-white">
-                    <img src="media/img/teo/fotos extra/silla-divertida.webp" alt="Más silla canasta" class="block aspect-[3/4] w-full object-cover transition-transform duration-500 group-hover:scale-105">
+                    <img src="media/img/teo/fotos extra/silla-divertida.webp" alt="Más silla canasta" class="block aspect-[3/4] w-full object-cover">
                     <div class="absolute inset-0 flex items-center justify-center bg-black/15 opacity-0 transition-opacity duration-300 pointer-events-none group-hover:opacity-100">
                         <div class="text-center text-xl font-semibold tracking-tight md:text-2xl">
                             <span class="text-azul">@</span><span class="text-rojo">teo</span><span class="text-amarillo">sillas</span>
@@ -303,7 +403,7 @@
                     </div>
                 </div>
                 <div class="group relative overflow-hidden border-r-2 border-b-2 border-black bg-white">
-                    <img src="media/img/teo/fotos extra/amigo_sillas.webp" alt="Más silla humo" class="block aspect-[3/4] w-full object-cover transition-transform duration-500 group-hover:scale-105">
+                    <img src="media/img/teo/fotos extra/amigo_sillas.webp" alt="Más silla humo" class="block aspect-[3/4] w-full object-cover">
                     <div class="absolute inset-0 flex items-center justify-center bg-black/15 opacity-0 transition-opacity duration-300 pointer-events-none group-hover:opacity-100">
                         <div class="text-center text-xl font-semibold tracking-tight md:text-2xl">
                             <span class="text-azul">@</span><span class="text-rojo">teo</span><span class="text-amarillo">sillas</span>
@@ -311,7 +411,7 @@
                     </div>
                 </div>
                 <div class="group relative overflow-hidden border-r-2 border-b-2 border-black bg-white">
-                    <img src="media/img/teo/fotos extra/maquina_palos.webp" alt="Más imágenes de Teo" class="block aspect-[3/4] w-full object-cover transition-transform duration-500 group-hover:scale-105">
+                    <img src="media/img/teo/fotos extra/maquina_palos.webp" alt="Más imágenes de Teo" class="block aspect-[3/4] w-full object-cover">
                     <div class="absolute inset-0 flex items-center justify-center bg-black/15 opacity-0 transition-opacity duration-300 pointer-events-none group-hover:opacity-100">
                         <div class="text-center text-xl font-semibold tracking-tight md:text-2xl">
                             <span class="text-azul">@</span><span class="text-rojo">teo</span><span class="text-amarillo">sillas</span>
@@ -319,7 +419,7 @@
                     </div>
                 </div>
                 <div class="group relative overflow-hidden border-r-2 border-b-2 border-black bg-white">
-                    <img src="media/img/teo/manos_apoyadas.webp" alt="Más manos trabajando" class="block aspect-[3/4] w-full object-cover transition-transform duration-500 group-hover:scale-105">
+                    <img src="media/img/teo/manos_apoyadas.webp" alt="Más manos trabajando" class="block aspect-[3/4] w-full object-cover">
                     <div class="absolute inset-0 flex items-center justify-center bg-black/15 opacity-0 transition-opacity duration-300 pointer-events-none group-hover:opacity-100">
                         <div class="text-center text-xl font-semibold tracking-tight md:text-2xl">
                             <span class="text-azul">@</span><span class="text-rojo">teo</span><span class="text-amarillo">sillas</span>
@@ -327,7 +427,7 @@
                     </div>
                 </div>
                 <div class="group relative overflow-hidden border-r-2 border-b-2 border-black bg-white">
-                    <img src="media/img/teo/Casa_de_teo.webp" alt="Más silla canasta" class="block aspect-[3/4] w-full object-cover transition-transform duration-500 group-hover:scale-105">
+                    <img src="media/img/teo/Casa_de_teo.webp" alt="Más silla canasta" class="block aspect-[3/4] w-full object-cover">
                     <div class="absolute inset-0 flex items-center justify-center bg-black/15 opacity-0 transition-opacity duration-300 pointer-events-none group-hover:opacity-100">
                         <div class="text-center text-xl font-semibold tracking-tight md:text-2xl">
                             <span class="text-azul">@</span><span class="text-rojo">teo</span><span class="text-amarillo">sillas</span>
@@ -335,7 +435,7 @@
                     </div>
                 </div>
                 <div class="group relative overflow-hidden border-r-2 border-b-2 border-black bg-white">
-                    <img src="media/img/teo/fotos extra/silla_humo.webp" alt="Más silla humo" class="block aspect-[3/4] w-full object-cover transition-transform duration-500 group-hover:scale-105">
+                    <img src="media/img/teo/fotos extra/silla_humo.webp" alt="Más silla humo" class="block aspect-[3/4] w-full object-cover">
                     <div class="absolute inset-0 flex items-center justify-center bg-black/15 opacity-0 transition-opacity duration-300 pointer-events-none group-hover:opacity-100">
                         <div class="text-center text-xl font-semibold tracking-tight md:text-2xl">
                             <span class="text-azul">@</span><span class="text-rojo">teo</span><span class="text-amarillo">sillas</span>
@@ -345,14 +445,36 @@
             </div>
         </div>
 
-        <div class="border-t-2 border-black px-5 py-4 text-center md:px-8 md:py-5">
+            
+
+        <div class="border-t-2 border-black px-5 py-8 text-center md:px-8 md:py-12 lg:py-16">
             <p class="text-2xl font-semibold tracking-tight text-rojo md:text-4xl">
                 SÍGUENOS EN INSTAGRAM
             </p>
-            <div class="mt-2 text-sm font-semibold tracking-tight text-rojo md:hidden">
+            <div class="mt-2 text-sm font-semibold tracking-tight text-azul md:hidden">
                 @teosillas
             </div>
         </div>
+
+
+        <nav aria-label="Accesos rápidos" class="group/botones grid px-5 pb-16 md:grid-cols-3 md:px-8 md:pb-24">
+
+            <a id="b-catalogo" href="catalogo.html"
+            class="flex min-h-16 items-center bg-azul px-5 text-base font-semibold text-gris-claro uppercase group-has-[#b-catalogo:hover]/botones:bg-rojo group-has-[#b-sobre:hover]/botones:bg-amarillo group-has-[#b-sobre:hover]/botones:text-azul group-has-[#b-ubicacion:hover]/botones:bg-amarillo group-has-[#b-ubicacion:hover]/botones:text-azul focus-visible:outline-2 focus-visible:-outline-offset-4 focus-visible:outline-white md:min-h-20 md:text-lg">
+                IR AL CATÁLOGO
+            </a>
+
+            <a id="b-sobre" href="favoritas.html"
+            class="flex min-h-16 items-center bg-rojo px-5 text-base font-semibold text-gris-claro uppercase group-has-[#b-catalogo:hover]/botones:bg-amarillo group-has-[#b-catalogo:hover]/botones:text-azul group-has-[#b-ubicacion:hover]/botones:bg-azul focus-visible:outline-2 focus-visible:-outline-offset-4 focus-visible:outline-white md:min-h-20 md:text-lg">
+                SILLAS DE TEO
+            </a>
+
+            <a id="b-ubicacion" href="ubicacion.html"
+            class="flex min-h-16 items-center bg-amarillo px-5 text-base font-semibold text-azul uppercase group-has-[#b-catalogo:hover]/botones:bg-azul group-has-[#b-catalogo:hover]/botones:text-gris-claro group-has-[#b-sobre:hover]/botones:bg-azul group-has-[#b-sobre:hover]/botones:text-gris-claro group-has-[#b-ubicacion:hover]/botones:bg-rojo group-has-[#b-ubicacion:hover]/botones:text-gris-claro focus-visible:outline-2 focus-visible:-outline-offset-4 focus-visible:outline-azul md:min-h-20 md:text-lg">
+                ¿DÓNDE ESTÁ TEO?
+            </a>
+
+        </nav>
 
     </main>
 
