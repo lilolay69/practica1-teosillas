@@ -38,7 +38,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 ['Tamaño', 'Altura de asiento 46 cm'],
                 ['Color', 'Azul eléctrico']
             ],
-            imagenes: ['#', '#']
+            imagenes: ['#'],
+            video: 'media/video/silla-azul.mp4'
         },
         v2: {
             nombre: 'Silla esmeralda',
@@ -49,7 +50,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 ['Tamaño', 'Altura de asiento 45 cm'],
                 ['Color', 'Verde esmeralda']
             ],
-            imagenes: ['#', '#']
+            imagenes: ['#'],
+            video: 'media/video/silla-esmeralda.mp4'
         },
         v3: {
             nombre: 'Silla famosa',
@@ -60,7 +62,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 ['Tamaño', 'Altura de asiento 44 cm'],
                 ['Color', 'Rojo lacado']
             ],
-            imagenes: ['#', '#']
+            imagenes: ['#'],
+            video: 'media/video/silla-famosa.mp4'
         },
         v4: {
             nombre: 'Silla orgánica',
@@ -71,7 +74,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 ['Tamaño', 'Altura de asiento 43 cm'],
                 ['Color', 'Madera natural']
             ],
-            imagenes: ['#', '#']
+            imagenes: ['#'],
+            video: 'media/video/silla-organica.mp4'
         },
         v5: {
             nombre: 'Silla serpiente',
@@ -82,7 +86,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 ['Tamaño', 'Altura de asiento 47 cm'],
                 ['Color', 'Estampado serpiente']
             ],
-            imagenes: ['#', '#']
+            imagenes: ['#'],
+            video: 'media/video/silla-serpiente.mp4'
         },
         v6: {
             nombre: 'Silla morada',
@@ -93,7 +98,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 ['Tamaño', 'Altura de asiento 46 cm'],
                 ['Color', 'Morado y blanco']
             ],
-            imagenes: ['#', '#']
+            imagenes: ['#'],
+            video: 'media/video/silla-morada.mp4'
         },
         v7: {
             nombre: 'Silla roja',
@@ -104,14 +110,11 @@ document.addEventListener('DOMContentLoaded', () => {
                 ['Tamaño', 'Altura de asiento 45 cm'],
                 ['Color', 'Rojo taller']
             ],
-            imagenes: ['#', '#']
+            imagenes: ['#'],
+            video: 'media/video/silla-roja.mp4'
         }
     };
 
-
-    // ==================================================
-    // 1. MENÚ DESPLEGABLE
-    // ==================================================
 
     const botonMenu = document.getElementById('boton-menu');
 
@@ -134,10 +137,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
 
-        // ==================================================
-    // 2. BUSCADOR
-    // ==================================================
-
     const paginas = [
         {
             nombre: 'Catálogo de Teo',
@@ -151,12 +150,12 @@ document.addEventListener('DOMContentLoaded', () => {
         },
         {
             nombre: '¿Quién es Teo?',
-            url: 'quien-es-teo.html',
+            url: 'sobreteo.html',
             palabras: 'quien teo historia sobre'
         },
         {
             nombre: '¿Dónde está Teo?',
-            url: 'donde-esta-teo.html',
+            url: 'ubicacion.html',
             palabras: 'donde direccion horario contacto mapa'
         }
     ];
@@ -269,7 +268,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const estilosSugerencias = document.createElement('style');
 
-               estilosSugerencias.textContent = `
+        estilosSugerencias.textContent = `
             #sugerencias-buscador {
                 position: absolute;
                 top: calc(100% + 4px);
@@ -451,10 +450,7 @@ document.addEventListener('DOMContentLoaded', () => {
             if (destino) {
                 window.location.href = destino;
             } else {
-                buscador.setCustomValidity(
-                    'No hay resultados para esa búsqueda'
-                );
-
+                buscador.setCustomValidity('No hay resultados para esa búsqueda');
                 buscador.reportValidity();
             }
         });
@@ -492,10 +488,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
 
-    // ==================================================
-    // 3. SCROLL
-    // ==================================================
-
     const UMBRAL_SCROLL = 40;
 
     function actualizarScroll() {
@@ -503,21 +495,10 @@ document.addEventListener('DOMContentLoaded', () => {
             window.scrollY > UMBRAL_SCROLL ? 'abajo' : 'arriba';
     }
 
-    window.addEventListener('scroll', actualizarScroll, {
-        passive: true
-    });
+    window.addEventListener('scroll', actualizarScroll, { passive: true });
 
     actualizarScroll();
 
-
-
-
-    
-
-
-    // ==================================================
-    // 4. MODO OSCURO
-    // ==================================================
 
     const botonTema = document.getElementById('boton-tema');
 
@@ -527,7 +508,6 @@ document.addEventListener('DOMContentLoaded', () => {
         const oscuro = document.documentElement.classList.contains('dark');
 
         botonTema.setAttribute('aria-pressed', String(oscuro));
-
         botonTema.setAttribute(
             'aria-label',
             oscuro ? 'Activar modo claro' : 'Activar modo oscuro'
@@ -538,14 +518,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
         botonTema.addEventListener('click', () => {
 
-            const oscuro =
-                document.documentElement.classList.toggle('dark');
+            const oscuro = document.documentElement.classList.toggle('dark');
 
             try {
-                localStorage.setItem(
-                    'tema',
-                    oscuro ? 'oscuro' : 'claro'
-                );
+                localStorage.setItem('tema', oscuro ? 'oscuro' : 'claro');
             } catch (e) {}
 
             sincronizarBotonTema();
@@ -554,10 +530,6 @@ document.addEventListener('DOMContentLoaded', () => {
         sincronizarBotonTema();
     }
 
-
-    // ==================================================
-    // 5. CATÁLOGO: FICHAS DE LAS 25 SILLAS
-    // ==================================================
 
     const sillasCatalogo = document.querySelectorAll('.silla-item');
     const fichaCatalogo = document.getElementById('detalle-catalogo');
@@ -823,10 +795,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
 
-    // ==================================================
-    // 6. NOMBRE DE SILLA EN LOS VÍDEOS
-    // ==================================================
-
     const nombreSilla = document.getElementById('nombre-silla');
 
     document.querySelectorAll('.grid-con-nombres video').forEach(video => {
@@ -851,10 +819,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
 
-    // ==================================================
-    // 7. REPRODUCCIÓN DE VÍDEOS
-    // ==================================================
-
     const videos = document.querySelectorAll('.silla-video');
 
     videos.forEach(video => {
@@ -876,10 +840,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
 
-    // ==================================================
-    // 8. FAVORITAS: FICHAS PERSONALIZADAS
-    // ==================================================
-
     const seccionDetalle = document.getElementById('detalle-silla');
     const seccionGrid = document.getElementById('grid-favoritas');
 
@@ -893,16 +853,12 @@ document.addEventListener('DOMContentLoaded', () => {
         const refDetalle = document.getElementById('detalle-ref');
         const nombreDetalle = document.getElementById('detalle-nombre');
         const descripcionDetalle = document.getElementById('detalle-descripcion');
-
         const listaDetalle = document.getElementById('detalle-lista');
 
-        const imagenesDetalle = [1, 2].map(n =>
-            document.getElementById(`detalle-img-${n}`)
-        );
+        const imagenesDetalle = [document.getElementById('detalle-img-1')];
+        const videoDetalle = document.getElementById('detalle-video');
 
-        const reducirMovimiento = window.matchMedia(
-            '(prefers-reduced-motion: reduce)'
-        );
+        const reducirMovimiento = window.matchMedia('(prefers-reduced-motion: reduce)');
 
         let sillaFija = null;
         let sillaHover = null;
@@ -957,6 +913,25 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
 
             });
+
+            if (videoDetalle) {
+
+                if (silla.video) {
+                    videoDetalle.muted = true;
+                    videoDetalle.loop = true;
+                    videoDetalle.playsInline = true;
+                    videoDetalle.src = silla.video;
+                    videoDetalle.setAttribute('aria-label', `${silla.nombre}, vídeo`);
+                    videoDetalle.load();
+                    videoDetalle.play().catch(() => {});
+                } else {
+                    videoDetalle.pause();
+                    videoDetalle.removeAttribute('src');
+                    videoDetalle.removeAttribute('aria-label');
+                    videoDetalle.load();
+                }
+
+            }
         }
 
         function mostrarDetalle() {
@@ -1025,6 +1000,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             temporizadorDetalle = setTimeout(() => {
                 seccionDetalle.classList.add('hidden');
+                if (videoDetalle) videoDetalle.pause();
             }, 500);
         }
 
@@ -1077,20 +1053,12 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
 
-    // ==================================================
-    // 9. ESCAPE: CERRAR MENÚ
-    // ==================================================
-
     document.addEventListener('keydown', e => {
         if (e.key === 'Escape' && botonMenu) {
             abrirMenu(false);
         }
     });
 
-
-    // ==================================================
-    // 10. MAPA INTERACTIVO
-    // ==================================================
 
     const contenedorMapa = document.getElementById('mapa-teo');
 
@@ -1124,10 +1092,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     }
 
-
-    // ==================================================
-    // 11. FORMULARIO DE CONTACTO
-    // ==================================================
 
     const formularioContacto = document.getElementById('formulario-contacto');
 

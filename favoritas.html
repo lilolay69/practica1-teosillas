@@ -154,37 +154,37 @@
 
                     <div class="contents md:grid md:min-h-0 md:min-w-0 md:grid-rows-[minmax(0,42fr)_minmax(0,58fr)]">
 
-                        <video id="v1" src="media/video/1colorazul.mp4" autoplay muted loop playsinline disablepictureinpicture preload="auto"
+                        <video id="v1" src="media/video/silla-azul.mp4" autoplay muted loop playsinline disablepictureinpicture preload="auto"
                                tabindex="0" role="button" aria-label="Silla azul"
                                class="silla-video block h-full w-full cursor-pointer object-cover col-start-1 row-start-1 row-span-6 md:[grid-area:auto]"></video>
 
-                        <video id="v2" src="media/video/2coloresmeralda.mp4" autoplay muted loop playsinline disablepictureinpicture preload="auto"
+                        <video id="v2" src="media/video/silla-esmeralda.mp4" autoplay muted loop playsinline disablepictureinpicture preload="auto"
                                tabindex="0" role="button" aria-label="Silla esmeralda"
                                class="silla-video block h-full w-full cursor-pointer object-cover col-start-1 row-start-7 row-span-9 md:[grid-area:auto]"></video>
 
                     </div>
 
-                    <video id="v3" src="media/video/3colorfamosa.mp4" autoplay muted loop playsinline disablepictureinpicture preload="auto"
+                    <video id="v3" src="media/video/silla-famosa.mp4" autoplay muted loop playsinline disablepictureinpicture preload="auto"
                            tabindex="0" role="button" aria-label="Silla famosa"
                            class="silla-video block h-full w-full cursor-pointer object-cover col-start-2 row-start-1 row-span-15 md:[grid-area:auto]"></video>
 
-                    <video id="v4" src="media/video/4colororganica.mp4" autoplay muted loop playsinline disablepictureinpicture preload="auto"
+                    <video id="v4" src="media/video/silla-organica.mp4" autoplay muted loop playsinline disablepictureinpicture preload="auto"
                            tabindex="0" role="button" aria-label="Silla orgánica"
                            class="silla-video block h-full w-full cursor-pointer object-cover col-start-1 row-start-27 row-span-23 md:[grid-area:auto]"></video>
 
                     <div class="contents md:grid md:min-h-0 md:min-w-0 md:grid-rows-[minmax(0,34fr)_minmax(0,66fr)]">
 
-                        <video id="v7" src="media/video/7colorrojo.mp4" autoplay muted loop playsinline disablepictureinpicture preload="auto"
+                        <video id="v7" src="media/video/silla-roja.mp4" autoplay muted loop playsinline disablepictureinpicture preload="auto"
                                tabindex="0" role="button" aria-label="Silla roja"
                                class="silla-video block h-full w-full cursor-pointer object-cover col-start-1 col-span-2 row-start-16 row-span-11 md:[grid-area:auto]"></video>
 
-                        <video id="v6" src="media/video/6colormorada.mp4" autoplay muted loop playsinline disablepictureinpicture preload="auto"
+                        <video id="v6" src="media/video/silla-morada.mp4" autoplay muted loop playsinline disablepictureinpicture preload="auto"
                                tabindex="0" role="button" aria-label="Silla morada"
                                class="silla-video block h-full w-full cursor-pointer object-cover col-start-2 row-start-27 row-span-13 md:[grid-area:auto]"></video>
 
                     </div>
 
-                    <video id="v5" src="media/video/5colorserpiente.mp4" autoplay muted loop playsinline disablepictureinpicture preload="auto"
+                    <video id="v5" src="media/video/silla-serpiente.mp4" autoplay muted loop playsinline disablepictureinpicture preload="auto"
                            tabindex="0" role="button" aria-label="Silla serpiente"
                            class="silla-video block h-full w-full cursor-pointer object-cover col-start-2 row-start-40 row-span-10 md:[grid-area:auto]"></video>
 
@@ -232,87 +232,58 @@
     
 <section id="detalle-silla"
          aria-labelledby="detalle-nombre"
-         class="relative z-10 hidden px-5 pb-24 opacity-0 transition-opacity duration-500 data-[visible=true]:opacity-100 md:px-8 md:pb-32">
+         class="relative z-10 col-span-full hidden px-5 pb-24 opacity-0 transition-opacity duration-500 data-[visible=true]:opacity-100 in-[.textos-grid]:px-0 in-[.textos-grid]:pb-0 md:px-8 md:pb-32">
 
     <div id="detalle-grid"
          class="scroll-mb-5 border-t-2 border-l-2 border-black md:grid md:h-[60svh] md:scroll-mb-8 md:grid-rows-[minmax(3rem,11fr)_minmax(0,89fr)]">
 
-        <!-- CABECERA -->
         <div class="flex min-h-12 items-center justify-between border-r-2 border-b-2 border-black bg-amarillo px-4 md:min-h-0 md:px-5">
 
             <button id="detalle-cerrar"
                     type="button"
                     aria-label="Cerrar ficha"
                     class="-ml-1 flex h-9 w-9 cursor-pointer items-center justify-center text-[#4D4D4D] hover:text-rojo">
-
-                <svg viewBox="0 0 24 24" fill="none"
-                     stroke="currentColor" stroke-width="2"
-                     stroke-linecap="round" class="h-6 w-6">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" class="h-6 w-6" aria-hidden="true">
                     <path d="M5 5l14 14M19 5L5 19"/>
                 </svg>
-
             </button>
 
-            <p id="detalle-ref"
-               class="text-sm font-light text-[#4D4D4D] md:text-base">
-            </p>
-
+            <p id="detalle-ref" class="text-sm font-light text-[#4D4D4D] md:text-base"></p>
         </div>
 
-        <!-- CONTENIDO -->
-        <div class="grid grid-cols-2 md:min-h-0 md:grid-cols-[40.6fr_3fr_27fr_29.4fr] md:grid-rows-[minmax(0,1fr)]">
+        <div class="grid grid-cols-2 md:min-h-0 md:grid-cols-[48fr_8fr_22fr_22fr] md:grid-rows-[minmax(0,1fr)]">
 
-            <!-- INFORMACIÓN -->
             <div class="col-span-2 grid md:col-span-1 md:min-h-0 md:grid-rows-[minmax(0,75fr)_minmax(0,25fr)]">
 
                 <div class="border-r-2 border-b-2 border-black bg-caja p-5 md:min-h-0 md:overflow-y-auto md:p-6">
-
-                    <h2 id="detalle-nombre"
-                        class="text-sm font-semibold text-tinta md:text-base">
-                    </h2>
-
-                    <p id="detalle-descripcion"
-                       class="mt-1 text-justify text-sm font-light text-tinta md:text-base">
-                    </p>
-
-                    <ul id="detalle-lista"
-                        class="mt-4 list-disc space-y-0.5 pl-6 text-sm font-light text-tinta md:text-base">
-                    </ul>
-
+                    <h2 id="detalle-nombre" class="text-sm font-semibold text-tinta md:text-base"></h2>
+                    <p id="detalle-descripcion" class="mt-1 text-justify text-sm font-light text-tinta md:text-base"></p>
+                    <ul id="detalle-lista" class="mt-4 list-disc space-y-0.5 pl-6 text-sm font-light text-tinta md:text-base"></ul>
                 </div>
 
-                <div class="flex min-h-20 items-center border-r-2 border-b-2 border-black bg-rojo px-5 text-2xl font-light text-white md:min-h-0 md:px-6 md:text-3xl">
+                <div class="flex min-h-11 items-center border-r-2 border-b-2 border-black bg-rojo px-5 text-lg font-light text-white md:min-h-0 md:px-6 md:text-3xl">
                     + INFO
                 </div>
 
+                <div class="h-2 border-r-2 border-b-2 border-black bg-azul md:hidden"></div>
             </div>
 
-            <!-- RECTÁNGULO AZUL -->
-            <div class="hidden border-r-2 border-b-2 border-black bg-azul md:block md:min-h-0">
-            </div>
+            <div class="hidden border-r-2 border-b-2 border-black bg-azul md:block md:min-h-0"></div>
 
-            <!-- IMAGEN 1 -->
-            <div class="relative aspect-[3/4] overflow-hidden border-r-2 border-b-2 border-black bg-white md:aspect-auto md:min-h-0">
-
+            <div class="relative h-62 overflow-hidden border-r-2 border-b-2 border-black bg-white md:h-auto md:min-h-0">
                 <img id="detalle-img-1"
                      alt=""
-                     class="absolute inset-0 h-full w-full object-cover">
-
+                     class="absolute inset-0 block h-full w-full object-contain md:object-cover">
             </div>
 
-            <!-- IMAGEN 2 -->
-            <div class="relative aspect-[3/4] overflow-hidden border-r-2 border-b-2 border-black bg-white md:aspect-auto md:min-h-0">
-
-                <img id="detalle-img-2"
-                     alt=""
-                     class="absolute inset-0 h-full w-full object-cover">
-
+            <div class="relative h-62 overflow-hidden border-r-2 border-b-2 border-black bg-white md:h-auto md:min-h-0">
+                <video id="detalle-video"
+                       autoplay muted loop playsinline disablepictureinpicture
+                       class="absolute inset-0 block h-full w-full object-contain md:object-cover"></video>
             </div>
 
         </div>
-
     </div>
-
 </section>
 
 
