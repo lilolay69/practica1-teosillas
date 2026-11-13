@@ -1,5 +1,7 @@
+
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,19 +13,24 @@
     <link rel="icon" type="image/png" sizes="16x16" href="media/img/favicon/favicon-16.png">
     <link rel="apple-touch-icon" sizes="180x180" href="media/img/favicon/apple-touch-icon.png">
 
+    <!-- TIPOGRAFÍA -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
-    <!-- CSS de librerías y estilos personalizados -->
+    <!-- CSS -->
     <link rel="stylesheet" href="css/styles.css">
 
+    <!-- MODO OSCURO -->
     <script>
         try {
-            if (localStorage.getItem('tema') === 'oscuro') document.documentElement.classList.add('dark');
+            if (localStorage.getItem('tema') === 'oscuro') {
+                document.documentElement.classList.add('dark');
+            }
         } catch (e) {}
     </script>
 
+    <!-- TAILWIND -->
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 
     <style type="text/tailwindcss">
@@ -46,17 +53,37 @@
             --animate-marquee: marquee 30s linear infinite;
 
             @keyframes marquee {
-                from { transform: translateX(0); }
-                to { transform: translateX(-50%); }
+                0% {
+                    transform: translateX(0);
+                }
+
+                100% {
+                    transform: translateX(-50%);
+                }
             }
 
             --animate-ciclo: ciclo-color 3s linear var(--desfase, 0s) infinite;
 
             @keyframes ciclo-color {
-                0%, 30% { background-color: var(--color-azul); color: var(--color-gris-claro); }
-                33.33%, 63.33% { background-color: var(--color-rojo); color: var(--color-gris-claro); }
-                66.66%, 96.66% { background-color: var(--color-amarillo); color: var(--color-azul); }
-                100% { background-color: var(--color-azul); color: var(--color-gris-claro); }
+                0%, 30% {
+                    background-color: var(--color-azul);
+                    color: var(--color-gris-claro);
+                }
+
+                33.33%, 63.33% {
+                    background-color: var(--color-rojo);
+                    color: var(--color-gris-claro);
+                }
+
+                66.66%, 96.66% {
+                    background-color: var(--color-amarillo);
+                    color: var(--color-azul);
+                }
+
+                100% {
+                    background-color: var(--color-azul);
+                    color: var(--color-gris-claro);
+                }
             }
         }
 
@@ -71,71 +98,136 @@
 
 <body class="group relative overflow-x-hidden bg-fondo font-poppins transition-colors duration-500">
 
-    <img src="media/img/LOGO PNG BLANCO.png" alt="Logo de Teo Sillas"
+    <!-- LOGO DE FONDO -->
+    <img src="media/img/LOGO PNG BLANCO.png"
+         alt="Logo de Teo Sillas"
          class="pointer-events-none absolute -top-16 left-[22px] z-0 w-[22rem] max-w-none md:-top-92 md:left-[-140px] md:w-[44rem]">
 
+    <!-- MENÚ DESPLEGABLE -->
     <div id="menu"
          class="invisible fixed inset-x-0 top-0 z-[15] bg-azul px-5 pt-5 pb-14 opacity-0 group-data-[menu=abierto]:visible group-data-[menu=abierto]:opacity-100 group-data-[menu=abierto]:transition-[opacity,visibility] group-data-[menu=abierto]:duration-800 group-data-[menu=abierto]:ease-in-out md:px-8 md:pt-8">
 
         <form id="formulario-buscar" role="search" action="#" class="mx-14">
             <label for="buscador" class="sr-only">Buscar en la web</label>
-            <input id="buscador" type="search" placeholder="Buscar..." autocomplete="off"
+            <input id="buscador"
+                   type="search"
+                   placeholder="Buscar..."
+                   autocomplete="off"
                    class="h-10 w-full bg-gris-claro px-4 text-base text-black placeholder:text-texto focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gris-claro">
         </form>
 
         <nav aria-label="Principal" class="-mx-5 mt-6 md:-mx-8">
             <ul class="space-y-1">
-                <li><a href="index.html" class="block px-5 py-2 text-2xl font-semibold text-gris-claro hover:bg-rojo hover:text-gris-claro focus-visible:bg-rojo focus-visible:text-gris-claro md:px-8 md:text-3xl">INICIO</a></li>
-                <li><a href="catalogo.html" class="block px-5 py-2 text-2xl font-semibold text-gris-claro hover:bg-rojo hover:text-gris-claro focus-visible:bg-rojo focus-visible:text-gris-claro md:px-8 md:text-3xl">CATÁLOGO DE TEO</a></li>
-                <li><a href="favoritas.html" class="block px-5 py-2 text-2xl font-semibold text-gris-claro hover:bg-rojo hover:text-gris-claro focus-visible:bg-rojo focus-visible:text-gris-claro md:px-8 md:text-3xl">FAVORITAS DE TEO</a></li>
-                <li><a href="sobreteo.html" class="block px-5 py-2 text-2xl font-semibold text-gris-claro hover:bg-rojo hover:text-gris-claro focus-visible:bg-rojo focus-visible:text-gris-claro md:px-8 md:text-3xl">¿QUIÉN ES TEO?</a></li>
-                <li><a href="ubicacion.html" class="block px-5 py-2 text-2xl font-semibold text-gris-claro hover:bg-rojo hover:text-gris-claro focus-visible:bg-rojo focus-visible:text-gris-claro md:px-8 md:text-3xl">¿DÓNDE ESTÁ TEO?</a></li>
+                <li>
+                    <a href="index.html" class="block px-5 py-2 text-2xl font-semibold text-gris-claro hover:bg-rojo hover:text-gris-claro focus-visible:bg-rojo focus-visible:text-gris-claro md:px-8 md:text-3xl">
+                        INICIO
+                    </a>
+                </li>
+
+                <li>
+                    <a href="catalogo.html" class="block px-5 py-2 text-2xl font-semibold text-gris-claro hover:bg-rojo hover:text-gris-claro focus-visible:bg-rojo focus-visible:text-gris-claro md:px-8 md:text-3xl">
+                        CATÁLOGO DE TEO
+                    </a>
+                </li>
+
+                <li>
+                    <a href="favoritas.html" class="block px-5 py-2 text-2xl font-semibold text-gris-claro hover:bg-rojo hover:text-gris-claro focus-visible:bg-rojo focus-visible:text-gris-claro md:px-8 md:text-3xl">
+                        FAVORITAS DE TEO
+                    </a>
+                </li>
+
+                <li>
+                    <a href="sobreteo.html" class="block px-5 py-2 text-2xl font-semibold text-gris-claro hover:bg-rojo hover:text-gris-claro focus-visible:bg-rojo focus-visible:text-gris-claro md:px-8 md:text-3xl">
+                        ¿QUIÉN ES TEO?
+                    </a>
+                </li>
+
+                <li>
+                    <a href="ubicacion.html" class="block px-5 py-2 text-2xl font-semibold text-gris-claro hover:bg-rojo hover:text-gris-claro focus-visible:bg-rojo focus-visible:text-gris-claro md:px-8 md:text-3xl">
+                        ¿DÓNDE ESTÁ TEO?
+                    </a>
+                </li>
             </ul>
         </nav>
     </div>
 
+    <!-- BOTÓN MENÚ -->
     <header class="pointer-events-none fixed top-5 left-5 z-20 flex items-center md:top-8 md:left-8">
-        <button id="boton-menu" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="menu"
+        <button id="boton-menu"
+                type="button"
+                aria-label="Abrir menú"
+                aria-expanded="false"
+                aria-controls="menu"
                 class="pointer-events-auto flex h-10 w-10 cursor-pointer flex-col items-center justify-center gap-[7px]">
+
             <span class="block h-[4.5px] w-10 bg-icono transition duration-300 group-data-[menu=abierto]:translate-y-[11.5px] group-data-[menu=abierto]:rotate-45 group-data-[menu=abierto]:bg-gris-claro"></span>
+
             <span class="block h-[4.5px] w-10 bg-icono transition duration-300 group-data-[menu=abierto]:bg-gris-claro group-data-[menu=abierto]:opacity-0"></span>
+
             <span class="block h-[4.5px] w-10 bg-icono transition duration-300 group-data-[menu=abierto]:-translate-y-[11.5px] group-data-[menu=abierto]:-rotate-45 group-data-[menu=abierto]:bg-gris-claro"></span>
         </button>
     </header>
 
-    <button id="boton-tema" type="button" aria-label="Activar modo oscuro" aria-pressed="false"
+    <!-- BOTÓN MODO OSCURO -->
+    <button id="boton-tema"
+            type="button"
+            aria-label="Activar modo oscuro"
+            aria-pressed="false"
             class="fixed top-5 right-5 z-20 flex h-10 w-10 cursor-pointer items-center justify-center text-icono transition-colors duration-300 group-data-[menu=abierto]:text-white md:top-8 md:right-8">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-             stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-10 w-10 dark:hidden" aria-hidden="true">
+
+        <svg xmlns="http://www.w3.org/2000/svg"
+             viewBox="0 0 24 24"
+             fill="none"
+             stroke="currentColor"
+             stroke-width="2"
+             stroke-linecap="round"
+             stroke-linejoin="round"
+             class="h-10 w-10 dark:hidden"
+             aria-hidden="true">
+
             <path d="M9 18h6"/>
             <path d="M10 22h4"/>
             <path d="M15.09 14c.18-.98.65-1.74 1.41-2.5A4.65 4.65 0 0 0 18 8 6 6 0 0 0 6 8c0 1 .23 2.23 1.5 3.5A4.61 4.61 0 0 1 8.91 14"/>
         </svg>
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-             stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="hidden h-10 w-10 dark:block" aria-hidden="true">
+
+        <svg xmlns="http://www.w3.org/2000/svg"
+             viewBox="0 0 24 24"
+             fill="none"
+             stroke="currentColor"
+             stroke-width="2"
+             stroke-linecap="round"
+             stroke-linejoin="round"
+             class="hidden h-10 w-10 dark:block"
+             aria-hidden="true">
+
             <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/>
         </svg>
     </button>
 
+    <!-- CONTENIDO PRINCIPAL -->
     <main class="relative z-10 px-5 pt-48 pb-4 md:pt-32 md:pr-8 md:pb-6 md:pl-[30%]">
 
         <h1 id="titulo-favoritas"
             class="mb-4 flex w-full justify-end text-4xl font-semibold text-rojo md:text-6xl">
-
             FAVORITAS DE TEO
-
         </h1>
 
         <p class="mt-2 max-w-[34rem]text-justify text-sm font-light text-tinta md:text-base">
             Esta no es una selección habitual. Aquí conviven las piezas más extravagantes, raras e insólitas nacidas en el propio taller de Teo. Esculturas funcionales, experimentos de forma y asientos de edición limitada creados para quienes entienden que una silla es mucho más que un lugar donde sentarse.
         </p>
 
+
     </main>
 
-    <section id="grid-favoritas" class="group/grid relative z-10 pb-24 md:grid md:grid-cols-[30%_1fr] md:pb-32">
+    <!-- GRID DE FAVORITAS -->
+    <section id="grid-favoritas"
+             class="group/grid relative z-10 pb-24 md:grid md:grid-cols-[30%_1fr] md:pb-32">
 
+        <!-- NOMBRES DE LAS SILLAS EN ESCRITORIO -->
         <div class="hidden px-5 md:col-start-1 md:row-start-1 md:flex md:h-full md:flex-col md:items-end md:justify-end md:pr-6 md:pl-0">
+
             <div class="relative w-full text-right text-2xl font-semibold uppercase text-azul md:text-3xl">
+
                 <span class="opacity-0 group-data-[nombre=v1]/grid:opacity-100">SILLA AZUL</span>
                 <span class="absolute inset-0 text-right opacity-0 group-data-[nombre=v2]/grid:opacity-100">SILLA ESMERALDA</span>
                 <span class="absolute inset-0 text-right opacity-0 group-data-[nombre=v3]/grid:opacity-100">SILLA FAMOSA</span>
@@ -143,77 +235,115 @@
                 <span class="absolute inset-0 text-right opacity-0 group-data-[nombre=v5]/grid:opacity-100">SILLA SERPIENTE</span>
                 <span class="absolute inset-0 text-right opacity-0 group-data-[nombre=v6]/grid:opacity-100">SILLA MORADA</span>
                 <span class="absolute inset-0 text-right opacity-0 group-data-[nombre=v7]/grid:opacity-100">SILLA ROJA</span>
+
             </div>
         </div>
 
+        <!-- VÍDEOS -->
         <div class="px-5 md:col-start-2 md:row-start-1 md:self-start md:pr-8 md:pl-0">
 
-            <div id="videos-favoritas" class="relative aspect-[23/49] w-full border-t-2 border-l-2 border-black md:aspect-[607/200]">
+            <div id="videos-favoritas"
+                 class="relative aspect-[23/49] w-full border-t-2 border-l-2 border-black md:aspect-[607/200]">
 
                 <div class="absolute inset-0 grid grid-cols-[minmax(0,1.3fr)_minmax(0,1fr)] grid-rows-[repeat(49,minmax(0,1fr))] overflow-hidden md:grid-cols-[minmax(0,1.15fr)_minmax(0,1fr)_minmax(0,1fr)_minmax(0,0.94fr)_minmax(0,1fr)] md:grid-rows-[minmax(0,1fr)]">
 
                     <div class="contents md:grid md:min-h-0 md:min-w-0 md:grid-rows-[minmax(0,42fr)_minmax(0,58fr)]">
 
-                        <video id="v1" src="media/video/silla-azul.mp4" autoplay muted loop playsinline disablepictureinpicture preload="auto"
-                               tabindex="0" role="button" aria-label="Silla azul"
-                               class="silla-video block h-full w-full cursor-pointer object-cover col-start-1 row-start-1 row-span-6 md:[grid-area:auto]"></video>
+                        <video id="v1"
+                               src="media/video/silla-azul.mp4"
+                               autoplay muted loop playsinline disablepictureinpicture preload="auto"
+                               tabindex="0"
+                               role="button"
+                               aria-label="Silla azul"
+                               class="silla-video col-start-1 row-start-1 row-span-6 block h-full w-full cursor-pointer object-cover md:[grid-area:auto]"></video>
 
-                        <video id="v2" src="media/video/silla-esmeralda.mp4" autoplay muted loop playsinline disablepictureinpicture preload="auto"
-                               tabindex="0" role="button" aria-label="Silla esmeralda"
-                               class="silla-video block h-full w-full cursor-pointer object-cover col-start-1 row-start-7 row-span-9 md:[grid-area:auto]"></video>
+                        <video id="v2"
+                               src="media/video/silla-esmeralda.mp4"
+                               autoplay muted loop playsinline disablepictureinpicture preload="auto"
+                               tabindex="0"
+                               role="button"
+                               aria-label="Silla esmeralda"
+                               class="silla-video col-start-1 row-start-7 row-span-9 block h-full w-full cursor-pointer object-cover md:[grid-area:auto]"></video>
 
                     </div>
 
-                    <video id="v3" src="media/video/silla-famosa.mp4" autoplay muted loop playsinline disablepictureinpicture preload="auto"
-                           tabindex="0" role="button" aria-label="Silla famosa"
-                           class="silla-video block h-full w-full cursor-pointer object-cover col-start-2 row-start-1 row-span-15 md:[grid-area:auto]"></video>
+                    <video id="v3"
+                           src="media/video/silla-famosa.mp4"
+                           autoplay muted loop playsinline disablepictureinpicture preload="auto"
+                           tabindex="0"
+                           role="button"
+                           aria-label="Silla famosa"
+                           class="silla-video col-start-2 row-start-1 row-span-15 block h-full w-full cursor-pointer object-cover md:[grid-area:auto]"></video>
 
-                    <video id="v4" src="media/video/silla-organica.mp4" autoplay muted loop playsinline disablepictureinpicture preload="auto"
-                           tabindex="0" role="button" aria-label="Silla orgánica"
-                           class="silla-video block h-full w-full cursor-pointer object-cover col-start-1 row-start-27 row-span-23 md:[grid-area:auto]"></video>
+                    <video id="v4"
+                           src="media/video/silla-organica.mp4"
+                           autoplay muted loop playsinline disablepictureinpicture preload="auto"
+                           tabindex="0"
+                           role="button"
+                           aria-label="Silla orgánica"
+                           class="silla-video col-start-1 row-start-27 row-span-23 block h-full w-full cursor-pointer object-cover md:[grid-area:auto]"></video>
 
                     <div class="contents md:grid md:min-h-0 md:min-w-0 md:grid-rows-[minmax(0,34fr)_minmax(0,66fr)]">
 
-                        <video id="v7" src="media/video/silla-roja.mp4" autoplay muted loop playsinline disablepictureinpicture preload="auto"
-                               tabindex="0" role="button" aria-label="Silla roja"
-                               class="silla-video block h-full w-full cursor-pointer object-cover col-start-1 col-span-2 row-start-16 row-span-11 md:[grid-area:auto]"></video>
+                        <video id="v7"
+                               src="media/video/silla-roja.mp4"
+                               autoplay muted loop playsinline disablepictureinpicture preload="auto"
+                               tabindex="0"
+                               role="button"
+                               aria-label="Silla roja"
+                               class="silla-video col-start-1 col-span-2 row-start-16 row-span-11 block h-full w-full cursor-pointer object-cover md:[grid-area:auto]"></video>
 
-                        <video id="v6" src="media/video/silla-morada.mp4" autoplay muted loop playsinline disablepictureinpicture preload="auto"
-                               tabindex="0" role="button" aria-label="Silla morada"
-                               class="silla-video block h-full w-full cursor-pointer object-cover col-start-2 row-start-27 row-span-13 md:[grid-area:auto]"></video>
+                        <video id="v6"
+                               src="media/video/silla-morada.mp4"
+                               autoplay muted loop playsinline disablepictureinpicture preload="auto"
+                               tabindex="0"
+                               role="button"
+                               aria-label="Silla morada"
+                               class="silla-video col-start-2 row-start-27 row-span-13 block h-full w-full cursor-pointer object-cover md:[grid-area:auto]"></video>
 
                     </div>
 
-                    <video id="v5" src="media/video/silla-serpiente.mp4" autoplay muted loop playsinline disablepictureinpicture preload="auto"
-                           tabindex="0" role="button" aria-label="Silla serpiente"
-                           class="silla-video block h-full w-full cursor-pointer object-cover col-start-2 row-start-40 row-span-10 md:[grid-area:auto]"></video>
+                    <video id="v5"
+                           src="media/video/silla-serpiente.mp4"
+                           autoplay muted loop playsinline disablepictureinpicture preload="auto"
+                           tabindex="0"
+                           role="button"
+                           aria-label="Silla serpiente"
+                           class="silla-video col-start-2 row-start-40 row-span-10 block h-full w-full cursor-pointer object-cover md:[grid-area:auto]"></video>
 
                 </div>
 
-                <div aria-hidden="true" class="pointer-events-none absolute inset-0 z-10 grid grid-cols-[minmax(0,1.3fr)_minmax(0,1fr)] grid-rows-[repeat(49,minmax(0,1fr))] md:grid-cols-[minmax(0,1.15fr)_minmax(0,1fr)_minmax(0,1fr)_minmax(0,0.94fr)_minmax(0,1fr)] md:grid-rows-[minmax(0,1fr)]">
+                <!-- BORDES DEL GRID -->
+                <div aria-hidden="true"
+                     class="pointer-events-none absolute inset-0 z-10 grid grid-cols-[minmax(0,1.3fr)_minmax(0,1fr)] grid-rows-[repeat(49,minmax(0,1fr))] md:grid-cols-[minmax(0,1.15fr)_minmax(0,1fr)_minmax(0,1fr)_minmax(0,0.94fr)_minmax(0,1fr)] md:grid-rows-[minmax(0,1fr)]">
 
                     <div class="contents md:grid md:min-h-0 md:min-w-0 md:grid-rows-[minmax(0,42fr)_minmax(0,58fr)]">
-                        <div class="border-r-2 border-b-2 border-black col-start-1 row-start-1 row-span-6 md:[grid-area:auto]"></div>
-                        <div class="border-r-2 border-b-2 border-black col-start-1 row-start-7 row-span-9 md:[grid-area:auto]"></div>
+                        <div class="col-start-1 row-start-1 row-span-6 border-r-2 border-b-2 border-black md:[grid-area:auto]"></div>
+                        <div class="col-start-1 row-start-7 row-span-9 border-r-2 border-b-2 border-black md:[grid-area:auto]"></div>
                     </div>
 
-                    <div class="border-r-2 border-b-2 border-black col-start-2 row-start-1 row-span-15 md:[grid-area:auto]"></div>
+                    <div class="col-start-2 row-start-1 row-span-15 border-r-2 border-b-2 border-black md:[grid-area:auto]"></div>
 
-                    <div class="border-r-2 border-b-2 border-black col-start-1 row-start-27 row-span-23 md:[grid-area:auto]"></div>
+                    <div class="col-start-1 row-start-27 row-span-23 border-r-2 border-b-2 border-black md:[grid-area:auto]"></div>
 
                     <div class="contents md:grid md:min-h-0 md:min-w-0 md:grid-rows-[minmax(0,34fr)_minmax(0,66fr)]">
-                        <div class="border-r-2 border-b-2 border-black col-start-1 col-span-2 row-start-16 row-span-11 md:[grid-area:auto]"></div>
-                        <div class="border-r-2 border-b-2 border-black col-start-2 row-start-27 row-span-13 md:[grid-area:auto]"></div>
+                        <div class="col-start-1 col-span-2 row-start-16 row-span-11 border-r-2 border-b-2 border-black md:[grid-area:auto]"></div>
+                        <div class="col-start-2 row-start-27 row-span-13 border-r-2 border-b-2 border-black md:[grid-area:auto]"></div>
                     </div>
 
-                    <div class="border-r-2 border-b-2 border-black col-start-2 row-start-40 row-span-10 md:[grid-area:auto]"></div>
+                    <div class="col-start-2 row-start-40 row-span-10 border-r-2 border-b-2 border-black md:[grid-area:auto]"></div>
 
                 </div>
 
             </div>
 
+            <!-- NOMBRES DE LAS SILLAS EN MÓVIL -->
             <div class="relative mt-4 h-8 md:hidden">
-                <span class="absolute inset-0 text-sm font-light text-tinta group-data-[nombre]/grid:opacity-0">TOCA UNA SILLA</span>
+
+                <span class="absolute inset-0 text-sm font-light text-tinta group-data-[nombre]/grid:opacity-0">
+                    TOCA UNA SILLA
+                </span>
+
                 <span class="absolute inset-0 text-xl font-bold uppercase text-azul opacity-0 group-data-[nombre=v1]/grid:opacity-100">SILLA AZUL</span>
                 <span class="absolute inset-0 text-xl font-bold uppercase text-azul opacity-0 group-data-[nombre=v2]/grid:opacity-100">SILLA ESMERALDA</span>
                 <span class="absolute inset-0 text-xl font-bold uppercase text-azul opacity-0 group-data-[nombre=v3]/grid:opacity-100">SILLA FAMOSA</span>
@@ -221,6 +351,7 @@
                 <span class="absolute inset-0 text-xl font-bold uppercase text-azul opacity-0 group-data-[nombre=v5]/grid:opacity-100">SILLA SERPIENTE</span>
                 <span class="absolute inset-0 text-xl font-bold uppercase text-azul opacity-0 group-data-[nombre=v6]/grid:opacity-100">SILLA MORADA</span>
                 <span class="absolute inset-0 text-xl font-bold uppercase text-azul opacity-0 group-data-[nombre=v7]/grid:opacity-100">SILLA ROJA</span>
+
             </div>
 
         </div>
@@ -228,8 +359,7 @@
     </section>
 
     
-
-    
+<!-- FICHA DETALLE DE CADA SILLA -->
 <section id="detalle-silla"
          aria-labelledby="detalle-nombre"
          class="relative z-10 col-span-full hidden px-5 pb-24 opacity-0 transition-opacity duration-500 data-[visible=true]:opacity-100 in-[.textos-grid]:px-0 in-[.textos-grid]:pb-0 md:px-8 md:pb-32">
@@ -237,28 +367,93 @@
     <div id="detalle-grid"
          class="scroll-mb-5 border-t-2 border-l-2 border-black md:grid md:h-[60svh] md:scroll-mb-8 md:grid-rows-[minmax(3rem,11fr)_minmax(0,89fr)]">
 
+        <!-- CABECERA AMARILLA -->
         <div class="flex min-h-12 items-center justify-between border-r-2 border-b-2 border-black bg-amarillo px-4 md:min-h-0 md:px-5">
 
-            <button id="detalle-cerrar"
-                    type="button"
-                    aria-label="Cerrar ficha"
-                    class="-ml-1 flex h-9 w-9 cursor-pointer items-center justify-center text-[#4D4D4D] hover:text-rojo">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" class="h-6 w-6" aria-hidden="true">
-                    <path d="M5 5l14 14M19 5L5 19"/>
-                </svg>
-            </button>
+            <!-- CERRAR + REFERENCIA -->
+            <div class="flex items-center gap-3">
 
-            <p id="detalle-ref" class="text-sm font-light text-[#4D4D4D] md:text-base"></p>
+                <button id="detalle-cerrar"
+                        type="button"
+                        aria-label="Cerrar ficha"
+                        class="-ml-1 flex h-9 w-9 cursor-pointer items-center justify-center text-[#4D4D4D] hover:text-rojo">
+
+                    <svg viewBox="0 0 24 24"
+                         fill="none"
+                         stroke="currentColor"
+                         stroke-width="2"
+                         stroke-linecap="round"
+                         class="h-6 w-6"
+                         aria-hidden="true">
+                        <path d="M5 5l14 14M19 5L5 19"/>
+                    </svg>
+
+                </button>
+
+                <p id="detalle-ref"
+                   class="text-sm font-light text-[#4D4D4D] md:text-base"></p>
+
+            </div>
+
+            <!-- FLECHAS DE NAVEGACIÓN -->
+            <div class="flex items-center gap-2">
+
+                <button id="catalogo-detalle-anterior"
+                        type="button"
+                        aria-label="Silla anterior"
+                        class="flex h-9 w-9 cursor-pointer items-center justify-center text-[#4D4D4D] transition-colors duration-300 hover:text-rojo focus-visible:text-rojo">
+
+                    <svg viewBox="0 0 24 24"
+                         fill="none"
+                         stroke="currentColor"
+                         stroke-width="2.5"
+                         stroke-linecap="round"
+                         stroke-linejoin="round"
+                         class="h-7 w-7"
+                         aria-hidden="true">
+                        <path d="M15 5l-7 7 7 7"/>
+                    </svg>
+
+                </button>
+
+                <button id="catalogo-detalle-siguiente"
+                        type="button"
+                        aria-label="Silla siguiente"
+                        class="flex h-9 w-9 cursor-pointer items-center justify-center text-[#4D4D4D] transition-colors duration-300 hover:text-rojo focus-visible:text-rojo">
+
+                    <svg viewBox="0 0 24 24"
+                         fill="none"
+                         stroke="currentColor"
+                         stroke-width="2.5"
+                         stroke-linecap="round"
+                         stroke-linejoin="round"
+                         class="h-7 w-7"
+                         aria-hidden="true">
+                        <path d="M9 5l7 7-7 7"/>
+                    </svg>
+
+                </button>
+
+            </div>
+
         </div>
 
+        <!-- CONTENIDO DE LA FICHA -->
         <div class="grid grid-cols-2 md:min-h-0 md:grid-cols-[48fr_8fr_22fr_22fr] md:grid-rows-[minmax(0,1fr)]">
 
             <div class="col-span-2 grid md:col-span-1 md:min-h-0 md:grid-rows-[minmax(0,75fr)_minmax(0,25fr)]">
 
                 <div class="border-r-2 border-b-2 border-black bg-caja p-5 md:min-h-0 md:overflow-y-auto md:p-6">
-                    <h2 id="detalle-nombre" class="text-sm font-semibold text-tinta md:text-base"></h2>
-                    <p id="detalle-descripcion" class="mt-1 text-justify text-sm font-light text-tinta md:text-base"></p>
-                    <ul id="detalle-lista" class="mt-4 list-disc space-y-0.5 pl-6 text-sm font-light text-tinta md:text-base"></ul>
+
+                    <h2 id="detalle-nombre"
+                        class="text-sm font-semibold text-tinta md:text-base"></h2>
+
+                    <p id="detalle-descripcion"
+                       class="mt-1 text-justify text-sm font-light text-tinta md:text-base"></p>
+
+                    <ul id="detalle-lista"
+                        class="mt-4 list-disc space-y-0.5 pl-6 text-sm font-light text-tinta md:text-base"></ul>
+
                 </div>
 
                 <div class="flex min-h-11 items-center border-r-2 border-b-2 border-black bg-rojo px-5 text-lg font-light text-white md:min-h-0 md:px-6 md:text-3xl">
@@ -266,87 +461,125 @@
                 </div>
 
                 <div class="h-2 border-r-2 border-b-2 border-black bg-azul md:hidden"></div>
+
             </div>
 
             <div class="hidden border-r-2 border-b-2 border-black bg-azul md:block md:min-h-0"></div>
 
-            <div class="relative h-62 overflow-hidden border-r-2 border-b-2 border-black bg-white md:h-auto md:min-h-0">
+            <!-- IMAGEN -->
+            <div class="relative h-62 min-h-0 min-w-0 overflow-hidden border-r-2 border-b-2 border-black bg-gris-claro md:h-auto">
+
                 <img id="detalle-img-1"
-                     alt=""
-                     class="absolute inset-0 block h-full w-full object-contain md:object-cover">
+                    alt=""
+                    class="absolute inset-0 block h-full w-full object-cover">
+
             </div>
 
-            <div class="relative h-62 overflow-hidden border-r-2 border-b-2 border-black bg-white md:h-auto md:min-h-0">
+            <!-- VÍDEO -->
+            <div class="relative h-62 min-h-0 min-w-0 overflow-hidden border-r-2 border-b-2 border-black bg-gris-claro md:h-auto">
+
                 <video id="detalle-video"
-                       autoplay muted loop playsinline disablepictureinpicture
-                       class="absolute inset-0 block h-full w-full object-contain md:object-cover"></video>
+                    autoplay muted loop playsinline disablepictureinpicture
+                    class="absolute inset-0 block h-full w-full object-cover">
+                </video>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+    <!-- CARRUSEL -->
+    <div class="mb-16 w-full overflow-hidden py-6 text-xl font-semibold whitespace-nowrap text-rojo md:text-2xl"
+         role="region"
+         aria-label="¡Te espero sentado!">
+
+        <div class="flex w-max animate-marquee hover:[animation-play-state:paused]"
+             aria-hidden="true">
+
+            <div class="flex shrink-0 items-center">
+                <span class="shrink-0 pr-12">¡TE ESPERO SENTADO!</span>
+                <span class="shrink-0 pr-12">¡TE ESPERO SENTADO!</span>
+                <span class="shrink-0 pr-12">¡TE ESPERO SENTADO!</span>
+                <span class="shrink-0 pr-12">¡TE ESPERO SENTADO!</span>
+                <span class="shrink-0 pr-12">¡TE ESPERO SENTADO!</span>
+                <span class="shrink-0 pr-12">¡TE ESPERO SENTADO!</span>
+            </div>
+
+            <div class="flex shrink-0 items-center">
+                <span class="shrink-0 pr-12">¡TE ESPERO SENTADO!</span>
+                <span class="shrink-0 pr-12">¡TE ESPERO SENTADO!</span>
+                <span class="shrink-0 pr-12">¡TE ESPERO SENTADO!</span>
+                <span class="shrink-0 pr-12">¡TE ESPERO SENTADO!</span>
+                <span class="shrink-0 pr-12">¡TE ESPERO SENTADO!</span>
+                <span class="shrink-0 pr-12">¡TE ESPERO SENTADO!</span>
             </div>
 
         </div>
     </div>
-</section>
 
+    <!-- BOTONES DE ACCESO RÁPIDO -->
+    <nav aria-label="Accesos rápidos"
+         class="group/botones grid px-5 pb-16 md:grid-cols-3 md:px-8 md:pb-24">
 
+        <a id="b-catalogo"
+           href="catalogo.html"
+           class="flex min-h-16 items-center bg-azul px-5 text-base font-semibold text-gris-claro uppercase group-has-[#b-catalogo:hover]/botones:bg-rojo group-has-[#b-sobre:hover]/botones:bg-amarillo group-has-[#b-sobre:hover]/botones:text-azul group-has-[#b-ubicacion:hover]/botones:bg-amarillo group-has-[#b-ubicacion:hover]/botones:text-azul focus-visible:outline-2 focus-visible:-outline-offset-4 focus-visible:outline-white md:min-h-20 md:text-lg">
 
-        <div class="mb-16 w-full overflow-hidden py-6 text-xl font-semibold whitespace-nowrap text-icono md:text-2xl"
-         role="region"
-         aria-label="¡Te espero sentado!">
+            IR AL CATÁLOGO
 
-            <div class="flex w-max animate-marquee motion-reduce:animate-none hover:[animation-play-state:paused]"
-                aria-hidden="true">
+        </a>
 
-                <div class="flex shrink-0 items-center">
-                    <span class="shrink-0 pr-12">¡TE ESPERO SENTADO!</span>
-                    <span class="shrink-0 pr-12">¡TE ESPERO SENTADO!</span>
-                    <span class="shrink-0 pr-12">¡TE ESPERO SENTADO!</span>
-                    <span class="shrink-0 pr-12">¡TE ESPERO SENTADO!</span>
-                    <span class="shrink-0 pr-12">¡TE ESPERO SENTADO!</span>
-                    <span class="shrink-0 pr-12">¡TE ESPERO SENTADO!</span>
-                </div>
+        <a id="b-sobre"
+           href="sobreteo.html"
+           class="flex min-h-16 items-center bg-rojo px-5 text-base font-semibold text-gris-claro uppercase group-has-[#b-catalogo:hover]/botones:bg-amarillo group-has-[#b-catalogo:hover]/botones:text-azul group-has-[#b-ubicacion:hover]/botones:bg-azul focus-visible:outline-2 focus-visible:-outline-offset-4 focus-visible:outline-white md:min-h-20 md:text-lg">
 
-                <div class="flex shrink-0 items-center">
-                    <span class="shrink-0 pr-12">¡TE ESPERO SENTADO!</span>
-                    <span class="shrink-0 pr-12">¡TE ESPERO SENTADO!</span>
-                    <span class="shrink-0 pr-12">¡TE ESPERO SENTADO!</span>
-                    <span class="shrink-0 pr-12">¡TE ESPERO SENTADO!</span>
-                    <span class="shrink-0 pr-12">¡TE ESPERO SENTADO!</span>
-                    <span class="shrink-0 pr-12">¡TE ESPERO SENTADO!</span>
-                </div>
+            SABER MÁS
 
-            </div>
-        </div>
+        </a>
 
-        <nav aria-label="Accesos rápidos" class="group/botones grid px-5 pb-16 md:grid-cols-3 md:px-8 md:pb-24">
+        <a id="b-ubicacion"
+           href="ubicacion.html"
+           class="flex min-h-16 items-center bg-amarillo px-5 text-base font-semibold text-azul uppercase group-has-[#b-catalogo:hover]/botones:bg-azul group-has-[#b-catalogo:hover]/botones:text-gris-claro group-has-[#b-sobre:hover]/botones:bg-azul group-has-[#b-sobre:hover]/botones:text-gris-claro group-has-[#b-ubicacion:hover]/botones:bg-rojo group-has-[#b-ubicacion:hover]/botones:text-gris-claro focus-visible:outline-2 focus-visible:-outline-offset-4 focus-visible:outline-azul md:min-h-20 md:text-lg">
 
-            <a id="b-catalogo" href="catalogo.html"
-            class="flex min-h-16 items-center bg-azul px-5 text-base font-semibold text-gris-claro uppercase group-has-[#b-catalogo:hover]/botones:bg-rojo group-has-[#b-sobre:hover]/botones:bg-amarillo group-has-[#b-sobre:hover]/botones:text-azul group-has-[#b-ubicacion:hover]/botones:bg-amarillo group-has-[#b-ubicacion:hover]/botones:text-azul focus-visible:outline-2 focus-visible:-outline-offset-4 focus-visible:outline-white md:min-h-20 md:text-lg">
-                IR AL CATÁLOGO
-            </a>
+            DONDE COMPRARLOS
 
-            <a id="b-sobre" href="sobreteo.html"
-            class="flex min-h-16 items-center bg-rojo px-5 text-base font-semibold text-gris-claro uppercase group-has-[#b-catalogo:hover]/botones:bg-amarillo group-has-[#b-catalogo:hover]/botones:text-azul group-has-[#b-ubicacion:hover]/botones:bg-azul focus-visible:outline-2 focus-visible:-outline-offset-4 focus-visible:outline-white md:min-h-20 md:text-lg">
-                SABER MÁS
-            </a>
+        </a>
 
-            <a id="b-ubicacion" href="ubicacion.html"
-            class="flex min-h-16 items-center bg-amarillo px-5 text-base font-semibold text-azul uppercase group-has-[#b-catalogo:hover]/botones:bg-azul group-has-[#b-catalogo:hover]/botones:text-gris-claro group-has-[#b-sobre:hover]/botones:bg-azul group-has-[#b-sobre:hover]/botones:text-gris-claro group-has-[#b-ubicacion:hover]/botones:bg-rojo group-has-[#b-ubicacion:hover]/botones:text-gris-claro focus-visible:outline-2 focus-visible:-outline-offset-4 focus-visible:outline-azul md:min-h-20 md:text-lg">
-                DONDE COMPRARLOS
-            </a>
+    </nav>
 
-        </nav>
-
+    <!-- FOOTER -->
     <footer class="cursor-default">
+
         <div class="grid bg-azul md:grid-cols-[20rem_1fr]">
+
+            <!-- LOGO -->
             <div class="px-5 pt-4 md:px-3 md:py-3">
+
                 <div class="flex h-full flex-col items-center justify-center border-b border-white pb-4 md:border-b-0 md:pb-0">
-                    <img src="media/img/LOGO PNG + TEO.png" alt="Logo de Teo Sillas" class="w-48 md:w-full">
+
+                    <img src="media/img/LOGO PNG + TEO.png"
+                         alt="Logo de Teo Sillas"
+                         class="w-48 md:w-full">
+
                 </div>
             </div>
 
+            <!-- INFORMACIÓN -->
             <div class="px-5 py-4 text-white md:my-8 md:border-l md:border-white md:py-0 md:pr-8 md:pl-12">
+
                 <div class="grid gap-5 sm:grid-cols-3">
+
+                    <!-- POLÍTICAS -->
                     <div>
-                        <h2 class="text-sm font-semibold uppercase">Política de privacidad</h2>
+
+                        <h2 class="text-sm font-semibold uppercase">
+                            Política de privacidad
+                        </h2>
+
                         <ul class="mt-3 space-y-1 text-sm font-light">
                             <li>Protección de datos</li>
                             <li>Política de cookies</li>
@@ -356,10 +589,16 @@
                             <li>Garantía de las piezas</li>
                             <li>Cuidado y mantenimiento</li>
                         </ul>
+
                     </div>
 
+                    <!-- CONTACTO -->
                     <div>
-                        <h2 class="text-sm font-semibold uppercase">Contacto</h2>
+
+                        <h2 class="text-sm font-semibold uppercase">
+                            Contacto
+                        </h2>
+
                         <ul class="mt-3 space-y-1.5 text-sm font-light">
                             <li class="flex items-center gap-2">@teosillas</li>
                             <li class="flex items-center gap-2">@teosillas_madrid</li>
@@ -367,28 +606,53 @@
                             <li class="flex items-center gap-2">hola@teosillas.es</li>
                             <li class="flex items-center gap-2">+34 612 345 678</li>
                         </ul>
+
                     </div>
 
+                    <!-- UBICACIÓN -->
                     <div>
-                        <h2 class="text-sm font-semibold uppercase">Dónde Teo</h2>
-                        <address class="mt-3 text-sm font-light not-italic">C/ de la Palma, 23<br>28004 Madrid</address>
-                        <p class="mt-3 text-sm font-light">Metro Sevilla<br>(líneas 2 y 10)</p>
-                        <p class="mt-3 text-sm font-light">Lunes a sábado<br>10:30 – 20:00</p>
+
+                        <h2 class="text-sm font-semibold uppercase">
+                            Dónde Teo
+                        </h2>
+
+                        <address class="mt-3 text-sm font-light not-italic">
+                            C/ de la Palma, 23<br>
+                            28004 Madrid
+                        </address>
+
+                        <p class="mt-3 text-sm font-light">
+                            Metro Sevilla<br>
+                            (líneas 2 y 10)
+                        </p>
+
+                        <p class="mt-3 text-sm font-light">
+                            Lunes a sábado<br>
+                            10:30 – 20:00
+                        </p>
+
                     </div>
+
                 </div>
             </div>
         </div>
 
+        <!-- COPYRIGHT -->
         <div class="grid grid-cols-[6rem_1fr] md:grid-cols-[20rem_1fr]">
+
             <div class="bg-rojo"></div>
+
             <p class="flex min-h-12 items-center justify-end bg-amarillo px-5 py-3 text-right text-sm font-bold text-rojo md:px-8">
                 © 2026 TEO SILLAS. Todos los derechos reservados.
             </p>
+
         </div>
+
     </footer>
 
-    <!-- Scripts de interfaz y control de vídeos -->
+    <!-- SCRIPTS -->
     <script src="js/interfaz.js"></script>
     <script src="js/videos.js"></script>
+
 </body>
 </html>

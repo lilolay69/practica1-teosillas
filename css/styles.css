@@ -37,11 +37,26 @@
 
 
 
+@keyframes desplazamiento-marquesina {
+        from {
+            transform: translateX(0);
+        }
 
-/* ==========================================
-   TEO SILLAS
-   HOJA DE ESTILOS RESPONSIVE
-========================================== */
+        to {
+            transform: translateX(-50%);
+        }
+    }
+
+    .marquesina-movimiento {
+        display: flex;
+        width: max-content;
+        animation: desplazamiento-marquesina 30s linear infinite;
+        will-change: transform;
+    }
+
+    .marquesina-movimiento:hover {
+        animation-play-state: paused;
+    }
 
 
 /* ==========================================
