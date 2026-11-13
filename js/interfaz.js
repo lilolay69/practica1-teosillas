@@ -40,7 +40,7 @@ const fichas = {
                 ['Tamaño', 'Altura de asiento 46 cm'],
                 ['Color', 'Azul eléctrico']
             ],
-            imagenes: ['#'],
+            imagenes: ['media/img/material/m31.png'],
             video: 'media/video/silla-azul.mp4'
         },
         v2: {
@@ -64,7 +64,7 @@ const fichas = {
                 ['Tamaño', 'Altura de asiento 44 cm'],
                 ['Color', 'Rojo lacado']
             ],
-            imagenes: ['#'],
+            imagenes: ['m'],
             video: 'media/video/silla-famosa.mp4'
         },
         v4: {

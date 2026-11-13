@@ -46,8 +46,13 @@
             --animate-marquee: marquee 30s linear infinite;
 
             @keyframes marquee {
-                from { transform: translateX(0); }
-                to { transform: translateX(-50%); }
+                from {
+                    transform: translateX(0);
+                }
+
+                to {
+                    transform: translateX(-50%);
+                }
             }
         }
 
@@ -232,9 +237,10 @@
      role="region"
      aria-label="El que se fue a Sevilla compró una silla">
 
-    <div class="flex w-max animate-marquee motion-reduce:animate-none hover:[animation-play-state:paused]"
+    <div class="flex w-max animate-marquee hover:[animation-play-state:paused]"
          aria-hidden="true">
 
+        <!-- PRIMER BLOQUE -->
         <div class="flex shrink-0 items-center">
             <span class="shrink-0 pr-12">NO SÉ, SOLO QUIERO SENTARME</span>
             <span class="shrink-0 pr-12">NO SÉ, SOLO QUIERO SENTARME</span>
@@ -243,6 +249,17 @@
             <span class="shrink-0 pr-12">NO SÉ, SOLO QUIERO SENTARME</span>
             <span class="shrink-0 pr-12">NO SÉ, SOLO QUIERO SENTARME</span>
         </div>
+
+        <!-- SEGUNDO BLOQUE DUPLICADO -->
+        <div class="flex shrink-0 items-center">
+            <span class="shrink-0 pr-12">NO SÉ, SOLO QUIERO SENTARME</span>
+            <span class="shrink-0 pr-12">NO SÉ, SOLO QUIERO SENTARME</span>
+            <span class="shrink-0 pr-12">NO SÉ, SOLO QUIERO SENTARME</span>
+            <span class="shrink-0 pr-12">NO SÉ, SOLO QUIERO SENTARME</span>
+            <span class="shrink-0 pr-12">NO SÉ, SOLO QUIERO SENTARME</span>
+            <span class="shrink-0 pr-12">NO SÉ, SOLO QUIERO SENTARME</span>
+        </div>
+
     </div>
 </div>
 

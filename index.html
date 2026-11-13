@@ -49,6 +49,7 @@
                 from {
                     transform: translateX(0);
                 }
+
                 to {
                     transform: translateX(-50%);
                 }
@@ -210,33 +211,34 @@
 <section class="bg-azul px-5 py-10 text-white md:px-8 md:py-10">
 
     <p class="text-justify text-sm leading-relaxed font-light md:text-base">
-         TEO SILLAS es una web dedicada a descubrir el universo de una tienda de sillas, donde el diseño, la funcionalidad y la personalidad se encuentran. A través de sus diferentes secciones, podremos explorar el catálogo de productos, conocer una selección de sillas favoritas, descubrir quién está detrás de Teo y consultar dónde se encuentra la tienda.
+        TEO SILLAS es una web dedicada a descubrir el universo de una tienda de sillas, donde el diseño, la funcionalidad y la personalidad se encuentran. A través de sus diferentes secciones, podremos explorar el catálogo de productos, conocer una selección de sillas favoritas, descubrir quién está detrás de Teo y consultar dónde se encuentra la tienda.
+    </p>
 
 </section>
 
 <section class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5">
 
-    <img src="media/img/sillas/3.webp"
+    <img src="media/img/sillas/silla-amarilla.webp"
          alt="Silla de Teo 1"
          class="block aspect-[3/4] w-full object-cover">
 
-    <img src="media/img/sillas/4.webp"
+    <img src="media/img/sillas/silla-metalica-azul.webp"
          alt="Silla de Teo 2"
          class="block aspect-[3/4] w-full object-cover">
 
-    <img src="media/img/sillas/7.webp"
+    <img src="media/img/sillas/silla-verde.webp"
          alt="Silla de Teo 3"
          class="block aspect-[3/4] w-full object-cover">
 
-    <img src="media/img/sillas/8.webp"
+    <img src="media/img/sillas/silla-inicio.webp"
          alt="Silla de Teo 4"
          class="block aspect-[3/4] w-full object-cover">
 
-    <img src="media/img/sillas/9.webp"
+    <img src="media/img/sillas/silla-naranja.webp"
          alt="Silla de Teo 5"
          class="block aspect-[3/4] w-full object-cover">
 
-    <img src="media/img/sillas/12.webp"
+    <img src="media/img/sillas/silla-viena.webp"
          alt="Silla de Teo 6"
          class="block aspect-[3/4] w-full object-cover lg:hidden">
 
@@ -249,7 +251,14 @@
      role="region"
      aria-label="El que se fue a Sevilla compró una silla">
 
-    <div class="flex w-max animate-marquee motion-reduce:animate-none hover:[animation-play-state:paused]"
+    
+<!-- CARRUSEL -->
+
+<div class="mt-20 mb-16 w-full overflow-hidden whitespace-nowrap py-0 text-xl font-semibold text-rojo md:text-2xl"
+     role="region"
+     aria-label="El que se fue a Sevilla compró una silla">
+
+    <div class="flex w-max animate-[marquee_30s_linear_infinite] hover:[animation-play-state:paused]"
          aria-hidden="true">
 
         <!-- PRIMER GRUPO -->
@@ -266,7 +275,7 @@
             <span class="shrink-0 pr-12">TEO SILLAS</span>
         </div>
 
-        <!-- SEGUNDO GRUPO: DUPLICADO -->
+        <!-- SEGUNDO GRUPO -->
         <div class="flex shrink-0 items-center">
             <span class="shrink-0 pr-12">TEO SILLAS</span>
             <span class="shrink-0 pr-12">TEO SILLAS</span>
