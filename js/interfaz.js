@@ -1,33 +1,33 @@
+
 document.addEventListener('DOMContentLoaded', () => {
 
-        
-const fichas = {
-    '01': ['Silla de líneas clásicas fabricada en madera, con respaldo de diseño tradicional y acabado natural.', '45 × 50 × 90 cm', 'Altura de asiento 46 cm', 'Madera natural'],
-    '02': ['Silla de diseño contemporáneo con asiento naranja y estructura ligera. Una pieza llamativa que aporta color al espacio.', '48 × 52 × 82 cm', 'Altura de asiento 45 cm', 'Naranja'],
-    '03': ['Silla amarilla de formas sencillas y líneas limpias. Su color aporta luminosidad y personalidad a cualquier estancia.', '46 × 50 × 80 cm', 'Altura de asiento 45 cm', 'Amarillo'],
-    '04': ['Silla plegable de estructura negra, práctica y funcional. Su diseño permite guardarla fácilmente cuando no se utiliza.', '43 × 47 × 80 cm', 'Altura de asiento 44 cm', 'Negro'],
-    '05': ['Silla con respaldo de rejilla y estructura de líneas ligeras. Combina materiales y texturas en un diseño actual.', '45 × 52 × 85 cm', 'Altura de asiento 46 cm', 'Negro y madera'],
-    '06': ['Silla de inspiración nórdica con asiento verde y patas de madera. Sus formas suaves y su estructura equilibrada aportan calidez.', '47 × 51 × 81 cm', 'Altura de asiento 45 cm', 'Verde'],
-    '07': ['Silla de estética minimalista y acabado negro. Su estructura sencilla prescinde de adornos y apuesta por la funcionalidad.', '42 × 48 × 82 cm', 'Altura de asiento 45 cm', 'Negro mate'],
-    '08': ['Silla transparente de aspecto ligero que permite integrar la pieza en distintos ambientes sin recargar el espacio.', '46 × 52 × 80 cm', 'Altura de asiento 46 cm', 'Transparente'],
-    '09': ['Silla de estilo vienés con respaldo curvado y una silueta clásica. Una reinterpretación de un diseño atemporal.', '43 × 49 × 89 cm', 'Altura de asiento 46 cm', 'Madera oscura'],
-    '10': ['Silla de oficina diseñada para el uso diario, con asiento cómodo, respaldo ergonómico y una estética funcional.', '58 × 58 × 95 cm', 'Altura de asiento 42–52 cm', 'Gris y negro'],
-    '11': ['Silla metálica de acabado azul y estructura resistente. Su diseño sencillo combina ligereza visual y funcionalidad.', '45 × 50 × 82 cm', 'Altura de asiento 45 cm', 'Azul'],
-    '12': ['Pieza de autor con una silueta expresiva y formas singulares. Un diseño con personalidad que destaca en cualquier ambiente.', '50 × 55 × 84 cm', 'Altura de asiento 45 cm', 'Multicolor'],
-    '13': ['Silla tapizada en tela verde, con asiento acolchado y respaldo envolvente. Combina comodidad y una estética acogedora.', '48 × 54 × 85 cm', 'Altura de asiento 46 cm', 'Verde'],
-    '14': ['Silla ejecutiva fabricada en madera, con brazos amplios y asiento acolchado. Una pieza de presencia elegante y clásica.', '60 × 62 × 98 cm', 'Altura de asiento 47 cm', 'Madera y cuero'],
-    '15': ['Silla de inspiración Luis XVI con respaldo ornamentado y patas de formas torneadas. Un diseño de carácter clásico y vintage.', '47 × 50 × 95 cm', 'Altura de asiento 46 cm', 'Blanco roto y dorado'],
-    '16': ['Silla de color coral y formas suaves. Su diseño aporta un toque de color y frescura a cualquier estancia.', '46 × 51 × 82 cm', 'Altura de asiento 45 cm', 'Coral'],
-    '17': ['Silla de escritorio tapizada en terciopelo. Su acabado textil y su diseño aportan un punto sofisticado al espacio de trabajo.', '55 × 56 × 90 cm', 'Altura de asiento 44–52 cm', 'Terciopelo'],
-    '18': ['Silla de hierro forjado con detalles decorativos y una estructura de carácter artesanal. Cada pieza destaca por su personalidad.', '44 × 48 × 92 cm', 'Altura de asiento 46 cm', 'Negro forja'],
-    '19': ['Silla de comedor de estética rústica, con estructura robusta y acabado de aspecto natural. Pensada para espacios cálidos.', '46 × 50 × 92 cm', 'Altura de asiento 47 cm', 'Madera rústica'],
-    '20': ['Silla de diseño clásico en color rojo. Su silueta sencilla y su acabado llamativo la convierten en una pieza protagonista.', '52 × 56 × 86 cm', 'Altura de asiento 46 cm', 'Rojo'],
-    '21': ['Silla de inspiración retro con patas cruzadas y asiento tapizado. Una combinación de formas geométricas y líneas ligeras.', '45 × 50 × 83 cm', 'Altura de asiento 46 cm', 'Beige'],
-    '22': ['Silla de ratán natural trenzado, con una estética artesanal y ligera. Sus materiales aportan textura y calidez al ambiente.', '48 × 52 × 85 cm', 'Altura de asiento 45 cm', 'Ratán natural'],
-    '23': ['Silla de autor de tonos oscuros y perfil escultórico. Una pieza de diseño singular que destaca por sus formas y acabado.', '48 × 53 × 86 cm', 'Altura de asiento 45 cm', 'Gris oscuro'],
-    '24': ['Silla minimalista fabricada en roble, con líneas rectas y una estética sobria. La madera aporta calidez a su diseño.', '44 × 48 × 80 cm', 'Altura de asiento 45 cm', 'Roble'],
-    '25': ['Silla de vanguardia con estructura de acero y formas contemporáneas. Una pieza que combina resistencia y ligereza visual.', '45 × 55 × 82 cm', 'Altura de asiento 44 cm', 'Acero cromado']
-};
+    const fichas = {
+        '01': ['Silla de líneas clásicas fabricada en madera, con respaldo de diseño tradicional y acabado natural.', '45 × 50 × 90 cm', 'Altura de asiento 46 cm', 'Madera natural'],
+        '02': ['Silla de diseño contemporáneo con asiento naranja y estructura ligera. Una pieza llamativa que aporta color al espacio.', '48 × 52 × 82 cm', 'Altura de asiento 45 cm', 'Naranja'],
+        '03': ['Silla amarilla de formas sencillas y líneas limpias. Su color aporta luminosidad y personalidad a cualquier estancia.', '46 × 50 × 80 cm', 'Altura de asiento 45 cm', 'Amarillo'],
+        '04': ['Silla plegable de estructura negra, práctica y funcional. Su diseño permite guardarla fácilmente cuando no se utiliza.', '43 × 47 × 80 cm', 'Altura de asiento 44 cm', 'Negro'],
+        '05': ['Silla con respaldo de rejilla y estructura de líneas ligeras. Combina materiales y texturas en un diseño actual.', '45 × 52 × 85 cm', 'Altura de asiento 46 cm', 'Negro y madera'],
+        '06': ['Silla de inspiración nórdica con asiento verde y patas de madera. Sus formas suaves y su estructura equilibrada aportan calidez.', '47 × 51 × 81 cm', 'Altura de asiento 45 cm', 'Verde'],
+        '07': ['Silla de estética minimalista y acabado negro. Su estructura sencilla prescinde de adornos y apuesta por la funcionalidad.', '42 × 48 × 82 cm', 'Altura de asiento 45 cm', 'Negro mate'],
+        '08': ['Silla transparente de aspecto ligero que permite integrar la pieza en distintos ambientes sin recargar el espacio.', '46 × 52 × 80 cm', 'Altura de asiento 46 cm', 'Transparente'],
+        '09': ['Silla de estilo vienés con respaldo curvado y una silueta clásica. Una reinterpretación de un diseño atemporal.', '43 × 49 × 89 cm', 'Altura de asiento 46 cm', 'Madera oscura'],
+        '10': ['Silla de oficina diseñada para el uso diario, con asiento cómodo, respaldo ergonómico y una estética funcional.', '58 × 58 × 95 cm', 'Altura de asiento 42–52 cm', 'Gris y negro'],
+        '11': ['Silla metálica de acabado azul y estructura resistente. Su diseño sencillo combina ligereza visual y funcionalidad.', '45 × 50 × 82 cm', 'Altura de asiento 45 cm', 'Azul'],
+        '12': ['Pieza de autor con una silueta expresiva y formas singulares. Un diseño con personalidad que destaca en cualquier ambiente.', '50 × 55 × 84 cm', 'Altura de asiento 45 cm', 'Multicolor'],
+        '13': ['Silla tapizada en tela verde, con asiento acolchado y respaldo envolvente. Combina comodidad y una estética acogedora.', '48 × 54 × 85 cm', 'Altura de asiento 46 cm', 'Verde'],
+        '14': ['Silla ejecutiva fabricada en madera, con brazos amplios y asiento acolchado. Una pieza de presencia elegante y clásica.', '60 × 62 × 98 cm', 'Altura de asiento 47 cm', 'Madera y cuero'],
+        '15': ['Silla de inspiración Luis XVI con respaldo ornamentado y patas de formas torneadas. Un diseño de carácter clásico y vintage.', '47 × 50 × 95 cm', 'Altura de asiento 46 cm', 'Blanco roto y dorado'],
+        '16': ['Silla de color coral y formas suaves. Su diseño aporta un toque de color y frescura a cualquier estancia.', '46 × 51 × 82 cm', 'Altura de asiento 45 cm', 'Coral'],
+        '17': ['Silla de escritorio tapizada en terciopelo. Su acabado textil y su diseño aportan un punto sofisticado al espacio de trabajo.', '55 × 56 × 90 cm', 'Altura de asiento 44–52 cm', 'Terciopelo'],
+        '18': ['Silla de hierro forjado con detalles decorativos y una estructura de carácter artesanal. Cada pieza destaca por su personalidad.', '44 × 48 × 92 cm', 'Altura de asiento 46 cm', 'Negro forja'],
+        '19': ['Silla de comedor de estética rústica, con estructura robusta y acabado de aspecto natural. Pensada para espacios cálidos.', '46 × 50 × 92 cm', 'Altura de asiento 47 cm', 'Madera rústica'],
+        '20': ['Silla de diseño clásico en color rojo. Su silueta sencilla y su acabado llamativo la convierten en una pieza protagonista.', '52 × 56 × 86 cm', 'Altura de asiento 46 cm', 'Rojo'],
+        '21': ['Silla de inspiración retro con patas cruzadas y asiento tapizado. Una combinación de formas geométricas y líneas ligeras.', '45 × 50 × 83 cm', 'Altura de asiento 46 cm', 'Beige'],
+        '22': ['Silla de ratán natural trenzado, con una estética artesanal y ligera. Sus materiales aportan textura y calidez al ambiente.', '48 × 52 × 85 cm', 'Altura de asiento 45 cm', 'Ratán natural'],
+        '23': ['Silla de autor de tonos oscuros y perfil escultórico. Una pieza de diseño singular que destaca por sus formas y acabado.', '48 × 53 × 86 cm', 'Altura de asiento 45 cm', 'Gris oscuro'],
+        '24': ['Silla minimalista fabricada en roble, con líneas rectas y una estética sobria. La madera aporta calidez a su diseño.', '44 × 48 × 80 cm', 'Altura de asiento 45 cm', 'Roble'],
+        '25': ['Silla de vanguardia con estructura de acero y formas contemporáneas. Una pieza que combina resistencia y ligereza visual.', '45 × 55 × 82 cm', 'Altura de asiento 44 cm', 'Acero cromado']
+    };
 
 
     const sillas = {
@@ -52,7 +52,7 @@ const fichas = {
                 ['Tamaño', 'Altura de asiento 45 cm'],
                 ['Color', 'Verde esmeralda']
             ],
-            imagenes: ['#'],
+            imagenes: ['media/img/material/esmeralda.webp'],
             video: 'media/video/silla-esmeralda.mp4'
         },
         v3: {
@@ -64,7 +64,7 @@ const fichas = {
                 ['Tamaño', 'Altura de asiento 44 cm'],
                 ['Color', 'Rojo lacado']
             ],
-            imagenes: ['m'],
+            imagenes: ['media/img/material/plastico-rojo.webp'],
             video: 'media/video/silla-famosa.mp4'
         },
         v4: {
@@ -76,7 +76,7 @@ const fichas = {
                 ['Tamaño', 'Altura de asiento 43 cm'],
                 ['Color', 'Madera natural']
             ],
-            imagenes: ['#'],
+            imagenes: ['media/img/material/madera-oscura.webp'],
             video: 'media/video/silla-organica.mp4'
         },
         v5: {
@@ -88,7 +88,7 @@ const fichas = {
                 ['Tamaño', 'Altura de asiento 47 cm'],
                 ['Color', 'Estampado serpiente']
             ],
-            imagenes: ['#'],
+            imagenes: ['media/img/material/dm-madera.webp'],
             video: 'media/video/silla-serpiente.mp4'
         },
         v6: {
@@ -100,7 +100,7 @@ const fichas = {
                 ['Tamaño', 'Altura de asiento 46 cm'],
                 ['Color', 'Morado y blanco']
             ],
-            imagenes: ['#'],
+            imagenes: ['media/img/material/tapiz-morado.webp'],
             video: 'media/video/silla-morada.mp4'
         },
         v7: {
@@ -112,7 +112,7 @@ const fichas = {
                 ['Tamaño', 'Altura de asiento 45 cm'],
                 ['Color', 'Rojo taller']
             ],
-            imagenes: ['#'],
+            imagenes: ['media/img/material/plastico-rojo.webp'],
             video: 'media/video/silla-roja.mp4'
         }
     };
@@ -162,34 +162,34 @@ const fichas = {
         }
     ];
 
-       
-const nombresCatalogo = {
-    '01': 'Silla clásica de madera',
-    '02': 'Silla naranja moderna',
-    '03': 'Silla amarilla de diseño',
-    '04': 'Silla plegable negra',
-    '05': 'Silla de rejilla',
-    '06': 'Silla nórdica verde',
-    '07': 'Silla minimalista negra',
-    '08': 'Silla transparente',
-    '09': 'Silla de Viena',
-    '10': 'Silla de oficina',
-    '11': 'Silla metálica azul',
-    '12': 'Silla Chula de autor',
-    '13': 'Silla tapizada verde',
-    '14': 'Silla ejecutiva de madera',
-    '15': 'Silla Luis XVI vintage',
-    '16': 'Silla coral',
-    '17': 'Silla Velvet',
-    '18': 'Silla forjada artística',
-    '19': 'Silla rústica de comedor',
-    '20': 'Silla roja clásica',
-    '21': 'Silla de patas cruzadas',
-    '22': 'Silla de ratán natural',
-    '23': 'Silla de autor',
-    '24': 'Silla minimalista de roble',
-    '25': 'Silla de vanguardia de acero'
-};
+
+    const nombresCatalogo = {
+        '01': 'Silla clásica de madera',
+        '02': 'Silla naranja moderna',
+        '03': 'Silla amarilla de diseño',
+        '04': 'Silla plegable negra',
+        '05': 'Silla de rejilla',
+        '06': 'Silla nórdica verde',
+        '07': 'Silla minimalista negra',
+        '08': 'Silla transparente',
+        '09': 'Silla de Viena',
+        '10': 'Silla de oficina',
+        '11': 'Silla metálica azul',
+        '12': 'Silla Chula de autor',
+        '13': 'Silla tapizada verde',
+        '14': 'Silla ejecutiva de madera',
+        '15': 'Silla Luis XVI vintage',
+        '16': 'Silla coral',
+        '17': 'Silla Velvet',
+        '18': 'Silla forjada artística',
+        '19': 'Silla rústica de comedor',
+        '20': 'Silla roja clásica',
+        '21': 'Silla de patas cruzadas',
+        '22': 'Silla de ratán natural',
+        '23': 'Silla de autor',
+        '24': 'Silla minimalista de roble',
+        '25': 'Silla de vanguardia de acero'
+    };
 
 
     const sillasBuscables = [
@@ -540,7 +540,33 @@ const nombresCatalogo = {
 
     if (sillasCatalogo.length && fichaCatalogo) {
 
-        const imagenesFicha = {};
+        const imagenesFicha = {
+            '01': ['media/img/sillas/silla-clasica.webp', 'media/img/material/madera-clara-beteada.webp'],
+            '02': ['media/img/sillas/silla-naranja.webp', 'media/img/material/m3.png'],
+            '03': ['media/img/sillas/silla-amarilla.webp', 'media/img/material/m4.png'],
+            '04': ['media/img/sillas/silla-plegable.webp', 'media/img/material/m5.png'],
+            '05': ['media/img/sillas/silla-rejilla.webp', 'media/img/material/plastico-negro-rugoso.webp'],
+            '06': ['media/img/sillas/silla-verde.webp', 'media/img/material/plastico-verde-rayado.webp'],
+            '07': ['media/img/sillas/silla-acero.webp', 'media/img/material/plastico-negro-liso.webp'],
+            '08': ['media/img/sillas/silla-transparente.webp', 'media/img/material/metal-inflado.webp'],
+            '09': ['media/img/sillas/silla-viena.webp', 'media/img/material/madera-clara.webp'],
+            '10': ['media/img/sillas/silla-oficina.webp', 'media/img/material/madera-clara.webp'],
+            '11': ['media/img/sillas/silla-metalica-azul.webp', 'media/img/material/plastico-azul-liso.webp'],
+            '12': ['media/img/sillas/silla-chula.webp', 'media/img/material/tapizado-claro-grumitos.webp'],
+            '13': ['media/img/sillas/silla-tapizada.webp', 'media/img/material/tela-verde-osc.webp'],
+            '14': ['media/img/sillas/silla-ejecutiva-madera.webp', 'media/img/material/tapiz-masclaro-grumos.webp'],
+            '15': ['media/img/sillas/silla-luis.webp', 'media/img/material/cuero-lila.webp'],
+            '16': ['media/img/sillas/silla-coral.webp', 'media/img/material/cuero-naranja.webp'],
+            '17': ['media/img/sillas/silla-velvet.webp', 'media/img/material/tapiz-azul-grumos.webp'],
+            '18': ['media/img/sillas/silla-forjada.webp', 'media/img/material/tapizado-claro-grumitos.webp'],
+            '19': ['media/img/sillas/silla-rustica.webp', 'media/img/material/madera-quemada.webp'],
+            '20': ['media/img/sillas/silla-inicio.webp', 'media/img/material/plastico-rojo-text.webp'],
+            '21': ['media/img/sillas/silla-cruzada.webp', 'media/img/material/paja-clara.webp'],
+            '22': ['media/img/sillas/silla-ratan.webp', 'media/img/material/tapiz-teja-grumo.webp'],
+            '23': ['media/img/sillas/silla-confort.webp', 'media/img/material/tapiz-teja-grumo.webp'],
+            '24': ['media/img/sillas/silla-roble.webp', 'media/img/material/madera-oscura.webp'],
+            '25': ['media/img/sillas/silla-acero.webp', 'media/img/material/plastico-negro-liso.webp']
+        };
 
         const mainCatalogo = document.querySelector('main');
         const textosCatalogo = [...document.querySelectorAll('.texto-item')];
@@ -550,6 +576,8 @@ const nombresCatalogo = {
 
         const fichaGrid = document.getElementById('catalogo-detalle-grid');
         const fichaCerrar = document.getElementById('catalogo-detalle-cerrar');
+        const fichaAnterior = document.getElementById('catalogo-detalle-anterior');
+        const fichaSiguiente = document.getElementById('catalogo-detalle-siguiente');
         const fichaRef = document.getElementById('catalogo-detalle-ref');
         const fichaNombre = document.getElementById('catalogo-detalle-nombre');
         const fichaDescripcion = document.getElementById('catalogo-detalle-descripcion');
@@ -709,6 +737,15 @@ const nombresCatalogo = {
             }, 500);
         }
 
+        function moverFicha(paso) {
+            if (!sillaAbierta) return;
+
+            const lista = [...sillasCatalogo];
+            const indice = lista.indexOf(sillaAbierta);
+
+            abrirFicha(lista[(indice + paso + lista.length) % lista.length]);
+        }
+
         sillasCatalogo.forEach((silla) => {
             const id = silla.dataset.id;
 
@@ -767,7 +804,23 @@ const nombresCatalogo = {
             });
         });
 
-        fichaCerrar.addEventListener('click', cerrarFicha);
+        if (fichaCerrar) fichaCerrar.addEventListener('click', cerrarFicha);
+
+        if (fichaAnterior) {
+            fichaAnterior.addEventListener('click', (e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                moverFicha(-1);
+            });
+        }
+
+        if (fichaSiguiente) {
+            fichaSiguiente.addEventListener('click', (e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                moverFicha(1);
+            });
+        }
 
         document.addEventListener('keydown', (e) => {
             if (e.key === 'Escape') cerrarFicha();
@@ -853,6 +906,10 @@ const nombresCatalogo = {
         const gridDetalle = document.getElementById('detalle-grid');
 
         const botonCerrar = document.getElementById('detalle-cerrar');
+
+        // BOTONES DE NAVEGACIÓN: ID CORRECTO DEL HTML
+        const botonAnterior = document.getElementById('catalogo-detalle-anterior');
+        const botonSiguiente = document.getElementById('catalogo-detalle-siguiente');
 
         const refDetalle = document.getElementById('detalle-ref');
         const nombreDetalle = document.getElementById('detalle-nombre');
@@ -983,6 +1040,20 @@ const nombresCatalogo = {
             }
         }
 
+        function moverDetalle(paso) {
+
+            if (!sillaFija) return;
+
+            const ids = Object.keys(sillas);
+            const indiceActual = ids.indexOf(sillaFija);
+
+            if (indiceActual === -1) return;
+
+            const nuevoIndice = (indiceActual + paso + ids.length) % ids.length;
+
+            abrirDetalle(ids[nuevoIndice]);
+        }
+
         function cerrarDetalle() {
 
             if (seccionDetalle.classList.contains('hidden')) return;
@@ -1040,6 +1111,23 @@ const nombresCatalogo = {
 
         if (botonCerrar) {
             botonCerrar.addEventListener('click', cerrarDetalle);
+        }
+
+        // EVENTOS DE NAVEGACIÓN DE FAVORITAS
+        if (botonAnterior) {
+            botonAnterior.addEventListener('click', (e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                moverDetalle(-1);
+            });
+        }
+
+        if (botonSiguiente) {
+            botonSiguiente.addEventListener('click', (e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                moverDetalle(1);
+            });
         }
 
         document.addEventListener('keydown', e => {

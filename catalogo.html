@@ -145,9 +145,10 @@
     </button>
 
     <!-- CONTENIDO PRINCIPAL -->
-    <main class="relative z-10 px-5 pt-48 pb-24 md:min-h-svh md:h-auto md:px-8 md:pt-20 md:pb-20">
+    <main class="relative z-10 px-5 pt-48 pb-4 md:min-h-svh md:h-auto md:px-8 md:pt-32 md:pb-6">
+        
 
-        <h1 class="mb-12 w-full text-right text-4xl font-semibold text-rojo md:text-6xl">
+        <h1 class="mb-4 flex w-full justify-end text-4xl font-semibold text-rojo md:text-6xl">
             CATÁLOGO DE TEO
         </h1>
 
@@ -468,14 +469,18 @@
         </div>
     </main>
 
-        <section id="detalle-catalogo"
-             aria-labelledby="catalogo-detalle-nombre"
-             class="relative z-10 col-span-full hidden px-5 pb-24 opacity-0 transition-opacity duration-500 data-[visible=true]:opacity-100 in-[.textos-grid]:px-0 in-[.textos-grid]:pb-0 md:px-8 md:pb-32">
+    <section id="detalle-catalogo"
+     aria-labelledby="catalogo-detalle-nombre"
+     class="relative z-10 col-span-full hidden px-5 pb-24 opacity-0 transition-opacity duration-500 data-[visible=true]:opacity-100 in-[.textos-grid]:px-0 in-[.textos-grid]:pb-0 md:px-8 md:pb-32">
 
-        <div id="catalogo-detalle-grid"
-             class="scroll-mb-5 border-t-2 border-l-2 border-black md:grid md:h-[60svh] md:scroll-mb-8 md:grid-rows-[minmax(3rem,11fr)_minmax(0,89fr)]">
+    <div id="catalogo-detalle-grid"
+         class="scroll-mt-16 scroll-mb-5 border-t-2 border-l-2 border-black md:grid md:h-[60svh] md:scroll-mb-8 md:grid-rows-[minmax(3rem,11fr)_minmax(0,89fr)]">
 
-            <div class="flex min-h-12 items-center justify-between border-r-2 border-b-2 border-black bg-amarillo px-4 md:min-h-0 md:px-5">
+        <!-- RECTÁNGULO AMARILLO -->
+        <div class="flex min-h-12 items-center justify-between border-r-2 border-b-2 border-black bg-amarillo px-4 md:min-h-0 md:px-5">
+
+            <!-- CERRAR + REFERENCIA -->
+            <div class="flex items-center gap-3">
 
                 <button id="catalogo-detalle-cerrar"
                         type="button"
@@ -487,42 +492,89 @@
                 </button>
 
                 <p id="catalogo-detalle-ref" class="text-sm font-light text-[#4D4D4D] md:text-base"></p>
-            </div>
-
-            <div class="grid grid-cols-2 md:min-h-0 md:grid-cols-[48fr_8fr_22fr_22fr] md:grid-rows-[minmax(0,1fr)]">
-
-                <div class="col-span-2 grid md:col-span-1 md:min-h-0 md:grid-rows-[minmax(0,75fr)_minmax(0,25fr)]">
-
-                    <div class="border-r-2 border-b-2 border-black bg-caja p-5 md:min-h-0 md:overflow-y-auto md:p-6">
-                        <h2 id="catalogo-detalle-nombre" class="text-sm font-semibold text-tinta md:text-base"></h2>
-                        <p id="catalogo-detalle-descripcion" class="mt-1 text-justify text-sm font-light text-tinta md:text-base"></p>
-                        <ul id="catalogo-detalle-lista" class="mt-4 list-disc space-y-0.5 pl-6 text-sm font-light text-tinta md:text-base"></ul>
-                    </div>
-
-                    <div class="flex min-h-11 items-center border-r-2 border-b-2 border-black bg-rojo px-5 text-lg font-light text-white md:min-h-0 md:px-6 md:text-3xl">
-                        + INFO
-                    </div>
-
-                    <div class="h-2 border-r-2 border-b-2 border-black bg-azul md:hidden"></div>
-                </div>
-
-                <div class="hidden border-r-2 border-b-2 border-black bg-azul md:block md:min-h-0"></div>
-
-                <div class="relative h-62 overflow-hidden border-r-2 border-b-2 border-black bg-caja md:h-auto md:min-h-0">
-                    <img id="catalogo-detalle-img-1"
-                         alt=""
-                         class="absolute inset-0 block h-full w-full object-contain md:object-cover">
-                </div>
-
-                <div class="relative h-62 overflow-hidden border-r-2 border-b-2 border-black bg-caja md:h-auto md:min-h-0">
-                    <img id="catalogo-detalle-img-2"
-                         alt=""
-                         class="absolute inset-0 block h-full w-full object-contain md:object-cover">
-                </div>
 
             </div>
+
+            <!-- FLECHAS DE NAVEGACIÓN -->
+            <div class="flex items-center gap-2">
+
+                <button id="catalogo-detalle-anterior"
+                        type="button"
+                        aria-label="Silla anterior"
+                        class="flex h-9 w-9 cursor-pointer items-center justify-center text-[#4D4D4D] transition-colors duration-300 hover:text-rojo focus-visible:text-rojo">
+
+                    <svg viewBox="0 0 24 24"
+                         fill="none"
+                         stroke="currentColor"
+                         stroke-width="2.5"
+                         stroke-linecap="round"
+                         stroke-linejoin="round"
+                         class="h-7 w-7"
+                         aria-hidden="true">
+                        <path d="M15 5l-7 7 7 7"/>
+                    </svg>
+
+                </button>
+
+                <button id="catalogo-detalle-siguiente"
+                        type="button"
+                        aria-label="Silla siguiente"
+                        class="flex h-9 w-9 cursor-pointer items-center justify-center text-[#4D4D4D] transition-colors duration-300 hover:text-rojo focus-visible:text-rojo">
+
+                    <svg viewBox="0 0 24 24"
+                         fill="none"
+                         stroke="currentColor"
+                         stroke-width="2.5"
+                         stroke-linecap="round"
+                         stroke-linejoin="round"
+                         class="h-7 w-7"
+                         aria-hidden="true">
+                        <path d="M9 5l7 7-7 7"/>
+                    </svg>
+
+                </button>
+
+            </div>
+
         </div>
-    </section>
+
+        <!-- CONTENIDO DEL DETALLE -->
+        <div class="grid grid-cols-2 md:min-h-0 md:grid-cols-[48fr_8fr_22fr_22fr] md:grid-rows-[minmax(0,1fr)]">
+
+            <div class="col-span-2 grid md:col-span-1 md:min-h-0 md:grid-rows-[minmax(0,75fr)_minmax(0,25fr)]">
+
+                <div class="border-r-2 border-b-2 border-black bg-caja p-5 md:min-h-0 md:overflow-y-auto md:p-6">
+                    <h2 id="catalogo-detalle-nombre" class="text-sm font-semibold text-tinta md:text-base"></h2>
+                    <p id="catalogo-detalle-descripcion" class="mt-1 text-justify text-sm font-light text-tinta md:text-base"></p>
+                    <ul id="catalogo-detalle-lista" class="mt-4 list-disc space-y-0.5 pl-6 text-sm font-light text-tinta md:text-base"></ul>
+                </div>
+
+                <div class="flex min-h-11 items-center border-r-2 border-b-2 border-black bg-rojo px-5 text-lg font-light text-white md:min-h-0 md:px-6 md:text-3xl">
+                    + INFO
+                </div>
+
+                <div class="h-2 border-r-2 border-b-2 border-black bg-azul md:hidden"></div>
+
+            </div>
+
+            <div class="hidden border-r-2 border-b-2 border-black bg-azul md:block md:min-h-0"></div>
+
+            <div class="relative h-62 min-h-0 min-w-0 overflow-hidden border-r-2 border-b-2 border-black bg-caja md:h-auto">
+                <img id="catalogo-detalle-img-1"
+                    alt=""
+                    class="absolute inset-0 block h-full w-full object-cover">
+            </div>
+
+            <!-- IMAGEN 2 -->
+            <div class="relative h-62 min-h-0 min-w-0 overflow-hidden border-r-2 border-b-2 border-black bg-caja md:h-auto">
+                <img id="catalogo-detalle-img-2"
+                    alt=""
+                    class="absolute inset-0 block h-full w-full object-cover">
+            </div>
+
+        </div>
+    </div>
+</section>
 
     <!-- <div class="mb-16 w-full overflow-hidden py-6 text-xl font-semibold whitespace-nowrap text-icono md:text-2xl"
          role="region"
